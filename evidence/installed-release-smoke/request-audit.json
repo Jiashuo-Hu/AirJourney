@@ -1,0 +1,86 @@
+{
+  "requests": [
+    {
+      "scheme": "airjourney:",
+      "type": "mainFrame",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "script",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "stylesheet",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "font",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "font",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "font",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "xhr",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "xhr",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "xhr",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "xhr",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "mainFrame",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "script",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "xhr",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "xhr",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "xhr",
+      "external": false
+    },
+    {
+      "scheme": "airjourney:",
+      "type": "xhr",
+      "external": false
+    }
+  ],
+  "externalAttempts": 0,
+  "physicalNetworkDisconnected": false
+}

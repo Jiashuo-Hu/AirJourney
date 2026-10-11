@@ -1,0 +1,2 @@
+b73956c7ae8c144eaa8b99c3444dbb3fad97213cf73ccb046262edcccd556b9a  AirJourney-v0.0-x64-setup.exe
+d8cd579a7b6f8ee8d5ffae18e15f56ffaf788fce8917c7faf0fcb4e924487c1f  AirJourney-v0.0-source.zip

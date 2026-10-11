@@ -1,0 +1,26 @@
+
+> airjourney@0.0.0 test
+> tsx --test tests/*.test.ts
+
+✔ unknown and date-only preserve null; missing time zone never guesses (2.2307ms)
+✔ FX03 PEK to LHR =12h, FX04 HND to LAX =9h (2.1065ms)
+✔ DST gap / overlap unresolved, offsets explicit, invalid chronology preserved (0.6429ms)
+✔ zero coordinate, zero distance and manual units stay distinct from unknown (0.8423ms)
+✔ WGS84 published geodesic oracle Wellington–Salamanca 19959679.267m (0.4448ms)
+✔ antimeridian / polar / antipodal / same-place route coordinates remain finite (2.9163ms)
+✔ safe SVG is vector only; bundled assets pass; dangerous SVG rejects (0.9111ms)
+✔ snapshot changes do not mutate existing flights; backups preserve all data and SVG (11.8527ms)
+✔ backup rejects corruption, unsupported schema, traversal, missing files; does not change source (4.6235ms)
+✔ CSV quotes multiline, escapes formula injection, exports precision / manual / derived values (0.4364ms)
+✔ Library CSV imports explicit columns, multiline names and optional coordinates (0.407ms)
+✔ explicit Library updates preserve per-flight user coordinate / code overrides (0.1352ms)
+✔ same text ID in different reference categories never overwrites an airport with an airline (0.1051ms)
+✔ backup schema rejects remote images, malformed time, invalid custom field and style (0.4339ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 255.624

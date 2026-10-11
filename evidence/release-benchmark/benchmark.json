@@ -1,0 +1,176 @@
+{
+  "records": 1000,
+  "search30ms": [
+    45.5,
+    51.89999997615814,
+    67.80000007152557,
+    43.699999928474426,
+    54.5,
+    50.60000002384186,
+    54.299999952316284,
+    47.90000009536743,
+    48.699999928474426,
+    50.800000071525574,
+    14.399999976158142,
+    50.39999997615814,
+    47.10000002384186,
+    44.299999952316284,
+    46.200000047683716,
+    40.199999928474426,
+    38.700000047683716,
+    46,
+    39.5,
+    41.299999952316284,
+    12,
+    34.300000071525574,
+    33.5,
+    35.39999997615814,
+    40.89999997615814,
+    41.10000002384186,
+    43.200000047683716,
+    41,
+    42.39999997615814,
+    39.60000002384186
+  ],
+  "searchP95ms": 54.299999952316284,
+  "storageCommit30ms": [
+    41.700000047683716,
+    29.699999928474426,
+    30.899999976158142,
+    28.200000047683716,
+    27.899999976158142,
+    27.600000023841858,
+    26.199999928474426,
+    29.800000071525574,
+    28.5,
+    26,
+    27,
+    26.59999990463257,
+    26.100000023841858,
+    30.200000047683716,
+    27.100000023841858,
+    26.899999976158142,
+    27.5,
+    27.399999976158142,
+    26.399999976158142,
+    30.100000023841858,
+    26.299999952316284,
+    28.200000047683716,
+    25.5,
+    25.799999952316284,
+    26,
+    25.800000071525574,
+    26.59999990463257,
+    26.600000023841858,
+    27,
+    28.300000071525574
+  ],
+  "storageCommitP95ms": 30.200000047683716,
+  "interactive5secMedianFPS": 153.84615384615384,
+  "metrics": [
+    {
+      "cpu": {
+        "cumulativeCPUUsage": 2.614138,
+        "percentCPUUsage": 0,
+        "idleWakeupsPerSecond": 0
+      },
+      "pid": 4336,
+      "type": "Browser",
+      "creationTime": 1791626489302.033,
+      "memory": {
+        "workingSetSize": 174676,
+        "peakWorkingSetSize": 175444,
+        "privateBytes": 164884
+      },
+      "integrityLevel": "medium",
+      "sandboxed": false
+    },
+    {
+      "cpu": {
+        "cumulativeCPUUsage": 5.6052,
+        "percentCPUUsage": 0,
+        "idleWakeupsPerSecond": 0
+      },
+      "pid": 3124,
+      "type": "GPU",
+      "creationTime": 1791626489490.481,
+      "serviceName": "GPU",
+      "memory": {
+        "workingSetSize": 683008,
+        "peakWorkingSetSize": 706320,
+        "privateBytes": 617588
+      },
+      "integrityLevel": "low",
+      "sandboxed": true
+    },
+    {
+      "cpu": {
+        "cumulativeCPUUsage": 0.110307,
+        "percentCPUUsage": 0,
+        "idleWakeupsPerSecond": 0
+      },
+      "pid": 18156,
+      "type": "Utility",
+      "creationTime": 1791626489502.197,
+      "serviceName": "network.mojom.NetworkService",
+      "name": "Network Service",
+      "memory": {
+        "workingSetSize": 45340,
+        "peakWorkingSetSize": 45376,
+        "privateBytes": 14980
+      },
+      "integrityLevel": "medium",
+      "sandboxed": false
+    },
+    {
+      "cpu": {
+        "cumulativeCPUUsage": 9.537518,
+        "percentCPUUsage": 0,
+        "idleWakeupsPerSecond": 0
+      },
+      "pid": 5124,
+      "type": "Tab",
+      "creationTime": 1791626489591.413,
+      "memory": {
+        "workingSetSize": 518940,
+        "peakWorkingSetSize": 545816,
+        "privateBytes": 470624
+      },
+      "integrityLevel": "untrusted",
+      "sandboxed": true
+    }
+  ],
+  "versions": {
+    "node": "22.19.0",
+    "acorn": "8.15.0",
+    "ada": "2.9.2",
+    "amaro": "1.1.0",
+    "ares": "1.34.5",
+    "brotli": "1.0.9",
+    "cjs_module_lexer": "2.1.0",
+    "cldr": "44.1",
+    "icu": "74.2",
+    "llhttp": "9.3.0",
+    "modules": "139",
+    "napi": "10",
+    "nbytes": "0.1.1",
+    "ncrypto": "0.0.1",
+    "nghttp2": "1.64.0",
+    "openssl": "0.0.0",
+    "simdjson": "3.13.0",
+    "simdutf": "7.3.3",
+    "sqlite": "3.50.4",
+    "tz": "2025b",
+    "undici": "6.21.2",
+    "unicode": "15.1",
+    "uv": "1.51.0",
+    "uvwasi": "0.0.21",
+    "v8": "14.0.365.4-electron.0",
+    "zlib": "1.3.1",
+    "zstd": "1.5.8",
+    "electron": "38.2.0",
+    "chrome": "140.0.7339.133"
+  },
+  "baselineMachine": false,
+  "fullAcceptanceBenchmark": false
+}
