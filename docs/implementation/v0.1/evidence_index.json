@@ -1,0 +1,79 @@
+{
+  "version": "v0.1",
+  "packageVersion": "0.1.0",
+  "date": "2026-10-11",
+  "localOnly": true,
+  "unitAssertions": 20,
+  "installedLegacyScenarios": 16,
+  "installedFocusedScenarios": 25,
+  "upgradeAndSoftwareScaleScenarios": 7,
+  "independentV01Acceptance": "NOT RUN",
+  "physicalTouchpadTested": false,
+  "systemDpiChanged": false,
+  "evidence": [
+    {
+      "path": "evidence/v0.1/unit-tests.log",
+      "sha256": "7bad3199f239dcc65053a3e948e1f7f0ac5143fe196a5976f07712a86deef078",
+      "bytes": 2068
+    },
+    {
+      "path": "evidence/v0.1/build.log",
+      "sha256": "88e0defeeb6fca737b57b29caca63332702ccbcc73d8255d6a2095a51a29d11f",
+      "bytes": 3838
+    },
+    {
+      "path": "evidence/v0.1/package.log",
+      "sha256": "759e59cab0b3eec6e065f1d83312ad76d3b7239043a36872d90c15ad2a100cad",
+      "bytes": 1047
+    },
+    {
+      "path": "evidence/v0.1/install.json",
+      "sha256": "9455fcbe63fba6799b51489c4853760adea8bbf88e1741a6fe7fcc619d0c8fd4",
+      "bytes": 194
+    },
+    {
+      "path": "evidence/v0.1/baseline/observations.json",
+      "sha256": "9c43c13a94a54f7ec70fbc81a0382eeb689101920a13b39dc6dc71ed1456153a",
+      "bytes": 521
+    },
+    {
+      "path": "evidence/v0.1/installed-smoke/smoke-results.json",
+      "sha256": "22f6d2dbaa7058dde1afc5fc4f2702d05ac09a2f23779ad1669d2616fdb3293f",
+      "bytes": 6695
+    },
+    {
+      "path": "evidence/v0.1/installed-regression-final/results.json",
+      "sha256": "7adcc651368e8de1d5a049ebee0a6a8e31d376df51c741adebf675baef198f77",
+      "bytes": 4437
+    },
+    {
+      "path": "evidence/v0.1/upgrade-display-final/results.json",
+      "sha256": "b8f90da70e1cf243ee8e328df6f16ceab0a4693d7be47cb04bc26af124ca98ae",
+      "bytes": 4150
+    },
+    {
+      "path": "evidence/v0.1/benchmark/benchmark.json",
+      "sha256": "ac941ba2b4d0f44d1fbbc62b0d7fdcc9277e41647ea7d278d59c2cd555aed905",
+      "bytes": 3994
+    }
+  ],
+  "fixtures": [
+    {
+      "path": "tests/fixtures/v00-journal.sqlite",
+      "sha256": "76fb2514cb6aae4de0ec3e497df59b73e9ff5ffca115b5effe384b08737d3725",
+      "syntheticOnly": true
+    },
+    {
+      "path": "tests/fixtures/v00-state.airjourney",
+      "sha256": "5ad64d5866044eda6b88b8ade8657db2327cc48f27dbd56fc08b3615a2d71e82",
+      "syntheticOnly": true
+    }
+  ],
+  "performanceProbe": {
+    "records": 1000,
+    "searchP95ms": 85.29999995231628,
+    "storageCommitP95ms": 33.200000047683716,
+    "interactive5secMedianFPS": 40,
+    "fullAcceptanceBenchmark": false
+  }
+}

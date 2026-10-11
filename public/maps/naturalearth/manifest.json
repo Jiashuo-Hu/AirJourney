@@ -1,0 +1,24 @@
+{
+  "version": "v0.1",
+  "source": "Natural Earth II 3.2.0",
+  "source_sha256": "7e0e07089b699a3cccad98dd1b2446390d8e3f8c5006359d477a329cebcafaa9",
+  "originalDimensions": [
+    10800,
+    5400
+  ],
+  "projection": "EPSG:4326",
+  "scheme": "Geographic; 2x1 root; north-origin Y",
+  "tileSize": 512,
+  "levels": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "effectiveMaximumDimensions": [
+    8192,
+    4096
+  ],
+  "count": 170,
+  "bytes": 12225231
+}

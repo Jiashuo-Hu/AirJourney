@@ -1,0 +1,10 @@
+{
+  "mode": "library-switch",
+  "results": [
+    {
+      "name": "AF04 native file dialog import bound to Airports after switching Airlines",
+      "status": "PASS"
+    }
+  ],
+  "observations": []
+}

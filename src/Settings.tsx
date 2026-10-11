@@ -1,7 +1,9 @@
+import { APP_VERSION } from "./version";
 import { useState } from "react";
 import type { State, Settings as Prefs, Field } from "./types";
 import { defaults } from "./domain";
 import { readFile } from "./storage";
+import type { StateMutation } from "./state-updates";
 export function Settings({
   state,
   path,
@@ -13,7 +15,7 @@ export function Settings({
 }: {
   state: State;
   path: string;
-  onCommit: (s: State) => Promise<boolean>;
+  onCommit: (change: StateMutation) => Promise<boolean>;
   onBackup: () => void;
   onImport: () => void;
   onCSV: () => void;
@@ -24,7 +26,10 @@ export function Settings({
     [tag, setTag] = useState("");
   const p = state.settings;
   function set<K extends keyof Prefs>(key: K, value: Prefs[K]) {
-    onCommit({ ...state, settings: { ...p, [key]: value } });
+    onCommit((latest) => ({
+      ...latest,
+      settings: { ...latest.settings, [key]: value },
+    }));
   }
   const select = (key: keyof Prefs, label: string, options: string[]) => (
     <label>
@@ -94,10 +99,10 @@ export function Settings({
           </label>
           <button
             onClick={() =>
-              onCommit({
-                ...state,
+              onCommit((latest) => ({
+                ...latest,
                 settings: {
-                  ...p,
+                  ...latest.settings,
                   theme: defaults.theme,
                   accent: defaults.accent,
                   density: defaults.density,
@@ -105,7 +110,7 @@ export function Settings({
                   dateFormat: defaults.dateFormat,
                   clock: defaults.clock,
                 },
-              })
+              }))
             }
           >
             Reset appearance
@@ -141,14 +146,14 @@ export function Settings({
                 image.close();
                 const reader = new FileReader();
                 reader.onload = () =>
-                  onCommit({
-                    ...state,
+                  onCommit((latest) => ({
+                    ...latest,
                     settings: {
-                      ...p,
+                      ...latest.settings,
                       mapImage: String(reader.result),
                       mapSource: f.name,
                     },
-                  });
+                  }));
                 reader.readAsDataURL(blob);
               } catch (e) {
                 onNotice(String(e));
@@ -159,10 +164,14 @@ export function Settings({
           </button>
           <button
             onClick={() =>
-              onCommit({
-                ...state,
-                settings: { ...p, mapImage: undefined, mapSource: undefined },
-              })
+              onCommit((latest) => ({
+                ...latest,
+                settings: {
+                  ...latest.settings,
+                  mapImage: undefined,
+                  mapSource: undefined,
+                },
+              }))
             }
           >
             Restore bundled imagery
@@ -180,6 +189,23 @@ export function Settings({
               onChange={(e) => set("routeColor", e.target.value)}
             />
           </label>
+          <label>
+            Route lift ·{" "}
+            {((p.routeHeight ?? defaults.routeHeight) / 1000).toFixed(0)} km
+            <input
+              aria-label="Route lift"
+              type="range"
+              min="0"
+              max="100000"
+              step="1000"
+              value={p.routeHeight ?? defaults.routeHeight}
+              onChange={(e) => set("routeHeight", Number(e.target.value))}
+            />
+          </label>
+          <p className="muted">
+            A small visual lift keeps routes clear of the globe. It is a route
+            illustration and does not change distance estimates.
+          </p>
           {(
             [
               ["width", "Route width", 1, 6, 0.5],
@@ -232,9 +258,16 @@ export function Settings({
                 min="-180"
                 max="180"
                 value={p.home[0]}
-                onChange={(e) =>
-                  set("home", [Number(e.target.value), p.home[1], p.home[2]])
-                }
+                onChange={(e) => {
+                  const value = Number(e.target.value);
+                  onCommit((s) => ({
+                    ...s,
+                    settings: {
+                      ...s.settings,
+                      home: [value, s.settings.home[1], s.settings.home[2]],
+                    },
+                  }));
+                }}
               />
             </label>
             <label>
@@ -244,26 +277,34 @@ export function Settings({
                 min="-90"
                 max="90"
                 value={p.home[1]}
-                onChange={(e) =>
-                  set("home", [p.home[0], Number(e.target.value), p.home[2]])
-                }
+                onChange={(e) => {
+                  const value = Number(e.target.value);
+                  onCommit((s) => ({
+                    ...s,
+                    settings: {
+                      ...s.settings,
+                      home: [s.settings.home[0], value, s.settings.home[2]],
+                    },
+                  }));
+                }}
               />
             </label>
           </div>
           <button
             onClick={() =>
-              onCommit({
-                ...state,
+              onCommit((latest) => ({
+                ...latest,
                 settings: {
-                  ...p,
+                  ...latest.settings,
                   routeColor: defaults.routeColor,
                   width: defaults.width,
+                  routeHeight: defaults.routeHeight,
                   opacity: defaults.opacity,
                   markerSize: defaults.markerSize,
                   labels: defaults.labels,
                   home: defaults.home,
                 },
-              })
+              }))
             }
           >
             Reset map style
@@ -286,10 +327,10 @@ export function Settings({
             <button
               onClick={() => {
                 if (tag.trim())
-                  onCommit({
-                    ...state,
-                    tags: [...new Set([...state.tags, tag.trim()])],
-                  });
+                  onCommit((latest) => ({
+                    ...latest,
+                    tags: [...new Set([...latest.tags, tag.trim()])],
+                  }));
                 setTag("");
               }}
             >
@@ -320,21 +361,25 @@ export function Settings({
                 disabled={i === 0}
                 aria-label={"Move " + v.label + " up"}
                 onClick={() => {
-                  const fs = [...state.fields];
-                  [fs[i - 1], fs[i]] = [fs[i], fs[i - 1]];
-                  onCommit({ ...state, fields: fs });
+                  onCommit((latest) => {
+                    const fs = [...latest.fields],
+                      index = fs.findIndex((f) => f.id === v.id);
+                    if (index > 0)
+                      [fs[index - 1], fs[index]] = [fs[index], fs[index - 1]];
+                    return { ...latest, fields: fs };
+                  });
                 }}
               >
                 ↑
               </button>
               <button
                 onClick={() =>
-                  onCommit({
-                    ...state,
-                    fields: state.fields.map((f) =>
+                  onCommit((latest) => ({
+                    ...latest,
+                    fields: latest.fields.map((f) =>
                       f.id === v.id ? { ...f, hidden: !f.hidden } : f,
                     ),
-                  })
+                  }))
                 }
               >
                 {v.hidden ? "Restore" : "Hide"}
@@ -385,17 +430,24 @@ export function Settings({
                 className="primary"
                 onClick={async () => {
                   if (!field.label.trim()) return;
-                  const old = state.fields.find((v) => v.id === field.id),
-                    fs = state.fields.map((v) =>
-                      v.id === field.id
-                        ? v.type === field.type
-                          ? field
-                          : { ...v, hidden: true }
-                        : v,
-                    );
-                  if (!old || old.type !== field.type)
-                    fs.push({ ...field, id: crypto.randomUUID() });
-                  if (await onCommit({ ...state, fields: fs })) setField(null);
+                  const edited = { ...field },
+                    newId = crypto.randomUUID();
+                  if (
+                    await onCommit((latest) => {
+                      const old = latest.fields.find((v) => v.id === edited.id),
+                        fs = latest.fields.map((v) =>
+                          v.id === edited.id
+                            ? v.type === edited.type
+                              ? edited
+                              : { ...v, hidden: true }
+                            : v,
+                        );
+                      if (!old || old.type !== edited.type)
+                        fs.push({ ...edited, id: newId });
+                      return { ...latest, fields: fs };
+                    })
+                  )
+                    setField(null);
                 }}
               >
                 Save field
@@ -430,7 +482,7 @@ export function Settings({
       )}
       {tab === "Sources" && (
         <>
-          <h3>AirJourney v0.0</h3>
+          <h3>AirJourney {APP_VERSION}</h3>
           <p>
             Personal flight journal · Local only · No account or flight
             verification.
@@ -439,8 +491,8 @@ export function Settings({
           <ul>
             <li>
               Natural Earth II natural color / shaded relief, version 3.2.0.
-              Public domain. 4096×2048 default and 2048×1024 fallback, locally
-              resampled from 10800×5400.
+              Public domain. 8192×4096 equivalent local tiles (levels 0–3),
+              4096×2048 fallback, locally resampled from 10800×5400.
             </li>
             <li>CesiumJS 1.133.0 · Apache 2.0</li>
             <li>Inter 5.2.6 package · SIL Open Font License 1.1</li>
@@ -465,8 +517,8 @@ export function Settings({
           </ul>
           <h4>Known resource limits</h4>
           <p>
-            Verified mainland-standard political boundaries and country labels
-            are not supplied. No street, airport runway or elevation mesh data.
+            The political boundary layer is not supplied. English labels are a
+            small curated set. No street, airport runway or elevation mesh data.
             Brand marks are trademarks of their respective owners.
           </p>
           <p className="muted">

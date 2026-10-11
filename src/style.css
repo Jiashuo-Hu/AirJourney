@@ -467,6 +467,7 @@ h4 {
   background: #2a4260;
 }
 .map-footer {
+  pointer-events: none;
   position: absolute;
   bottom: 28px;
   left: 26px;
@@ -483,6 +484,7 @@ h4 {
   margin-right: 6px;
 }
 .map-count {
+  pointer-events: none;
   position: absolute;
   right: 24px;
   top: 24px;
@@ -922,4 +924,26 @@ select[multiple] {
   padding: 3px;
   background: #fff;
   border-radius: 4px;
+}
+
+.map-help {
+  position: absolute;
+  bottom: 94px;
+  left: 24px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.6;
+  background: rgba(12, 28, 44, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  pointer-events: none;
+}
+@media (max-width: 1150px) {
+  .map-help {
+    left: 16px;
+    bottom: 100px;
+    max-width: 280px;
+    font-size: 11px;
+  }
 }

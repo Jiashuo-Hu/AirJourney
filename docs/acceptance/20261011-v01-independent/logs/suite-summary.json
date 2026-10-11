@@ -1,0 +1,17 @@
+[
+  {
+    "Report": "data/regression/results.json",
+    "Total": 25,
+    "Failed": 0
+  },
+  {
+    "Report": "data/upgrade/results.json",
+    "Total": 7,
+    "Failed": 0
+  },
+  {
+    "Report": "data/smoke/smoke-results.json",
+    "Total": 16,
+    "Failed": 0
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "mode": "newbugs",
+  "results": [
+    {
+      "name": "switch main page retains unsaved editor",
+      "status": "PASS"
+    }
+  ],
+  "observations": [
+    {
+      "id": "V01-01",
+      "expected": "SORT-A before SORT-B in resolved UTC chronology",
+      "actualOrder": [
+        "✈SORT-BUnknown airlineRecordedIndependent sort origin→Independent sort destination31 Aug 2026Unknown aircraftNeeds locationUnknown distance · Estimate",
+        "✈SORT-AUnknown airlineRecordedIndependent sort origin→Independent sort destination01 Sep 2026Unknown aircraftNeeds locationUnknown distance · Estimate",
+        "JLV01-INDEPENDENT-EDITJapan AirlinesRecordedPVG→HND20 Sep 2026Unknown aircraftRoute illustration1,740.8 km · Estimate"
+      ],
+      "a": 1,
+      "bb": 0,
+      "times": {
+        "A": "2026-08-31T10:30:00Z",
+        "B": "2026-09-01T09:30:00Z"
+      }
+    },
+    {
+      "id": "V01-02",
+      "action": "select PVG then replace place name by typing a distinct custom place",
+      "actual": {
+        "id": "4bd7de66-eda5-4914-8a3c-18990fc7b00f",
+        "code": "PVG",
+        "name": "Independent custom new place",
+        "city": "Shanghai (Pudong)",
+        "region": "China",
+        "lat": 31.1434,
+        "lon": 121.805,
+        "zone": "Asia/Shanghai",
+        "source": "Bundled",
+        "overrides": []
+      },
+      "expected": "Clarify or clear borrowed location when replacing place rather than silently using former airport coordinates"
+    }
+  ]
+}

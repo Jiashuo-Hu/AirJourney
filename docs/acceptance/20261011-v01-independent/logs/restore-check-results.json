@@ -1,0 +1,10 @@
+{
+  "mode": "restore-check",
+  "results": [
+    {
+      "name": "native dialog backup restores every object into independent empty profile",
+      "status": "PASS"
+    }
+  ],
+  "observations": []
+}

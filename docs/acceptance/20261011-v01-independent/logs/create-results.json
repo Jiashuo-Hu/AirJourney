@@ -1,0 +1,14 @@
+{
+  "mode": "create",
+  "results": [
+    {
+      "name": "actual native typed number retained",
+      "status": "PASS"
+    },
+    {
+      "name": "normal local airport airline times tags persist",
+      "status": "PASS"
+    }
+  ],
+  "observations": []
+}

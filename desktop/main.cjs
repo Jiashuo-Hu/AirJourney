@@ -194,7 +194,7 @@ app.whenReady().then(async () => {
     minWidth: 1024,
     minHeight: 720,
     backgroundColor: "#f7f8fa",
-    title: "AirJourney v0.0",
+    title: `AirJourney v${app.getVersion().split(".").slice(0, 2).join(".")}`,
     icon: path.join(__dirname, "../dist/app-icon.png"),
     webPreferences: {
       preload: path.join(__dirname, "preload.cjs"),
@@ -220,7 +220,7 @@ app.whenReady().then(async () => {
       );
   });
   await win.loadURL("airjourney://app/index.html");
-  if (process.env.AIRJOURNEY_SMOKE) {
+  if (process.env.AIRJOURNEY_SMOKE && !process.env.AIRJOURNEY_UI_TEST) {
     require(
       process.env.AIRJOURNEY_BENCHMARK ? "./benchmark.cjs" : "./smoke.cjs",
     )(win, data)

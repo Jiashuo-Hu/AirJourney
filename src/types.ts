@@ -18,7 +18,13 @@ export type Reference = Place & {
   manufacturer?: string;
   family?: string;
 };
-export type TimeSpec = { date: string; time: string; zone: string };
+export type TimePrecision = "Unknown" | "Date only" | "Date and time";
+export type TimeSpec = {
+  date: string;
+  time: string;
+  zone: string;
+  precision?: TimePrecision;
+};
 export type Flight = {
   id: string;
   created: string;
@@ -70,6 +76,7 @@ export type Settings = {
   lastView?: number[];
   mapImage?: string;
   mapSource?: string;
+  routeHeight?: number;
 };
 export type State = {
   schema: 1;

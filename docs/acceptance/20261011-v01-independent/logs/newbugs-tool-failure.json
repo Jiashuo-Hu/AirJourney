@@ -1,0 +1,11 @@
+{
+  "mode": "newbugs",
+  "results": [
+    {
+      "name": "stopped",
+      "status": "FAIL",
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '+ Add flight', exact: true })\u001b[22m\n\n    at button (C:\\MyFile\\Project\\AirJourney\\docs\\acceptance\\20261011-v01-independent\\driver.cjs:6:103)\n    at make (C:\\MyFile\\Project\\AirJourney\\docs\\acceptance\\20261011-v01-independent\\driver.cjs:30:51)\n    at C:\\MyFile\\Project\\AirJourney\\docs\\acceptance\\20261011-v01-independent\\driver.cjs:31:59"
+    }
+  ],
+  "observations": []
+}

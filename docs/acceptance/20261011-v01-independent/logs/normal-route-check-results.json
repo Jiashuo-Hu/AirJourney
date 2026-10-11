@@ -1,0 +1,12 @@
+{
+  "mode": "normal-route-check",
+  "results": [],
+  "observations": [
+    {
+      "mode": "normal production app; no AIRJOURNEY_SMOKE / no __ajTestGlobe",
+      "testingHook": false,
+      "records": 3,
+      "note": "Screenshots show clock change removes route until wheel movement; persisted records intact"
+    }
+  ]
+}

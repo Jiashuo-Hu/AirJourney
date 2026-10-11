@@ -1,5 +1,21 @@
-import type { Field, Flight, Place, Reference, State } from "./types";
-import { distance, duration, resolveTime, hasLocation } from "./domain";
+import { useEffect, useState } from "react";
+import type {
+  Field,
+  Flight,
+  Place,
+  Reference,
+  State,
+  TimePrecision,
+} from "./types";
+import {
+  distance,
+  duration,
+  resolveTime,
+  hasLocation,
+  timePrecision,
+  withPrecision,
+  parseTags,
+} from "./domain";
 const number = (v: string) => (v === "" ? undefined : Number(v));
 export function FlightEditor({
   value: f,
@@ -17,6 +33,8 @@ export function FlightEditor({
   onPick: (side: "from" | "to") => void;
 }) {
   const patch = (p: Partial<Flight>) => onChange({ ...f, ...p });
+  const [tagText, setTagText] = useState(f.tags.join(", "));
+  useEffect(() => setTagText(f.tags.join(", ")), [f.id]);
   function airport(side: "from" | "to") {
     const p = f[side];
     const set = (v: Partial<Place>) =>
@@ -116,7 +134,7 @@ export function FlightEditor({
   function time(side: "departure" | "arrival") {
     const t = f[side],
       set = (p: Partial<typeof t>) => patch({ [side]: { ...t, ...p } }),
-      precision = t.time ? "Date and time" : t.date ? "Date only" : "Unknown";
+      precision = timePrecision(t);
     return (
       <fieldset>
         <legend>
@@ -127,13 +145,9 @@ export function FlightEditor({
           <select
             value={precision}
             onChange={(e) =>
-              set(
-                e.target.value === "Unknown"
-                  ? { date: "", time: "" }
-                  : e.target.value === "Date only"
-                    ? { time: "" }
-                    : {},
-              )
+              patch({
+                [side]: withPrecision(t, e.target.value as TimePrecision),
+              })
             }
           >
             <option>Unknown</option>
@@ -147,7 +161,12 @@ export function FlightEditor({
             <input
               type="date"
               value={t.date}
-              onChange={(e) => set({ date: e.target.value })}
+              onChange={(e) =>
+                set({
+                  date: e.target.value,
+                  precision: precision === "Unknown" ? "Date only" : precision,
+                })
+              }
             />
           </label>
           <label>
@@ -155,7 +174,9 @@ export function FlightEditor({
             <input
               type="time"
               value={t.time}
-              onChange={(e) => set({ time: e.target.value })}
+              onChange={(e) =>
+                set({ time: e.target.value, precision: "Date and time" })
+              }
             />
           </label>
         </div>
@@ -350,16 +371,13 @@ export function FlightEditor({
             <label>
               Tags (comma separated)
               <input
-                value={f.tags.join(", ")}
+                value={tagText}
                 list="tags"
-                onChange={(e) =>
-                  patch({
-                    tags: e.target.value
-                      .split(",")
-                      .map((v) => v.trim())
-                      .filter(Boolean),
-                  })
-                }
+                onChange={(e) => {
+                  setTagText(e.target.value);
+                  patch({ tags: parseTags(e.target.value) });
+                }}
+                onBlur={() => setTagText(parseTags(tagText).join(", "))}
               />
             </label>
             <label>

@@ -1,3 +1,4 @@
+import { APP_VERSION } from "./version";
 import { useEffect, useMemo, useRef, useState } from "react";
 import moment from "moment-timezone";
 import type { Flight, State, Place } from "./types";
@@ -24,6 +25,7 @@ import { Globe } from "./Globe";
 import { FlightEditor } from "./FlightEditor";
 import { Library } from "./Library";
 import { Settings } from "./Settings";
+import { serialMutations, type StateMutation } from "./state-updates";
 function blank(): Flight {
   return {
     id: crypto.randomUUID(),
@@ -76,7 +78,17 @@ export function App() {
     [focusRequest, setFocusRequest] = useState(0),
     [busy, setBusy] = useState(false);
   const current = useRef(state),
-    queue = useRef(Promise.resolve());
+    queue = useRef<ReturnType<typeof serialMutations> | null>(null),
+    pending = useRef(0);
+  if (!queue.current)
+    queue.current = serialMutations(
+      () => current.current,
+      save,
+      (next) => {
+        current.current = next;
+        setState(next);
+      },
+    );
   const modalRef = useRef<HTMLDivElement>(null);
   const modalOpen = Boolean(confirm || incoming);
   useEffect(() => {
@@ -133,25 +145,22 @@ export function App() {
     const t = setTimeout(() => setNotice(""), 6500);
     return () => clearTimeout(t);
   }, [notice]);
-  async function commit(next: State) {
+  async function commit(change: StateMutation) {
+    pending.current++;
     setBusy(true);
-    let success = false;
-    const operation = queue.current.then(async () => {
-      try {
-        await save(next);
-        setState(next);
-        success = true;
-      } catch (e) {
-        setNotice(
-          "Changes were not saved. Your current data and draft are preserved. " +
-            String(e),
-        );
-      }
-    });
-    queue.current = operation;
-    await operation;
-    setBusy(false);
-    return success;
+    try {
+      await queue.current!(change);
+      return true;
+    } catch (e) {
+      setNotice(
+        "Changes were not saved. Your current data and draft are preserved. " +
+          String(e),
+      );
+      return false;
+    } finally {
+      pending.current--;
+      setBusy(pending.current > 0);
+    }
   }
   const filtered = useMemo(() => {
     if (!state) return [];
@@ -235,21 +244,28 @@ export function App() {
     try {
       validateFlight(draft);
       const f = { ...draft, updated: new Date().toISOString() };
-      const s = {
-        ...state,
-        flights: [...state.flights.filter((v) => v.id !== f.id), f],
-        tags: [...new Set([...state.tags, ...f.tags])],
-      };
-      for (const place of [f.from, f.to])
-        if (place.name && !s.library.Airports.some((r) => r.id === place.id))
-          s.library = {
-            ...s.library,
-            Airports: [
-              ...s.library.Airports,
-              { ...place, overrides: undefined, source: "Custom" },
-            ],
+      if (
+        await commit((latest) => {
+          const s = {
+            ...latest,
+            flights: [...latest.flights.filter((v) => v.id !== f.id), f],
+            tags: [...new Set([...latest.tags, ...f.tags])],
           };
-      if (await commit(s)) {
+          for (const place of [f.from, f.to])
+            if (
+              place.name &&
+              !s.library.Airports.some((r) => r.id === place.id)
+            )
+              s.library = {
+                ...s.library,
+                Airports: [
+                  ...s.library.Airports,
+                  { ...place, overrides: undefined, source: "Custom" },
+                ],
+              };
+          return s;
+        })
+      ) {
         setDraft(null);
         setSelected(f.id);
         setNotice(
@@ -312,9 +328,16 @@ export function App() {
     return () => media.removeEventListener("change", apply);
   }, [state?.settings.theme, state?.settings.accent, state?.settings.density]);
   async function exportBackup() {
-    if (state)
+    await queue.current?.idle();
+    const latest = current.current;
+    if (latest)
       try {
-        if (await exportFile("AirJourney-v0.0.airjourney", await backup(state)))
+        if (
+          await exportFile(
+            `AirJourney-${APP_VERSION}.airjourney`,
+            await backup(latest),
+          )
+        )
           setNotice("Backup exported.");
       } catch (e) {
         setNotice(String(e));
@@ -331,35 +354,42 @@ export function App() {
   async function applyImport() {
     if (!incoming || !state) return;
     try {
+      await queue.current?.idle();
       if (
         !(await exportFile(
           "AirJourney-before-import.airjourney",
-          await backup(state),
+          await backup(current.current!),
         ))
       )
         return;
       const replace = importMode === "Replace entire personal library";
-      let s = structuredClone(incoming);
-      if (!replace) {
-        s = structuredClone(state);
-        for (const f of incoming.flights) {
-          const i = s.flights.findIndex((v) => v.id === f.id);
-          if (i < 0) s.flights.push(f);
-          else if (importMode === "Merge · replace conflicts") s.flights[i] = f;
-        }
-        for (const k of Object.keys(s.library)) {
-          for (const r of incoming.library[k]) {
-            const i = s.library[k].findIndex((v) => v.id === r.id);
-            if (i < 0) s.library[k].push(r);
-            else if (importMode === "Merge · replace conflicts")
-              s.library[k][i] = r;
+      const preview = incoming,
+        policy = importMode;
+      if (
+        await commit((latest) => {
+          let s = structuredClone(preview);
+          if (!replace) {
+            s = latest;
+            for (const f of preview.flights) {
+              const i = s.flights.findIndex((v) => v.id === f.id);
+              if (i < 0) s.flights.push(f);
+              else if (policy === "Merge · replace conflicts") s.flights[i] = f;
+            }
+            for (const k of Object.keys(s.library)) {
+              for (const r of preview.library[k]) {
+                const i = s.library[k].findIndex((v) => v.id === r.id);
+                if (i < 0) s.library[k].push(r);
+                else if (policy === "Merge · replace conflicts")
+                  s.library[k][i] = r;
+              }
+            }
+            for (const f of preview.fields)
+              if (!s.fields.some((v) => v.id === f.id)) s.fields.push(f);
+            s.tags = [...new Set([...s.tags, ...preview.tags])];
           }
-        }
-        for (const f of incoming.fields)
-          if (!s.fields.some((v) => v.id === f.id)) s.fields.push(f);
-        s.tags = [...new Set([...s.tags, ...incoming.tags])];
-      }
-      if (await commit(s)) {
+          return s;
+        })
+      ) {
         setIncoming(null);
         setSelected(null);
         setNotice("Backup imported.");
@@ -455,7 +485,7 @@ export function App() {
         <div className="brand">
           <span className="brandmark">↗</span>
           <strong>AirJourney</strong>
-          <small>v0.0</small>
+          <small>{APP_VERSION}</small>
         </div>
         <nav aria-label="Main navigation">
           {["Flights", "Library", "Insights", "Settings"].map((v) => (
@@ -797,10 +827,10 @@ export function App() {
                                         created: new Date().toISOString(),
                                       };
                                       if (
-                                        await commit({
-                                          ...state,
-                                          flights: [...state.flights, copy],
-                                        })
+                                        await commit((latest) => ({
+                                          ...latest,
+                                          flights: [...latest.flights, copy],
+                                        }))
                                       )
                                         choose(copy.id);
                                     }}
@@ -809,9 +839,9 @@ export function App() {
                                   </button>
                                   <button
                                     onClick={() =>
-                                      commit({
-                                        ...state,
-                                        flights: state.flights.map((v) =>
+                                      commit((latest) => ({
+                                        ...latest,
+                                        flights: latest.flights.map((v) =>
                                           v.id === f.id
                                             ? {
                                                 ...v,
@@ -820,7 +850,7 @@ export function App() {
                                               }
                                             : v,
                                         ),
-                                      })
+                                      }))
                                     }
                                   >
                                     Move to Trash
@@ -830,14 +860,14 @@ export function App() {
                                 <>
                                   <button
                                     onClick={() =>
-                                      commit({
-                                        ...state,
-                                        flights: state.flights.map((v) =>
+                                      commit((latest) => ({
+                                        ...latest,
+                                        flights: latest.flights.map((v) =>
                                           v.id === f.id
                                             ? { ...v, deleted: undefined }
                                             : v,
                                         ),
-                                      })
+                                      }))
                                     }
                                   >
                                     Restore flight
@@ -850,12 +880,12 @@ export function App() {
                                           "Permanently delete this flight?",
                                         body: "This cannot be undone. Export a backup if you need to keep it.",
                                         action: async () => {
-                                          await commit({
-                                            ...state,
-                                            flights: state.flights.filter(
+                                          await commit((latest) => ({
+                                            ...latest,
+                                            flights: latest.flights.filter(
                                               (v) => v.id !== f.id,
                                             ),
-                                          });
+                                          }));
                                           setConfirm(null);
                                         },
                                       })
@@ -996,19 +1026,20 @@ export function App() {
             onKeyDown={(e) => {
               if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
                 e.preventDefault();
-                commit({
-                  ...state,
+                commit((latest) => ({
+                  ...latest,
                   settings: {
-                    ...p,
+                    ...latest.settings,
                     sidebarWidth: Math.min(
                       480,
                       Math.max(
                         300,
-                        p.sidebarWidth + (e.key === "ArrowRight" ? 10 : -10),
+                        latest.settings.sidebarWidth +
+                          (e.key === "ArrowRight" ? 10 : -10),
                       ),
                     ),
                   },
-                });
+                }));
               }
             }}
             onPointerDown={(e) => {
@@ -1022,7 +1053,10 @@ export function App() {
               const up = () => {
                 target.removeEventListener("pointermove", move);
                 target.removeEventListener("pointerup", up);
-                commit({ ...state, settings: { ...p, sidebarWidth: width } });
+                commit((latest) => ({
+                  ...latest,
+                  settings: { ...latest.settings, sidebarWidth: width },
+                }));
               };
               target.addEventListener("pointermove", move);
               target.addEventListener("pointerup", up);
@@ -1037,10 +1071,19 @@ export function App() {
             onSelect={choose}
             picking={!!pick}
             onPick={(lat, lon) => setLocation([lat, lon])}
-            onHome={(home) => commit({ ...state, settings: { ...p, home } })}
+            onHome={(home) =>
+              commit((latest) => ({
+                ...latest,
+                settings: { ...latest.settings, home },
+              }))
+            }
             onView={(lastView) => {
               const s = current.current;
-              if (s) commit({ ...s, settings: { ...s.settings, lastView } });
+              if (s)
+                commit((latest) => ({
+                  ...latest,
+                  settings: { ...latest.settings, lastView },
+                }));
             }}
             focusRequest={focusRequest}
           />

@@ -169,9 +169,9 @@ module.exports = async (win, data) => {
   await click("Data & backup");
   await click("Export backup");
   await wait(300);
-  assert.ok(fs.existsSync(path.join(data, "AirJourney-v0.0.airjourney")));
+  assert.ok(fs.existsSync(path.join(data, "AirJourney-v0.1.airjourney")));
   fs.copyFileSync(
-    path.join(data, "AirJourney-v0.0.airjourney"),
+    path.join(data, "AirJourney-v0.1.airjourney"),
     path.join(data, "import-next.bin"),
   );
   await click("Import backup");

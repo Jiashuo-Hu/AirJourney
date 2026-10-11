@@ -1,0 +1,30 @@
+{
+  "mode": "route-refresh",
+  "results": [],
+  "observations": [
+    {
+      "repeat": 0,
+      "before": {
+        "height": 3444701.003037292,
+        "routeEntities": [
+          "route-433ea2d3-e0f6-4924-8719-296aac82682a"
+        ],
+        "requestRenderMode": true
+      },
+      "afterHeight": 3322897.386550373,
+      "note": "Compare raster screenshots, not merely entity count. A ordinary clock preference causes invisible route until a camera event."
+    },
+    {
+      "repeat": 1,
+      "before": {
+        "height": 3444701.003037292,
+        "routeEntities": [
+          "route-433ea2d3-e0f6-4924-8719-296aac82682a"
+        ],
+        "requestRenderMode": true
+      },
+      "afterHeight": 3322897.386550373,
+      "note": "Compare raster screenshots, not merely entity count. A ordinary clock preference causes invisible route until a camera event."
+    }
+  ]
+}

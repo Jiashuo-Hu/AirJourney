@@ -1,0 +1,63 @@
+{
+  "version": "v0.1",
+  "packageVersion": "0.1.0",
+  "baseline": "docs/planning",
+  "date": "2026-10-11",
+  "artifacts": [
+    {
+      "path": "release/v0.1/AirJourney-v0.1-x64-setup.exe",
+      "bytes": 114917680,
+      "sha256": "5a06a3c9dbf8196ddcaf453e75880553228dd15280c57b3287c233d9d5aa243d"
+    }
+  ],
+  "resourceFiles": 704,
+  "sourceSnapshots": {
+    "date": "2026-10-10",
+    "airports_source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+    "airports_sha256": "79dd7db7228a12199839aa6acbc2dc1f1e50a4604f14d7f60dceb6983de91906",
+    "airport_count": 15,
+    "airport_fields": "name, code, municipality, WGS84 latitude/longitude; manual IANA suggestions and region display rules",
+    "imagery_source": "https://naturalearth.s3.amazonaws.com/50m_raster/NE2_50M_SR_W.zip",
+    "imagery_version": "3.2.0",
+    "imagery_source_dimensions": [
+      10800,
+      5400
+    ],
+    "imagery_sha256": "7e0e07089b699a3cccad98dd1b2446390d8e3f8c5006359d477a329cebcafaa9",
+    "projection": "EPSG:4326, [-180,-90,180,90], north at top",
+    "license": "Public domain; no accuracy guarantee"
+  },
+  "signature": "NotSigned; actual check in evidence/v0.1/install.json",
+  "sourceArchive": {
+    "path": "release/v0.1/AirJourney-v0.1-source.zip",
+    "sha256File": "release/v0.1/SHA256SUMS.txt",
+    "note": "Self hash lives outside the ZIP; all embedded documentation is unchanged from the delivery workspace."
+  },
+  "localOnly": true,
+  "fullIndependentV01Acceptance": "NOT RUN",
+  "tileManifest": {
+    "version": "v0.1",
+    "source": "Natural Earth II 3.2.0",
+    "source_sha256": "7e0e07089b699a3cccad98dd1b2446390d8e3f8c5006359d477a329cebcafaa9",
+    "originalDimensions": [
+      10800,
+      5400
+    ],
+    "projection": "EPSG:4326",
+    "scheme": "Geographic; 2x1 root; north-origin Y",
+    "tileSize": 512,
+    "levels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "effectiveMaximumDimensions": [
+      8192,
+      4096
+    ],
+    "count": 170,
+    "bytes": 12225231
+  },
+  "completeAcceptancePassed": false
+}

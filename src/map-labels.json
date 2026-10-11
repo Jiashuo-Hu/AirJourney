@@ -1,14 +1,14 @@
 [
-  {"name":"China","lon":104,"lat":36},
-  {"name":"Japan","lon":138,"lat":37},
-  {"name":"Australia","lon":134,"lat":-25},
-  {"name":"New Zealand","lon":172,"lat":-42},
-  {"name":"United Kingdom","lon":-3,"lat":55},
-  {"name":"France","lon":2,"lat":47},
-  {"name":"Germany","lon":10,"lat":51},
-  {"name":"United States","lon":-100,"lat":39},
-  {"name":"Asia","lon":89,"lat":55},
-  {"name":"Africa","lon":20,"lat":2},
-  {"name":"South America","lon":-60,"lat":-16},
-  {"name":"Antarctica","lon":0,"lat":-82}
+  { "name": "China", "lon": 104, "lat": 36 },
+  { "name": "Japan", "lon": 138, "lat": 37 },
+  { "name": "Australia", "lon": 134, "lat": -25 },
+  { "name": "New Zealand", "lon": 172, "lat": -42 },
+  { "name": "United Kingdom", "lon": -3, "lat": 55 },
+  { "name": "France", "lon": 2, "lat": 47 },
+  { "name": "Germany", "lon": 10, "lat": 51 },
+  { "name": "United States", "lon": -100, "lat": 39 },
+  { "name": "Asia", "lon": 89, "lat": 55 },
+  { "name": "Africa", "lon": 20, "lat": 2 },
+  { "name": "South America", "lon": -60, "lat": -16 },
+  { "name": "Antarctica", "lon": 0, "lat": -82 }
 ]

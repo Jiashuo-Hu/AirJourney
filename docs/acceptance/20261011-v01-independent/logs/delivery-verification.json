@@ -1,0 +1,45 @@
+{
+  "packageVersion": "0.1.0",
+  "productionCompared": 610,
+  "productionChanges": [
+    {
+      "path": "package.json"
+    }
+  ],
+  "sourceCompared": 45,
+  "sourceChanges": [],
+  "docsCompared": 148,
+  "docsChanges": [],
+  "resources": 704,
+  "resourceMismatches": [],
+  "hasLatestPlanning": true,
+  "hasPriorIssues": true,
+  "artifacts": [
+    {
+      "path": "release/v0.1/AirJourney-v0.1-x64-setup.exe",
+      "bytes": 114917680,
+      "sha256": "5a06a3c9dbf8196ddcaf453e75880553228dd15280c57b3287c233d9d5aa243d"
+    },
+    {
+      "path": "release/v0.1/AirJourney-v0.1-source.zip",
+      "bytes": 53619128,
+      "sha256": "79c2fe7d0af578daeb3dcf70b0d681022f65b17492a25dff25b8e6626e3783cf"
+    },
+    {
+      "path": "release/v0.1/win-unpacked/resources/app.asar",
+      "bytes": 48570672,
+      "sha256": "d019798b9b46ff18435e85b03298bd9e5c5e3a215c3cf4924fbc1100c548370f"
+    }
+  ],
+  "packagedManifest": {
+    "name": "airjourney",
+    "version": "0.1.0",
+    "description": "Local personal flight journal",
+    "author": "AirJourney",
+    "main": "desktop/main.cjs",
+    "dependencies": {
+      "sql.js": "1.13.0"
+    }
+  },
+  "manifestDifferenceExpected": true
+}

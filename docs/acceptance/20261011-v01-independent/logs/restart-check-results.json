@@ -1,0 +1,10 @@
+{
+  "mode": "restart-check",
+  "results": [
+    {
+      "name": "actual process restart preserves complete independent state",
+      "status": "PASS"
+    }
+  ],
+  "observations": []
+}

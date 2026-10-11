@@ -1,0 +1,44 @@
+ID,子项,结果,证据,说明
+AC-01,新建编辑真实进程重启,PASS,logs/create-results.json;logs/restart-check-results.json,独立PVG到HND记录全状态保持
+AC-01,复制取消草稿,PASS,data/smoke/smoke-results.json;logs/newbugs-results.json,本轮复跑和独立主页面切换
+AC-02,Unknown日期only缺坐标,PASS,data/regression/results.json;logs/newbugs-results.json,空精度及未知地点保存
+AC-03,机场选择及自定义选点,PASS,logs/create-results.json;data/smoke/smoke-results.json,实际选择PVG/HND及复跑选点确认
+AC-04,资料跨类别预览导入,PASS,data/regression/results.json;logs/library-switch-results.json,四类回归及真实文件对话框机场导入
+AC-04,资料草稿切页,P3 ISSUE,logs/library-draft-results.json,V01-N03不影响已保存数据
+AC-05,航司选择及快照,PASS,logs/create-results.json;data/smoke/smoke-results.json,Japan Airlines及历史快照回归
+AC-06,逐字多标签含中文,PASS,logs/create-results.json;data/regression/results.json,AF02修复尾逗号保留去重清空搜索
+AC-06,字段排序隐藏全矩阵,NOT RUN,,非重点未穷尽
+AC-07,空精度意图及正常时间,PASS,data/regression/results.json;screenshots/02-route-light.png,AF01修复正常时间样例180分钟
+AC-07,DST极端矩阵,NOT RUN,,不推定通过
+AC-08,距离和近地几何独立,PASS,logs/unit-tests.log;data/regression/results.json,距离不受高度影响
+AC-09,搜索筛选列表地图与基础统计,PASS,data/smoke/smoke-results.json;data/regression/results.json,本轮重新执行基础路径
+AC-09,跨日期排序探索,PASS,logs/newbugs-results.json,符合BR11当地出发日期优先仅建议更明确文案
+AC-10,本地底图区域清晰度旋转,PASS,screenshots/02-route-light.png;data/regression/results.json,8K瓦片及DPR绘制本轮核对
+AC-10,原生滚轮双击,PASS,logs/native-wheel-before.json;logs/native-wheel-in.json;logs/native-wheel-out.json;logs/native-double-in.json,高度定量改变
+AC-10,Shift双击及模拟pinch,PASS,data/regression/results.json,实际BrowserWindow输入路径
+AC-10,真实触控板硬件,NOT RUN,,模拟Ctrlwheel和双触点不替代真设备
+AC-11,列表地图机场聚合联动,PASS,data/smoke/smoke-results.json,本轮复跑已有脚本
+AC-11,普通设置后静止路线保持,FAIL,logs/normal-route-check-results.json;screenshots/19-normal-route-missing.png;screenshots/20-normal-route-reappeared.png,V01-N01 P2滚动可恢复
+AC-12,标签字形及机场底板,PASS,data/regression/results.json;screenshots/02-route-light.png,地名描边机场标签可读
+AC-13,侧栏恢复草稿快捷键,PASS,data/smoke/smoke-results.json,本轮重新执行
+AC-14,英语主入口深浅主题及字体,PASS,screenshots/01-editor-light.png;screenshots/03-settings-dark.png;screenshots/04-route-dark.png,主要布局整洁易读
+AC-14,地图装饰小字对比,P3 ISSUE,screenshots/02-route-light.png;screenshots/04-route-dark.png,V01-N02
+AC-15,已有SVG未知占位及备份,PASS,data/smoke/smoke-results.json;data/upgrade/results.json,本轮复跑SVG及旧资产恢复
+AC-15,全部个人Logo替换矩阵,NOT RUN,,未完整执行
+AC-16,连续主题单位滑块保存,PASS,data/regression/results.json,AF03及重启通过不等于地图静止显示无缺陷
+AC-17,未来资料历史应用及失败保存,PASS,data/smoke/smoke-results.json,重新执行不继承旧结论
+AC-18,真实导出独立空库全状态恢复,PASS,logs/restore-check-results.json;data/native-v01.airjourney,真实对话框无smoke标志
+AC-18,跨机器恢复,NOT RUN,,独立目录不是跨机器
+AC-19,预览取消及保留替换冲突,PASS,data/regression/results.json,四类预览绑定成功
+AC-19,完整导入格式矩阵,NOT RUN,,本轮未穷尽
+AC-20,删除回收站恢复,PASS,data/smoke/smoke-results.json,本轮独立测试目录重新执行
+AC-21,本地日常输入资源,PASS,data/smoke/smoke-results.json;logs/create-results.json,无在线航班查询
+AC-21,物理断网,NOT RUN,,无通信安全检查
+AC-22,当前设备短操作顺畅,OBSERVED,screenshots;logs/suite-summary.json,主观交互观察未执行新定量性能基准
+AC-22,低配长时万条压力,NOT RUN,,不外推当前硬件
+AC-23,主按钮英语布局1024x720及软件比例,PASS,data/smoke/smoke-results.json;data/upgrade/results.json,软件比例100至300不等于系统DPI
+AC-23,实际系统DPI屏幕阅读器矩阵,NOT RUN,,未执行
+AC-24,v0.1程序版本构建产物摘要,PASS,logs/delivery-verification.json;logs/build.log;logs/unit-tests.log,609产品文件一致运行清单正常裁剪
+AC-24,源码ZIP规划文档同步,PASS,logs/delivery-verification.json,AF05 45源码及148文档一致
+AC-24,安装卸载干净VM,NOT RUN,,实际运行解包exe未运行安装向导
+COMPAT,v0.0SQLite和备份兼容,PASS,data/upgrade/results.json,独立合成旧数据全对象保持

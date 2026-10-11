@@ -1,6 +1,39 @@
 import geodesic from "geographiclib-geodesic";
 import moment from "moment-timezone";
-import type { Flight, Place, State, TimeSpec, Reference } from "./types";
+import type {
+  Flight,
+  Place,
+  State,
+  TimeSpec,
+  Reference,
+  TimePrecision,
+} from "./types";
+export function timePrecision(t: TimeSpec): TimePrecision {
+  return (
+    t.precision ?? (t.time ? "Date and time" : t.date ? "Date only" : "Unknown")
+  );
+}
+export function withPrecision(t: TimeSpec, precision: TimePrecision): TimeSpec {
+  return {
+    ...t,
+    precision,
+    ...(precision === "Unknown"
+      ? { date: "", time: "" }
+      : precision === "Date only"
+        ? { time: "" }
+        : {}),
+  };
+}
+export function parseTags(raw: string) {
+  return [
+    ...new Set(
+      raw
+        .split(",")
+        .map((v) => v.trim())
+        .filter(Boolean),
+    ),
+  ];
+}
 export function referenceUsedBy(f: Flight, kind: string, reference: Reference) {
   return kind === "Airports"
     ? [f.from.id, f.to.id].includes(reference.id)
@@ -85,7 +118,8 @@ export const defaults = {
   clock: "24h",
   density: "Comfortable",
   routeColor: "#74bcff",
-  width: 2,
+  width: 4,
+  routeHeight: 12000,
   opacity: 0.85,
   markerSize: 7,
   labels: true,
@@ -108,7 +142,7 @@ export function distance(a: Place, b: Place): number | null {
     ? geodesic.Geodesic.WGS84.Inverse(a.lat, a.lon, b.lat, b.lon).s12
     : null;
 }
-export function route(a: Place, b: Place) {
+export function route(a: Place, b: Place, height = defaults.routeHeight) {
   if (!hasLocation(a) || !hasLocation(b)) return [];
   const g = geodesic.Geodesic.WGS84;
   const inv = g.Inverse(a.lat, a.lon, b.lat, b.lon);
@@ -116,15 +150,16 @@ export function route(a: Place, b: Place) {
     return Array.from({ length: 65 }, (_, i) => [
       a.lon! + 0.18 * Math.cos((i * Math.PI) / 32),
       a.lat! + 0.18 * Math.sin((i * Math.PI) / 32),
-      15000,
+      4000,
     ]);
-  return Array.from({ length: 97 }, (_, i) => {
-    const t = i / 96,
+  const steps = Math.max(96, Math.ceil(inv.s12 / 35000));
+  return Array.from({ length: steps + 1 }, (_, i) => {
+    const t = i / steps,
       p = g.Direct(a.lat, a.lon, inv.azi1, inv.s12 * t);
     return [
       p.lon2,
       p.lat2,
-      Math.sin(Math.PI * t) * Math.min(inv.s12 * 0.12, 1500000) + 3000,
+      Math.sin(Math.PI * t) * Math.min(inv.s12 * 0.01, height) + 4000,
     ];
   });
 }
@@ -188,6 +223,11 @@ export function validateFlight(f: Flight) {
     if (n !== undefined && (!Number.isFinite(n) || n < 0))
       throw Error("Distance and duration must be non-negative.");
   for (const t of [f.departure, f.arrival]) {
+    if (
+      t.precision !== undefined &&
+      !["Unknown", "Date only", "Date and time"].includes(t.precision)
+    )
+      throw Error("Invalid time precision.");
     if (t.date && !moment(t.date, "YYYY-MM-DD", true).isValid())
       throw Error("Enter a valid date.");
     if (t.time && (!t.date || !/^([01]\d|2[0-3]):[0-5]\d$/.test(t.time)))
@@ -392,6 +432,13 @@ export function validateState(s: State) {
     }
   }
   const p = s.settings;
+  if (
+    p.routeHeight !== undefined &&
+    (!Number.isFinite(p.routeHeight) ||
+      p.routeHeight < 0 ||
+      p.routeHeight > 100000)
+  )
+    throw Error("Invalid route lift.");
   if (
     !["System", "Light", "Dark"].includes(p.theme) ||
     !["km", "miles"].includes(p.units) ||

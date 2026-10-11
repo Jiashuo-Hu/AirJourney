@@ -1,3 +1,4 @@
+import { APP_VERSION } from "./version";
 import { zipSync, unzipSync, strToU8, strFromU8 } from "fflate";
 import { validateState } from "./domain";
 import type { State } from "./types";
@@ -68,7 +69,7 @@ export async function backup(s: State) {
       JSON.stringify({
         format: "airjourney",
         version: 1,
-        app: "v0.0",
+        app: APP_VERSION,
         base: "starter-20261010",
         sha256: hash,
       }),

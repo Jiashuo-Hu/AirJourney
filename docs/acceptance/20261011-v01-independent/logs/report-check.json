@@ -1,0 +1,29 @@
+{
+  "RequiredFilesPresent": 4,
+  "ACs": 24,
+  "Rows": 43,
+  "Statuses": [
+    {
+      "Name": "FAIL",
+      "Count": 1
+    },
+    {
+      "Name": "NOT RUN",
+      "Count": 10
+    },
+    {
+      "Name": "OBSERVED",
+      "Count": 1
+    },
+    {
+      "Name": "P3 ISSUE",
+      "Count": 2
+    },
+    {
+      "Name": "PASS",
+      "Count": 29
+    }
+  ],
+  "CoreEvidencePresent": true,
+  "NormalRestoreResult": "PASS"
+}

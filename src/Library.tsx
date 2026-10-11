@@ -9,6 +9,7 @@ import {
 import { seedLibrary } from "./seed";
 import { readFile, exportFile } from "./storage";
 import { parseReferenceCSV, referenceCSV } from "./library-csv";
+import type { StateMutation } from "./state-updates";
 export function Library({
   state,
   onCommit,
@@ -16,7 +17,7 @@ export function Library({
   onPick,
 }: {
   state: State;
-  onCommit: (s: State) => Promise<boolean>;
+  onCommit: (change: StateMutation) => Promise<boolean>;
   onNotice: (s: string) => void;
   onPick: (callback: (lat: number, lon: number) => void) => void;
 }) {
@@ -25,7 +26,10 @@ export function Library({
     [showHidden, setShowHidden] = useState(false),
     [edit, setEdit] = useState<Reference | null>(null),
     [review, setReview] = useState(false),
-    [incoming, setIncoming] = useState<Reference[] | null>(null),
+    [incoming, setIncoming] = useState<{
+      kind: string;
+      entries: Reference[];
+    } | null>(null),
     [replace, setReplace] = useState(false);
   const used = edit
     ? state.flights.filter((f) =>
@@ -55,20 +59,20 @@ export function Library({
       source:
         edit.source === "Bundled" ? "User edited" : edit.source || "Custom",
     };
-    const s = structuredClone(state),
-      idx = s.library[kind].findIndex((r) => r.id === e.id);
-    if (idx < 0) s.library[kind].push(e);
-    else s.library[kind][idx] = e;
-    if (apply)
-      s.flights = s.flights.map((f) =>
-        applyReference(
-          f,
-          kind,
-          state.library[kind].find((r) => r.id === e.id) || e,
-          e,
-        ),
-      );
-    if (await onCommit(s)) {
+    const target = kind;
+    if (
+      await onCommit((s) => {
+        const previous = s.library[target].find((r) => r.id === e.id) || e;
+        const idx = s.library[kind].findIndex((r) => r.id === e.id);
+        if (idx < 0) s.library[kind].push(e);
+        else s.library[kind][idx] = e;
+        if (apply)
+          s.flights = s.flights.map((f) =>
+            applyReference(f, kind, previous, e),
+          );
+        return s;
+      })
+    ) {
       setEdit(null);
       setReview(false);
       onNotice(
@@ -119,7 +123,8 @@ export function Library({
           safeSvg(decodeURIComponent(escape(atob(r.logo.split(",")[1]))));
         }
       }
-      setIncoming(data.entries);
+      setIncoming({ kind, entries: data.entries });
+      setReplace(false);
     } catch (e) {
       onNotice(String(e));
     }
@@ -449,12 +454,12 @@ export function Library({
       )}
       {incoming && (
         <div className="review">
-          <h3>Import preview · {kind}</h3>
+          <h3>Import preview · {incoming.kind}</h3>
           <p>
-            {incoming.length} entries ·{" "}
+            {incoming.entries.length} entries ·{" "}
             {
-              incoming.filter((r) =>
-                state.library[kind].some((x) => x.id === r.id),
+              incoming.entries.filter((r) =>
+                state.library[incoming.kind].some((x) => x.id === r.id),
               ).length
             }{" "}
             matching IDs. Flight snapshots remain unchanged.
@@ -470,13 +475,21 @@ export function Library({
           <button
             className="primary"
             onClick={async () => {
-              const s = structuredClone(state);
-              for (const r of incoming) {
-                const i = s.library[kind].findIndex((x) => x.id === r.id);
-                if (i < 0) s.library[kind].push(r);
-                else if (replace) s.library[kind][i] = r;
-              }
-              if (await onCommit(s)) setIncoming(null);
+              const preview = incoming,
+                overwrite = replace;
+              if (
+                await onCommit((s) => {
+                  for (const r of preview.entries) {
+                    const i = s.library[preview.kind].findIndex(
+                      (x) => x.id === r.id,
+                    );
+                    if (i < 0) s.library[preview.kind].push(r);
+                    else if (overwrite) s.library[preview.kind][i] = r;
+                  }
+                  return s;
+                })
+              )
+                setIncoming(null);
             }}
           >
             Confirm import

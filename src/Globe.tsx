@@ -41,6 +41,8 @@ export function Globe({
   useEffect(() => {
     let v: C.CesiumWidget | undefined,
       disposed = false;
+    let clickTimer: ReturnType<typeof setTimeout> | undefined;
+    let removeWheel: (() => void) | undefined;
     try {
       v = new C.CesiumWidget(host.current!, {
         baseLayer: false,
@@ -49,15 +51,76 @@ export function Globe({
         maximumRenderTimeChange: Infinity,
         skyBox: false,
         skyAtmosphere: new C.SkyAtmosphere(),
+        useBrowserRecommendedResolution: false,
+        contextOptions: { webgl: { antialias: true } },
       });
       viewer.current = v;
       if (window.airjourney?.testing) (window as any).__ajTestGlobe = v;
       v.scene.backgroundColor = C.Color.fromCssColorString("#0c1725");
       v.scene.globe.baseColor = C.Color.fromCssColorString("#2b4b60");
       v.scene.globe.enableLighting = false;
+      v.scene.msaaSamples = 4;
+      v.scene.globe.maximumScreenSpaceError = 1;
+      v.scene.globe.tileCacheSize = 180;
       v.scene.screenSpaceCameraController.minimumZoomDistance = 1500000;
       v.scene.screenSpaceCameraController.maximumZoomDistance = 40000000;
-      v.scene.globe.depthTestAgainstTerrain = true;
+      const controller = v.scene.screenSpaceCameraController;
+      controller.zoomEventTypes = [
+        C.CameraEventType.RIGHT_DRAG,
+        C.CameraEventType.PINCH,
+      ];
+      controller.tiltEventTypes = [
+        C.CameraEventType.MIDDLE_DRAG,
+        {
+          eventType: C.CameraEventType.LEFT_DRAG,
+          modifier: C.KeyboardEventModifier.CTRL,
+        },
+      ];
+      controller.inertiaZoom = 0;
+      function zoom(factor: number) {
+        if (!v) return;
+        v.camera.cancelFlight();
+        const height = v.camera.positionCartographic.height;
+        const next = Math.max(1500000, Math.min(40000000, height * factor));
+        if (next < height) v.camera.zoomIn(height - next);
+        else v.camera.zoomOut(next - height);
+        v.scene.requestRender();
+      }
+      const wheel = (event: WheelEvent) => {
+        event.preventDefault();
+        if (!event.deltaY) return;
+        const pixels =
+          event.deltaY *
+          (event.deltaMode === 1
+            ? 16
+            : event.deltaMode === 2
+              ? v!.canvas.clientHeight
+              : 1);
+        zoom(
+          Math.exp(
+            Math.max(-300, Math.min(300, pixels)) *
+              (event.ctrlKey ? 0.006 : 0.0018),
+          ),
+        );
+      };
+      v.canvas.addEventListener("wheel", wheel, { passive: false });
+      removeWheel = () => v?.canvas.removeEventListener("wheel", wheel);
+      const doubleClick = (out = false) => {
+        if (clickTimer) clearTimeout(clickTimer);
+        if (!clicks.current.picking) zoom(out ? 1.5 : 0.65);
+      };
+      v.screenSpaceEventHandler.setInputAction(
+        () => doubleClick(),
+        C.ScreenSpaceEventType.LEFT_DOUBLE_CLICK,
+      );
+      v.screenSpaceEventHandler.setInputAction(
+        () => doubleClick(true),
+        C.ScreenSpaceEventType.LEFT_DOUBLE_CLICK,
+        C.KeyboardEventModifier.SHIFT,
+      );
+      // Ellipsoid-only imagery: avoid terrain LOD depth noise hiding low routes.
+      // Cesium still occludes primitives on the opposite side of the globe.
+      v.scene.globe.depthTestAgainstTerrain = false;
       const start =
         settings.remember && settings.lastView
           ? settings.lastView
@@ -78,12 +141,15 @@ export function Globe({
           }
           return;
         }
-        const picked = v!.scene.pick(evt.position),
-          ids = picked?.id?.properties?.flightIds?.getValue();
-        if (ids?.length) {
-          if (ids.length > 1) setGroup(ids);
-          else api.onSelect(ids[0]);
-        }
+        if (clickTimer) clearTimeout(clickTimer);
+        clickTimer = setTimeout(() => {
+          const picked = v!.scene.pick(evt.position),
+            ids = picked?.id?.properties?.flightIds?.getValue();
+          if (ids?.length) {
+            if (ids.length > 1) setGroup(ids);
+            else api.onSelect(ids[0]);
+          }
+        }, 250);
       }, C.ScreenSpaceEventType.LEFT_CLICK);
       v.scene.renderError.addEventListener((_scene, err) =>
         setError(
@@ -97,6 +163,8 @@ export function Globe({
     }
     return () => {
       disposed = true;
+      if (clickTimer) clearTimeout(clickTimer);
+      removeWheel?.();
       if (v && !v.isDestroyed()) v.destroy();
       viewer.current = null;
     };
@@ -135,12 +203,37 @@ export function Globe({
         ).withAlpha(
           selected && !picked ? settings.opacity * 0.35 : settings.opacity,
         );
-      const coords = route(f.from, f.to).flat();
+      const coords = route(f.from, f.to, settings.routeHeight).flat();
       v.entities.add({
         id: "route-" + f.id,
         polyline: {
           positions: C.Cartesian3.fromDegreesArrayHeights(coords),
           width: settings.width + (picked ? 2 : 0),
+          arcType: C.ArcType.NONE,
+          material: new C.PolylineOutlineMaterialProperty({
+            color,
+            outlineColor: C.Color.fromCssColorString("#102438").withAlpha(
+              color.alpha * 0.8,
+            ),
+            outlineWidth: 1,
+          }),
+        },
+        properties: { flightIds: fs.map((f) => f.id) },
+      });
+      const positions = route(f.from, f.to, settings.routeHeight);
+      v.entities.add({
+        id: "direction-" + f.id,
+        polyline: {
+          positions: C.Cartesian3.fromDegreesArrayHeights(
+            positions
+              .slice(
+                Math.floor(positions.length * 0.5),
+                Math.floor(positions.length * 0.62) + 1,
+              )
+              .map(([lon, lat, height]) => [lon, lat, height + 500])
+              .flat(),
+          ),
+          width: Math.max(8, settings.width + 4 + (picked ? 2 : 0)),
           arcType: C.ArcType.NONE,
           material: new C.PolylineArrowMaterialProperty(color),
         },
@@ -172,17 +265,17 @@ export function Globe({
               text: p.code || p.name,
               show: labelVisibility(p.lon!, p.lat!),
               disableDepthTestDistance: Number.POSITIVE_INFINITY,
-              font: "12px Inter",
+              font: "600 28px Inter",
               fillColor: C.Color.WHITE,
               showBackground: true,
               backgroundColor:
-                C.Color.fromCssColorString("#17283b").withAlpha(0.8),
+                C.Color.fromCssColorString("#102438").withAlpha(0.94),
               pixelOffset: new C.Cartesian2(10, -16),
               distanceDisplayCondition: new C.DistanceDisplayCondition(
                 0,
                 16000000,
               ),
-              scale: 0.95,
+              scale: 0.5,
             }
           : undefined,
         properties: { flightIds: ids },
@@ -196,10 +289,11 @@ export function Globe({
             text: place.name,
             show: labelVisibility(place.lon, place.lat),
             disableDepthTestDistance: Number.POSITIVE_INFINITY,
-            font: "13px Inter",
+            font: "600 28px Inter",
             fillColor: C.Color.WHITE,
-            outlineColor: C.Color.fromCssColorString("#17283b"),
-            outlineWidth: 2,
+            outlineColor: C.Color.fromCssColorString("#102438"),
+            outlineWidth: 4,
+            scale: 0.5,
             style: C.LabelStyle.FILL_AND_OUTLINE,
             distanceDisplayCondition: new C.DistanceDisplayCondition(
               1000000,
@@ -241,14 +335,23 @@ export function Globe({
     const v = viewer.current;
     if (!v) return;
     let canceled = false;
-    C.SingleTileImageryProvider.fromUrl(
-      settings.mapImage || "./maps/naturalearth-4096.jpg",
-      {
-        credit: settings.mapImage
-          ? "User supplied local imagery"
-          : "Natural Earth II · public domain",
-      },
-    )
+    const imagery = settings.mapImage
+      ? C.SingleTileImageryProvider.fromUrl(settings.mapImage, {
+          credit: settings.mapImage
+            ? "User supplied local imagery"
+            : "Natural Earth II · public domain",
+        })
+      : Promise.resolve(
+          new C.UrlTemplateImageryProvider({
+            url: "./maps/naturalearth/{z}/{x}/{y}.jpg",
+            tilingScheme: new C.GeographicTilingScheme(),
+            tileWidth: 512,
+            tileHeight: 512,
+            maximumLevel: 3,
+            credit: "Natural Earth II · local 8K tile pyramid",
+          }),
+        );
+    imagery
       .then((provider) => {
         if (!canceled) {
           v.imageryLayers.removeAll();
@@ -263,7 +366,7 @@ export function Globe({
         }
         try {
           const provider = await C.SingleTileImageryProvider.fromUrl(
-            "./maps/naturalearth-2048.jpg",
+            "./maps/naturalearth-4096.jpg",
           );
           if (!canceled) {
             v.imageryLayers.removeAll();
@@ -360,6 +463,11 @@ export function Globe({
           Save home view
         </button>
       </div>
+      <div className="map-help" aria-label="Map controls">
+        Drag to rotate · Scroll / pinch to zoom
+        <br />
+        Double-click to zoom in · Shift + double-click to zoom out
+      </div>
       {picking && (
         <div className="pick-banner">
           Click the globe to preview a location.
@@ -369,7 +477,7 @@ export function Globe({
         <span>
           <i /> Route illustration · WGS84
         </span>
-        <span>Natural Earth II · Map detail limit: regional view</span>
+        <span>Natural Earth II · Local 8K detail · Regional view</span>
       </div>
       {group.length > 0 && (
         <div className="route-popover">
