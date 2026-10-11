@@ -1,0 +1,30 @@
+{
+  "entries": 532,
+  "mismatches": [
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/.devcontainer/Dockerfile",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/.devcontainer/devcontainer.json",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/.eslintrc.js",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/.jsdoc.config.json",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/.nojekyll",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/AUTHORS",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/CONTRIBUTING.md",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/LICENSE",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/sql-asm-debug.js",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/sql-asm-memory-growth.js",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/sql-asm.js",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/sql-wasm-debug.js",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/sql-wasm-debug.wasm",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/sql-wasm.js",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/sql-wasm.wasm",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/sqljs-all.zip",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/sqljs-wasm.zip",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/sqljs-worker-wasm.zip",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/worker.sql-asm-debug.js",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/worker.sql-asm.js",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/worker.sql-wasm-debug.js",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/dist/worker.sql-wasm.js",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/documentation_index.md",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/logo.svg",
+    "MISSING release/win-unpacked/resources/app.asar::node_modules/sql.js/package.json"
+  ]
+}

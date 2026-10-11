@@ -1,0 +1,103 @@
+{
+  "results": [
+    {
+      "name": "process restart retains manually created and edited flight",
+      "status": "PASS",
+      "detail": {
+        "number": "ACC-MANUAL-01-EDIT",
+        "dataPath": "C:\\MyFile\\Project\\AirJourney\\docs\\acceptance\\20261010-independent-functional\\data\\manual\\airjourney.sqlite"
+      }
+    },
+    {
+      "name": "precision selector independent observation",
+      "status": "PASS",
+      "detail": {
+        "expected": "Date and time",
+        "actual": "Unknown"
+      }
+    },
+    {
+      "name": "normal time and manual distance entry",
+      "status": "PASS",
+      "detail": {
+        "distance": 1000,
+        "unit": "miles",
+        "alliance": "None"
+      }
+    },
+    {
+      "name": "comma tag typing independent observation",
+      "status": "PASS",
+      "detail": {
+        "actual": "alpha"
+      }
+    },
+    {
+      "name": "search filters list and globe counts",
+      "status": "PASS"
+    },
+    {
+      "name": "custom unknown and date-only save without invented coordinates",
+      "status": "PASS",
+      "detail": {
+        "id": "93ee1662-717f-435f-98f0-d99f7d098ecf",
+        "created": "2026-10-10T14:29:29.493Z",
+        "updated": "2026-10-10T14:29:30.200Z",
+        "number": "ACC-UNLOCATED",
+        "from": {
+          "id": "36b6d0b3-67be-4237-b85b-a16cf9b2517b",
+          "name": "Acceptance origin"
+        },
+        "to": {
+          "id": "0d5e05cc-140c-4b93-a400-f84c66f1c0c7",
+          "name": "Acceptance destination"
+        },
+        "departure": {
+          "date": "2025-02-01",
+          "time": "",
+          "zone": ""
+        },
+        "arrival": {
+          "date": "",
+          "time": "",
+          "zone": ""
+        },
+        "unit": "km",
+        "status": "Recorded",
+        "tags": [],
+        "notes": "",
+        "fields": {},
+        "color": "",
+        "visible": true
+      }
+    },
+    {
+      "name": "adding coordinates produces mapped route",
+      "status": "PASS"
+    },
+    {
+      "name": "Airports custom create edit hide unhide",
+      "status": "PASS",
+      "detail": {
+        "id": "ade83e42-7848-4484-9a2f-dfd051620b98"
+      }
+    },
+    {
+      "name": "Airlines custom create edit hide unhide",
+      "status": "FAIL",
+      "error": "Error: {\"exceptionId\":1,\"text\":\"Uncaught\",\"lineNumber\":0,\"columnNumber\":122,\"scriptId\":\"67\",\"exception\":{\"type\":\"object\",\"subtype\":\"error\",\"className\":\"TypeError\",\"description\":\"TypeError: Cannot read properties of undefined (reading 'click')\\n    at <anonymous>:1:123\\n    at <anonymous>:1:132\",\"objectId\":\"35493729917634349.1.2\"}}\n    at js (file:///C:/MyFile/Project/AirJourney/docs/acceptance/20261010-independent-functional/runner.mjs:12:146)\n    at async file:///C:/MyFile/Project/AirJourney/docs/acceptance/20261010-independent-functional/runner.mjs:46:663\n    at async test (file:///C:/MyFile/Project/AirJourney/docs/acceptance/20261010-independent-functional/runner.mjs:21:46)\n    at async file:///C:/MyFile/Project/AirJourney/docs/acceptance/20261010-independent-functional/runner.mjs:46:1"
+    }
+  ],
+  "issues": [
+    {
+      "id": "AF-01",
+      "expected": "Date and time selected",
+      "actual": "Unknown"
+    },
+    {
+      "id": "AF-02",
+      "expected": "alpha, remains ready to type second tag",
+      "actual": "alpha"
+    }
+  ]
+}

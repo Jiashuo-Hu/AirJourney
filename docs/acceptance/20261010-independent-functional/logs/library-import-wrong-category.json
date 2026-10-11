@@ -1,0 +1,12 @@
+{
+  "Airports": [],
+  "Airlines": [
+    {
+      "id": "acceptance-import-place",
+      "name": "Acceptance imported airport",
+      "lat": 0,
+      "lon": 0,
+      "source": "Custom"
+    }
+  ]
+}

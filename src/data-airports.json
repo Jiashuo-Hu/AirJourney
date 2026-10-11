@@ -1,0 +1,167 @@
+[
+  {
+    "id": "airport-PEK",
+    "code": "PEK",
+    "name": "Beijing Capital International Airport",
+    "city": "Beijing",
+    "region": "China",
+    "lat": 40.077349,
+    "lon": 116.596702,
+    "zone": "Asia/Shanghai",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-PVG",
+    "code": "PVG",
+    "name": "Shanghai Pudong International Airport",
+    "city": "Shanghai (Pudong)",
+    "region": "China",
+    "lat": 31.1434,
+    "lon": 121.805,
+    "zone": "Asia/Shanghai",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-CAN",
+    "code": "CAN",
+    "name": "Guangzhou Baiyun International Airport",
+    "city": "Guangzhou (Huadu)",
+    "region": "China",
+    "lat": 23.392401,
+    "lon": 113.299004,
+    "zone": "Asia/Shanghai",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-HKG",
+    "code": "HKG",
+    "name": "Hong Kong International Airport",
+    "city": "Hong Kong",
+    "region": "China",
+    "lat": 22.31184,
+    "lon": 113.914862,
+    "zone": "Asia/Hong_Kong",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-TPE",
+    "code": "TPE",
+    "name": "Taiwan Taoyuan International Airport",
+    "city": "Taoyuan",
+    "region": "China",
+    "lat": 25.0777,
+    "lon": 121.233002,
+    "zone": "Asia/Taipei",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-LHR",
+    "code": "LHR",
+    "name": "London Heathrow Airport",
+    "city": "London",
+    "region": "United Kingdom",
+    "lat": 51.470748,
+    "lon": -0.459909,
+    "zone": "Europe/London",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-JFK",
+    "code": "JFK",
+    "name": "John F. Kennedy International Airport",
+    "city": "New York",
+    "region": "United States",
+    "lat": 40.639447,
+    "lon": -73.779317,
+    "zone": "America/New_York",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-LAX",
+    "code": "LAX",
+    "name": "Los Angeles International Airport",
+    "city": "Los Angeles",
+    "region": "United States",
+    "lat": 33.942501,
+    "lon": -118.407997,
+    "zone": "America/Los_Angeles",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-HND",
+    "code": "HND",
+    "name": "Tokyo Haneda International Airport",
+    "city": "Tokyo",
+    "region": "Japan",
+    "lat": 35.549678,
+    "lon": 139.786958,
+    "zone": "Asia/Tokyo",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-SIN",
+    "code": "SIN",
+    "name": "Singapore Changi Airport",
+    "city": "Singapore",
+    "region": "Singapore",
+    "lat": 1.35019,
+    "lon": 103.994003,
+    "zone": "Asia/Singapore",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-AKL",
+    "code": "AKL",
+    "name": "Auckland International Airport",
+    "city": "Auckland",
+    "region": "New Zealand",
+    "lat": -37.01199,
+    "lon": 174.786331,
+    "zone": "Pacific/Auckland",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-SYD",
+    "code": "SYD",
+    "name": "Sydney Kingsford Smith International Airport",
+    "city": "Sydney (Mascot)",
+    "region": "Australia",
+    "lat": -33.946098,
+    "lon": 151.177002,
+    "zone": "Australia/Sydney",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-CDG",
+    "code": "CDG",
+    "name": "Charles de Gaulle International Airport",
+    "city": "Paris (Roissy-en-France, Val-d'Oise)",
+    "region": "France",
+    "lat": 49.00896,
+    "lon": 2.554117,
+    "zone": "Europe/Paris",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-FRA",
+    "code": "FRA",
+    "name": "Frankfurt Main Airport",
+    "city": "Frankfurt am Main",
+    "region": "Germany",
+    "lat": 50.026706,
+    "lon": 8.55835,
+    "zone": "Europe/Berlin",
+    "source": "Bundled"
+  },
+  {
+    "id": "airport-DXB",
+    "code": "DXB",
+    "name": "Dubai International Airport",
+    "city": "Dubai",
+    "region": "United Arab Emirates",
+    "lat": 25.24979,
+    "lon": 55.370992,
+    "zone": "Asia/Dubai",
+    "source": "Bundled"
+  }
+]

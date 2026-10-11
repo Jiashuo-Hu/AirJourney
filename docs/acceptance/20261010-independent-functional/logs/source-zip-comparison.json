@@ -1,0 +1,24 @@
+{
+  "entries": 97,
+  "codeCompared": 32,
+  "changedCode": [],
+  "changedPlanningDocs": [
+    "docs/planning/00_README.md",
+    "docs/planning/01_PRODUCT.md",
+    "docs/planning/02_REQUIREMENTS.md",
+    "docs/planning/03_DESIGN.md",
+    "docs/planning/04_ENGINEERING.md",
+    "docs/planning/05_DATA_AND_ASSETS.md",
+    "docs/planning/06_IMPLEMENTATION_PLAN.md",
+    "docs/planning/07_ACCEPTANCE.md",
+    "docs/planning/08_AGENT_HANDOFF.md",
+    "docs/planning/09_DECISIONS_AND_SOURCES.md",
+    "docs/planning/10_EXPERIMENTS.md",
+    "docs/planning/11_IMPLEMENTATION_PROMPT.md",
+    "docs/planning/templates/acceptance_report.md",
+    "docs/planning/templates/asset_registry.csv",
+    "docs/planning/templates/experiment_report.md",
+    "docs/planning/templates/README.md",
+    "docs/planning/templates/requirements_traceability.csv"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": "v0.0",
+  "packageVersion": "0.0.0",
+  "baseline": "docs/planning",
+  "date": "2026-10-10",
+  "artifacts": [
+    {
+      "path": "release/AirJourney-v0.0-x64-setup.exe",
+      "bytes": 107303389,
+      "sha256": "b73956c7ae8c144eaa8b99c3444dbb3fad97213cf73ccb046262edcccd556b9a"
+    },
+    {
+      "path": "release/AirJourney-v0.0-source.zip",
+      "bytes": 11294630,
+      "sha256": "d8cd579a7b6f8ee8d5ffae18e15f56ffaf788fce8917c7faf0fcb4e924487c1f"
+    }
+  ],
+  "resourceFiles": 532,
+  "sourceSnapshots": {
+    "date": "2026-10-10",
+    "airports_source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+    "airports_sha256": "79dd7db7228a12199839aa6acbc2dc1f1e50a4604f14d7f60dceb6983de91906",
+    "airport_count": 15,
+    "airport_fields": "name, code, municipality, WGS84 latitude/longitude; manual IANA suggestions and region display rules",
+    "imagery_source": "https://naturalearth.s3.amazonaws.com/50m_raster/NE2_50M_SR_W.zip",
+    "imagery_version": "3.2.0",
+    "imagery_source_dimensions": [
+      10800,
+      5400
+    ],
+    "imagery_sha256": "7e0e07089b699a3cccad98dd1b2446390d8e3f8c5006359d477a329cebcafaa9",
+    "projection": "EPSG:4326, [-180,-90,180,90], north at top",
+    "license": "Public domain; no accuracy guarantee"
+  },
+  "signature": "NotSigned; actual Authenticode check in evidence/install-final.json",
+  "completeAcceptancePassed": false,
+  "sourceArchiveNote": "Embedded manifest predates its own ZIP hash; external delivery manifest / SHA256SUMS are authoritative.",
+  "evidenceIndex": "docs/implementation/evidence_index.json"
+}

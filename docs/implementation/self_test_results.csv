@@ -1,0 +1,22 @@
+﻿test_id,scope,status,evidence,limitations
+UNIT,14 domain assertions,PASS,evidence/unit-tests.log,Not complete independent acceptance
+DESKTOP-01,local globe / empty cache / production protocol,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-02,manual synthetic / unknown time / mapped / local SVG / SQLite commit,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-03,duplicate new UUID,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-04,sidebar / new-flight shortcut preserve draft; modal focus trap / Escape,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-05,trash / restore preserves record,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-06,reload / SQLite and preferences persistence / single viewer,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-07,simulated write failure preserves database,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-08,actual UI portable backup / preview / full restore with SVG,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-09,future-only reference edit preserves existing snapshots,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-10,explicit reference preview / apply updates snapshots,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-11,globe zoom / reset / aggregated entities,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-12,actual globe point picking / aggregate list / flight selection / direction representative,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-13,1024x720 no document overflow,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-14,Library custom airport / globe pick preview / confirmation,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-15,incomplete / no number / no coordinates saves and retains needs-location state,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+DESKTOP-16,JavaScript eval remains blocked under narrow WASM CSP,PASS,evidence/installed-release-smoke/smoke-results.json,Actual installed app; current machine only
+CLEAN-OFFLINE,No clean Windows user/VM; system network not disconnected,NOT RUN,docs/implementation/known_issues.md,Not counted as passed
+DPI-AT,Full DPI and screen-reader matrix not run,NOT RUN,docs/implementation/known_issues.md,Not counted as passed
+PERF-FULL,Not Iris Xe; no 60-second / 15-minute complete benchmark,NOT RUN,docs/implementation/known_issues.md,Not counted as passed
+INDEPENDENT,AC-01–24 reserved for third acceptance Agent,NOT RUN,docs/implementation/known_issues.md,Not counted as passed

@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-10",
+  "airports_source": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+  "airports_sha256": "79dd7db7228a12199839aa6acbc2dc1f1e50a4604f14d7f60dceb6983de91906",
+  "airport_count": 15,
+  "airport_fields": "name, code, municipality, WGS84 latitude/longitude; manual IANA suggestions and region display rules",
+  "imagery_source": "https://naturalearth.s3.amazonaws.com/50m_raster/NE2_50M_SR_W.zip",
+  "imagery_version": "3.2.0",
+  "imagery_source_dimensions": [
+    10800,
+    5400
+  ],
+  "imagery_sha256": "7e0e07089b699a3cccad98dd1b2446390d8e3f8c5006359d477a329cebcafaa9",
+  "projection": "EPSG:4326, [-180,-90,180,90], north at top",
+  "license": "Public domain; no accuracy guarantee"
+}

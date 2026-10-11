@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "name": "Airports custom create edit hide unhide",
+      "status": "PASS",
+      "detail": {
+        "id": "2342033f-10b4-4e10-a0f5-5b25a82755c4"
+      }
+    },
+    {
+      "name": "Airlines custom create edit hide unhide",
+      "status": "PASS",
+      "detail": {
+        "id": "d1920099-8658-4f5e-a07a-0070334da184"
+      }
+    },
+    {
+      "name": "Alliances custom create edit hide unhide",
+      "status": "PASS",
+      "detail": {
+        "id": "ff8a77b6-1c35-4844-93f1-57331377d455"
+      }
+    },
+    {
+      "name": "Aircraft custom create edit hide unhide",
+      "status": "PASS",
+      "detail": {
+        "id": "98e222d1-93f7-4d51-8545-00fb3dd2ffed"
+      }
+    },
+    {
+      "name": "trash and complete restore",
+      "status": "PASS",
+      "detail": {
+        "count": 2
+      }
+    },
+    {
+      "name": "theme units map labels persisted through renderer reload",
+      "status": "PASS",
+      "detail": {
+        "theme": "Dark",
+        "accent": "#245fd6",
+        "units": "miles",
+        "dateFormat": "DD MMM YYYY",
+        "clock": "24h",
+        "density": "Comfortable",
+        "routeColor": "#74bcff",
+        "width": 2,
+        "opacity": 0.85,
+        "markerSize": 7,
+        "labels": false,
+        "boundaries": false,
+        "reducedMotion": false,
+        "sidebarWidth": 380,
+        "home": [
+          105,
+          25,
+          22000000
+        ],
+        "remember": false
+      }
+    }
+  ],
+  "issues": []
+}

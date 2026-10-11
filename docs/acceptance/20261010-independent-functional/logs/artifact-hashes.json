@@ -1,0 +1,17 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B73956C7AE8C144EAA8B99C3444DBB3FAD97213CF73CCB046262EDCCCD556B9A",
+    "Path": "C:\\MyFile\\Project\\AirJourney\\release\\AirJourney-v0.0-x64-setup.exe"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "D8CD579A7B6F8EE8D5FFAE18E15F56FFAF788FCE8917C7FAF0FCB4E924487C1F",
+    "Path": "C:\\MyFile\\Project\\AirJourney\\release\\AirJourney-v0.0-source.zip"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "4DF34A3646ADE921CBEFEE79341275EC24C1DD9DC443F4C211B3D7688C7A0DBF",
+    "Path": "C:\\MyFile\\Project\\AirJourney\\release\\win-unpacked\\resources\\app.asar"
+  }
+]

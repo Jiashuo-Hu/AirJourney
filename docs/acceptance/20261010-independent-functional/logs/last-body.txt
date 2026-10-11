@@ -1,0 +1,42 @@
+↗
+AirJourney
+v0.0
+Flights
+Library
+Insights
+Settings
+Local only
+YOUR PERSONAL SPACE
+Settings
+Appearance
+Map
+Personal fields
+Data & backup
+Sources
+Your data stays here.
+
+SQLite database
+
+C:\MyFile\Project\AirJourney\docs\acceptance\20261010-independent-functional\data\manual\airjourney.sqlite
+
+Every save keeps a previous database file. Exports contain your Library, snapshots, personal SVG files, tags, fields and settings.
+
+Export backup
+Import backup
+Export CSV
+
+Backups use the .airjourney format (ZIP, schema 1), with an integrity checksum. Imported SVG data is embedded for portability. Import always previews before changing data.
+
+CesiumJS · local resourcesData attribution
+YOUR WORLD, CONNECTED
+Every journey
+has a place.
+Local globe · Your own flight records
+↺ Reset view
++
+−
+Save home view
+ Route illustration · WGS84
+Natural Earth II · Map detail limit: regional view
+◧ Hide sidebar
+2 mapped flights · 0 need location

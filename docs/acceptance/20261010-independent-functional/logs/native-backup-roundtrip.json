@@ -1,0 +1,27 @@
+{
+  "equal": true,
+  "flights": 2,
+  "personalSVG": true,
+  "settings": {
+    "theme": "Light",
+    "accent": "#245fd6",
+    "units": "miles",
+    "dateFormat": "DD MMM YYYY",
+    "clock": "24h",
+    "density": "Comfortable",
+    "routeColor": "#74bcff",
+    "width": 2,
+    "opacity": 0.85,
+    "markerSize": 7,
+    "labels": false,
+    "boundaries": false,
+    "reducedMotion": false,
+    "sidebarWidth": 380,
+    "home": [
+      105,
+      25,
+      22000000
+    ],
+    "remember": false
+  }
+}

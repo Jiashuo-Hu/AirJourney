@@ -1,0 +1,66 @@
+{
+  "name": "airjourney",
+  "version": "0.0.0",
+  "description": "Local personal flight journal",
+  "author": "AirJourney",
+  "private": true,
+  "type": "module",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc && vite build && node scripts/copy-resources.mjs",
+    "test": "tsx --test tests/*.test.ts",
+    "start": "electron .",
+    "package": "node scripts/prepare-package.mjs && electron-builder --win nsis --x64"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.2.6",
+    "cesium": "1.133.0",
+    "fflate": "0.8.2",
+    "geographiclib-geodesic": "2.2.0",
+    "moment-timezone": "0.6.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "sql.js": "1.13.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
+    "electron": "38.2.0",
+    "electron-builder": "26.0.12",
+    "prettier": "3.6.2",
+    "tsx": "4.20.5",
+    "typescript": "5.9.2",
+    "vite": "7.1.7"
+  },
+  "build": {
+    "appId": "local.airjourney.app",
+    "productName": "AirJourney",
+    "directories": {
+      "output": "release",
+      "app": ".tools/desktop-app"
+    },
+    "files": [
+      "dist/**/*",
+      "desktop/**/*",
+      "package.json",
+      "node_modules/sql.js/**/*"
+    ],
+    "asar": true,
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false,
+      "icon": "public/app.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "AirJourney-v0.0-${arch}-setup.${ext}",
+      "installerIcon": "public/app.ico",
+      "uninstallerIcon": "public/app.ico"
+    },
+    "npmRebuild": false
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "name": "four custom field types save and preserve raw values",
+      "status": "PASS",
+      "detail": {
+        "398fa7df-45c0-4954-8700-207bf6e7f065": "测试 custom",
+        "ffd796ae-de37-4d9c-9634-931a434784c4": "42.5",
+        "72a81add-8ef6-4fe3-9de8-ee8eb8ad7ff6": "2026-01-02",
+        "fb16e2c5-fecd-498b-8fc3-8b7cff017506": "Window"
+      }
+    },
+    {
+      "name": "changing field type archives old definition and value",
+      "status": "PASS"
+    },
+    {
+      "name": "global route width setting saves",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate uses distinct UUID",
+      "status": "PASS"
+    },
+    {
+      "name": "explicit permanent deletion removes only test duplicate",
+      "status": "PASS"
+    },
+    {
+      "name": "same airport distance zero and ring route",
+      "status": "PASS"
+    }
+  ],
+  "observations": [
+    {
+      "id": "AF-03",
+      "expected": {
+        "theme": "Dark",
+        "units": "km"
+      },
+      "actual": {
+        "theme": "Light",
+        "units": "km"
+      },
+      "note": "Two ordinary setting changes dispatched before first save completes; no artificial save delay."
+    }
+  ]
+}

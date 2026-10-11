@@ -1,0 +1,65 @@
+{
+  "version": "v0.0",
+  "installer_sha256": "b73956c7ae8c144eaa8b99c3444dbb3fad97213cf73ccb046262edcccd556b9a",
+  "unitAssertions": 14,
+  "installedDesktopScenarios": 16,
+  "allSelectedAssertionsPassed": true,
+  "physicalNetworkDisconnected": false,
+  "cleanMachine": false,
+  "independentAcceptance": "NOT RUN",
+  "evidence": [
+    {
+      "path": "evidence/build.log",
+      "sha256": "912b4dc75e1e72ef00856d910fce074a9deb0a60ea5074f7b54bd49781b54ea4",
+      "bytes": 3839
+    },
+    {
+      "path": "evidence/unit-tests.log",
+      "sha256": "d47fb12b23bb7d2e3a326026ce77bbde9b607ba7852b0ad8511b7dab36683423",
+      "bytes": 1487
+    },
+    {
+      "path": "evidence/package-final.log",
+      "sha256": "1c190c61ac99f4ea6fe80893a7448dfed9c0e260b06a348b766675ff390f8fa4",
+      "bytes": 1017
+    },
+    {
+      "path": "evidence/install-final.json",
+      "sha256": "a74546be20579f17285fb4de70d96a92e792bcf9a3028dc5e2f2d0e9750f07e0",
+      "bytes": 172
+    },
+    {
+      "path": "evidence/hardware-gpu.json",
+      "sha256": "bbc529648d79d7e935101007e45dcaee8fa3eec657e9826fe07ef826560b7fa2",
+      "bytes": 187
+    },
+    {
+      "path": "evidence/hardware-memory.json",
+      "sha256": "e3eaa175ba489f4a6e221d194917645370b5a5adb1105ba647dcb3094e53932f",
+      "bytes": 80
+    },
+    {
+      "path": "evidence/installed-release-smoke/smoke-results.json",
+      "sha256": "f20095869e115928050a2d17b203f10b8b60fd71980db8d750d61ea749d08785",
+      "bytes": 6692
+    },
+    {
+      "path": "evidence/installed-release-smoke/request-audit.json",
+      "sha256": "1fc47202f69fe93042c1187c8252e202e3e19494f346dd4acafd23f8f1f9ac68",
+      "bytes": 1539
+    },
+    {
+      "path": "evidence/release-benchmark/benchmark.json",
+      "sha256": "cc9691a37c9831b89bbd00aa5e2dc585d87ed10bd684fcacf59292d2466dc374",
+      "bytes": 3966
+    }
+  ],
+  "performanceProbe": {
+    "records": 1000,
+    "searchP95ms": 54.299999952316284,
+    "storageCommitP95ms": 30.200000047683716,
+    "interactive5secMedianFPS": 153.84615384615384,
+    "baselineMachine": false,
+    "fullAcceptanceBenchmark": false
+  }
+}
