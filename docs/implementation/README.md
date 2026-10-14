@@ -1,6 +1,10 @@
+> 当前 v0.2 同版本更新记录位于 [map-and-location-update](v0.2/map-and-location-update/implementation_summary.md)，旧的手工位置能力以16号补充范围撤销。
+
 # 实现与交付记录
 
-当前本地候选为 [v0.1](v0.1/implementation_summary.md)，工程版本 0.1.0。最新测试、已知问题、构建安装和交付清单均位于 `v0.1/`。
+当前本地候选为 [v0.2](v0.2/implementation_summary.md)，工程版本0.2.0。最新实现、测试、已知问题、构建安装/备份、资源和需求追踪均位于v0.2/；产物在release/v0.2/。
+
+本轮仅本地实现、测试与打包，v0.2没有GitHub推送、PR、Release或上传。下列v0.1发布/验收记录为历史事件，不能推定v0.2已发布或独立通过。
 
 v0.1 本地实现阶段只授权本地测试与打包；该阶段记录保留原样。用户随后另行授权上传 GitHub，发布目标与产物说明见 [github_release_v0.1.md](github_release_v0.1.md)。
 

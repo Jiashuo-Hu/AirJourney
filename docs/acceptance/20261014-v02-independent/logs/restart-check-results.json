@@ -1,0 +1,10 @@
+{
+  "mode": "restart-check",
+  "results": [
+    {
+      "name": "normal-mode actual restart preserves every object",
+      "status": "PASS"
+    }
+  ],
+  "observations": []
+}

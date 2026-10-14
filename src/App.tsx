@@ -1,3 +1,4 @@
+import { assertLocationsLocked } from "./location-lock";
 import { APP_VERSION } from "./version";
 import { useEffect, useMemo, useRef, useState } from "react";
 import moment from "moment-timezone";
@@ -26,6 +27,8 @@ import { FlightEditor } from "./FlightEditor";
 import { Library } from "./Library";
 import { Settings } from "./Settings";
 import { serialMutations, type StateMutation } from "./state-updates";
+import { AirportSearch, loadAirportCatalog, locationLabel } from "./airports";
+import type { Reference } from "./types";
 function blank(): Flight {
   return {
     id: crypto.randomUUID(),
@@ -46,6 +49,7 @@ function blank(): Flight {
   };
 }
 export function App() {
+  const [catalogue, setCatalogue] = useState<Reference[]>([]);
   const [state, setState] = useState<State | null>(null),
     [fatal, setFatal] = useState(""),
     [notice, setNotice] = useState(""),
@@ -71,15 +75,32 @@ export function App() {
       body: string;
       action: () => void;
     } | null>(null),
-    [pick, setPick] = useState<{
-      callback: (lat: number, lon: number) => void;
-    } | null>(null),
-    [location, setLocation] = useState<number[] | null>(null),
     [focusRequest, setFocusRequest] = useState(0),
     [busy, setBusy] = useState(false);
   const current = useRef(state),
     queue = useRef<ReturnType<typeof serialMutations> | null>(null),
     pending = useRef(0);
+  const airportIndex = useMemo(
+    () => new AirportSearch(catalogue, state?.library.Airports || []),
+    [catalogue, state?.library.Airports],
+  );
+  const flightAirportIndex = useMemo(
+    () =>
+      new AirportSearch(
+        catalogue,
+        (state?.library.Airports || []).filter((r) =>
+          airportIndex.canonicalFor(r),
+        ),
+      ),
+    [catalogue, airportIndex],
+  );
+  useEffect(() => {
+    loadAirportCatalog()
+      .then(setCatalogue)
+      .catch((e) =>
+        setNotice(String(e) + " Your personal Library is still available."),
+      );
+  }, []);
   if (!queue.current)
     queue.current = serialMutations(
       () => current.current,
@@ -145,11 +166,17 @@ export function App() {
     const t = setTimeout(() => setNotice(""), 6500);
     return () => clearTimeout(t);
   }, [notice]);
-  async function commit(change: StateMutation) {
+  async function commit(change: StateMutation, restoreBackup = false) {
     pending.current++;
     setBusy(true);
     try {
-      await queue.current!(change);
+      await queue.current!((s) => {
+        const previous = current.current!;
+        const next = change(s);
+        if (!restoreBackup)
+          assertLocationsLocked(previous, next, airportIndex.baseById);
+        return next;
+      });
       return true;
     } catch (e) {
       setNotice(
@@ -251,18 +278,6 @@ export function App() {
             flights: [...latest.flights.filter((v) => v.id !== f.id), f],
             tags: [...new Set([...latest.tags, ...f.tags])],
           };
-          for (const place of [f.from, f.to])
-            if (
-              place.name &&
-              !s.library.Airports.some((r) => r.id === place.id)
-            )
-              s.library = {
-                ...s.library,
-                Airports: [
-                  ...s.library.Airports,
-                  { ...place, overrides: undefined, source: "Custom" },
-                ],
-              };
           return s;
         })
       ) {
@@ -271,7 +286,7 @@ export function App() {
         setNotice(
           hasLocation(f.from) && hasLocation(f.to)
             ? "Flight saved."
-            : "Flight saved. Add airport coordinates to show its route.",
+            : "Flight saved. Choose supplied airports to show its route.",
         );
       }
     } catch (e) {
@@ -388,7 +403,7 @@ export function App() {
             s.tags = [...new Set([...s.tags, ...preview.tags])];
           }
           return s;
-        })
+        }, true)
       ) {
         setIncoming(null);
         setSelected(null);
@@ -501,9 +516,6 @@ export function App() {
             </button>
           ))}
         </nav>
-        <span className="local-status">
-          <i /> Local only
-        </span>
       </header>
       <main inert={modalOpen}>
         <aside
@@ -516,40 +528,16 @@ export function App() {
                 <FlightEditor
                   value={draft}
                   state={state}
+                  airportIndex={flightAirportIndex}
                   onChange={setDraft}
                   onSave={saveDraft}
                   onCancel={cancelDraft}
-                  onPick={(which) =>
-                    setPick({
-                      callback: (lat, lon) =>
-                        setDraft((v) =>
-                          v
-                            ? {
-                                ...v,
-                                [which]: {
-                                  ...v[which],
-                                  lat,
-                                  lon,
-                                  overrides: [
-                                    ...new Set([
-                                      ...(v[which].overrides || []),
-                                      "lat",
-                                      "lon",
-                                    ]),
-                                  ],
-                                },
-                              }
-                            : v,
-                        ),
-                    })
-                  }
                 />
               ) : (
                 <>
                   <div className="panel-head">
                     <div>
-                      <span className="eyebrow">YOUR FLIGHT JOURNAL</span>
-                      <h2>{trash ? "Trash" : "Journeys"}</h2>
+                      <h2>{trash ? "Trash" : "Flights"}</h2>
                     </div>
                     <button className="primary" onClick={add}>
                       + Add flight
@@ -606,12 +594,13 @@ export function App() {
                         { id: "Unknown", name: "Unknown" },
                         ...state.library.Airlines,
                       ])}
-                      {multiselect(
-                        "Airport",
-                        ports,
-                        setPorts,
-                        state.library.Airports,
-                      )}
+                      {multiselect("Airport", ports, setPorts, [
+                        ...new Map(
+                          state.flights
+                            .flatMap((f) => [f.from, f.to])
+                            .map((r) => [r.id, r]),
+                        ).values(),
+                      ])}
                       {multiselect(
                         "Tags",
                         tags,
@@ -666,14 +655,18 @@ export function App() {
                           maximumFractionDigits: 0,
                         })}
                       </strong>
-                      <span>{p.units} recorded*</span>
+                      <span title="Recorded flights; manual distances or geographic estimates">
+                        {p.units}
+                      </span>
                     </div>
                   </div>
-                  <p className="coverage">
-                    {missing} need location · {hidden} hidden · {known.length}{" "}
-                    distances known / {meters.length - known.length} unknown ·{" "}
-                    {estimated} estimates
-                  </p>
+                  {(missing > 0 || hidden > 0) && (
+                    <p className="coverage">
+                      {missing > 0 ? `${missing} need location` : ""}
+                      {missing > 0 && hidden > 0 ? " · " : ""}
+                      {hidden > 0 ? `${hidden} hidden` : ""}
+                    </p>
+                  )}
                   <div className="flight-list">
                     {!filtered.length && (
                       <div className="empty">
@@ -770,6 +763,15 @@ export function App() {
                             <p>
                               {f.from.name} → {f.to.name}
                             </p>
+                            {[f.from, f.to].some(
+                              (r) =>
+                                r.locationKind === "approximate" ||
+                                !hasLocation(r),
+                            ) && (
+                              <p className="location-status">
+                                {locationLabel(f.from)} → {locationLabel(f.to)}
+                              </p>
+                            )}
                             <p>
                               {f.allianceLogo && (
                                 <img
@@ -901,17 +903,14 @@ export function App() {
                       </div>
                     ))}
                   </div>
-                  <div className="sidebar-foot">
-                    * Recorded flights only · Personal records, no verification
-                  </div>
                 </>
               ))}
             {page === "Library" && (
               <Library
+                airportIndex={airportIndex}
                 state={state}
                 onCommit={commit}
                 onNotice={setNotice}
-                onPick={(callback) => setPick({ callback })}
               />
             )}{" "}
             {page === "Settings" && (
@@ -1069,8 +1068,6 @@ export function App() {
             selected={selected}
             settings={p}
             onSelect={choose}
-            picking={!!pick}
-            onPick={(lat, lon) => setLocation([lat, lon])}
             onHome={(home) =>
               commit((latest) => ({
                 ...latest,
@@ -1094,10 +1091,6 @@ export function App() {
           >
             {side ? "◧ Hide sidebar" : "◨ Show sidebar"}
           </button>
-          <div className="map-count">
-            <strong>{mapped.length}</strong> mapped flights{" "}
-            <span>· {missing} need location</span>
-          </div>
         </div>
       </main>
       {notice && (
@@ -1112,40 +1105,6 @@ export function App() {
         </div>
       )}
       {busy && <div className="saving">Saving locally…</div>}
-      {pick && (
-        <div className="location-prompt">
-          <strong>
-            {location
-              ? "Confirm WGS84 location"
-              : "Pick a location on the globe"}
-          </strong>
-          <p>
-            {location
-              ? `${location[0].toFixed(6)}, ${location[1].toFixed(6)}`
-              : "Rotate or zoom, then click the earth."}
-          </p>
-          {location && (
-            <button
-              className="primary"
-              onClick={() => {
-                pick.callback(location[0], location[1]);
-                setPick(null);
-                setLocation(null);
-              }}
-            >
-              Confirm location
-            </button>
-          )}
-          <button
-            onClick={() => {
-              setPick(null);
-              setLocation(null);
-            }}
-          >
-            Cancel
-          </button>
-        </div>
-      )}
       {confirm && (
         <div className="modal-backdrop">
           <div

@@ -1,0 +1,18 @@
+{
+  "mode": "fixture-flights",
+  "results": [
+    {
+      "name": "approximate provenance stays explicit in saved detail",
+      "status": "PASS"
+    },
+    {
+      "name": "unlocated source remains absent in record",
+      "status": "PASS"
+    },
+    {
+      "name": "custom shared code entries remain distinct",
+      "status": "PASS"
+    }
+  ],
+  "observations": []
+}

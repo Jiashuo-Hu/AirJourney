@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { lockedReference, sameCoordinates } from "./location-lock";
+import { useMemo, useRef, useState } from "react";
+import { AirportSearch, locationLabel } from "./airports";
 import type { Reference, State } from "./types";
 import {
   hasLocation,
@@ -12,14 +14,14 @@ import { parseReferenceCSV, referenceCSV } from "./library-csv";
 import type { StateMutation } from "./state-updates";
 export function Library({
   state,
+  airportIndex,
   onCommit,
   onNotice,
-  onPick,
 }: {
   state: State;
+  airportIndex: AirportSearch;
   onCommit: (change: StateMutation) => Promise<boolean>;
   onNotice: (s: string) => void;
-  onPick: (callback: (lat: number, lon: number) => void) => void;
 }) {
   const [kind, setKind] = useState("Airports"),
     [query, setQuery] = useState(""),
@@ -31,12 +33,32 @@ export function Library({
       entries: Reference[];
     } | null>(null),
     [replace, setReplace] = useState(false);
+  const drafts = useRef<Record<string, Reference | null>>({});
+  const [offset, setOffset] = useState(0);
+  const found = useMemo(
+    () =>
+      kind === "Airports"
+        ? airportIndex.search(query, 60, offset, showHidden)
+        : new AirportSearch(state.library[kind]).search(
+            query,
+            60,
+            offset,
+            showHidden,
+          ),
+    [kind, airportIndex, state.library[kind], query, offset, showHidden],
+  );
+  const bundled =
+    kind === "Airports"
+      ? airportIndex.byId
+      : new Map(seedLibrary[kind].map((r) => [r.id, r]));
   const used = edit
     ? state.flights.filter((f) =>
         referenceUsedBy(
           f,
           kind,
-          state.library[kind].find((r) => r.id === edit.id) || edit,
+          state.library[kind].find((r) => r.id === edit.id) ||
+            bundled.get(edit.id) ||
+            edit,
         ),
       )
     : [];
@@ -54,15 +76,30 @@ export function Library({
       onNotice("Enter a valid complete WGS84 coordinate pair, or clear both.");
       return;
     }
-    const e = {
+    let e: Reference = {
       ...edit,
       source:
-        edit.source === "Bundled" ? "User edited" : edit.source || "Custom",
+        edit.source?.startsWith("OurAirports") || edit.source === "Bundled"
+          ? "User edited"
+          : edit.source || "Custom",
     };
+    if (kind === "Airports") {
+      const original =
+        state.library.Airports.find((r) => r.id === e.id) ||
+        airportIndex.baseById.get(e.id);
+      if (!original) {
+        onNotice("Choose a supplied airport. Airport creation is disabled.");
+        return;
+      }
+      e = lockedReference(e, original);
+    }
     const target = kind;
     if (
       await onCommit((s) => {
-        const previous = s.library[target].find((r) => r.id === e.id) || e;
+        const previous =
+          s.library[target].find((r) => r.id === e.id) ||
+          bundled.get(e.id) ||
+          e;
         const idx = s.library[kind].findIndex((r) => r.id === e.id);
         if (idx < 0) s.library[kind].push(e);
         else s.library[kind][idx] = e;
@@ -74,6 +111,7 @@ export function Library({
       })
     ) {
       setEdit(null);
+      drafts.current[target] = null;
       setReview(false);
       onNotice(
         apply
@@ -123,6 +161,28 @@ export function Library({
           safeSvg(decodeURIComponent(escape(atob(r.logo.split(",")[1]))));
         }
       }
+      if (kind === "Airports")
+        data.entries = data.entries.map((r: Reference) => {
+          const original =
+            state.library.Airports.find((x) => x.id === r.id) ||
+            airportIndex.baseById.get(r.id) ||
+            airportIndex.canonicalFor(r);
+          if (!original)
+            throw Error(
+              "Airport imports update supplied entries only. New locations are not supported.",
+            );
+          if (
+            (r.lat !== undefined || r.lon !== undefined) &&
+            !sameCoordinates(r, original)
+          )
+            throw Error(
+              "Airport coordinates are locked. Import metadata only, without changed coordinates.",
+            );
+          return lockedReference(
+            { ...original, ...r, id: original.id },
+            original,
+          );
+        });
       setIncoming({ kind, entries: data.entries });
       setReplace(false);
     } catch (e) {
@@ -133,18 +193,19 @@ export function Library({
     <div className="panel library">
       <div className="panel-head">
         <div>
-          <span className="eyebrow">MAKE IT YOURS</span>
           <h2>Library</h2>
         </div>
-        <button
-          className="primary"
-          onClick={() => {
-            setEdit({ id: crypto.randomUUID(), name: "", source: "Custom" });
-            setReview(false);
-          }}
-        >
-          + Add new
-        </button>
+        {kind !== "Airports" && (
+          <button
+            className="primary"
+            onClick={() => {
+              setEdit({ id: crypto.randomUUID(), name: "", source: "Custom" });
+              setReview(false);
+            }}
+          >
+            + Add new
+          </button>
+        )}
       </div>
       <div className="tabs">
         {Object.keys(state.library).map((k) => (
@@ -152,8 +213,12 @@ export function Library({
             className={kind === k ? "active" : ""}
             key={k}
             onClick={() => {
+              drafts.current[kind] = edit;
               setKind(k);
-              setEdit(null);
+              setEdit(drafts.current[k] || null);
+              setQuery("");
+              setOffset(0);
+              setReview(false);
             }}
           >
             {k}
@@ -166,41 +231,58 @@ export function Library({
           placeholder={`Search ${kind.toLowerCase()}`}
           aria-label="Search Library"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setOffset(0);
+          }}
         />
       </div>
       <div className="row">
         <button onClick={importData}>Import</button>
-        <button
-          onClick={() =>
-            exportFile(
-              `airjourney-${kind.toLowerCase()}.json`,
-              new TextEncoder().encode(
-                JSON.stringify({ kind, entries: state.library[kind] }, null, 2),
-              ),
-            )
-          }
-        >
-          Export
-        </button>
-        <button
-          onClick={() =>
-            exportFile(
-              `airjourney-${kind.toLowerCase()}.csv`,
-              new TextEncoder().encode(referenceCSV(state.library[kind])),
-            )
-          }
-        >
-          CSV
-        </button>
-        <label className="check">
-          <input
-            type="checkbox"
-            checked={showHidden}
-            onChange={(e) => setShowHidden(e.target.checked)}
-          />
-          Show hidden
-        </label>
+        <details className="data-tools">
+          <summary>Data tools</summary>
+          <button
+            onClick={() =>
+              exportFile(
+                `airjourney-${kind.toLowerCase()}.json`,
+                new TextEncoder().encode(
+                  JSON.stringify(
+                    { kind, entries: state.library[kind] },
+                    null,
+                    2,
+                  ),
+                ),
+              )
+            }
+          >
+            Export personal JSON
+          </button>
+          <button
+            onClick={() =>
+              exportFile(
+                `airjourney-${kind.toLowerCase()}.csv`,
+                new TextEncoder().encode(referenceCSV(state.library[kind])),
+              )
+            }
+          >
+            Export personal CSV
+          </button>
+          <label className="check">
+            <input
+              type="checkbox"
+              checked={showHidden}
+              onChange={(e) => {
+                setShowHidden(e.target.checked);
+                setOffset(0);
+              }}
+            />
+            Show hidden
+          </label>
+          <small>
+            Exports contain your saved entries and overrides. The global base
+            stays bundled.
+          </small>
+        </details>
       </div>
       {edit ? (
         <div className="library-edit">
@@ -247,52 +329,23 @@ export function Library({
                   />
                 </label>
               </div>
-              <div className="two">
-                <label>
-                  Latitude
-                  <input
-                    type="number"
-                    step="any"
-                    value={edit.lat ?? ""}
-                    onChange={(e) =>
-                      patch({
-                        lat:
-                          e.target.value === ""
-                            ? undefined
-                            : Number(e.target.value),
-                      })
-                    }
-                  />
-                </label>
-                <label>
-                  Longitude
-                  <input
-                    type="number"
-                    step="any"
-                    value={edit.lon ?? ""}
-                    onChange={(e) =>
-                      patch({
-                        lon:
-                          e.target.value === ""
-                            ? undefined
-                            : Number(e.target.value),
-                      })
-                    }
-                  />
-                </label>
-              </div>
-              <div className="row">
-                <button
-                  onClick={() => onPick((lat, lon) => patch({ lat, lon }))}
-                >
-                  Pick on globe
-                </button>
-                <button
-                  onClick={() => patch({ lat: undefined, lon: undefined })}
-                >
-                  Clear location
-                </button>
-              </div>
+              <details className="advanced">
+                <summary>Fixed airport location</summary>
+                <dl>
+                  <dt>Coordinates</dt>
+                  <dd>
+                    {hasLocation(edit)
+                      ? `${edit.lat!.toFixed(6)}, ${edit.lon!.toFixed(6)}`
+                      : "Not supplied"}
+                  </dd>
+                  <dt>Source</dt>
+                  <dd>
+                    {edit.locationSource ||
+                      edit.source ||
+                      "Preserved legacy entry"}
+                  </dd>
+                </dl>
+              </details>
               <label>
                 Time zone / offset
                 <input
@@ -370,25 +423,36 @@ export function Library({
             <button onClick={() => setReview(true)} disabled={!used.length}>
               Review changes to existing flights
             </button>
+            {kind !== "Airports" && (
+              <button
+                onClick={() => {
+                  const base =
+                    seedLibrary[kind].find((r) => r.id === edit.id) ||
+                    airportIndex.baseById.get(edit.id);
+                  if (base) setEdit(structuredClone(base));
+                  else onNotice("This custom entry has no bundled default.");
+                }}
+              >
+                Restore bundled values
+              </button>
+            )}
             <button
               onClick={() => {
-                const base = seedLibrary[kind].find((r) => r.id === edit.id);
-                if (base) setEdit(structuredClone(base));
-                else onNotice("This custom entry has no bundled default.");
+                drafts.current[kind] = null;
+                setEdit(null);
               }}
             >
-              Restore bundled values
+              Cancel
             </button>
-            <button onClick={() => setEdit(null)}>Cancel</button>
           </div>
           {review && (
             <div className="review">
               <h3>Review snapshot changes</h3>
               <p>
-                Update name, code, coordinates / zone suggestion, and logo in{" "}
-                {used.length} flight snapshots. Manual distance, entered time
-                zones and individual alliance overrides stay as entered. Time
-                zone suggestions may need review.
+                Update name, code, zone suggestion, and logo in {used.length}{" "}
+                flight snapshots. Manual distance, entered time zones, fixed
+                airport locations and individual alliance overrides stay as
+                entered. Time zone suggestions may need review.
               </p>
               <pre>
                 {JSON.stringify(
@@ -417,39 +481,60 @@ export function Library({
         </div>
       ) : (
         <div className="reference-list">
-          {state.library[kind]
-            .filter(
-              (r) =>
-                (showHidden || !r.hidden) &&
-                [r.name, r.code, r.city, r.aliases]
-                  .join(" ")
-                  .toLowerCase()
-                  .includes(query.toLowerCase()),
-            )
-            .map((r) => (
-              <button
-                className="reference-row"
-                key={r.id}
-                onClick={() => {
-                  setEdit(structuredClone(r));
-                  setReview(false);
-                }}
-              >
-                {r.logo ? (
-                  <img src={r.logo} alt="" />
-                ) : (
-                  <span className="reference-icon">{r.code || "◇"}</span>
-                )}
-                <span>
-                  <strong>{r.name}</strong>
+          <div className="library-count">
+            {found.total.toLocaleString("en-US")} entries
+            {kind === "Airports" ? " · local catalogue + personal" : ""}
+          </div>
+          {found.results.map((r) => (
+            <button
+              className="reference-row"
+              key={r.id}
+              onClick={() => {
+                setEdit(structuredClone(r));
+                setReview(false);
+              }}
+            >
+              {r.logo ? (
+                <img src={r.logo} alt="" />
+              ) : (
+                <span className="reference-icon">{r.code || "◇"}</span>
+              )}
+              <span>
+                <strong>{r.name}</strong>
+                <small>
+                  {[r.code, r.city, r.region].filter(Boolean).join(" · ")}{" "}
+                  {r.hidden ? "· Hidden" : ""}
+                </small>
+                {kind === "Airports" && (
                   <small>
-                    {r.code} {r.city} · {r.source || "Custom"}{" "}
-                    {r.hidden ? "· Hidden" : ""}
+                    {locationLabel(r)} ·{" "}
+                    {r.airportType?.replaceAll("_", " ") ||
+                      r.source ||
+                      "Custom"}
                   </small>
-                </span>
-                <span>›</span>
-              </button>
-            ))}
+                )}
+              </span>
+              <span>›</span>
+            </button>
+          ))}
+          <div className="row">
+            <button
+              disabled={offset === 0}
+              onClick={() => setOffset((v) => Math.max(0, v - 60))}
+            >
+              Previous
+            </button>
+            <small>
+              {found.total ? offset + 1 : 0}–
+              {Math.min(offset + 60, found.total)} of {found.total}
+            </small>
+            <button
+              disabled={offset + 60 >= found.total}
+              onClick={() => setOffset((v) => v + 60)}
+            >
+              Next
+            </button>
+          </div>
         </div>
       )}
       {incoming && (

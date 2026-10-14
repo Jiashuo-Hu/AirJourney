@@ -11,6 +11,14 @@ export type Place = {
   aliases?: string;
   hidden?: boolean;
   source?: string;
+  ident?: string;
+  iata?: string;
+  icao?: string;
+  countryCode?: string;
+  airportType?: string;
+  scheduled?: boolean;
+  locationKind?: "airport" | "approximate" | "manual" | "unlocated";
+  locationSource?: string;
 };
 export type Reference = Place & {
   alliance?: string;

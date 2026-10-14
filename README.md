@@ -1,14 +1,16 @@
-# AirJourney v0.1
+# AirJourney v0.2
 
 高度自由、可自定义的Windows个人飞行旅程记录App。用户手动提供航班信息，App本地保存并在三维地球上呈现示意路线。
 
-当前版本为 v0.1（工程 0.1.0），按照 [本轮提示词](docs/planning/13_V0_1_IMPLEMENTATION_PROMPT.md)完成地图、缩放交互和航线改进，并修复 AF-01–AF-05。历史 v0.0 报告与产物保留。[独立 v0.1 验收](docs/acceptance/20261011-v01-independent/report.md)结论为基本功能通过；新发现1项P2和2项P3，详见[缺陷清单](docs/acceptance/20261011-v01-independent/issues.md)。
+当前版本为 v0.2（工程 0.2.0），依据[本轮范围](docs/planning/15_V0_2_SCOPE.md)扩充86,242条全球机场资料、247个国家/地区代码，加入可搜索机场选择与明确位置类型，并收纳常驻说明和低频选项。个人元数据与原航班快照保留；机场位置按16号范围固定。历史 v0.0/v0.1 报告与产物保留；本次地图与位置更新已通过[轻量独立验收](docs/acceptance/20261014-v02-map-followup/report.md)，完整设备与长期测试仍未完成。
 
-安装包 `release/v0.1/AirJourney-v0.1-x64-setup.exe`；源码包 `release/v0.1/AirJourney-v0.1-source.zip`；SHA-256 和完整交付清单在同目录。
+最新更新：[地图、悬停标签与固定机场位置](docs/implementation/v0.2/map-and-location-update/implementation_summary.md)、[更新测试](docs/implementation/v0.2/map-and-location-update/test_report.md)。版本保持v0.2/0.2.0，原交付快照保留。
 
-本地实现阶段结束后，用户另行授权上传 GitHub，发布目标为 [v0.1](https://github.com/Jiashuo-Hu/AirJourney/releases/tag/v0.1)。[发布说明](docs/implementation/github_release_v0.1.md)记录产物与已知问题。项目代码使用根目录 MIT LICENSE；第三方资源各自的来源、许可与限制见清单。
+安装包 `release/v0.2/AirJourney-v0.2-x64-setup.exe`；源码包 `release/v0.2/AirJourney-v0.2-source.zip`；SHA-256 和完整交付清单在同目录。
 
-交付与检查：[v0.1 实现记录](docs/implementation/v0.1/implementation_summary.md)、[自测报告](docs/implementation/v0.1/test_report.md)、[已知问题](docs/implementation/v0.1/known_issues.md)、[需求追踪](docs/implementation/v0.1/requirements_traceability.csv)、[构建安装](docs/implementation/v0.1/build_and_install.md)、[备份恢复](docs/implementation/backup_and_restore.md)、[资源清单](docs/implementation/v0.1/resource_manifest.csv)、[历史独立验收](docs/acceptance/20261010-independent-functional/report.md)。
+简要历史更新见 [update_log.txt](update_log.txt)。2026-10-14 用户另行授权将当前项目同步到 GitHub；本次更新仓库源码、资源、文档及验收记录，不创建 PR 或 Release。安装产物、依赖、缓存及个人运行数据不提交到 Git。此前v0.1的授权发布记录见[历史发布说明](docs/implementation/github_release_v0.1.md)。项目代码使用根目录 MIT LICENSE；第三方资源各自的来源、许可与限制见清单。实现报告中的“仅本地、未上传”描述当时交付状态。
+
+交付与检查：[v0.2实现记录](docs/implementation/v0.2/implementation_summary.md)、[自测报告](docs/implementation/v0.2/test_report.md)、[已知问题](docs/implementation/v0.2/known_issues.md)、[需求追踪](docs/implementation/v0.2/requirements_traceability.csv)、[构建安装/备份](docs/implementation/v0.2/build_and_install.md)、[机场覆盖与来源](public/data/airports-global-manifest.json)、[资源清单](docs/implementation/v0.2/resource_manifest.csv)、[历史v0.1独立验收](docs/acceptance/20261011-v01-independent/report.md)。
 
 ```powershell
 npm ci --no-audit --no-fund

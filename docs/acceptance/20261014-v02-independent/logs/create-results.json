@@ -1,0 +1,22 @@
+{
+  "mode": "create",
+  "results": [
+    {
+      "name": "native typed identifier and actual version",
+      "status": "PASS"
+    },
+    {
+      "name": "bundled global data matches local resource and multiple regions search correctly",
+      "status": "PASS",
+      "detail": {
+        "countries": 14,
+        "rows": 86242
+      }
+    },
+    {
+      "name": "global airports saved as snapshots without catalog inflation",
+      "status": "PASS"
+    }
+  ],
+  "observations": []
+}

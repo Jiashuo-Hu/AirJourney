@@ -1,4 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { attachMapLoop, type MapDiagnostics } from "./map-runtime";
+import {
+  airportHoverCode,
+  fadeLabel,
+  selectLabels,
+  type LabelBox,
+} from "./map-label-layout";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as C from "@cesium/engine";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import type { Flight, Settings } from "./types";
@@ -15,8 +22,6 @@ export function Globe({
   selected,
   settings,
   onSelect,
-  picking,
-  onPick,
   onHome,
   onView,
   focusRequest,
@@ -25,27 +30,189 @@ export function Globe({
   selected: string | null;
   settings: Settings;
   onSelect: (id: string) => void;
-  picking: boolean;
-  onPick: (lat: number, lon: number) => void;
   onHome: (v: number[]) => void;
   onView: (v: number[]) => void;
   focusRequest: number;
 }) {
   const host = useRef<HTMLDivElement>(null),
     viewer = useRef<C.CesiumWidget | null>(null),
-    clicks = useRef({ onSelect, onPick, picking, onView }),
+    clicks = useRef({ onSelect, onView }),
     [error, setError] = useState(""),
     [ready, setReady] = useState(0),
-    [group, setGroup] = useState<string[]>([]);
-  clicks.current = { onSelect, onPick, picking, onView };
+    [group, setGroup] = useState<string[]>([]),
+    [generation, setGeneration] = useState(0);
+  const savedCamera = useRef<
+      | { position: number[]; heading: number; pitch: number; roll: number }
+      | undefined
+    >(undefined),
+    hoverIds = useRef<string[]>([]),
+    nodes = useRef(new Map<string, HTMLSpanElement>()),
+    alpha = useRef(new Map<string, number>()),
+    failures = useRef<number[]>([]),
+    lastFocus = useRef<{ selected: string | null; request: number } | null>(
+      null,
+    ),
+    labelUpdate = useRef((elapsed: number) => {}),
+    diagnostic = useRef<MapDiagnostics>({
+      frames: 0,
+      skippedFrames: 0,
+      rebuilds: 0,
+      errors: [],
+      lastViewport: [],
+      state: "starting",
+    });
+  const geometryKey = JSON.stringify(
+    flights.map((f) => ({
+      id: f.id,
+      from: f.from,
+      to: f.to,
+      visible: f.visible,
+      color: f.color,
+    })),
+  );
+  const labels = useMemo(() => {
+    const ports = new Map<
+      string,
+      {
+        id: string;
+        text: string;
+        lon: number;
+        lat: number;
+        ids: string[];
+        airport: boolean;
+        priority: number;
+      }
+    >();
+    for (const f of flights.filter((f) => f.visible))
+      for (const p of [f.from, f.to]) {
+        const code = airportHoverCode(p);
+        if (!hasLocation(p) || !code) continue;
+        const id = "airport-" + p.id + "@" + p.lon + "," + p.lat;
+        const e = ports.get(id) || {
+          id,
+          text: code.toUpperCase(),
+          lon: p.lon!,
+          lat: p.lat!,
+          ids: [],
+          airport: true,
+          priority: 1000,
+        };
+        e.ids.push(f.id);
+        ports.set(id, e);
+      }
+    return [
+      ...ports.values(),
+      ...mapLabels.map((p) => ({
+        id: "country-" + p.name,
+        text: p.name,
+        lon: p.lon,
+        lat: p.lat,
+        ids: [],
+        airport: false,
+        priority: p.priority,
+      })),
+    ];
+  }, [geometryKey]);
+  labelUpdate.current = (elapsed) => {
+    const v = viewer.current;
+    if (!v) return;
+    const cam = C.Cartesian3.normalize(v.camera.positionWC, new C.Cartesian3()),
+      horizon = 6378137 / C.Cartesian3.magnitude(v.camera.positionWC) + 0.02;
+    const boxes: LabelBox[] = [],
+      airportBoxes: LabelBox[] = [],
+      positions = new Map<string, { x: number; y: number }>(),
+      desired = new Set<string>();
+    for (const d of labels) {
+      const node = nodes.current.get(d.id);
+      if (!node) continue;
+      const pos = C.Cartesian3.fromDegrees(d.lon, d.lat, 8000),
+        front =
+          C.Cartesian3.dot(
+            C.Cartesian3.normalize(pos, new C.Cartesian3()),
+            cam,
+          ) > horizon;
+      const p = v.scene.cartesianToCanvasCoordinates(pos);
+      const visible =
+        !!p &&
+        front &&
+        p.x > (node.offsetWidth || 40) / 2 + 8 &&
+        p.x < v.canvas.clientWidth - (node.offsetWidth || 40) / 2 - 8 &&
+        p.y > 12 &&
+        p.y < v.canvas.clientHeight - 12 &&
+        settings.labels;
+      if (!p) continue;
+      let x = p.x,
+        y = p.y;
+      const b = {
+        id: d.id,
+        x,
+        y,
+        width: node.offsetWidth || d.text.length * 8 + 14,
+        height: 22,
+        priority: d.priority,
+        visible,
+      };
+      if (d.airport) {
+        b.visible =
+          visible && d.ids.some((id) => hoverIds.current.includes(id));
+        y -= 22;
+        for (
+          let n = 0;
+          n < 5 &&
+          airportBoxes.some(
+            (a) =>
+              Math.abs(a.x - x) < (a.width + b.width) / 2 + 6 &&
+              Math.abs(a.y - y) < 24,
+          );
+          n++
+        )
+          y += 26;
+        b.x = x;
+        b.y = y;
+        if (b.visible) {
+          airportBoxes.push(b);
+          desired.add(d.id);
+        }
+      } else boxes.push(b);
+      positions.set(d.id, { x, y });
+    }
+    const kept = selectLabels([...airportBoxes, ...boxes]);
+    for (const id of kept) desired.add(id);
+    for (const d of labels) {
+      const n = nodes.current.get(d.id);
+      if (!n) continue;
+      const a = fadeLabel(
+        alpha.current.get(d.id) || 0,
+        desired.has(d.id) ? 1 : 0,
+        elapsed,
+        settings.reducedMotion,
+      );
+      alpha.current.set(d.id, a);
+      n.style.opacity = String(a);
+      n.dataset.alpha = a.toFixed(3);
+      n.style.visibility = a > 0 ? "visible" : "hidden";
+      const pos = positions.get(d.id);
+      if (pos) {
+        n.style.left = pos.x + "px";
+        n.style.top = pos.y + "px";
+      }
+    }
+  };
+  clicks.current = { onSelect, onView };
   useEffect(() => {
     let v: C.CesiumWidget | undefined,
       disposed = false;
     let clickTimer: ReturnType<typeof setTimeout> | undefined;
     let removeWheel: (() => void) | undefined;
+    let stopLoop: (() => void) | undefined;
+    let recoveryTimer: ReturnType<typeof setTimeout> | undefined;
+    let hoverTime = 0;
     try {
       v = new C.CesiumWidget(host.current!, {
         baseLayer: false,
+        useDefaultRenderLoop: false,
+        showRenderLoopErrors: false,
+        msaaSamples: 1,
         terrainProvider: new C.EllipsoidTerrainProvider(),
         requestRenderMode: true,
         maximumRenderTimeChange: Infinity,
@@ -59,7 +226,7 @@ export function Globe({
       v.scene.backgroundColor = C.Color.fromCssColorString("#0c1725");
       v.scene.globe.baseColor = C.Color.fromCssColorString("#2b4b60");
       v.scene.globe.enableLighting = false;
-      v.scene.msaaSamples = 4;
+      v.scene.msaaSamples = 1;
       v.scene.globe.maximumScreenSpaceError = 1;
       v.scene.globe.tileCacheSize = 180;
       v.scene.screenSpaceCameraController.minimumZoomDistance = 1500000;
@@ -107,7 +274,7 @@ export function Globe({
       removeWheel = () => v?.canvas.removeEventListener("wheel", wheel);
       const doubleClick = (out = false) => {
         if (clickTimer) clearTimeout(clickTimer);
-        if (!clicks.current.picking) zoom(out ? 1.5 : 0.65);
+        zoom(out ? 1.5 : 0.65);
       };
       v.screenSpaceEventHandler.setInputAction(
         () => doubleClick(),
@@ -122,27 +289,30 @@ export function Globe({
       // Cesium still occludes primitives on the opposite side of the globe.
       v.scene.globe.depthTestAgainstTerrain = false;
       const start =
-        settings.remember && settings.lastView
+        savedCamera.current?.position ||
+        (settings.remember && settings.lastView
           ? settings.lastView
-          : settings.home;
+          : settings.home);
       v.camera.setView({
         destination: C.Cartesian3.fromDegrees(start[0], start[1], start[2]),
+        orientation: savedCamera.current
+          ? {
+              heading: savedCamera.current.heading,
+              pitch: savedCamera.current.pitch,
+              roll: savedCamera.current.roll,
+            }
+          : undefined,
       });
       v.screenSpaceEventHandler.setInputAction((evt: any) => {
         const api = clicks.current;
-        if (api.picking) {
-          const p = v!.camera.pickEllipsoid(evt.position);
-          if (p) {
-            const loc = C.Cartographic.fromCartesian(p);
-            api.onPick(
-              C.Math.toDegrees(loc.latitude),
-              C.Math.toDegrees(loc.longitude),
-            );
-          }
-          return;
-        }
         if (clickTimer) clearTimeout(clickTimer);
         clickTimer = setTimeout(() => {
+          if (
+            disposed ||
+            v!.isDestroyed() ||
+            diagnostic.current.state !== "running"
+          )
+            return;
           const picked = v!.scene.pick(evt.position),
             ids = picked?.id?.properties?.flightIds?.getValue();
           if (ids?.length) {
@@ -151,12 +321,71 @@ export function Globe({
           }
         }, 250);
       }, C.ScreenSpaceEventType.LEFT_CLICK);
-      v.scene.renderError.addEventListener((_scene, err) =>
+      const failure = (err: unknown) => {
+        if (disposed || recoveryTimer) return;
+        const message = String(err);
+        if (diagnostic.current.errors.at(-1) !== message)
+          diagnostic.current.errors.push(message);
+        const p = v!.camera.positionCartographic;
+        savedCamera.current = {
+          position: [
+            C.Math.toDegrees(p.longitude),
+            C.Math.toDegrees(p.latitude),
+            Math.max(1500000, p.height),
+          ],
+          heading: v!.camera.heading,
+          pitch: v!.camera.pitch,
+          roll: v!.camera.roll,
+        };
+        const now = Date.now();
+        failures.current = failures.current.filter((t) => now - t < 30000);
         setError(
-          "Globe rendering unavailable. Flight management still works. " +
-            String(err),
-        ),
+          "Map paused. " +
+            (failures.current.length < 2
+              ? "Recovering…"
+              : "Use Restart map to try again."),
+        );
+        if (failures.current.length < 2) {
+          failures.current.push(now);
+          recoveryTimer = setTimeout(() => {
+            if (!disposed) {
+              diagnostic.current.rebuilds++;
+              setGeneration((g) => g + 1);
+            }
+          }, 200);
+        }
+      };
+      stopLoop = attachMapLoop(
+        v,
+        host.current!,
+        diagnostic.current,
+        (dt) => labelUpdate.current(dt),
+        failure,
+        () => setError(""),
       );
+      v.screenSpaceEventHandler.setInputAction((evt: any) => {
+        if (diagnostic.current.state !== "running") return;
+        if (performance.now() - hoverTime < 50) return;
+        hoverTime = performance.now();
+        try {
+          const p = v!.scene
+            .drillPick(evt.endPosition, 8)
+            .find(
+              (hit) =>
+                hit?.id?.id?.startsWith("route-") ||
+                hit?.id?.id?.startsWith("direction-"),
+            );
+          hoverIds.current = p ? p.id.properties.flightIds.getValue() : [];
+        } catch (e) {
+          hoverIds.current = [];
+          failure(e);
+        }
+      }, C.ScreenSpaceEventType.MOUSE_MOVE);
+      v.canvas.addEventListener("mouseleave", () => {
+        hoverIds.current = [];
+      });
+      if (window.airjourney?.testing)
+        (window as any).__ajMapDiagnostics = diagnostic.current;
       setReady((x) => x + 1);
     } catch (e) {
       setError("Globe unavailable. Check local resources / GPU. " + String(e));
@@ -164,35 +393,31 @@ export function Globe({
     return () => {
       disposed = true;
       if (clickTimer) clearTimeout(clickTimer);
+      stopLoop?.();
+      if (recoveryTimer) clearTimeout(recoveryTimer);
       removeWheel?.();
+      const gl =
+        v?.canvas.getContext("webgl2") || v?.canvas.getContext("webgl");
+      const release = gl?.getExtension("WEBGL_lose_context");
       if (v && !v.isDestroyed()) v.destroy();
+      if (gl && !gl.isContextLost()) release?.loseContext();
+      hoverIds.current = [];
       viewer.current = null;
     };
-  }, []);
+  }, [generation]);
   useEffect(() => {
     const v = viewer.current;
     if (!v) return;
     v.entities.removeAll();
-    function labelVisibility(lon: number, lat: number) {
-      const normal = C.Cartesian3.normalize(
-        C.Cartesian3.fromDegrees(lon, lat),
-        new C.Cartesian3(),
-      );
-      const cameraNormal = new C.Cartesian3();
-      return new C.CallbackProperty(
-        () =>
-          C.Cartesian3.dot(
-            normal,
-            C.Cartesian3.normalize(v!.camera.positionWC, cameraNormal),
-          ) >
-          6378137 / C.Cartesian3.magnitude(v!.camera.positionWC) + 0.02,
-        false,
-      );
-    }
     const groups = new Map<string, Flight[]>();
     for (const f of flights) {
       if (!f.visible || !hasLocation(f.from) || !hasLocation(f.to)) continue;
-      const key = [f.from.id, f.to.id].sort().join("|");
+      const key = [
+        f.from.id + "@" + f.from.lat + "," + f.from.lon,
+        f.to.id + "@" + f.to.lat + "," + f.to.lon,
+      ]
+        .sort()
+        .join("|");
       groups.set(key, [...(groups.get(key) || []), f]);
     }
     for (const fs of groups.values()) {
@@ -241,10 +466,9 @@ export function Globe({
       });
     }
     const ports = new Map<string, { p: Flight["from"]; ids: string[] }>();
-    for (const f of flights.filter(
-      (f) => f.visible && hasLocation(f.from) && hasLocation(f.to),
-    )) {
+    for (const f of flights.filter((f) => f.visible)) {
       for (const p of [f.from, f.to]) {
+        if (!hasLocation(p)) continue;
         const x = ports.get(p.id) || { p, ids: [] };
         if (!x.ids.includes(f.id)) x.ids.push(f.id);
         ports.set(p.id, x);
@@ -256,54 +480,46 @@ export function Globe({
         position: C.Cartesian3.fromDegrees(p.lon!, p.lat!, 5000),
         point: {
           pixelSize: settings.markerSize,
-          color: C.Color.WHITE,
+          color:
+            p.locationKind === "approximate"
+              ? C.Color.fromCssColorString("#ffc66d")
+              : C.Color.WHITE,
           outlineColor: C.Color.fromCssColorString(settings.routeColor),
           outlineWidth: 2,
         },
-        label: settings.labels
-          ? {
-              text: p.code || p.name,
-              show: labelVisibility(p.lon!, p.lat!),
-              disableDepthTestDistance: Number.POSITIVE_INFINITY,
-              font: "600 28px Inter",
-              fillColor: C.Color.WHITE,
-              showBackground: true,
-              backgroundColor:
-                C.Color.fromCssColorString("#102438").withAlpha(0.94),
-              pixelOffset: new C.Cartesian2(10, -16),
-              distanceDisplayCondition: new C.DistanceDisplayCondition(
-                0,
-                16000000,
-              ),
-              scale: 0.5,
-            }
-          : undefined,
         properties: { flightIds: ids },
       });
-    if (settings.labels)
-      for (const place of mapLabels)
-        v.entities.add({
-          id: "label-" + place.name,
-          position: C.Cartesian3.fromDegrees(place.lon, place.lat, 8000),
-          label: {
-            text: place.name,
-            show: labelVisibility(place.lon, place.lat),
-            disableDepthTestDistance: Number.POSITIVE_INFINITY,
-            font: "600 28px Inter",
-            fillColor: C.Color.WHITE,
-            outlineColor: C.Color.fromCssColorString("#102438"),
-            outlineWidth: 4,
-            scale: 0.5,
-            style: C.LabelStyle.FILL_AND_OUTLINE,
-            distanceDisplayCondition: new C.DistanceDisplayCondition(
-              1000000,
-              28000000,
-            ),
-          },
-        });
     v.scene.requestRender();
-  }, [flights, selected, settings, ready]);
+    // Polyline geometry is prepared asynchronously. Keep frames flowing briefly
+    // after rebuilding so the final primitive also reaches the static scene.
+    const until = performance.now() + 3000;
+    const remove = v.scene.postRender.addEventListener(() => {
+      if (performance.now() < until) v.scene.requestRender();
+    });
+    const timer = setTimeout(remove, 3100);
+    return () => {
+      clearTimeout(timer);
+      remove();
+    };
+  }, [
+    geometryKey,
+    selected,
+    settings.routeColor,
+    settings.routeHeight,
+    settings.opacity,
+    settings.width,
+    settings.markerSize,
+    settings.labels,
+    ready,
+  ]);
   useEffect(() => {
+    if (
+      savedCamera.current &&
+      lastFocus.current?.selected === selected &&
+      lastFocus.current.request === focusRequest
+    )
+      return;
+    lastFocus.current = { selected, request: focusRequest };
     const v = viewer.current,
       f = flights.find((f) => f.id === selected);
     if (v && f && hasLocation(f.from) && hasLocation(f.to)) {
@@ -353,13 +569,14 @@ export function Globe({
         );
     imagery
       .then((provider) => {
-        if (!canceled) {
+        if (!canceled && !v.isDestroyed()) {
           v.imageryLayers.removeAll();
           v.imageryLayers.addImageryProvider(provider);
           v.scene.requestRender();
         }
       })
       .catch(async (e) => {
+        if (canceled || v.isDestroyed()) return;
         if (settings.mapImage) {
           setError("Local map image could not be loaded. " + String(e));
           return;
@@ -368,7 +585,7 @@ export function Globe({
           const provider = await C.SingleTileImageryProvider.fromUrl(
             "./maps/naturalearth-4096.jpg",
           );
-          if (!canceled) {
+          if (!canceled && !v.isDestroyed()) {
             v.imageryLayers.removeAll();
             v.imageryLayers.addImageryProvider(provider);
             v.scene.requestRender();
@@ -383,6 +600,25 @@ export function Globe({
       canceled = true;
     };
   }, [settings.mapImage, ready]);
+  function restartMap() {
+    const v = viewer.current;
+    if (v && !v.isDestroyed()) {
+      const p = v.camera.positionCartographic;
+      savedCamera.current = {
+        position: [
+          C.Math.toDegrees(p.longitude),
+          C.Math.toDegrees(p.latitude),
+          p.height,
+        ],
+        heading: v.camera.heading,
+        pitch: v.camera.pitch,
+        roll: v.camera.roll,
+      };
+    }
+    failures.current = [];
+    diagnostic.current.rebuilds++;
+    setGeneration((g) => g + 1);
+  }
   function reset() {
     const v = viewer.current;
     if (v)
@@ -394,25 +630,36 @@ export function Globe({
       });
   }
   return (
-    <section
-      className={"globe " + (picking ? "picking" : "")}
-      aria-label="Local three dimensional globe"
-    >
+    <section className="globe" aria-label="Local three dimensional globe">
       <div ref={host} className="canvas" />
+      <div className="globe-labels" aria-hidden="true">
+        {labels.map((d) => (
+          <span
+            key={d.id}
+            data-label-id={d.id}
+            data-kind={d.airport ? "airport" : "country"}
+            className={d.airport ? "airport-hover-label" : "country-map-label"}
+            ref={(n) => {
+              if (n) nodes.current.set(d.id, n);
+              else nodes.current.delete(d.id);
+            }}
+          >
+            {d.text}
+          </span>
+        ))}
+      </div>
       {error && (
         <div className="map-error" role="alert">
-          {error}
+          {error}{" "}
+          <button
+            onClick={() => {
+              restartMap();
+            }}
+          >
+            Restart map
+          </button>
         </div>
       )}
-      <div className="globe-heading">
-        <span className="eyebrow">YOUR WORLD, CONNECTED</span>
-        <h1>
-          Every journey
-          <br />
-          has a place.
-        </h1>
-        <span>Local globe · Your own flight records</span>
-      </div>
       <div className="map-tools">
         <button onClick={reset}>↺ Reset view</button>
         <button
@@ -449,35 +696,36 @@ export function Globe({
         >
           −
         </button>
-        <button
-          onClick={() => {
-            const p = viewer.current?.camera.positionCartographic;
-            if (p)
-              onHome([
-                C.Math.toDegrees(p.longitude),
-                C.Math.toDegrees(p.latitude),
-                p.height,
-              ]);
-          }}
-        >
-          Save home view
-        </button>
-      </div>
-      <div className="map-help" aria-label="Map controls">
-        Drag to rotate · Scroll / pinch to zoom
-        <br />
-        Double-click to zoom in · Shift + double-click to zoom out
-      </div>
-      {picking && (
-        <div className="pick-banner">
-          Click the globe to preview a location.
-        </div>
-      )}
-      <div className="map-footer">
-        <span>
-          <i /> Route illustration · WGS84
-        </span>
-        <span>Natural Earth II · Local 8K detail · Regional view</span>
+        <details className="map-more">
+          <summary aria-label="More map controls">•••</summary>
+          <div className="map-menu">
+            <button
+              onClick={() => {
+                const p = viewer.current?.camera.positionCartographic;
+                if (p)
+                  onHome([
+                    C.Math.toDegrees(p.longitude),
+                    C.Math.toDegrees(p.latitude),
+                    p.height,
+                  ]);
+              }}
+            >
+              Save home view
+            </button>
+            <p>Drag to rotate · Scroll / pinch to zoom</p>
+            <button onClick={restartMap}>Restart map</button>
+            <p>
+              Double-click to zoom in
+              <br />
+              Shift + double-click to zoom out
+            </p>
+            <p>
+              Illustrative routes · WGS84
+              <br />
+              Natural Earth II · local imagery
+            </p>
+          </div>
+        </details>
       </div>
       {group.length > 0 && (
         <div className="route-popover">

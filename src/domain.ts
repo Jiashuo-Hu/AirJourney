@@ -68,12 +68,24 @@ export function applyPlaceSnapshot(previous: Place, next: Place): Place {
   const result = { ...structuredClone(next), overrides: previous.overrides };
   for (const field of previous.overrides || [])
     if (
-      ["name", "code", "city", "region", "lat", "lon", "zone"].includes(field)
+      [
+        "name",
+        "code",
+        "city",
+        "region",
+        "lat",
+        "lon",
+        "zone",
+        "locationKind",
+        "locationSource",
+      ].includes(field)
     )
       (result as any)[field] = (previous as any)[field];
   if (previous.overrides?.some((k) => k === "lat" || k === "lon")) {
     result.lat = previous.lat;
     result.lon = previous.lon;
+    result.locationKind = previous.locationKind;
+    result.locationSource = previous.locationSource;
   }
   return result;
 }
@@ -96,6 +108,12 @@ export function validatePlace(p: Place, requireName = false) {
     "manufacturer",
     "family",
     "source",
+    "ident",
+    "iata",
+    "icao",
+    "countryCode",
+    "airportType",
+    "locationSource",
   ])
     if ((p as any)[key] !== undefined && typeof (p as any)[key] !== "string")
       throw Error("Invalid reference text field.");
@@ -103,10 +121,32 @@ export function validatePlace(p: Place, requireName = false) {
     p.overrides &&
     (!Array.isArray(p.overrides) ||
       !p.overrides.every((k) =>
-        ["name", "code", "city", "region", "lat", "lon", "zone"].includes(k),
+        [
+          "name",
+          "code",
+          "city",
+          "region",
+          "lat",
+          "lon",
+          "zone",
+          "locationKind",
+          "locationSource",
+        ].includes(k),
       ))
   )
     throw Error("Invalid snapshot overrides.");
+  if (
+    p.locationKind !== undefined &&
+    !["airport", "approximate", "manual", "unlocated"].includes(p.locationKind)
+  )
+    throw Error("Invalid location kind.");
+  if (
+    (p.locationKind === "approximate" || p.locationKind === "airport") &&
+    !hasLocation(p)
+  )
+    throw Error("Located reference requires coordinates.");
+  if (p.locationKind === "unlocated" && hasLocation(p))
+    throw Error("Unlocated reference must not contain coordinates.");
   if ((p.lat !== undefined || p.lon !== undefined) && !hasLocation(p))
     throw Error("Invalid coordinates.");
 }
