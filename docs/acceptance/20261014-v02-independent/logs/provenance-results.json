@@ -1,0 +1,54 @@
+{
+  "mode": "provenance",
+  "results": [],
+  "observations": [
+    {
+      "id": "V02-N01",
+      "oldLat": "19.088699",
+      "oldSource": "OurAirports airport coordinates",
+      "userEnteredLat": 19.2,
+      "newChoiceLat": "19.2",
+      "newChoiceKind": "airport",
+      "newChoiceSource": "OurAirports airport coordinates",
+      "persisted": {
+        "id": "oa-26434",
+        "name": "Chhatrapati Shivaji Maharaj International Airport",
+        "ident": "VABB",
+        "countryCode": "IN",
+        "region": "India",
+        "airportType": "large_airport",
+        "scheduled": true,
+        "source": "User edited",
+        "lat": 19.2,
+        "lon": 72.867897,
+        "locationKind": "airport",
+        "locationSource": "OurAirports airport coordinates",
+        "code": "BOM",
+        "iata": "BOM",
+        "icao": "VABB",
+        "city": "Mumbai",
+        "aliases": "VABB Bombay, Sahar International Airport"
+      },
+      "historicalSnapshot": {
+        "id": "oa-26434",
+        "name": "Chhatrapati Shivaji Maharaj International Airport",
+        "ident": "VABB",
+        "countryCode": "IN",
+        "region": "India",
+        "airportType": "large_airport",
+        "scheduled": true,
+        "source": "OurAirports · 2026-10-14",
+        "lat": 19.088699,
+        "lon": 72.867897,
+        "locationKind": "airport",
+        "locationSource": "OurAirports airport coordinates",
+        "code": "BOM",
+        "iata": "BOM",
+        "icao": "VABB",
+        "city": "Mumbai",
+        "aliases": "VABB Bombay, Sahar International Airport",
+        "overrides": []
+      }
+    }
+  ]
+}

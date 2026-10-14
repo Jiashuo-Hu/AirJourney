@@ -1,14 +1,110 @@
 [
-  { "name": "China", "lon": 104, "lat": 36 },
-  { "name": "Japan", "lon": 138, "lat": 37 },
-  { "name": "Australia", "lon": 134, "lat": -25 },
-  { "name": "New Zealand", "lon": 172, "lat": -42 },
-  { "name": "United Kingdom", "lon": -3, "lat": 55 },
-  { "name": "France", "lon": 2, "lat": 47 },
-  { "name": "Germany", "lon": 10, "lat": 51 },
-  { "name": "United States", "lon": -100, "lat": 39 },
-  { "name": "Asia", "lon": 89, "lat": 55 },
-  { "name": "Africa", "lon": 20, "lat": 2 },
-  { "name": "South America", "lon": -60, "lat": -16 },
-  { "name": "Antarctica", "lon": 0, "lat": -82 }
+  {
+    "name": "China",
+    "lon": 104,
+    "lat": 36,
+    "priority": 100
+  },
+  {
+    "name": "United States",
+    "lon": -100,
+    "lat": 39,
+    "priority": 95
+  },
+  {
+    "name": "Russia",
+    "lon": 94,
+    "lat": 63,
+    "priority": 90
+  },
+  {
+    "name": "Canada",
+    "lon": -106,
+    "lat": 58,
+    "priority": 85
+  },
+  {
+    "name": "Brazil",
+    "lon": -53,
+    "lat": -12,
+    "priority": 80
+  },
+  {
+    "name": "India",
+    "lon": 79,
+    "lat": 22,
+    "priority": 75
+  },
+  {
+    "name": "Australia",
+    "lon": 134,
+    "lat": -25,
+    "priority": 70
+  },
+  {
+    "name": "Japan",
+    "lon": 138,
+    "lat": 37,
+    "priority": 55
+  },
+  {
+    "name": "United Kingdom",
+    "lon": -3,
+    "lat": 55,
+    "priority": 45
+  },
+  {
+    "name": "France",
+    "lon": 2,
+    "lat": 47,
+    "priority": 40
+  },
+  {
+    "name": "Germany",
+    "lon": 10,
+    "lat": 51,
+    "priority": 35
+  },
+  {
+    "name": "New Zealand",
+    "lon": 172,
+    "lat": -42,
+    "priority": 25
+  },
+  {
+    "name": "South Africa",
+    "lon": 25,
+    "lat": -29,
+    "priority": 50
+  },
+  {
+    "name": "Egypt",
+    "lon": 30,
+    "lat": 26,
+    "priority": 40
+  },
+  {
+    "name": "Nigeria",
+    "lon": 8,
+    "lat": 9,
+    "priority": 45
+  },
+  {
+    "name": "Argentina",
+    "lon": -64,
+    "lat": -35,
+    "priority": 45
+  },
+  {
+    "name": "Mexico",
+    "lon": -102,
+    "lat": 24,
+    "priority": 50
+  },
+  {
+    "name": "Indonesia",
+    "lon": 118,
+    "lat": -3,
+    "priority": 50
+  }
 ]

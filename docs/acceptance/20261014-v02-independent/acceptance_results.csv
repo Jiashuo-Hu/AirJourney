@@ -1,0 +1,24 @@
+ID,检查,结果,证据,说明
+DATA-01,覆盖计数缺项及来源摘要,PASS,logs/airport-data-audit.json,86242条247国家地区代码
+DATA-02,全量名称代码城市坐标与源快照一致,PASS,logs/airport-data-audit.json,无转换不匹配不等于独立测绘
+DATA-03,来源身份去重与共享名称代码保留,PASS,logs/airport-data-audit.json,ID和ident唯一显示码55重名2614组
+DATA-04,14国家正常窗口搜索选择,PASS,logs/runtime-search-samples.json;logs/create-results.json,名称位置代码吻合
+DATA-05,分页变音多词键盘与自定义重码,PASS,data/regression/results.json;logs/fixture-flights-results.json,最多30结果60分页两ACCDUP可区分
+DATA-06,真实来源缺坐标城市回退,NOT RUN,logs/airport-data-audit.json,来源全部有效无真实分支触发
+DATA-07,近似和待定位策略测试,PASS,logs/resource-tests.log,5项夹具不猜首都模糊或跨国城市
+DATA-08,近似和待定位保存元数据,PASS,logs/fixture-flights-results.json,待定位不补坐标
+DATA-09,近似航段地图持续正常,FAIL,screenshots/09-approximate-route.png;logs/render-error.json,V02-N02 P1偶发停止后续三轮未触发
+DATA-10,Library手输坐标来源标识,FAIL,logs/provenance-results.json;logs/ui-bugs-results.json,V02-N01 P2
+CORE-01,新增编辑正常进程重启,PASS,logs/create-results.json;logs/restart-check-results.json,完整对象一致
+CORE-02,旧库旧备份及个人覆盖兼容,PASS,data/upgrade/results.json;logs/provenance-results.json,原快照不改
+CORE-03,列表地图侧栏及基础操作,PASS,data/smoke-rerun/smoke-results.json;data/regression/results.json,正常路径通过不覆盖偶发P1
+CORE-04,真实备份导出,PASS,data/native-v02.airjourney;logs/backup-state.json,正常模式原生对话框
+CORE-05,同库恢复及旧版本备份恢复,PASS,data/regression/results.json;data/upgrade/results.json,本轮重新运行
+CORE-06,真实独立空库恢复,NOT RUN,,用户Escape停止于文件选择未完成
+UI-01,冗余文字减少与深浅布局,PASS,screenshots/02-global-route-light.png;screenshots/03-route-dark.png,主入口清楚次要组折叠
+UI-02,近邻地图标签,P3 ISSUE,screenshots/15-restarted-near-route.png,重叠已知限制建议避让
+BUILD-01,测试与构建,PASS,logs/unit-tests.log;logs/build.log,28测试构建通过
+BUILD-02,发布版本资源代码文档一致,PASS,logs/delivery-verification.json,0.2.0资源706源码56文档239
+BUILD-03,首次smoke聚合弹层时间断言,FAIL,data/smoke/smoke-error.txt,250ms等待边界问题原样重跑16通过不认定产品弹层缺失
+BUILD-04,安装向导干净VM跨机器,NOT RUN,,本轮选择运行解包exe
+LIMIT-01,真实触控板系统DPI全设备长期性能,NOT RUN,,不继承旧报告或外推

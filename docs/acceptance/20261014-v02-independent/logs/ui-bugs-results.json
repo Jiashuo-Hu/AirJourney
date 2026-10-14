@@ -1,0 +1,23 @@
+{
+  "mode": "ui-bugs",
+  "results": [
+    {
+      "name": "no-match and Escape preserve draft",
+      "status": "PASS"
+    }
+  ],
+  "observations": [
+    {
+      "id": "V02-N01-related",
+      "beforeType": "airport",
+      "resultText": "◇\nKeyboard custom coordinates test\nAirport coordinates · Custom\n›",
+      "persisted": {
+        "id": "ecfcd39a-8fd8-4ac3-abbe-6b4939a85537",
+        "name": "Keyboard custom coordinates test",
+        "source": "Custom",
+        "lat": 1,
+        "lon": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "errors": [
+    "An error occurred while rendering. Rendering has stopped.\n\nDeveloperError: Expected width to be greater than 0, actual value was 0\n\nSee more...\nOK",
+    "Globe rendering unavailable. Flight management still works. DeveloperError: Expected width to be greater than 0, actual value was 0 Error at new w (airjourney://app/assets/index-DE9XG9dP.js:65:44241) at z.typeOf.number.greaterThan (airjourney://app/assets/index-DE9XG9dP.js:66:1041) at new fn (airjourney://app/assets/index-DE9XG9dP.js:3959:4197) at Mi.update (airjourney://app/assets/index-DE9XG9dP.js:3959:77218) at hA.update (airjourney://app/assets/index-DE9XG9dP.js:11592:3500) at qst (airjourney://app/assets/index-DE9XG9dP.js:15389:33263) at Ci.updateAndExecuteCommands (airjourney://app/assets/index-DE9XG9dP.js:15389:26695) at Hst (airjourney://app/assets/index-DE9XG9dP.js:15389:40185) at Rh (airjourney://app/assets/index-DE9XG9dP.js:15389:40383) at Ci.render (airjourney://app/assets/index-DE9XG9dP.js:15389:41419)"
+  ],
+  "canvas": [
+    {
+      "width": 2084,
+      "height": 1726,
+      "clientWidth": 1042,
+      "clientHeight": 863
+    }
+  ],
+  "dpr": 2
+}

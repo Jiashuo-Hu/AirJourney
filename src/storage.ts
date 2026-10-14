@@ -70,7 +70,7 @@ export async function backup(s: State) {
         format: "airjourney",
         version: 1,
         app: APP_VERSION,
-        base: "starter-20261010",
+        base: "ourairports-20261014",
         sha256: hash,
       }),
     ),

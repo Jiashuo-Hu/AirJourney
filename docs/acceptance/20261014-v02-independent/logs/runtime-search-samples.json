@@ -1,0 +1,128 @@
+[
+  {
+    "code": "VABB",
+    "country": "IN",
+    "name": "Chhatrapati Shivaji Maharaj International Airport",
+    "lat": 19.088699,
+    "lon": 72.867897,
+    "firstResultText": "BOM · Chhatrapati Shivaji Maharaj International Airport\nMumbai · India\nAirport coordinates · large airport",
+    "count": 1
+  },
+  {
+    "code": "HKJK",
+    "country": "KE",
+    "name": "Jomo Kenyatta International Airport",
+    "lat": -1.318886,
+    "lon": 36.928233,
+    "firstResultText": "NBO · Jomo Kenyatta International Airport\nNairobi · Kenya\nAirport coordinates · large airport",
+    "count": 1
+  },
+  {
+    "code": "FAOR",
+    "country": "ZA",
+    "name": "O.R. Tambo International Airport",
+    "lat": -26.140081,
+    "lon": 28.246801,
+    "firstResultText": "JNB · O.R. Tambo International Airport\nJohannesburg · South Africa\nAirport coordinates · large airport",
+    "count": 1
+  },
+  {
+    "code": "OMDB",
+    "country": "AE",
+    "name": "Dubai International Airport",
+    "lat": 25.24979,
+    "lon": 55.370992,
+    "firstResultText": "DXB · Dubai International Airport\nDubai · United Arab Emirates\nAirport coordinates · large airport",
+    "count": 1
+  },
+  {
+    "code": "BIKF",
+    "country": "IS",
+    "name": "Keflavik International Airport",
+    "lat": 63.985001,
+    "lon": -22.6056,
+    "firstResultText": "KEF · Keflavik International Airport\nReykjavík · Iceland\nAirport coordinates · large airport",
+    "count": 1
+  },
+  {
+    "code": "SCEL",
+    "country": "CL",
+    "name": "Comodoro Arturo Merino Benítez International Airport",
+    "lat": -33.393001556396484,
+    "lon": -70.78579711914062,
+    "firstResultText": "SCL · Comodoro Arturo Merino Benítez International Airport\nSantiago · Chile\nAirport coordinates · large airport",
+    "count": 8
+  },
+  {
+    "code": "SBGR",
+    "country": "BR",
+    "name": "São Paulo/Guarulhos–Governor André Franco Montoro International Airport",
+    "lat": -23.431274,
+    "lon": -46.469954,
+    "firstResultText": "GRU · São Paulo/Guarulhos–Governor André Franco Montoro International Airport\nSão Paulo · Brazil\nAirport coordinates · large airport",
+    "count": 1
+  },
+  {
+    "code": "NZWN",
+    "country": "NZ",
+    "name": "Wellington International Airport",
+    "lat": -41.326839,
+    "lon": 174.806862,
+    "firstResultText": "WLG · Wellington International Airport\nWellington · New Zealand\nAirport coordinates · large airport",
+    "count": 1
+  },
+  {
+    "code": "NFFN",
+    "country": "FJ",
+    "name": "Nadi International Airport",
+    "lat": -17.761822,
+    "lon": 177.437843,
+    "firstResultText": "NAN · Nadi International Airport\nNadi · Fiji\nAirport coordinates · large airport",
+    "count": 1
+  },
+  {
+    "code": "MMMX",
+    "country": "MX",
+    "name": "Mexico City Benito Juárez International Airport",
+    "lat": 19.435822,
+    "lon": -99.07033,
+    "firstResultText": "MEX · Mexico City Benito Juárez International Airport\nMexico City · Mexico\nAirport coordinates · large airport",
+    "count": 2
+  },
+  {
+    "code": "KJFK",
+    "country": "US",
+    "name": "John F. Kennedy International Airport",
+    "lat": 40.639447,
+    "lon": -73.779317,
+    "firstResultText": "JFK · John F. Kennedy International Airport\nNew York · United States\nAirport coordinates · large airport",
+    "count": 1
+  },
+  {
+    "code": "EDDM",
+    "country": "DE",
+    "name": "Munich Airport",
+    "lat": 48.353802,
+    "lon": 11.7861,
+    "firstResultText": "MUC · Munich Airport\nMunich · Germany\nAirport coordinates · large airport",
+    "count": 2
+  },
+  {
+    "code": "RJTT",
+    "country": "JP",
+    "name": "Tokyo Haneda International Airport",
+    "lat": 35.549678,
+    "lon": 139.786958,
+    "firstResultText": "HND · Tokyo Haneda International Airport\nTokyo · Japan\nAirport coordinates · large airport",
+    "count": 1
+  },
+  {
+    "code": "WSSS",
+    "country": "SG",
+    "name": "Singapore Changi Airport",
+    "lat": 1.35019,
+    "lon": 103.994003,
+    "firstResultText": "SIN · Singapore Changi Airport\nSingapore · Singapore\nAirport coordinates · large airport",
+    "count": 1
+  }
+]

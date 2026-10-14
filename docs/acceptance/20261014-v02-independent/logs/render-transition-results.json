@@ -1,0 +1,36 @@
+{
+  "mode": "render-transition",
+  "results": [],
+  "observations": [
+    {
+      "i": 0,
+      "step": "long to short",
+      "errors": []
+    },
+    {
+      "i": 0,
+      "step": "save short record",
+      "errors": []
+    },
+    {
+      "i": 1,
+      "step": "long to short",
+      "errors": []
+    },
+    {
+      "i": 1,
+      "step": "save short record",
+      "errors": []
+    },
+    {
+      "i": 2,
+      "step": "long to short",
+      "errors": []
+    },
+    {
+      "i": 2,
+      "step": "save short record",
+      "errors": []
+    }
+  ]
+}

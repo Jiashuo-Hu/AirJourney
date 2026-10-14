@@ -1,0 +1,17 @@
+{
+  "mode": "render-probe",
+  "results": [],
+  "observations": [
+    {
+      "errors": [],
+      "canvas": [
+        {
+          "width": 2084,
+          "height": 1726,
+          "clientWidth": 1042,
+          "clientHeight": 863
+        }
+      ]
+    }
+  ]
+}

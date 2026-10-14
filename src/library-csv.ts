@@ -14,6 +14,13 @@ const keys = [
   "manufacturer",
   "family",
   "hidden",
+  "ident",
+  "iata",
+  "icao",
+  "countryCode",
+  "airportType",
+  "locationKind",
+  "locationSource",
 ] as const;
 export function referenceCSV(entries: Reference[]) {
   return [

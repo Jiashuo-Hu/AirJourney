@@ -1,4 +1,7 @@
+import { sameCoordinates } from "./location-lock";
 import { useEffect, useState } from "react";
+import { AirportPicker } from "./AirportPicker";
+import { locationLabel, type AirportSearch } from "./airports";
 import type {
   Field,
   Flight,
@@ -20,114 +23,75 @@ const number = (v: string) => (v === "" ? undefined : Number(v));
 export function FlightEditor({
   value: f,
   state,
+  airportIndex,
   onChange,
   onSave,
   onCancel,
-  onPick,
 }: {
   value: Flight;
   state: State;
+  airportIndex: AirportSearch;
   onChange: (f: Flight) => void;
   onSave: () => void;
   onCancel: () => void;
-  onPick: (side: "from" | "to") => void;
 }) {
   const patch = (p: Partial<Flight>) => onChange({ ...f, ...p });
   const [tagText, setTagText] = useState(f.tags.join(", "));
   useEffect(() => setTagText(f.tags.join(", ")), [f.id]);
   function airport(side: "from" | "to") {
     const p = f[side];
-    const set = (v: Partial<Place>) =>
-      patch({
-        [side]: {
-          ...p,
-          ...v,
-          overrides: [...new Set([...(p.overrides || []), ...Object.keys(v)])],
-        },
-      });
+    const supplied = airportIndex.canonicalFor(p);
+    const legacy = supplied && !sameCoordinates(p, supplied);
     return (
       <fieldset>
         <legend>{side === "from" ? "Departure" : "Arrival"}</legend>
-        <label>
-          Choose local airport
-          <select
-            value=""
-            onChange={(e) => {
-              const r = state.library.Airports.find(
-                (r) => r.id === e.target.value,
-              );
-              if (r)
-                patch({
-                  [side]: { ...structuredClone(r), overrides: [] },
-                  [side === "from" ? "departure" : "arrival"]: {
-                    ...f[side === "from" ? "departure" : "arrival"],
-                    zone: r.zone || "",
-                  },
-                });
-            }}
-          >
-            <option value="">Select from Library…</option>
-            {state.library.Airports.filter((r) => !r.hidden).map((r) => (
-              <option value={r.id} key={r.id}>
-                {r.code ? `${r.code} · ` : ""}
-                {r.name} · {r.city}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Airport / place name
-          <input
-            list="airport-names"
-            value={p.name}
-            onChange={(e) =>
-              patch({
-                [side]: { ...p, id: crypto.randomUUID(), name: e.target.value },
-              })
-            }
-          />
-        </label>
-        <div className="two">
-          <label>
-            Code (optional)
-            <input
-              value={p.code || ""}
-              onChange={(e) => set({ code: e.target.value })}
-            />
-          </label>
-          <button type="button" onClick={() => onPick(side)}>
-            Pick on globe
-          </button>
+        <AirportPicker
+          side={side === "from" ? "Departure" : "Arrival"}
+          index={airportIndex}
+          onSelect={(r) =>
+            patch({
+              [side]: {
+                ...structuredClone(airportIndex.canonicalFor(r) || r),
+                name: r.name,
+                overrides: [],
+              },
+              [side === "from" ? "departure" : "arrival"]: {
+                ...f[side === "from" ? "departure" : "arrival"],
+                zone: r.zone || "",
+              },
+            })
+          }
+        />
+        <div className="chosen-airport">
+          <strong>{p.name || "Select an airport"}</strong>
+          <small>
+            {[p.iata || p.code, p.city, p.region].filter(Boolean).join(" · ")}
+          </small>
+          {p.name && (
+            <span className="location-status">
+              {legacy ? "Preserved legacy location" : locationLabel(p)}
+            </span>
+          )}
         </div>
-        <div className="two">
-          <label>
-            Latitude
-            <input
-              type="number"
-              step="any"
-              min="-90"
-              max="90"
-              value={p.lat ?? ""}
-              onChange={(e) => set({ lat: number(e.target.value) })}
-            />
-          </label>
-          <label>
-            Longitude
-            <input
-              type="number"
-              step="any"
-              min="-180"
-              max="180"
-              value={p.lon ?? ""}
-              onChange={(e) => set({ lon: number(e.target.value) })}
-            />
-          </label>
-        </div>
-        <span className="muted">
-          {hasLocation(p)
-            ? "Located · WGS84"
-            : "Needs location · You can save without coordinates."}
-        </span>
+        {p.name && (
+          <details className="advanced">
+            <summary>Airport information</summary>
+            <dl>
+              <dt>Coordinates</dt>
+              <dd>
+                {hasLocation(p)
+                  ? `${p.lat!.toFixed(6)}, ${p.lon!.toFixed(6)}`
+                  : "Not supplied"}
+              </dd>
+              <dt>Location source</dt>
+              <dd>
+                {legacy
+                  ? "Stored legacy coordinates; selecting an airport uses the supplied catalogue location."
+                  : p.locationSource || p.source || "Preserved legacy record"}
+              </dd>
+            </dl>
+          </details>
+        )}
       </fieldset>
     );
   }
@@ -198,7 +162,6 @@ export function FlightEditor({
     <div className="editor">
       <div className="panel-head">
         <div>
-          <span className="eyebrow">MANUAL ENTRY</span>
           <h2>
             {state.flights.some((v) => v.id === f.id)
               ? "Edit flight"
@@ -216,10 +179,6 @@ export function FlightEditor({
         }}
       >
         <div className="form-scroll">
-          <p className="muted">
-            Times and flight details are entered by you. Unknown values are
-            welcome.
-          </p>
           <label>
             Flight number
             <input
@@ -263,7 +222,7 @@ export function FlightEditor({
           </label>
           {time("departure")}
           {time("arrival")}
-          <details open>
+          <details key={f.id}>
             <summary>More details</summary>
             <label>
               Aircraft
@@ -447,13 +406,6 @@ export function FlightEditor({
               Reset to global style
             </button>
           </details>
-          <datalist id="airport-names">
-            {state.library.Airports.map((r) => (
-              <option key={r.id} value={r.name}>
-                {r.code} · {r.city}
-              </option>
-            ))}
-          </datalist>
           <datalist id="zones">
             {[
               "Asia/Shanghai",

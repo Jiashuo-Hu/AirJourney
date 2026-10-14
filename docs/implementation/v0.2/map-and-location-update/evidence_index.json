@@ -1,0 +1,326 @@
+{
+  "version": "v0.2",
+  "packageVersion": "0.2.0",
+  "date": "2026-10-14",
+  "localOnly": true,
+  "noGitHubActions": true,
+  "unitTests": 35,
+  "resourceTests": 5,
+  "installedLegacyScenarios": 16,
+  "installedV02Scenarios": 17,
+  "legacyAndSoftwareScaleScenarios": 10,
+  "independentV02Acceptance": "NOT RUN",
+  "physicalTouchpadTested": false,
+  "windowsSystemDpiChanged": false,
+  "revision": "map-and-location-update",
+  "originalIntermittentTriggerNotEstablished": true,
+  "faultInjectionDeclared": true,
+  "sourceCoverage": {
+    "records": 86242,
+    "countryOrRegionCodes": 247,
+    "sourceCoordinateRecords": 86242,
+    "approximateRecords": 0,
+    "unlocatedRecords": 0,
+    "missingCity": 4765,
+    "missingIata": 77191,
+    "missingIcao": 75691
+  },
+  "searchBenchmark": {
+    "records": 86242,
+    "initMs": 181.76080000000002,
+    "searchP95ms": 28.483600000000024,
+    "samples": [
+      {
+        "query": "JFK",
+        "ms": 36.478300000000104,
+        "total": 6,
+        "rendered": 6
+      },
+      {
+        "query": "NZAA",
+        "ms": 18.769900000000007,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "sao paulo brazil",
+        "ms": 21.536200000000008,
+        "total": 303,
+        "rendered": 30
+      },
+      {
+        "query": "France",
+        "ms": 20.18259999999998,
+        "total": 1813,
+        "rendered": 30
+      },
+      {
+        "query": "Fiji",
+        "ms": 19.18100000000004,
+        "total": 38,
+        "rendered": 30
+      },
+      {
+        "query": "München",
+        "ms": 28.483600000000024,
+        "total": 17,
+        "rendered": 17
+      },
+      {
+        "query": "FAOR",
+        "ms": 16.377700000000004,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "WSSS",
+        "ms": 15.092399999999998,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "LHR",
+        "ms": 19.745400000000018,
+        "total": 3,
+        "rendered": 3
+      },
+      {
+        "query": "KJFK",
+        "ms": 12.777900000000045,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "not-an-airport-xyz123",
+        "ms": 16.390999999999963,
+        "total": 0,
+        "rendered": 0
+      },
+      {
+        "query": "",
+        "ms": 4.333300000000008,
+        "total": 86242,
+        "rendered": 30
+      },
+      {
+        "query": "JFK",
+        "ms": 14.369100000000003,
+        "total": 6,
+        "rendered": 6
+      },
+      {
+        "query": "NZAA",
+        "ms": 15.762300000000096,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "sao paulo brazil",
+        "ms": 15.68509999999992,
+        "total": 303,
+        "rendered": 30
+      },
+      {
+        "query": "France",
+        "ms": 12.550299999999993,
+        "total": 1813,
+        "rendered": 30
+      },
+      {
+        "query": "Fiji",
+        "ms": 12.399000000000001,
+        "total": 38,
+        "rendered": 30
+      },
+      {
+        "query": "München",
+        "ms": 14.910100000000057,
+        "total": 17,
+        "rendered": 17
+      },
+      {
+        "query": "FAOR",
+        "ms": 14.979900000000043,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "WSSS",
+        "ms": 12.629400000000032,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "LHR",
+        "ms": 16.758199999999988,
+        "total": 3,
+        "rendered": 3
+      },
+      {
+        "query": "KJFK",
+        "ms": 13.437400000000025,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "not-an-airport-xyz123",
+        "ms": 14.503299999999967,
+        "total": 0,
+        "rendered": 0
+      },
+      {
+        "query": "",
+        "ms": 3.173000000000002,
+        "total": 86242,
+        "rendered": 30
+      },
+      {
+        "query": "JFK",
+        "ms": 12.384600000000091,
+        "total": 6,
+        "rendered": 6
+      },
+      {
+        "query": "NZAA",
+        "ms": 14.136099999999942,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "sao paulo brazil",
+        "ms": 14.029899999999998,
+        "total": 303,
+        "rendered": 30
+      },
+      {
+        "query": "France",
+        "ms": 10.517900000000054,
+        "total": 1813,
+        "rendered": 30
+      },
+      {
+        "query": "Fiji",
+        "ms": 9.272100000000023,
+        "total": 38,
+        "rendered": 30
+      },
+      {
+        "query": "München",
+        "ms": 9.458000000000084,
+        "total": 17,
+        "rendered": 17
+      },
+      {
+        "query": "FAOR",
+        "ms": 8.252100000000041,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "WSSS",
+        "ms": 7.800299999999993,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "LHR",
+        "ms": 10.501699999999914,
+        "total": 3,
+        "rendered": 3
+      },
+      {
+        "query": "KJFK",
+        "ms": 8.161400000000071,
+        "total": 1,
+        "rendered": 1
+      },
+      {
+        "query": "not-an-airport-xyz123",
+        "ms": 10.10850000000005,
+        "total": 0,
+        "rendered": 0
+      },
+      {
+        "query": "",
+        "ms": 2.03469999999993,
+        "total": 86242,
+        "rendered": 30
+      }
+    ],
+    "scope": "Node index only, not full UI or target-machine acceptance"
+  },
+  "evidence": [
+    {
+      "path": "evidence/v0.2-map-update/unit-tests-final.log",
+      "bytes": 3454,
+      "sha256": "ed2f99e94f517b9524d623283daa502572c4f054c741f947c31b7911be92863c"
+    },
+    {
+      "path": "evidence/v0.2-map-update/resource-tests.log",
+      "bytes": 108,
+      "sha256": "46a59d823d772c3809446eba836399e2612ba33924b6c71abe8e15b736b8f4b7"
+    },
+    {
+      "path": "evidence/v0.2-map-update/build-final.log",
+      "bytes": 3838,
+      "sha256": "350435519fb6f597aa986ec2745808e22413304965e6125d31948c04ebe79bfa"
+    },
+    {
+      "path": "evidence/v0.2-map-update/package-final.log",
+      "bytes": 1151,
+      "sha256": "0c7857f2ec44e1742a42346d672c569d025030f7146122e15f0d58f2ca08028c"
+    },
+    {
+      "path": "evidence/v0.2-map-update/install-final.json",
+      "bytes": 219,
+      "sha256": "ac0a216af140058ef22f73e3114ca7f160cecff216321cc6d587ffbe095862ab"
+    },
+    {
+      "path": "evidence/v0.2-map-update/search-benchmark.json",
+      "bytes": 4120,
+      "sha256": "229a5daf8a63e002a7ff26f772ec3cbcc3d4bba1e7ef2042dd10e5be42a0242d"
+    },
+    {
+      "path": "evidence/v0.2-map-update/installed-smoke-final2/smoke-results.json",
+      "bytes": 6708,
+      "sha256": "f153b31f3a1c1268632fe6b72b882b2eddc9aa176ec68c4013b498b5ae97e6ff"
+    },
+    {
+      "path": "evidence/v0.2-map-update/installed-regression-final4/results.json",
+      "bytes": 5769,
+      "sha256": "2b185ed833e47c787343d25f54a1a51484e116741f13729998849587214967f3"
+    },
+    {
+      "path": "evidence/v0.2-map-update/upgrade-display-final2/results.json",
+      "bytes": 5083,
+      "sha256": "7ff63caf6143b5f60012c25bf2dde461ec1bee302eb8ed62a69721c193615ac0"
+    }
+  ],
+  "fixtures": [
+    {
+      "path": "tests/fixtures/v00-journal.sqlite",
+      "sha256": "76fb2514cb6aae4de0ec3e497df59b73e9ff5ffca115b5effe384b08737d3725",
+      "synthetic": true
+    },
+    {
+      "path": "tests/fixtures/v00-state.airjourney",
+      "sha256": "5ad64d5866044eda6b88b8ade8657db2327cc48f27dbd56fc08b3615a2d71e82",
+      "synthetic": true
+    },
+    {
+      "path": "tests/fixtures/v01-journal.sqlite",
+      "sha256": "2555f414bba3f8c2b4f757aeb7380c2bf8690c6635dc2ca8f8953febd98f544d",
+      "synthetic": true
+    },
+    {
+      "path": "tests/fixtures/v01-state.airjourney",
+      "sha256": "d803b3e522753d833d5b4fb79b7c1807d7e01357884c723fcd3f4dea47685609",
+      "synthetic": true
+    }
+  ],
+  "visualReview": {
+    "mapRecoveryAndNearRouteScenario": "PASS screenshot review",
+    "screenshots": "docs/implementation/v0.2/map-and-location-update/screenshots",
+    "fullGpuMatrix": "NOT RUN"
+  }
+}

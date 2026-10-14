@@ -1,0 +1,10 @@
+{
+  "mode": "confirm-library",
+  "results": [
+    {
+      "name": "native airport import stays in bound category",
+      "status": "PASS"
+    }
+  ],
+  "observations": []
+}

@@ -1,0 +1,13 @@
+项目,结果,证据
+现有测试35项,PASS,logs/tests.log
+构建及产品文件一致,PASS,logs/build.log;logs/delivery-verification.json
+航线默认显示及悬浮三字码渐显渐隐,PASS,data/map-regression/results.json;data/map-regression/02-hover-codes.png
+国家标签缩小优先级避让,PASS,data/map-regression/results.json;data/map-regression/03-decluttered-world.png
+位置编辑新增选点入口撤除及导入约束,PASS,data/map-regression/results.json
+旧坐标保留新选择随包坐标,PASS,data/map-regression/results.json;logs/legacy-choice.json
+零尺寸和真实绘制缓冲区防护,PASS,data/map-regression/results.json
+自动重建及Restart map同进程恢复,PASS,data/map-regression/results.json;data/map-regression/05-context-recovered.png
+正常模式短路线操作及实际重启,PASS,data/map-regression/results.json;data/map-regression/07-normal-short.png
+资源和源码包文档一致,PASS,logs/delivery-verification.json
+真实驱动随机故障全设备长期压力,NOT RUN,按用户轻量范围未执行
+安装向导完整备份矩阵,NOT RUN,本轮运行解包exe

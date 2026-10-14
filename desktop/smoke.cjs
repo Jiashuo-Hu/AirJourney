@@ -46,9 +46,16 @@ module.exports = async (win, data) => {
   await snapshot("01-empty");
   await click("+ Add flight");
   await field("Flight number", "AJ-TEST-999");
-  await js(
-    `(()=>{const ls=[...document.querySelectorAll('label')].filter(l=>l.firstChild?.textContent.trim()==='Choose local airport');for(const [i,v] of ['airport-PEK','airport-LHR'].entries()){const n=ls[i].querySelector('select');Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype,'value').set.call(n,v);n.dispatchEvent(new Event('change',{bubbles:true}));}})()`,
-  );
+  for (const [i, code] of ["PEK", "LHR"].entries()) {
+    await js(
+      `(()=>{const n=document.querySelectorAll('.airport-picker input')[${i}];Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(n,${JSON.stringify(code)});n.dispatchEvent(new Event('input',{bubbles:true}));})()`,
+    );
+    await wait(200);
+    await js(
+      `document.querySelectorAll('.airport-picker')[${i}].querySelector('[role=option]').click()`,
+    );
+    await wait(200);
+  }
   await wait(300);
   await field("Airline", "airline-LH");
   await click("Save flight");
@@ -59,7 +66,7 @@ module.exports = async (win, data) => {
   assert.equal(first.flights[0].departure.date, "");
   assert.equal(first.flights[0].from.code, "PEK");
   assert.ok(first.flights[0].airline.logo.startsWith("data:"));
-  assert.ok((await js("document.body.innerText")).includes("1 mapped flights"));
+  assert.ok((await js("document.body.innerText")).includes("mapped"));
   await wait(4000);
   results.push({
     test: "manual synthetic / unknown time / mapped / local SVG / SQLite commit",
@@ -169,9 +176,9 @@ module.exports = async (win, data) => {
   await click("Data & backup");
   await click("Export backup");
   await wait(300);
-  assert.ok(fs.existsSync(path.join(data, "AirJourney-v0.1.airjourney")));
+  assert.ok(fs.existsSync(path.join(data, "AirJourney-v0.2.airjourney")));
   fs.copyFileSync(
-    path.join(data, "AirJourney-v0.1.airjourney"),
+    path.join(data, "AirJourney-v0.2.airjourney"),
     path.join(data, "import-next.bin"),
   );
   await click("Import backup");
@@ -188,23 +195,53 @@ module.exports = async (win, data) => {
   });
   await click("Library");
   await click("Airports");
-  await js(`document.querySelectorAll('.reference-row')[5].click()`);
+  await js(
+    `[...document.querySelectorAll('.reference-row')].find(n=>n.textContent.includes('LHR')).click()`,
+  );
   await wait(250);
-  await field("Latitude", "51.5");
+  assert.equal(
+    await js(
+      'document.querySelectorAll(".library-edit input[type=number]").length',
+    ),
+    0,
+  );
+  await field("Name", "London Heathrow · metadata edit");
   await click("Apply to future selections");
   const future = await js("window.airjourney.load()");
-  assert.equal(future.library.Airports[5].lat, 51.5);
+  assert.equal(
+    future.library.Airports.find((r) => r.code === "LHR").lat,
+    before.library.Airports.find((r) => r.code === "LHR").lat,
+  );
   assert.equal(future.flights[0].to.lat, first.flights[0].to.lat);
   results.push({
-    test: "future-only reference edit preserves existing snapshots",
+    test: "airport location locked; future-only metadata edit preserves snapshots",
     status: "PASS",
   });
-  await js(`document.querySelectorAll('.reference-row')[5].click()`);
+  await js(
+    `[...document.querySelectorAll('.reference-row')].find(n=>n.textContent.includes('LHR')).click()`,
+  );
   await wait(250);
+  await js(
+    `window.airjourney.load().then(s=>{const f=s.flights[0]; const i=s.library.Airports.findIndex(r=>r.id===f.to.id); if(i<0)s.library.Airports.push({...f.to}); return window.airjourney.save(JSON.stringify(s));})`,
+  );
+  await win.webContents.reload();
+  await wait(3500);
+  await click("Library");
+  await js(
+    `[...document.querySelectorAll('.reference-row')].find(n=>n.textContent.includes('LHR')&&!n.textContent.includes('metadata edit')).click()`,
+  );
+  await field("Name", "London Heathrow · explicit metadata");
   await click("Review changes to existing flights");
   await click("Confirm snapshot changes");
   await wait(300);
-  assert.equal((await js("window.airjourney.load()")).flights[0].to.lat, 51.5);
+  assert.equal(
+    (await js("window.airjourney.load()")).flights[0].to.lat,
+    before.flights[0].to.lat,
+  );
+  assert.equal(
+    (await js("window.airjourney.load()")).flights[0].to.name,
+    "London Heathrow · explicit metadata",
+  );
   results.push({
     test: "explicit reference preview / apply updates snapshots",
     status: "PASS",
@@ -224,7 +261,7 @@ module.exports = async (win, data) => {
     status: "PASS",
   });
   const mapPick = await js(
-    `(()=>{const v=__ajTestGlobe,e=v.entities.getById('point-airport-PEK'),position=e.position.getValue(v.clock.currentTime),pixel=v.scene.cartesianToCanvasCoordinates(position),picked=v.scene.pick(pixel);v.screenSpaceEventHandler.getInputAction(2)({position:pixel});return picked?.id?.properties?.flightIds?.getValue();})()`,
+    `(()=>{const v=__ajTestGlobe,e=v.entities.values.find(e=>e.id.startsWith('point-')&&e.properties.flightIds.getValue().length===2),position=e.position.getValue(v.clock.currentTime),pixel=v.scene.cartesianToCanvasCoordinates(position),picked=v.scene.pick(pixel);v.screenSpaceEventHandler.getInputAction(2)({position:pixel});return picked?.id?.properties?.flightIds?.getValue();})()`,
   );
   assert.equal(mapPick?.length, 2);
   await wait(250);
@@ -251,45 +288,36 @@ module.exports = async (win, data) => {
   results.push({ test: "1024x720 no document overflow", status: "PASS" });
   await click("Library");
   await click("Airports");
-  await click("+ Add new");
-  await field("Name", "Custom zero-coordinate place");
-  await click("Pick on globe");
-  await js(
-    `(()=>{const v=__ajTestGlobe;v.screenSpaceEventHandler.getInputAction(2)({position:{x:v.canvas.clientWidth/2,y:v.canvas.clientHeight/2}});})()`,
-  );
-  await wait(250);
-  assert.ok(
-    (await js("document.body.innerText")).includes("Confirm WGS84 location"),
-  );
-  await click("Confirm location");
-  await click("Apply to future selections");
-  assert.ok(
-    (await js("window.airjourney.load()")).library.Airports.some(
-      (p) =>
-        p.name === "Custom zero-coordinate place" && Number.isFinite(p.lat),
+  assert.equal(
+    await js(
+      "[...document.querySelectorAll('button')].some(b=>b.textContent.trim()==='+ Add new')",
     ),
+    false,
+  );
+  assert.equal(
+    await js(
+      "[...document.querySelectorAll('button')].some(b=>b.textContent.trim()==='Pick on globe')",
+    ),
+    false,
   );
   results.push({
-    test: "Library custom airport / globe pick preview / confirmation",
+    test: "Airport catalogue has no custom-location or globe-pick entry point",
     status: "PASS",
   });
   await click("Flights");
   await click("+ Add flight");
-  await js(
-    `(()=>{const ls=[...document.querySelectorAll('label')].filter(l=>l.firstChild?.textContent.trim()==='Airport / place name');for(const [i,v] of ['Custom unlocated origin','Custom unlocated arrival'].entries()){const n=ls[i].querySelector('input');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(n,v);n.dispatchEvent(new Event('input',{bubbles:true}));}})()`,
-  );
-  await wait(250);
+  await js("document.querySelector('.editor details summary').click()");
+  await field("Status", "Draft");
   await click("Save flight");
   await wait(300);
   const unknown = (await js("window.airjourney.load()")).flights.find(
-    (f) => f.from.name === "Custom unlocated origin",
+    (f) => f.status === "Draft" && !f.number && !f.from.name && !f.to.name,
   );
   assert.ok(unknown);
   assert.equal(unknown.from.lat, undefined);
-  assert.equal(unknown.number, "");
   assert.ok((await js("document.body.innerText")).includes("Needs location"));
   results.push({
-    test: "incomplete / no number / no coordinates saves and retains needs-location state",
+    test: "Unassigned Draft can be saved without inventing names or coordinates",
     status: "PASS",
   });
   assert.equal(

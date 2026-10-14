@@ -1,6 +1,6 @@
 {
   "name": "airjourney",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Local personal flight journal",
   "author": "AirJourney",
   "private": true,
@@ -37,7 +37,7 @@
     "appId": "local.airjourney.app",
     "productName": "AirJourney",
     "directories": {
-      "output": "release/v0.1",
+      "output": "release/v0.2",
       "app": ".tools/desktop-app"
     },
     "files": [
@@ -57,7 +57,7 @@
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
       "deleteAppDataOnUninstall": false,
-      "artifactName": "AirJourney-v0.1-${arch}-setup.${ext}",
+      "artifactName": "AirJourney-v0.2-${arch}-setup.${ext}",
       "installerIcon": "public/app.ico",
       "uninstallerIcon": "public/app.ico"
     },

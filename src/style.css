@@ -947,3 +947,176 @@ select[multiple] {
     font-size: 11px;
   }
 }
+
+/* v0.2: keep the journal and map quiet; reveal reference detail on demand. */
+.advanced,
+.data-tools {
+  margin: 12px 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.advanced > summary,
+.data-tools > summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--muted);
+}
+.advanced[open] > summary,
+.data-tools[open] > summary {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.data-tools {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+.data-tools[open] button {
+  display: block;
+  margin: 8px 0;
+}
+.airport-picker {
+  position: relative;
+}
+.airport-options {
+  position: absolute;
+  z-index: 25;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 8px 28px #0003;
+}
+.airport-options button {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 10px 12px;
+}
+.airport-options button[aria-selected="true"] {
+  background: var(--subtle);
+}
+.airport-options strong,
+.airport-options small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.airport-options strong {
+  font-size: 12px;
+}
+.airport-options small {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 4px;
+}
+.search-total {
+  display: block;
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.location-status {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 6px 0;
+}
+.library-count {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 12px 0;
+}
+.map-more {
+  position: relative;
+}
+.map-more > summary {
+  cursor: pointer;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-height: 34px;
+  color: var(--text);
+}
+.map-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  width: 240px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 6px 24px #0004;
+}
+.map-menu p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.journey-stats {
+  margin-bottom: 14px;
+}
+
+.globe-labels {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.globe-labels > span {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  font:
+    600 13px Inter,
+    sans-serif;
+  will-change: opacity;
+}
+.country-map-label {
+  color: #fff;
+  text-shadow:
+    -1px -1px 2px #102438,
+    1px 1px 2px #102438,
+    0 0 4px #102438;
+  padding: 3px;
+}
+.airport-hover-label {
+  background: #102438ed;
+  color: #fff;
+  border: 1px solid #fff5;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.chosen-airport {
+  padding: 9px 0;
+}
+.chosen-airport strong,
+.chosen-airport small {
+  display: block;
+}
+.chosen-airport small {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+dt {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 10px;
+}
+dd {
+  margin: 4px 0;
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,460 @@
+{
+  "schema": 1,
+  "flights": [
+    {
+      "id": "70e3a3d0-0622-4906-8d7d-9569e21912f5",
+      "created": "2026-10-14T04:24:48.350Z",
+      "updated": "2026-10-14T04:28:38.804Z",
+      "number": "ACC-V02-EDIT",
+      "from": {
+        "id": "oa-26434",
+        "name": "Chhatrapati Shivaji Maharaj International Airport",
+        "ident": "VABB",
+        "countryCode": "IN",
+        "region": "India",
+        "airportType": "large_airport",
+        "scheduled": true,
+        "source": "OurAirports · 2026-10-14",
+        "lat": 19.088699,
+        "lon": 72.867897,
+        "locationKind": "airport",
+        "locationSource": "OurAirports airport coordinates",
+        "code": "BOM",
+        "iata": "BOM",
+        "icao": "VABB",
+        "city": "Mumbai",
+        "aliases": "VABB Bombay, Sahar International Airport",
+        "overrides": []
+      },
+      "to": {
+        "id": "oa-3206",
+        "name": "Jomo Kenyatta International Airport",
+        "ident": "HKJK",
+        "countryCode": "KE",
+        "region": "Kenya",
+        "airportType": "large_airport",
+        "scheduled": true,
+        "source": "OurAirports · 2026-10-14",
+        "lat": -1.318886,
+        "lon": 36.928233,
+        "locationKind": "airport",
+        "locationSource": "OurAirports airport coordinates",
+        "code": "NBO",
+        "iata": "NBO",
+        "icao": "HKJK",
+        "city": "Nairobi",
+        "aliases": "HKJK Jkia Airport, Embakasi Airport, Nairobi International Airport",
+        "overrides": []
+      },
+      "departure": {
+        "date": "2026-10-01",
+        "time": "09:00",
+        "zone": "+05:30",
+        "precision": "Date and time"
+      },
+      "arrival": {
+        "date": "2026-10-01",
+        "time": "13:00",
+        "zone": "+03:00",
+        "precision": "Date and time"
+      },
+      "unit": "km",
+      "status": "Recorded",
+      "tags": [
+        "world",
+        "independent"
+      ],
+      "notes": "自构造机场组合，用于独立功能验收。",
+      "fields": {},
+      "color": "",
+      "visible": true,
+      "airline": {
+        "id": "airline-EK",
+        "code": "EK",
+        "name": "Emirates",
+        "alliance": "None",
+        "source": "Bundled"
+      },
+      "alliance": "None"
+    }
+  ],
+  "library": {
+    "Airports": [
+      {
+        "id": "airport-PEK",
+        "code": "PEK",
+        "name": "Beijing Capital International Airport",
+        "city": "Beijing",
+        "region": "China",
+        "lat": 40.077349,
+        "lon": 116.596702,
+        "zone": "Asia/Shanghai",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-PVG",
+        "code": "PVG",
+        "name": "Shanghai Pudong International Airport",
+        "city": "Shanghai (Pudong)",
+        "region": "China",
+        "lat": 31.1434,
+        "lon": 121.805,
+        "zone": "Asia/Shanghai",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-CAN",
+        "code": "CAN",
+        "name": "Guangzhou Baiyun International Airport",
+        "city": "Guangzhou (Huadu)",
+        "region": "China",
+        "lat": 23.392401,
+        "lon": 113.299004,
+        "zone": "Asia/Shanghai",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-HKG",
+        "code": "HKG",
+        "name": "Hong Kong International Airport",
+        "city": "Hong Kong",
+        "region": "China",
+        "lat": 22.31184,
+        "lon": 113.914862,
+        "zone": "Asia/Hong_Kong",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-TPE",
+        "code": "TPE",
+        "name": "Taiwan Taoyuan International Airport",
+        "city": "Taoyuan",
+        "region": "China",
+        "lat": 25.0777,
+        "lon": 121.233002,
+        "zone": "Asia/Taipei",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-LHR",
+        "code": "LHR",
+        "name": "London Heathrow Airport",
+        "city": "London",
+        "region": "United Kingdom",
+        "lat": 51.470748,
+        "lon": -0.459909,
+        "zone": "Europe/London",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-JFK",
+        "code": "JFK",
+        "name": "John F. Kennedy International Airport",
+        "city": "New York",
+        "region": "United States",
+        "lat": 40.639447,
+        "lon": -73.779317,
+        "zone": "America/New_York",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-LAX",
+        "code": "LAX",
+        "name": "Los Angeles International Airport",
+        "city": "Los Angeles",
+        "region": "United States",
+        "lat": 33.942501,
+        "lon": -118.407997,
+        "zone": "America/Los_Angeles",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-HND",
+        "code": "HND",
+        "name": "Tokyo Haneda International Airport",
+        "city": "Tokyo",
+        "region": "Japan",
+        "lat": 35.549678,
+        "lon": 139.786958,
+        "zone": "Asia/Tokyo",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-SIN",
+        "code": "SIN",
+        "name": "Singapore Changi Airport",
+        "city": "Singapore",
+        "region": "Singapore",
+        "lat": 1.35019,
+        "lon": 103.994003,
+        "zone": "Asia/Singapore",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-AKL",
+        "code": "AKL",
+        "name": "Auckland International Airport",
+        "city": "Auckland",
+        "region": "New Zealand",
+        "lat": -37.01199,
+        "lon": 174.786331,
+        "zone": "Pacific/Auckland",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-SYD",
+        "code": "SYD",
+        "name": "Sydney Kingsford Smith International Airport",
+        "city": "Sydney (Mascot)",
+        "region": "Australia",
+        "lat": -33.946098,
+        "lon": 151.177002,
+        "zone": "Australia/Sydney",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-CDG",
+        "code": "CDG",
+        "name": "Charles de Gaulle International Airport",
+        "city": "Paris (Roissy-en-France, Val-d'Oise)",
+        "region": "France",
+        "lat": 49.00896,
+        "lon": 2.554117,
+        "zone": "Europe/Paris",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-FRA",
+        "code": "FRA",
+        "name": "Frankfurt Main Airport",
+        "city": "Frankfurt am Main",
+        "region": "Germany",
+        "lat": 50.026706,
+        "lon": 8.55835,
+        "zone": "Europe/Berlin",
+        "source": "Bundled"
+      },
+      {
+        "id": "airport-DXB",
+        "code": "DXB",
+        "name": "Dubai International Airport",
+        "city": "Dubai",
+        "region": "United Arab Emirates",
+        "lat": 25.24979,
+        "lon": 55.370992,
+        "zone": "Asia/Dubai",
+        "source": "Bundled"
+      },
+      {
+        "id": "oa-26434",
+        "name": "Chhatrapati Shivaji Maharaj International Airport",
+        "ident": "VABB",
+        "countryCode": "IN",
+        "region": "India",
+        "airportType": "large_airport",
+        "scheduled": true,
+        "source": "User edited",
+        "lat": 19.2,
+        "lon": 72.867897,
+        "locationKind": "airport",
+        "locationSource": "OurAirports airport coordinates",
+        "code": "BOM",
+        "iata": "BOM",
+        "icao": "VABB",
+        "city": "Mumbai",
+        "aliases": "VABB Bombay, Sahar International Airport"
+      },
+      {
+        "id": "ecfcd39a-8fd8-4ac3-abbe-6b4939a85537",
+        "name": "Keyboard custom coordinates test",
+        "source": "Custom",
+        "lat": 1,
+        "lon": 2
+      }
+    ],
+    "Airlines": [
+      {
+        "id": "airline-CA",
+        "code": "CA",
+        "name": "Air China",
+        "alliance": "Star Alliance",
+        "source": "Bundled"
+      },
+      {
+        "id": "airline-MU",
+        "code": "MU",
+        "name": "China Eastern Airlines",
+        "alliance": "SkyTeam",
+        "source": "Bundled"
+      },
+      {
+        "id": "airline-CZ",
+        "code": "CZ",
+        "name": "China Southern Airlines",
+        "alliance": "None",
+        "source": "Bundled"
+      },
+      {
+        "id": "airline-BA",
+        "code": "BA",
+        "name": "British Airways",
+        "alliance": "oneworld",
+        "source": "Bundled"
+      },
+      {
+        "id": "airline-LH",
+        "code": "LH",
+        "name": "Lufthansa",
+        "alliance": "Star Alliance",
+        "source": "Bundled",
+        "logo": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cgo8c3ZnIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAzMzI2IDU4NiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczpzZXJpZj0iaHR0cDovL3d3dy5zZXJpZi5jb20vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEuNDE0MjE7Ij4KICAgIDxnIGlkPSJwYXRoMjIiIHRyYW5zZm9ybT0ibWF0cml4KDEuMzMzMzMsMCwwLC0xLjMzMzMzLDQwMi44MjcsMjM2LjU0NSkiPgogICAgICAgIDxwYXRoIGQ9Ik0wLDBDLTEuNjE2LDAgLTIuOTc2LC0wLjA0MiAtMy43NDEsLTAuMTI3Qy00LjYzNCwtMS43NDMgLTUuOTUyLC0zLjkxMSAtNy45MDgsLTYuOTNDMjIuNTMyLC02LjkzIDUwLjE2NywtOS40MzggODAuNzM0LC0xNC45MjJMNzIuMTA0LC0yMy4yNTVDNDQuNTEyLC0xOC4zNjYgMjEuNTk3LC0xNi40MTEgLTcuNjEsLTE2LjQxMUMtMTEuODYxLC0xNi40MTEgLTEyLjc1NCwtMTYuNDExIC0xMy43NzQsLTE2LjQ1M0MtMTQuNzk1LC0xNy45ODMgLTE3LjA5MSwtMjAuOTU5IC0xOS4zODYsLTIzLjcyM0MtMTYuNzkzLC0yMy41NTMgLTExLjc3NiwtMjMuNDY4IC00Ljg0NywtMjMuNDY4QzE5LjE3NCwtMjMuNDY4IDQxLjYyMSwtMjUuMjUzIDY1Ljk4MiwtMjkuMTY1TDU3LjM1MSwtMzcuNTRDMzguODE1LC0zNC42NDkgMTYuMTU1LC0zMi45OTEgLTQuMTY3LC0zMi45OTFDLTExLjM5NCwtMzIuOTkxIC0xOS41OTksLTMzLjI0NiAtMjYuOTU0LC0zMy42NzFDLTI4LjYxMiwtMzUuNTg0IC0zMi45NDgsLTQwLjI2MSAtMzQuMjY2LC00MS43MDZDLTI0LjUzMSwtNDAuNjg2IC0xMy44MTcsLTQwLjIxOCAtMS4wNjMsLTQwLjIxOEMxNy4wOTEsLTQwLjIxOCAzNC40MzcsLTQxLjQwOSA1MC44NDcsLTQzLjgzMkw0Mi4yMTYsLTUyLjEyMkMzMC41MjUsLTUwLjY3NyAxNi4zMjUsLTQ5LjgyNyAzLjc4NCwtNDkuODI3Qy0yOC41NjksLTQ5LjgyNyAtNTQuMDc4LC01Ni44NDEgLTgwLjQzNywtNzIuOTU0Qy01NS4zMTEsLTk5LjkwOCAtMTQuMTU3LC0xMTYuOTU2IDI1LjcyMSwtMTE2Ljk1NkwyOS40NjIsLTExNi45NTZMMTUuNTE4LC0xMzAuNDM1Qy00Mi4wMDQsLTExOS42MzUgLTEwMi41NDQsLTk0LjMzOSAtMTUzLjY4OCwtNTkuNjg5Qy0yMDIuODc3LC0yNi40ODYgLTIyMC4wOTUsLTE2LjY2NiAtMjU4LjQ4NSwwLjI5N0wtMjU4Ljc0LDEwLjE2MUwtMjMyLjc2NCwtMC45NzhMLTIyMy45MjEsNi4wMzdMLTEzOS4xMDYsLTMyLjgyMUwtMTQ0LjYzMywtMzcuMjQyTC0xODguMTY3LC0xOC4zMjRMLTE5Mi40NjEsLTIxLjY4MkwtMTY5Ljg0MywtMzQuMzA5Qy0xNTAuNzU0LC00NC45MzggLTEzNi4yMTUsLTQ5LjY5OSAtMTIyLjc4LC00OS42OTlDLTkzLjQwMywtNDkuNjk5IC02Ny4wNDQsLTI4Ljg2NyAtNTAuMDM5LDcuNzM3Qy0zNy4yNDIsOS4zOTYgLTIzLjU5NSwxMC4xNjEgLTcuMTg1LDEwLjE2MUMyNi40ODYsMTAuMTYxIDU5LjE3OSw2LjkzIDk2LjIwOSwwTDg3LjE5NiwtOC43MTVDNjQuMTU0LC0zLjkxMSAyNC45OTgsMCAwLDBNLTgyLjQzNSwtMjQyLjExN0MtMTkyLjc3MywtMjQyLjExNyAtMjgyLjI3NywtMTUyLjYxMyAtMjgyLjI3NywtNDIuMjc1Qy0yODIuMjc3LDY4LjA2MyAtMTkyLjc3MywxNTcuNTY4IC04Mi40MzUsMTU3LjU2OEMyNy45MDMsMTU3LjU2OCAxMTcuNDA3LDY4LjA2MyAxMTcuNDA3LC00Mi4yNzVDMTE3LjQwNywtMTUyLjYxMyAyNy45MDMsLTI0Mi4xMTcgLTgyLjQzNSwtMjQyLjExN00tODIuNDM1LDE3MC4zMjNDLTIwMC4wMDEsMTcwLjMyMyAtMjk1LjAzNCw3NS4yOTIgLTI5NS4wMzQsLTQyLjI3NUMtMjk1LjAzNCwtMTU5Ljg0MiAtMjAwLjAwMSwtMjU0Ljg3NCAtODIuNDM1LC0yNTQuODc0QzM1LjEzMiwtMjU0Ljg3NCAxMzAuMTY0LC0xNTkuODQyIDEzMC4xNjQsLTQyLjI3NUMxMzAuMTY0LDc1LjI5MiAzNS4xMzIsMTcwLjMyMyAtODIuNDM1LDE3MC4zMjNNNDc5LjIyOSwtMTI2LjkxTDYwMS4xMTksLTEyNi45MUw2MDEuMTE5LC0xODQuMDA4TDQxMy42MjgsLTE4NC4wMDhMNDEzLjYyOCw5OS40NThMNDc5LjIyOSw5OS40NThMNDc5LjIyOSwtMTI2LjkxWk03NDguNTIxLDIwLjA4N0w4MDkuNjY3LDIwLjA4N0w4MDkuNjY3LC0xODQuMDA4TDc1Mi4xNjYsLTE4NC4wMDhMNzUyLjE2NiwtMTYwLjUyMUM3NDMuNjYxLC0xNzYuMzE0IDcyNi4yNSwtMTkwLjA4MSA2OTQuMjU3LC0xOTAuMDgxQzY0Mi4wMjEsLTE5MC4wODEgNjE0Ljg4OSwtMTY2LjU5NCA2MTQuODg5LC05OS4zNzNMNjE0Ljg4OSwyMC4wODdMNjc2LjAzNiwyMC4wODdMNjc2LjAzNiwtOTYuNTM3QzY3Ni4wMzYsLTEyMy42NyA2ODcuNzgxLC0xMzUuODE3IDcxMi40ODIsLTEzNS44MTdDNzM0Ljc1NCwtMTM1LjgxNyA3NDguNTIxLC0xMjMuNjcgNzQ4LjUyMSwtOTYuNTM3TDc0OC41MjEsMjAuMDg3Wk04NTYuNjQzLDI3Ljc4Qzg1Ni42NDMsNzcuMTgzIDg4Ny44MjYsMTAzLjUwNyA5MzYuODI0LDEwMy41MDdDOTUyLjYxOSwxMDMuNTA3IDk2Mi43NDEsMTAxLjA3NyA5NjIuNzQxLDEwMS4wNzdMOTYyLjc0MSw1MS42NzRDOTYyLjc0MSw1MS42NzQgOTU0LjIzNyw1Mi40ODEgOTQ2Ljk0Niw1Mi40ODFDOTI3LjkxNCw1Mi40ODEgOTE3Ljc4OSw0Ni4wMDIgOTE3Ljc4OSwyOC4xODVMOTE3Ljc4OSwyMC4wODdMOTYyLjc0MSwyMC4wODdMOTYyLjc0MSwtMjkuNzIyTDkxNy43ODksLTI5LjcyMkw5MTcuNzg5LC0xODQuMDA4TDg1Ni42NDMsLTE4NC4wMDhMODU2LjY0MywtMjkuNzIyTDgyNS44NjgsLTI5LjcyMkw4MjUuODY4LDIwLjA4N0w4NTYuNjQzLDIwLjA4N0w4NTYuNjQzLDI3Ljc4TTEwNzAuNDUsMjAuMDg3TDExMTcuMDIsMjAuMDg3TDExMTcuMDIsLTI5LjcyMkwxMDcwLjQ1LC0yOS43MjJMMTA3MC40NSwtMTA5LjA5MkMxMDcwLjQ1LC0xMzAuOTYgMTA4MS43OSwtMTM2LjYyOSAxMDk5LjYxLC0xMzYuNjI5QzExMDYuOSwtMTM2LjYyOSAxMTE3LjAyLC0xMzUuNDE1IDExMTcuMDIsLTEzNS40MTVMMTExNy4wMiwtMTg0LjQxM0MxMTE3LjAyLC0xODQuNDEzIDExMDIuODUsLTE4Ny42NTEgMTA4Ny44NywtMTg3LjY1MUMxMDM4Ljg3LC0xODcuNjUxIDEwMDkuMzEsLTE2NS4zOCAxMDA5LjMxLC0xMTUuOTc4TDEwMDkuMzEsLTI5LjcyMkw5NzguNTMsLTI5LjcyMkw5NzguNTMsMjAuMDg3TDEwMDkuMzEsMjAuMDg3TDEwMDkuMzEsNzkuNjE0TDEwNzAuNDUsNzkuNjE0TDEwNzAuNDUsMjAuMDg3Wk0xMjUyLjQsMjYuMTYxQzEzMDQuMjQsMjYuMTYxIDEzMzEuMzcsMi42NzUgMTMzMS4zNywtNjQuNTQ3TDEzMzEuMzcsLTE4NC4wMDhMMTI3MC4yMiwtMTg0LjAwOEwxMjcwLjIyLC02Ny4zODFDMTI3MC4yMiwtNDAuMjUxIDEyNTguNDgsLTI4LjEwNCAxMjMyLjk3LC0yOC4xMDRDMTIwOS44OCwtMjguMTA0IDExOTYuMTIsLTQwLjI1MSAxMTk2LjEyLC02Ny4zODFMMTE5Ni4xMiwtMTg0LjAwOEwxMTM0Ljk3LC0xODQuMDA4TDExMzQuOTcsOTkuMDUyTDExOTYuNTIsOTkuMDUyTDExOTYuNTIsMC4yNDVDMTIwNy4wNSwxNS4yMjkgMTIyMy42NSwyNi4xNjEgMTI1Mi40LDI2LjE2MU0xNDg3LjI3LC0xMDQuNjM3QzE0ODcuMjcsLTEyNi45MSAxNDY2LjIxLC0xNDMuNTE0IDE0MzMuODIsLTE0My41MTRDMTQxOC4wMywtMTQzLjUxNCAxNDA4LjcxLC0xMzYuMjI1IDE0MDguNzEsLTEyMi40NTVDMTQwOC43MSwtMTExLjkyNyAxNDE1LjE5LC0xMDMuMDE5IDE0MzUuODUsLTEwMC4xODZMMTQ3MS4wOCwtOTUuMzI0QzE0NzcuMTUsLTk0LjUxMyAxNDgzLjYzLC05My4zIDE0ODcuMjcsLTkyLjA4NUwxNDg3LjI3LC0xMDQuNjM3Wk0xNDUzLjI2LDI2LjE2QzEzOTIuOTIsMjYuMTYgMTM2My43NiwzLjA3NyAxMzYxLjM0LC00MC4yNTJMMTQyMC44NiwtNDAuMjUyQzE0MjEuNjcsLTI4LjkxMiAxNDI4LjE1LC0yMC40MDggMTQ1My4yNiwtMjAuNDA4QzE0NzUuNTMsLTIwLjQwOCAxNDg2LjA2LC0yNy42OTkgMTQ4Ni4wNiwtMzguNjNDMTQ4Ni4wNiwtNDguMzUyIDE0NzkuOTgsLTUxLjk5NSAxNDY1LC01My42MTRMMTQyNi4xMywtNTcuNjYzQzEzNzMuNDgsLTYzLjMzMSAxMzQ5LjU5LC04NS4yIDEzNDkuNTksLTEyNC44ODdDMTM0OS41OSwtMTYxLjczNiAxMzcyLjI3LC0xOTAuMDgxIDE0MjAuNDYsLTE5MC4wODFDMTQ1My4yNiwtMTkwLjA4MSAxNDcyLjcsLTE3OS41NTMgMTQ4OS43LC0xNTguNDk0TDE0ODkuNywtMTg0LjAwOEwxNTQ1LjU5LC0xODQuMDA4TDE1NDUuNTksLTQ5Ljk3QzE1NDUuNTksNi4zMTggMTUxMi43OSwyNi4xNiAxNDUzLjI2LDI2LjE2TTE2ODYuOTgsMjYuMTYxQzE3NDAuMDMsMjYuMTYxIDE3NjcuMTYsMi42NzUgMTc2Ny4xNiwtNjQuNTQ3TDE3NjcuMTYsLTE4NC4wMDhMMTcwNi4wMSwtMTg0LjAwOEwxNzA2LjAxLC02Ny4zODFDMTcwNi4wMSwtNDAuMjUxIDE2OTQuMjcsLTI4LjEwNCAxNjY4Ljc2LC0yOC4xMDRDMTY0NS42NywtMjguMTA0IDE2MzEuOTEsLTQwLjI1MSAxNjMxLjkxLC02Ny4zODFMMTYzMS45MSwtMTg0LjAwOEwxNTcwLjc2LC0xODQuMDA4TDE1NzAuNzYsMjAuMDg2TDE2MjguMjYsMjAuMDg2TDE2MjguMjYsLTMuNDAyQzE2MzYuNzcsMTIuMzkzIDE2NTQuMTgsMjYuMTYxIDE2ODYuOTgsMjYuMTYxTTE4OTYuMTUsLTU2LjA0M0MxOTQ3Ljk4LC02Mi45MjkgMTk3My45LC03OS4xMjYgMTk3My45LC0xMjEuNjQ2QzE5NzMuOSwtMTY0LjU3MSAxOTQzLjUzLC0xOTAuMDgyIDE4NzkuMTQsLTE5MC4wODJDMTgwOS4wOSwtMTkwLjA4MiAxNzg0LjM4LC0xNjIuMTQzIDE3ODMuMTcsLTEyMS4yMzlMMTg0My41MSwtMTIxLjIzOUMxODQ1LjEzLC0xMzYuMjI1IDE4NTUuNjUsLTE0My41MTQgMTg3OS4xNCwtMTQzLjUxNEMxOTAzLjAzLC0xNDMuNTE0IDE5MTIuNzUsLTEzNy44NDMgMTkxMi43NSwtMTI2LjUwNkMxOTEyLjc1LC0xMTUuOTc4IDE5MDQuNjUsLTExMS4xMTkgMTg4My42LC0xMDguMjg0TDE4NjIuMTMsLTEwNS40NDdDMTgxNy4xOCwtOTkuMzc0IDE3OTEuMjcsLTgxLjk2MiAxNzkxLjI3LC00MS40NjZDMTc5MS4yNywtMi41OTEgMTgyMC4wMiwyNi4xNjEgMTg4MC4zNiwyNi4xNjFDMTkzNi4yNCwyNi4xNjEgMTk2Ni4yMSwzLjg4OSAxOTY5LjA0LC00MC4yNTFMMTkwOS41MSwtNDAuMjUxQzE5MDcuNDksLTI4LjUxIDE5MDEuMDEsLTIxLjIxOSAxODgwLjM2LC0yMS4yMTlDMTg2MC4xMSwtMjEuMjE5IDE4NTIuNDIsLTI4LjEwNCAxODUyLjQyLC0zNy4wMTRDMTg1Mi40MiwtNDUuOTIgMTg1Ny4yOCwtNTAuNzggMTg3NC42OSwtNTMuMjExTDE4OTYuMTUsLTU2LjA0M00yMTI2Ljk3LC0xMDQuNjQxQzIxMjYuOTcsLTEyNi45MTEgMjEwNS45MSwtMTQzLjUxNCAyMDczLjUyLC0xNDMuNTE0QzIwNTcuNzIsLTE0My41MTQgMjA0OC40MSwtMTM2LjIyNSAyMDQ4LjQxLC0xMjIuNDU1QzIwNDguNDEsLTExMS45MjcgMjA1NC44OSwtMTAzLjAxOSAyMDc1LjU0LC0xMDAuMTg2TDIxMTAuNzcsLTk1LjMyNEMyMTE2Ljg1LC05NC41MTcgMjEyMy4zMiwtOTMuMyAyMTI2Ljk3LC05Mi4wODVMMjEyNi45NywtMTA0LjY0MVpNMjA5Mi45NSwyNi4xNkMyMDMyLjYyLDI2LjE2IDIwMDMuNDYsMy4wNzcgMjAwMS4wMywtNDAuMjUyTDIwNjAuNTYsLTQwLjI1MkMyMDYxLjM3LC0yOC45MTIgMjA2Ny44NSwtMjAuNDExIDIwOTIuOTUsLTIwLjQxMUMyMTE1LjIzLC0yMC40MTEgMjEyNS43NiwtMjcuNjk5IDIxMjUuNzYsLTM4LjYzM0MyMTI1Ljc2LC00OC4zNTIgMjExOS42OCwtNTEuOTk1IDIxMDQuNywtNTMuNjE0TDIwNjUuODIsLTU3LjY2M0MyMDEzLjE4LC02My4zMzQgMTk4OS4yOSwtODUuMjAxIDE5ODkuMjksLTEyNC44ODdDMTk4OS4yOSwtMTYxLjczNiAyMDExLjk2LC0xOTAuMDgxIDIwNjAuMTUsLTE5MC4wODFDMjA5Mi45NSwtMTkwLjA4MSAyMTEyLjM5LC0xNzkuNTUzIDIxMjkuNCwtMTU4LjQ5NEwyMTI5LjQsLTE4NC4wMDhMMjE4NS4yOCwtMTg0LjAwOEwyMTg1LjI4LC00OS45N0MyMTg1LjI4LDYuMzE1IDIxNTIuNDgsMjYuMTYgMjA5Mi45NSwyNi4xNiIgc3R5bGU9ImZpbGw6cmdiKDEwLDI5LDYxKTtmaWxsLXJ1bGU6bm9uemVybzsiLz4KICAgIDwvZz4KPC9zdmc+Cg=="
+      },
+      {
+        "id": "airline-AF",
+        "code": "AF",
+        "name": "Air France",
+        "alliance": "SkyTeam",
+        "source": "Bundled"
+      },
+      {
+        "id": "airline-JL",
+        "code": "JL",
+        "name": "Japan Airlines",
+        "alliance": "oneworld",
+        "source": "Bundled"
+      },
+      {
+        "id": "airline-SQ",
+        "code": "SQ",
+        "name": "Singapore Airlines",
+        "alliance": "Star Alliance",
+        "source": "Bundled"
+      },
+      {
+        "id": "airline-EK",
+        "code": "EK",
+        "name": "Emirates",
+        "alliance": "None",
+        "source": "Bundled"
+      },
+      {
+        "id": "airline-UA",
+        "code": "UA",
+        "name": "United Airlines",
+        "alliance": "Star Alliance",
+        "source": "Bundled"
+      },
+      {
+        "id": "airline-DL",
+        "code": "DL",
+        "name": "Delta Air Lines",
+        "alliance": "SkyTeam",
+        "source": "Bundled"
+      },
+      {
+        "id": "airline-QF",
+        "code": "QF",
+        "name": "Qantas",
+        "alliance": "oneworld",
+        "source": "Bundled"
+      }
+    ],
+    "Alliances": [
+      {
+        "id": "alliance-Star Alliance",
+        "name": "Star Alliance",
+        "source": "Bundled",
+        "logo": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDQzMzYzKSAgLS0+DQoNCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIyMDBweCIgaGVpZ2h0PSIxMTVweCIgdmlld0JveD0iMCAwIDIwMCAxMTUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwMCAxMTUiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjQzlDQkNEIiBkPSJNNzguNTY4LDI0LjEyNWMyLjk3Mi00LjEyMiw2LjI3Mi04LjA4OCw5LjkwNS0xMS44NTENCgkJCWMzLjY0Ni0zLjc3NSw3LjUwMS03LjIyNywxMS41MzItMTAuMzQ5bC00LjMxMywxNy4yODhMNzguNTY4LDI0LjEyNUw3OC41NjgsMjQuMTI1eiIvPg0KCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzVCNUM1RSIgZD0iTTEwOC41MSwzMS41OWMtNS4wNTYtMC41MTMtMTAuMTQxLTEuMzg4LTE1LjIxNi0yLjY1Mw0KCQkJYy01LjA5Mi0xLjI3LTEwLjAwOS0yLjg4My0xNC43MjktNC44MTNsMTcuMTI4LTQuOTFMMTA4LjUxLDMxLjU5TDEwOC41MSwzMS41OXoiLz4NCgkJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiM5OTlCOUQiIGQ9Ik0xMDAuMDA0LDEuOTI5YzIuMDg0LDQuNjM1LDMuODY5LDkuNDc1LDUuMzExLDE0LjUwMw0KCQkJYzEuNDQ3LDUuMDQ1LDIuNTA4LDEwLjEwOSwzLjE5NiwxNS4xNjFMOTUuNjkzLDE5LjIxNEwxMDAuMDA0LDEuOTI5TDEwMC4wMDQsMS45Mjl6Ii8+DQoJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjOTk5QjlEIiBkPSJNNzIuNTE5LDU5LjY1N2MtMy4wMDMtNC4wOTktNS43NTQtOC40NjMtOC4yMDktMTMuMDgxDQoJCQljLTIuNDY1LTQuNjM0LTQuNTU2LTkuMzY3LTYuMjc5LTE0LjE2NmwxNS4xMDksOS40NDRMNzIuNTE5LDU5LjY1N0w3Mi41MTksNTkuNjU3eiIvPg0KCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzVCNUM1RSIgZD0iTTg4Ljg3LDMzLjQ5Yy0yLjA1LDQuNjQ5LTQuNDU0LDkuMjE1LTcuMjI1LDEzLjY1DQoJCQljLTIuNzgxLDQuNDUxLTUuODM1LDguNjI5LTkuMTI5LDEyLjUybDAuNjIzLTE3LjgwNkw4OC44NywzMy40OUw4OC44NywzMy40OXoiLz4NCgkJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNDOUNCQ0QiIGQ9Ik01OC4wMzIsMzIuNDEzYzUuMDUyLTAuNTUsMTAuMjA3LTAuNzUxLDE1LjQzNC0wLjU2OA0KCQkJYzUuMjQ1LDAuMTg0LDEwLjM5MSwwLjczOSwxNS40MDgsMS42NDZMNzMuMTQsNDEuODU0TDU4LjAzMiwzMi40MTNMNTguMDMyLDMyLjQxM3oiLz4NCgkJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiM1QjVDNUUiIGQ9Ik0xMDQuNDQ0LDc2LjM5NGMtNC44MjgsMS41ODgtOS44MjksMi44NTUtMTQuOTgsMy43NjQNCgkJCWMtNS4xNjgsMC45MS0xMC4zMTYsMS40MzgtMTUuNDEyLDEuNTkzbDEzLjY1LTExLjQ1MUwxMDQuNDQ0LDc2LjM5NEwxMDQuNDQ0LDc2LjM5NHoiLz4NCgkJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiM5OTlCOUQiIGQ9Ik04NC42MDksNTIuNzU1YzMuNzg4LDMuMzg3LDcuMzg3LDcuMDg0LDEwLjc0OCwxMS4wODkNCgkJCWMzLjM3NSw0LjAyMiw2LjQwNCw4LjIxNiw5LjA4OCwxMi41NTJsLTE2Ljc0My02LjA5N0w4NC42MDksNTIuNzU1TDg0LjYwOSw1Mi43NTV6Ii8+DQoJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjQzlDQkNEIiBkPSJNNzQuMDU0LDgxLjc1YzEuMDM5LTQuOTc1LDIuNDQxLTkuOTM5LDQuMjI5LTE0Ljg1NA0KCQkJYzEuNzk2LTQuOTMzLDMuOTE0LTkuNjUzLDYuMzI3LTE0LjE0NWwzLjA5MiwxNy41NDdMNzQuMDU0LDgxLjc1TDc0LjA1NCw4MS43NXoiLz4NCgkJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiM5OTlCOUQiIGQ9Ik0xMzAuMjI1LDUxLjIwM2MwLjAxOSw1LjA4MS0wLjMyLDEwLjIyOS0xLjA0OSwxNS40MDcNCgkJCWMtMC43MjksNS4xOTctMS44MjEsMTAuMjU3LTMuMjQ2LDE1LjE1MWwtNi42NzQtMTYuNTIxTDEzMC4yMjUsNTEuMjAzTDEzMC4yMjUsNTEuMjAzeiIvPg0KCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0M5Q0JDRCIgZD0iTTEwMS42MTMsNjIuNzZjNC4zOTMtMi41NTYsOS4wMjEtNC44MzYsMTMuODY5LTYuNzk1DQoJCQljNC44NjctMS45NjYsOS43OTItMy41NTEsMTQuNzQ0LTQuNzY0TDExOS4yNTYsNjUuMjRMMTAxLjYxMyw2Mi43NkwxMDEuNjEzLDYyLjc2eiIvPg0KCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzVCNUM1RSIgZD0iTTEyNS45Myw4MS43NmMtNC40MTEtMi41MjQtOC42OTktNS4zOTMtMTIuODItOC42MTQNCgkJCWMtNC4xMzctMy4yMzEtNy45NzEtNi43MDQtMTEuNDk4LTEwLjM4NmwxNy42NDUsMi40OEwxMjUuOTMsODEuNzZMMTI1LjkzLDgxLjc2eiIvPg0KCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzk5OUI5RCIgZD0iTTExNC4yMzQsMTguODk5YzQuODM4LDEuNTUyLDkuNjI5LDMuNDY2LDE0LjMzLDUuNzU5DQoJCQljNC43MTgsMi4zMDEsOS4xOTEsNC45MDEsMTMuNDA2LDcuNzdsLTE3Ljc3NCwxLjI0MUwxMTQuMjM0LDE4Ljg5OUwxMTQuMjM0LDE4Ljg5OXoiLz4NCgkJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNDOUNCQ0QiIGQ9Ik0xMTYuMzg2LDQ5LjY4MWMtMS4wNzYtNC45NjctMS44MTMtMTAuMDczLTIuMTc5LTE1LjI5DQoJCQljLTAuMzY2LTUuMjM1LTAuMzUtMTAuNDA5LDAuMDI3LTE1LjQ5NGw5Ljk2MiwxNC43NzJMMTE2LjM4Niw0OS42ODFMMTE2LjM4Niw0OS42ODF6Ii8+DQoJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNUI1QzVFIiBkPSJNMTQxLjk2OCwzMi40MjhjLTMuNzY0LDMuNDEzLTcuODE3LDYuNjA1LTEyLjE1Miw5LjUzDQoJCQljLTQuMzUyLDIuOTM1LTguODQxLDUuNTA5LTEzLjQzMyw3LjcyNWw3LjgxMy0xNi4wMTRMMTQxLjk2OCwzMi40MjhMMTQxLjk2OCwzMi40Mjh6Ii8+DQoJPC9nPg0KCTxnPg0KCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTcuMDcsMTA0LjM0OGMtMi44NTMtMC4yODktNS41NDgtMC41NjEtNS41NDgtMy4yNTUNCgkJCWMwLTEuMjM0LDAuNjQ5LTIuMTU4LDEuOTM0LTIuNzVjMS4yNTctMC41NzcsMi43NTgtMC42NjQsMy41NDEtMC42NjRjMS4wODcsMCwzLjA4MiwwLjE3NCw0LjIzOCwxLjMyOA0KCQkJYzAuNTYzLDAuNTY1LDAuODUsMS4yOTMsMC44NSwyLjE2NmMwLDAuMTQxLTAuMDAzLDAuMjYzLTAuMDIxLDAuMzg1aDAuOTI0YzAuMDAzLTAuMDY4LDAuMDA2LTAuMTM2LDAuMDEyLTAuMjAyDQoJCQljMC4wMDctMC4wNzcsMC4wMTMtMC4xNTcsMC4wMTMtMC4yMzRjMC0xLjA5Ni0wLjM0Ni0xLjk5Ny0xLjAyNy0yLjY4Yy0xLjI4Ny0xLjI4Ni0zLjQ5NS0xLjU1Ni01LjEyLTEuNTU2DQoJCQljLTEuNjM1LDAtNC4wMTYsMC40NzItNS4zNDgsMS44MDVjLTAuNjY1LDAuNjY2LTEuMDAzLDEuNDc0LTEuMDAzLDIuNDAyYzAsMy41MTEsMy4xNTgsMy43OTUsNi4yMTIsNC4wNjkNCgkJCWMxLjQ3OSwwLjEzNCwyLjg3OCwwLjI2LDMuOTQ2LDAuNzI4YzEuMjA0LDAuNTI1LDEuNzg5LDEuNDM0LDEuNzg5LDIuNzc1YzAsMC44NTktMC4yODgsMS41ODItMC44NTcsMi4xNTINCgkJCWMtMS4yODMsMS4yODMtMy42MTEsMS40MjItNC41NTQsMS40MjJjLTIuMzExLDAtMy45OTYtMC41MTQtNS4wMDktMS41MjVjLTAuNzQ5LTAuNzUxLTEuMTMyLTEuNzgzLTEuMTQtMy4wNzFIMA0KCQkJYy0wLjAwMSwxLjUwOSwwLjQzOSwyLjcxOSwxLjMxMywzLjZjMS4xODIsMS4xODcsMy4xNDcsMS43OSw1Ljg0NCwxLjc5YzEuNDgzLDAsNi4zMjMtMC4zMTksNi4zMjMtNC40NDINCgkJCUMxMy40NzksMTA0Ljk5NSwxMC4yMjIsMTA0LjY2Nyw3LjA3LDEwNC4zNDhMNy4wNywxMDQuMzQ4eiIvPg0KCQk8cG9seWdvbiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgcG9pbnRzPSIyMy4zMDMsOTguMDY1IDIzLjMwMywxMTIuNzI5IDIyLjM0NCwxMTIuNzI5IDIyLjM0NCw5OC4wNjUgDQoJCQkxNi4wNSw5OC4wNjUgMTYuMDUsOTcuMTg4IDI5LjU5Nyw5Ny4xODggMjkuNTk3LDk4LjA2NSAyMy4zMDMsOTguMDY1IAkJIi8+DQoJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNDQuMTgsMTEyLjcyOWwtMi4yODQtNS4wMjFoLTguNjQ0bC0yLjMxMSw1LjAyMWgtMS4wNTNsNy4xNDYtMTUuNTQxaDEuMDg5DQoJCQlsNy4xNDYsMTUuNTQxSDQ0LjE4TDQ0LjE4LDExMi43Mjl6IE0zNy41NjUsOTguMjI2bC0zLjkzMiw4LjYzM2g3Ljg5TDM3LjU2NSw5OC4yMjZMMzcuNTY1LDk4LjIyNnoiLz4NCgkJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02Mi4wMjksMTEyLjcyOWMtMC4yNjYtMC4yNjgtMC4zNzEtMS4yNDgtMC40MjUtMy42MTMNCgkJCWMtMC4wOC0yLjcxMS0wLjkzLTMuNDU0LTQuMDEyLTMuNDU0aC02LjcyMXY3LjA2N2gtMC45NzlWOTcuMTg4aDcuNzI3YzIuOTc2LDAsNS4yNiwwLjg1LDUuMjYsNC4xMTgNCgkJCWMwLDEuNjE5LTAuOTgyLDMuMzQ2LTMuMTg4LDMuODUxdjAuMDU0YzEuODg3LDAuMjM5LDIuODk2LDEuNTQyLDIuOTIzLDMuMjE1YzAuMDI2LDIuODE2LDAuMTMyLDMuNzQ1LDAuNDI1LDQuMzA0SDYyLjAyOQ0KCQkJTDYyLjAyOSwxMTIuNzI5eiBNNTcuNjk5LDk4LjA2NWgtNi44Mjd2Ni43MjFoNi41ODhjMC45NTcsMCw0LjQwOSwwLDQuNDA5LTMuNTMzQzYxLjg2OSw5OC43Myw1OS45MDQsOTguMDY1LDU3LjY5OSw5OC4wNjUNCgkJCUw1Ny42OTksOTguMDY1eiIvPg0KCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTg4LjA4NiwxMTIuNzI5bC0yLjMxMS01LjAyMWgtOC42NDRsLTIuMjg1LDUuMDIxaC0xLjA3OGw3LjE0NS0xNS41NDFoMS4xMTYNCgkJCWw3LjExOSwxNS41NDFIODguMDg2TDg4LjA4NiwxMTIuNzI5eiBNODEuNDcyLDk4LjIyNmwtMy45NTgsOC42MzNoNy44OUw4MS40NzIsOTguMjI2TDgxLjQ3Miw5OC4yMjZ6Ii8+DQoJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQyLjg4NywxMTIuNzI5bC0yLjMxMi01LjAyMWgtOC42NDRsLTIuMjg0LDUuMDIxaC0xLjA3OGw3LjE0NS0xNS41NDFoMS4xMTYNCgkJCWw3LjExOCwxNS41NDFIMTQyLjg4N0wxNDIuODg3LDExMi43Mjl6IE0xMzYuMjcxLDk4LjIyNmwtMy45NTcsOC42MzNoNy44ODlMMTM2LjI3MSw5OC4yMjZMMTM2LjI3MSw5OC4yMjZ6Ii8+DQoJCTxwb2x5Z29uIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBwb2ludHM9IjEwNC44NzQsMTExLjg1MiA5NC45OTksMTExLjg1MiA5NC45OTksOTcuMTg4IDk0LjAxOSw5Ny4xODggDQoJCQk5NC4wMTksMTEyLjcyOSAxMDQuODc0LDExMi43MjkgMTA0Ljg3NCwxMTEuODUyIAkJIi8+DQoJCTxwb2x5Z29uIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBwb2ludHM9IjExOS4yMzMsMTExLjg1MiAxMDkuMzc4LDExMS44NTIgMTA5LjM3OCw5Ny4xODggMTA4LjM5Nyw5Ny4xODggDQoJCQkxMDguMzk3LDExMi43MjkgMTE5LjIzMywxMTIuNzI5IDExOS4yMzMsMTExLjg1MiAJCSIvPg0KCQk8cG9seWdvbiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgcG9pbnRzPSIxMjIuNjg5LDExMi43MjkgMTIyLjY4OSw5Ny4xODggMTIzLjY0OSw5Ny4xODggMTIzLjY0OSwxMTIuNzI5IA0KCQkJMTIyLjY4OSwxMTIuNzI5IAkJIi8+DQoJCTxwb2x5Z29uIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBwb2ludHM9IjE2MS4wMDMsMTEyLjcyOSAxNDkuMzQyLDk4LjU5NyAxNDkuMjg4LDk4LjU5NyAxNDkuMjg4LDExMi43MjkgDQoJCQkxNDguMzM1LDExMi43MjkgMTQ4LjMzNSw5Ny4xODggMTQ5LjUwMiw5Ny4xODggMTYxLjE2MywxMTEuMzIxIDE2MS4yMTYsMTExLjM3MyAxNjEuMjE2LDk3LjE4OCAxNjIuMTY5LDk3LjE4OCAxNjIuMTY5LDExMi43MjkgDQoJCQkxNjEuMDAzLDExMi43MjkgCQkiLz4NCgkJPHBvbHlnb24gZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIHBvaW50cz0iMTg3Ljc0LDExMi43MjkgMTg3Ljc0LDk3LjE4OCAxOTkuODY3LDk3LjE4OCAxOTkuODY3LDk4LjA2NSANCgkJCTE4OC43MTEsOTguMDY1IDE4OC43MTEsMTA0LjI1NCAxOTkuNDE2LDEwNC4yNTQgMTk5LjQxNiwxMDUuMTA1IDE4OC43MTEsMTA1LjEwNSAxODguNzExLDExMS44NTIgMjAwLDExMS44NTIgMjAwLDExMi43MjkgDQoJCQkxODcuNzQsMTEyLjcyOSAJCSIvPg0KCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE3NS4wMywxMTMuMDc0Yy00LjcyOCwwLTguMDExLTIuOTY2LTguMDExLTguMDkzDQoJCQljMC00LjA2MywyLjY2Mi04LjEzOCw4LjA3My04LjEzOGMzLjcxOCwwLDYuNTI1LDEuNzUzLDcuMjk3LDUuMjMyaC0wLjk4NGMtMC43NDMtMy4wMDEtMy40MTgtNC4zNTUtNi4zMTMtNC4zNTUNCgkJCWMtNC40NjMsMC03LjA2MywzLjMyLTcuMDYzLDcuMjUxYzAsMy44NzksMi4yMjEsNy4yMjYsNy4wMDEsNy4yMjZjMy40MjcsMCw2LjAzLTEuOTkzLDYuNjE0LTUuMzY0aDEuMDENCgkJCUMxODIuMzEsMTA5Ljc4LDE3OS42NzksMTEzLjA3NCwxNzUuMDMsMTEzLjA3NEwxNzUuMDMsMTEzLjA3NHoiLz4NCgk8L2c+DQo8L2c+DQo8L3N2Zz4NCg=="
+      },
+      {
+        "id": "alliance-SkyTeam",
+        "name": "SkyTeam",
+        "source": "Bundled"
+      },
+      {
+        "id": "alliance-oneworld",
+        "name": "oneworld",
+        "source": "Bundled",
+        "logo": "data:image/svg+xml;base64,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiByb2xlPSJpbWciIGFyaWEtaGlkZGVuPSJ0cnVlIiBzdHlsZT0id2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgZmlsbDogdHJhbnNwYXJlbnQiIGNsYXNzPSIiIHZpZXdCb3g9IjEuNSAxLjUgMjAuOTcgMjAuOTciPgogICAgPHRpdGxlPk9uZXdvcmxkPC90aXRsZT4KICAgIDxkZXNjPkxvZ28gaW1hZ2UgZm9yIE9uZXdvcmxkIEFsbGlhbmNlPC9kZXNjPgogICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0ib25ld29ybGRfc3ZnX19hIiBjeD0iMjMuNjMyJSIgY3k9IjE3Ljg3NSUiIHI9IjE2Mi43MjUlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9Ii41Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjI4MyIgc3RvcC1jb2xvcj0iI2FkYWJkMyIgc3RvcC1vcGFjaXR5PSIuNTk1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjU4IiBzdG9wLWNvbG9yPSIjNWM1OGE4IiBzdG9wLW9wYWNpdHk9Ii42OTUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIuNzkxIiBzdG9wLWNvbG9yPSIjMmEyNDhjIiBzdG9wLW9wYWNpdHk9Ii43NjYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTYxMDgyIiBzdG9wLW9wYWNpdHk9Ii44Ii8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJvbmV3b3JsZF9zdmdfX2IiIGN4PSIyMC40MzIlIiBjeT0iMTUuNzExJSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCguNjE1MjQgLjc4ODM0IC0xLjAxMTI2IC43ODkyMiAuMjM3IC0uMTI4KSIgcj0iNzcuODQxJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIuOSIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii4yODMiIHN0b3AtY29sb3I9IiNhZGFiZDMiIHN0b3Atb3BhY2l0eT0iLjYxNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii41OCIgc3RvcC1jb2xvcj0iIzVjNThhOCIgc3RvcC1vcGFjaXR5PSIuMzE2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjc5MSIgc3RvcC1jb2xvcj0iIzJhMjQ4YyIgc3RvcC1vcGFjaXR5PSIuMTA0Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE2MTA4MiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogIDwvZGVmcz4KCiAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS41IDEuNSkiPgogICAgICA8cGF0aCBkPSJNMCAxMC40ODNjMCA1Ljc4IDQuNyAxMC40ODIgMTAuNDgzIDEwLjQ4MiA1Ljc4MSAwIDEwLjQ4Mi00LjcgMTAuNDgyLTEwLjQ4MkMyMC45NjUgNC43IDE2LjI2MiAwIDEwLjQ4MyAwIDQuNzAzIDAgMCA0LjcgMCAxMC40ODN6bTEuMDcgMGMwLTUuMTkyIDQuMjIyLTkuNDE0IDkuNDEzLTkuNDE0IDUuMTkgMCA5LjQxMiA0LjIyMyA5LjQxMiA5LjQxNCAwIDUuMTktNC4yMjIgOS40MTItOS40MTIgOS40MTItNS4xOTEgMC05LjQxNC00LjIyMi05LjQxNC05LjQxMnoiIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIvPgogICAgICA8Y2lyY2xlIGN4PSIxMC40ODMiIGN5PSIxMC40ODMiIGZpbGw9IiMxNjEwODIiIHI9IjkuOTAyIi8+CiAgICAgIDxjaXJjbGUgY3g9IjkuOTUyIiBjeT0iOS45NTIiIGZpbGw9InVybCgjb25ld29ybGRfc3ZnX19hKSIgb3BhY2l0eT0iLjUiIHI9IjkuOTAyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSguNTMxIC41MzEpIi8+CiAgICAgIDxjaXJjbGUgY3g9IjkuOTUyIiBjeT0iOS45NTIiIGZpbGw9InVybCgjb25ld29ybGRfc3ZnX19iKSIgcj0iOS45MDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC41MzEgLjUzMSkiLz4KICAgICAgPHBhdGggZD0iTTcuNzYyIDEwLjU3MWMuMDQ0LS4yNjYuMjIzLS40NDYuNDktLjQ0Ni4yNjggMCAuNDQ2LjIyNS40NDYuNDQ2em0xLjY1LjQwMmMuMDQ0LS43NTgtLjM1Ny0xLjM4My0xLjE2LTEuMzgzLS42NyAwLTEuMjA0LjQ5LTEuMjA0IDEuMjA2IDAgLjc1Ny40OSAxLjIwMyAxLjI0OCAxLjIwMy40OTEgMCAuOTgyLS4yMjQgMS4xMTYtLjc1N2gtLjY3Yy0uMDg4LjE3Ny0uMjIyLjI2Ni0uNC4yNjYtLjMxMyAwLS40OTItLjIyMy0uNDkyLS41MzV6bTkuMjMzLjgwM2MuNTggMCAuODAzLS40OS44MDMtLjk4MXMtLjIyNC0uOTgyLS44MDMtLjk4MmMtLjUzNSAwLS43NTguNDktLjc1OC45ODJzLjIyMy45ODEuNzU4Ljk4MW0xLjA3MS4xNzhoLS4yNjh2LS40NDZjLS4xMzQuMzEzLS40OS40OTEtLjgwMy40OTEtLjY3IDAtMS4wMjUtLjU4LTEuMDI1LTEuMjA0IDAtLjYyNS4zMTItMS4yMDUgMS4wMjUtMS4yMDUuMzU3IDAgLjY2OS4xOC44MDMuNDlWOC43ODhoLjI2N3YzLjE2N005LjU0NiA5LjY4aC4zMTJsLjU4IDEuOTY0LjUzNS0xLjk2NGguMzEybC41MzYgMS45NjQuNTgtMS45NjRoLjM1NmwtLjcxMyAyLjI3NWgtLjMxM2wtLjU3OS0xLjkxNy0uNTM2IDEuOTE3aC0uMzEyem01LjUzMiAxLjExNmMwIC42NjktLjM1OCAxLjIwNC0xLjA3MiAxLjIwNC0uNzEzIDAtMS4wNy0uNTM1LTEuMDctMS4yMDRzLjM1Ny0xLjIwNSAxLjA3LTEuMjA1Yy42Ny4wNDUgMS4wNy41OCAxLjA3IDEuMjA2bS0xLjg3MyAwYzAgLjQ5LjI2OC45OC44MDMuOTguNTM2IDAgLjgwMy0uNDkuODAzLS45ODFzLS4yNjctLjk4Mi0uODAzLS45ODJjLS41MzUuMDQ1LS44MDMuNTM1LS44MDMuOTgybTIuMjc1LTEuMTE2aC4yNjh2LjUzNmEuODcyLjg3MiAwIDAxLjg0Ny0uNTh2LjI2N2MtLjQ5LS4wNDQtLjg0Ny4zNTgtLjg0Ny44MDR2MS4yMDRoLS4yNjdWOS42OG0xLjQyNy0uODQ4aC4zMTJ2My4xMjJoLS4yNjhWOC44MzJ6TTIuMjc1IDEwLjc5NWMwLS4yNjcuMDktLjYyNS40NDYtLjYyNXMuNDQ2LjM1Ny40NDYuNjI1LS4wOS42MjQtLjQ0Ni42MjQtLjQ0Ni0uMzEyLS40NDYtLjYyNG0tLjc1OCAwYzAgLjY2OS40OTEgMS4yMDQgMS4yMDQgMS4yMDQuNzE0IDAgMS4yMDUtLjQ5IDEuMjA1LTEuMjA0IDAtLjY3LS40OTEtMS4yMDUtMS4yMDYtMS4yMDUtLjcxMy4wNDUtMS4yMDQuNTM1LTEuMjA0IDEuMjA2bTIuODExLTEuMTE3aC43MTR2LjMxM2MuMTMzLS4yMjQuNDQ2LS4zNTcuNzEzLS4zNTcuNzU4IDAgLjgwMy41MzUuODAzLjg5MnYxLjQyN0g1Ljh2LTEuMDdjMC0uMzEzLjA0My0uNjI0LS4zNTgtLjYyNC0uMjY3IDAtLjQwMS4yMjMtLjQwMS40OVYxMmgtLjcxNVY5LjY3NyIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJub256ZXJvIi8+CiAgIDwvZz4KPC9zdmc+"
+      }
+    ],
+    "Aircraft": [
+      {
+        "id": "aircraft-Airbus A320",
+        "name": "Airbus A320",
+        "manufacturer": "Airbus",
+        "source": "Bundled"
+      },
+      {
+        "id": "aircraft-Airbus A330",
+        "name": "Airbus A330",
+        "manufacturer": "Airbus",
+        "source": "Bundled"
+      },
+      {
+        "id": "aircraft-Airbus A350-900",
+        "name": "Airbus A350-900",
+        "manufacturer": "Airbus",
+        "source": "Bundled"
+      },
+      {
+        "id": "aircraft-Airbus A380",
+        "name": "Airbus A380",
+        "manufacturer": "Airbus",
+        "source": "Bundled"
+      },
+      {
+        "id": "aircraft-Boeing 737",
+        "name": "Boeing 737",
+        "manufacturer": "Boeing",
+        "source": "Bundled"
+      },
+      {
+        "id": "aircraft-Boeing 747",
+        "name": "Boeing 747",
+        "manufacturer": "Boeing",
+        "source": "Bundled"
+      },
+      {
+        "id": "aircraft-Boeing 777",
+        "name": "Boeing 777",
+        "manufacturer": "Boeing",
+        "source": "Bundled"
+      },
+      {
+        "id": "aircraft-Boeing 787-9",
+        "name": "Boeing 787-9",
+        "manufacturer": "Boeing",
+        "source": "Bundled"
+      }
+    ]
+  },
+  "fields": [],
+  "tags": [
+    "world",
+    "independent"
+  ],
+  "settings": {
+    "theme": "Dark",
+    "accent": "#245fd6",
+    "units": "km",
+    "dateFormat": "DD MMM YYYY",
+    "clock": "24h",
+    "density": "Comfortable",
+    "routeColor": "#74bcff",
+    "width": 4,
+    "routeHeight": 12000,
+    "opacity": 0.85,
+    "markerSize": 7,
+    "labels": true,
+    "boundaries": false,
+    "reducedMotion": false,
+    "sidebarWidth": 380,
+    "home": [
+      105,
+      25,
+      22000000
+    ],
+    "remember": false
+  }
+}

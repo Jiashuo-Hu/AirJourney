@@ -1,0 +1,1297 @@
+{
+  "snapshot": "2026-10-14",
+  "runtimeNetworkRequired": false,
+  "sources": [
+    {
+      "name": "OurAirports",
+      "url": "https://ourairports.com/data/",
+      "download": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "license": "Public domain; no accuracy or completeness warranty",
+      "rawSha256": "f219659218d1f27e7907c284b87778047b84102435d3483c7ee0ce6990b95e77",
+      "countryRawSha256": "2a9dbee691125b0cdb8ceb5fe227c48c903f99c488963b8e53e2ab366521c639"
+    },
+    {
+      "name": "GeoNames cities500",
+      "url": "https://download.geonames.org/export/dump/readme.txt",
+      "license": "CC BY 4.0; attribution GeoNames contributors",
+      "rawSha256": "46dcffbe059cfc88ee76b5d9ab40342609168a95a2fa1e9b76eb6138db9bf483",
+      "appliedToRecords": 0
+    }
+  ],
+  "inputRows": 86242,
+  "records": 86242,
+  "removedDuplicateRows": [],
+  "locationCounts": {
+    "airport": 86242
+  },
+  "airportTypes": {
+    "large_airport": 1176,
+    "medium_airport": 4104,
+    "small_airport": 42812,
+    "seaplane_base": 1273,
+    "heliport": 23240,
+    "closed": 13574,
+    "balloonport": 63
+  },
+  "countriesWithRecords": 247,
+  "coverage": [
+    {
+      "code": "AD",
+      "name": "Andorra",
+      "records": 3
+    },
+    {
+      "code": "AE",
+      "name": "United Arab Emirates",
+      "records": 306
+    },
+    {
+      "code": "AF",
+      "name": "Afghanistan",
+      "records": 81
+    },
+    {
+      "code": "AG",
+      "name": "Antigua and Barbuda",
+      "records": 6
+    },
+    {
+      "code": "AI",
+      "name": "Anguilla",
+      "records": 2
+    },
+    {
+      "code": "AL",
+      "name": "Albania",
+      "records": 21
+    },
+    {
+      "code": "AM",
+      "name": "Armenia",
+      "records": 16
+    },
+    {
+      "code": "AO",
+      "name": "Angola",
+      "records": 126
+    },
+    {
+      "code": "AQ",
+      "name": "Antarctica",
+      "records": 42
+    },
+    {
+      "code": "AR",
+      "name": "Argentina",
+      "records": 1009
+    },
+    {
+      "code": "AS",
+      "name": "American Samoa",
+      "records": 4
+    },
+    {
+      "code": "AT",
+      "name": "Austria",
+      "records": 201
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "records": 2795
+    },
+    {
+      "code": "AW",
+      "name": "Aruba",
+      "records": 4
+    },
+    {
+      "code": "AZ",
+      "name": "Azerbaijan",
+      "records": 42
+    },
+    {
+      "code": "BA",
+      "name": "Bosnia and Herzegovina",
+      "records": 28
+    },
+    {
+      "code": "BB",
+      "name": "Barbados",
+      "records": 2
+    },
+    {
+      "code": "BD",
+      "name": "Bangladesh",
+      "records": 58
+    },
+    {
+      "code": "BE",
+      "name": "Belgium",
+      "records": 217
+    },
+    {
+      "code": "BF",
+      "name": "Burkina Faso",
+      "records": 51
+    },
+    {
+      "code": "BG",
+      "name": "Bulgaria",
+      "records": 234
+    },
+    {
+      "code": "BH",
+      "name": "Bahrain",
+      "records": 25
+    },
+    {
+      "code": "BI",
+      "name": "Burundi",
+      "records": 7
+    },
+    {
+      "code": "BJ",
+      "name": "Benin",
+      "records": 10
+    },
+    {
+      "code": "BL",
+      "name": "Saint Barthélemy",
+      "records": 1
+    },
+    {
+      "code": "BM",
+      "name": "Bermuda",
+      "records": 4
+    },
+    {
+      "code": "BN",
+      "name": "Brunei",
+      "records": 16
+    },
+    {
+      "code": "BO",
+      "name": "Bolivia",
+      "records": 206
+    },
+    {
+      "code": "BQ",
+      "name": "Caribbean Netherlands",
+      "records": 4
+    },
+    {
+      "code": "BR",
+      "name": "Brazil",
+      "records": 8092
+    },
+    {
+      "code": "BS",
+      "name": "Bahamas",
+      "records": 78
+    },
+    {
+      "code": "BT",
+      "name": "Bhutan",
+      "records": 12
+    },
+    {
+      "code": "BW",
+      "name": "Botswana",
+      "records": 144
+    },
+    {
+      "code": "BY",
+      "name": "Belarus",
+      "records": 73
+    },
+    {
+      "code": "BZ",
+      "name": "Belize",
+      "records": 37
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "records": 3369
+    },
+    {
+      "code": "CC",
+      "name": "Cocos (Keeling) Islands",
+      "records": 1
+    },
+    {
+      "code": "CD",
+      "name": "Democratic Republic of the Congo",
+      "records": 307
+    },
+    {
+      "code": "CF",
+      "name": "Central African Republic",
+      "records": 49
+    },
+    {
+      "code": "CG",
+      "name": "Republic of the Congo",
+      "records": 57
+    },
+    {
+      "code": "CH",
+      "name": "Switzerland",
+      "records": 133
+    },
+    {
+      "code": "CI",
+      "name": "Côte d'Ivoire",
+      "records": 32
+    },
+    {
+      "code": "CK",
+      "name": "Cook Islands",
+      "records": 12
+    },
+    {
+      "code": "CL",
+      "name": "Chile",
+      "records": 544
+    },
+    {
+      "code": "CM",
+      "name": "Cameroon",
+      "records": 47
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "records": 785
+    },
+    {
+      "code": "CO",
+      "name": "Colombia",
+      "records": 738
+    },
+    {
+      "code": "CR",
+      "name": "Costa Rica",
+      "records": 144
+    },
+    {
+      "code": "CU",
+      "name": "Cuba",
+      "records": 156
+    },
+    {
+      "code": "CV",
+      "name": "Cape Verde",
+      "records": 11
+    },
+    {
+      "code": "CW",
+      "name": "Curaçao",
+      "records": 1
+    },
+    {
+      "code": "CX",
+      "name": "Christmas Island",
+      "records": 1
+    },
+    {
+      "code": "CY",
+      "name": "Cyprus",
+      "records": 95
+    },
+    {
+      "code": "CZ",
+      "name": "Czech Republic",
+      "records": 406
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "records": 1435
+    },
+    {
+      "code": "DJ",
+      "name": "Djibouti",
+      "records": 17
+    },
+    {
+      "code": "DK",
+      "name": "Denmark",
+      "records": 151
+    },
+    {
+      "code": "DM",
+      "name": "Dominica",
+      "records": 3
+    },
+    {
+      "code": "DO",
+      "name": "Dominican Republic",
+      "records": 50
+    },
+    {
+      "code": "DZ",
+      "name": "Algeria",
+      "records": 116
+    },
+    {
+      "code": "EC",
+      "name": "Ecuador",
+      "records": 361
+    },
+    {
+      "code": "EE",
+      "name": "Estonia",
+      "records": 62
+    },
+    {
+      "code": "EG",
+      "name": "Egypt",
+      "records": 144
+    },
+    {
+      "code": "EH",
+      "name": "Western Sahara (disputed territory)",
+      "records": 30
+    },
+    {
+      "code": "ER",
+      "name": "Eritrea",
+      "records": 21
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
+      "records": 588
+    },
+    {
+      "code": "ET",
+      "name": "Ethiopia",
+      "records": 70
+    },
+    {
+      "code": "FI",
+      "name": "Finland",
+      "records": 125
+    },
+    {
+      "code": "FJ",
+      "name": "Fiji",
+      "records": 37
+    },
+    {
+      "code": "FK",
+      "name": "Falkland Islands",
+      "records": 41
+    },
+    {
+      "code": "FM",
+      "name": "Micronesia",
+      "records": 7
+    },
+    {
+      "code": "FO",
+      "name": "Faroe Islands",
+      "records": 16
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "records": 1786
+    },
+    {
+      "code": "GA",
+      "name": "Gabon",
+      "records": 47
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "records": 1606
+    },
+    {
+      "code": "GD",
+      "name": "Grenada",
+      "records": 3
+    },
+    {
+      "code": "GE",
+      "name": "Georgia",
+      "records": 55
+    },
+    {
+      "code": "GF",
+      "name": "French Guiana",
+      "records": 22
+    },
+    {
+      "code": "GG",
+      "name": "Guernsey",
+      "records": 5
+    },
+    {
+      "code": "GH",
+      "name": "Ghana",
+      "records": 18
+    },
+    {
+      "code": "GI",
+      "name": "Gibraltar",
+      "records": 1
+    },
+    {
+      "code": "GL",
+      "name": "Greenland",
+      "records": 91
+    },
+    {
+      "code": "GM",
+      "name": "Gambia",
+      "records": 1
+    },
+    {
+      "code": "GN",
+      "name": "Guinea",
+      "records": 19
+    },
+    {
+      "code": "GP",
+      "name": "Guadeloupe",
+      "records": 10
+    },
+    {
+      "code": "GQ",
+      "name": "Equatorial Guinea",
+      "records": 8
+    },
+    {
+      "code": "GR",
+      "name": "Greece",
+      "records": 169
+    },
+    {
+      "code": "GS",
+      "name": "South Georgia and the South Sandwich Islands",
+      "records": 1
+    },
+    {
+      "code": "GT",
+      "name": "Guatemala",
+      "records": 73
+    },
+    {
+      "code": "GU",
+      "name": "Guam",
+      "records": 7
+    },
+    {
+      "code": "GW",
+      "name": "Guinea-Bissau",
+      "records": 10
+    },
+    {
+      "code": "GY",
+      "name": "Guyana",
+      "records": 61
+    },
+    {
+      "code": "HK",
+      "name": "Hong Kong, China",
+      "records": 152
+    },
+    {
+      "code": "HM",
+      "name": "Heard and McDonald Islands",
+      "records": 2
+    },
+    {
+      "code": "HN",
+      "name": "Honduras",
+      "records": 160
+    },
+    {
+      "code": "HR",
+      "name": "Croatia",
+      "records": 83
+    },
+    {
+      "code": "HT",
+      "name": "Haiti",
+      "records": 22
+    },
+    {
+      "code": "HU",
+      "name": "Hungary",
+      "records": 142
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "records": 731
+    },
+    {
+      "code": "IE",
+      "name": "Ireland",
+      "records": 137
+    },
+    {
+      "code": "IL",
+      "name": "Israel",
+      "records": 58
+    },
+    {
+      "code": "IM",
+      "name": "Isle of Man",
+      "records": 7
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "records": 653
+    },
+    {
+      "code": "IO",
+      "name": "British Indian Ocean Territory",
+      "records": 1
+    },
+    {
+      "code": "IQ",
+      "name": "Iraq",
+      "records": 95
+    },
+    {
+      "code": "IR",
+      "name": "Iran",
+      "records": 352
+    },
+    {
+      "code": "IS",
+      "name": "Iceland",
+      "records": 95
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "records": 1158
+    },
+    {
+      "code": "JE",
+      "name": "Jersey",
+      "records": 2
+    },
+    {
+      "code": "JM",
+      "name": "Jamaica",
+      "records": 27
+    },
+    {
+      "code": "JO",
+      "name": "Jordan",
+      "records": 24
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "records": 3747
+    },
+    {
+      "code": "KE",
+      "name": "Kenya",
+      "records": 370
+    },
+    {
+      "code": "KG",
+      "name": "Kyrgyzstan",
+      "records": 61
+    },
+    {
+      "code": "KH",
+      "name": "Cambodia",
+      "records": 21
+    },
+    {
+      "code": "KI",
+      "name": "Kiribati",
+      "records": 23
+    },
+    {
+      "code": "KM",
+      "name": "Comoros",
+      "records": 4
+    },
+    {
+      "code": "KN",
+      "name": "Saint Kitts and Nevis",
+      "records": 3
+    },
+    {
+      "code": "KP",
+      "name": "North Korea",
+      "records": 94
+    },
+    {
+      "code": "KR",
+      "name": "South Korea",
+      "records": 1427
+    },
+    {
+      "code": "KW",
+      "name": "Kuwait",
+      "records": 46
+    },
+    {
+      "code": "KY",
+      "name": "Cayman Islands",
+      "records": 10
+    },
+    {
+      "code": "KZ",
+      "name": "Kazakhstan",
+      "records": 215
+    },
+    {
+      "code": "LA",
+      "name": "Laos",
+      "records": 28
+    },
+    {
+      "code": "LB",
+      "name": "Lebanon",
+      "records": 39
+    },
+    {
+      "code": "LC",
+      "name": "Saint Lucia",
+      "records": 2
+    },
+    {
+      "code": "LI",
+      "name": "Liechtenstein",
+      "records": 2
+    },
+    {
+      "code": "LK",
+      "name": "Sri Lanka",
+      "records": 38
+    },
+    {
+      "code": "LR",
+      "name": "Liberia",
+      "records": 20
+    },
+    {
+      "code": "LS",
+      "name": "Lesotho",
+      "records": 34
+    },
+    {
+      "code": "LT",
+      "name": "Lithuania",
+      "records": 77
+    },
+    {
+      "code": "LU",
+      "name": "Luxembourg",
+      "records": 15
+    },
+    {
+      "code": "LV",
+      "name": "Latvia",
+      "records": 92
+    },
+    {
+      "code": "LY",
+      "name": "Libya",
+      "records": 81
+    },
+    {
+      "code": "MA",
+      "name": "Morocco",
+      "records": 45
+    },
+    {
+      "code": "MC",
+      "name": "Monaco",
+      "records": 3
+    },
+    {
+      "code": "MD",
+      "name": "Moldova",
+      "records": 15
+    },
+    {
+      "code": "ME",
+      "name": "Montenegro",
+      "records": 9
+    },
+    {
+      "code": "MF",
+      "name": "Saint Martin",
+      "records": 2
+    },
+    {
+      "code": "MG",
+      "name": "Madagascar",
+      "records": 94
+    },
+    {
+      "code": "MH",
+      "name": "Marshall Islands",
+      "records": 36
+    },
+    {
+      "code": "MK",
+      "name": "North Macedonia",
+      "records": 34
+    },
+    {
+      "code": "ML",
+      "name": "Mali",
+      "records": 40
+    },
+    {
+      "code": "MM",
+      "name": "Myanmar",
+      "records": 83
+    },
+    {
+      "code": "MN",
+      "name": "Mongolia",
+      "records": 42
+    },
+    {
+      "code": "MO",
+      "name": "Macao, China",
+      "records": 5
+    },
+    {
+      "code": "MP",
+      "name": "Northern Mariana Islands",
+      "records": 14
+    },
+    {
+      "code": "MQ",
+      "name": "Martinique",
+      "records": 4
+    },
+    {
+      "code": "MR",
+      "name": "Mauritania",
+      "records": 34
+    },
+    {
+      "code": "MS",
+      "name": "Montserrat",
+      "records": 2
+    },
+    {
+      "code": "MT",
+      "name": "Malta",
+      "records": 9
+    },
+    {
+      "code": "MU",
+      "name": "Mauritius",
+      "records": 8
+    },
+    {
+      "code": "MV",
+      "name": "Maldives",
+      "records": 31
+    },
+    {
+      "code": "MW",
+      "name": "Malawi",
+      "records": 31
+    },
+    {
+      "code": "MX",
+      "name": "Mexico",
+      "records": 2695
+    },
+    {
+      "code": "MY",
+      "name": "Malaysia",
+      "records": 134
+    },
+    {
+      "code": "MZ",
+      "name": "Mozambique",
+      "records": 105
+    },
+    {
+      "code": "NA",
+      "name": "Namibia",
+      "records": 303
+    },
+    {
+      "code": "NC",
+      "name": "New Caledonia",
+      "records": 27
+    },
+    {
+      "code": "NE",
+      "name": "Niger",
+      "records": 28
+    },
+    {
+      "code": "NF",
+      "name": "Norfolk Island",
+      "records": 1
+    },
+    {
+      "code": "NG",
+      "name": "Nigeria",
+      "records": 69
+    },
+    {
+      "code": "NI",
+      "name": "Nicaragua",
+      "records": 44
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands",
+      "records": 275
+    },
+    {
+      "code": "NO",
+      "name": "Norway",
+      "records": 305
+    },
+    {
+      "code": "NP",
+      "name": "Nepal",
+      "records": 65
+    },
+    {
+      "code": "NR",
+      "name": "Nauru",
+      "records": 1
+    },
+    {
+      "code": "NU",
+      "name": "Niue",
+      "records": 1
+    },
+    {
+      "code": "NZ",
+      "name": "New Zealand",
+      "records": 335
+    },
+    {
+      "code": "OM",
+      "name": "Oman",
+      "records": 62
+    },
+    {
+      "code": "PA",
+      "name": "Panama",
+      "records": 91
+    },
+    {
+      "code": "PE",
+      "name": "Peru",
+      "records": 209
+    },
+    {
+      "code": "PF",
+      "name": "French Polynesia",
+      "records": 59
+    },
+    {
+      "code": "PG",
+      "name": "Papua New Guinea",
+      "records": 652
+    },
+    {
+      "code": "PH",
+      "name": "Philippines",
+      "records": 856
+    },
+    {
+      "code": "PK",
+      "name": "Pakistan",
+      "records": 195
+    },
+    {
+      "code": "PL",
+      "name": "Poland",
+      "records": 402
+    },
+    {
+      "code": "PM",
+      "name": "Saint Pierre and Miquelon",
+      "records": 3
+    },
+    {
+      "code": "PN",
+      "name": "Pitcairn",
+      "records": 0
+    },
+    {
+      "code": "PR",
+      "name": "Puerto Rico",
+      "records": 73
+    },
+    {
+      "code": "PS",
+      "name": "Palestinian Territory",
+      "records": 7
+    },
+    {
+      "code": "PT",
+      "name": "Portugal",
+      "records": 238
+    },
+    {
+      "code": "PW",
+      "name": "Palau",
+      "records": 3
+    },
+    {
+      "code": "PY",
+      "name": "Paraguay",
+      "records": 132
+    },
+    {
+      "code": "QA",
+      "name": "Qatar",
+      "records": 23
+    },
+    {
+      "code": "RE",
+      "name": "Réunion",
+      "records": 11
+    },
+    {
+      "code": "RO",
+      "name": "Romania",
+      "records": 214
+    },
+    {
+      "code": "RS",
+      "name": "Serbia",
+      "records": 65
+    },
+    {
+      "code": "RU",
+      "name": "Russia",
+      "records": 1839
+    },
+    {
+      "code": "RW",
+      "name": "Rwanda",
+      "records": 9
+    },
+    {
+      "code": "SA",
+      "name": "Saudi Arabia",
+      "records": 193
+    },
+    {
+      "code": "SB",
+      "name": "Solomon Islands",
+      "records": 41
+    },
+    {
+      "code": "SC",
+      "name": "Seychelles",
+      "records": 24
+    },
+    {
+      "code": "SD",
+      "name": "Sudan",
+      "records": 58
+    },
+    {
+      "code": "SE",
+      "name": "Sweden",
+      "records": 283
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "records": 11
+    },
+    {
+      "code": "SH",
+      "name": "Saint Helena, Ascension and Tristan da Cunha",
+      "records": 4
+    },
+    {
+      "code": "SI",
+      "name": "Slovenia",
+      "records": 47
+    },
+    {
+      "code": "SK",
+      "name": "Slovakia",
+      "records": 129
+    },
+    {
+      "code": "SL",
+      "name": "Sierra Leone",
+      "records": 12
+    },
+    {
+      "code": "SM",
+      "name": "San Marino",
+      "records": 2
+    },
+    {
+      "code": "SN",
+      "name": "Senegal",
+      "records": 25
+    },
+    {
+      "code": "SO",
+      "name": "Somalia",
+      "records": 45
+    },
+    {
+      "code": "SR",
+      "name": "Suriname",
+      "records": 57
+    },
+    {
+      "code": "SS",
+      "name": "South Sudan",
+      "records": 103
+    },
+    {
+      "code": "ST",
+      "name": "São Tomé and Principe",
+      "records": 4
+    },
+    {
+      "code": "SV",
+      "name": "El Salvador",
+      "records": 29
+    },
+    {
+      "code": "SX",
+      "name": "Sint Maarten",
+      "records": 1
+    },
+    {
+      "code": "SY",
+      "name": "Syria",
+      "records": 60
+    },
+    {
+      "code": "SZ",
+      "name": "Eswatini",
+      "records": 17
+    },
+    {
+      "code": "TC",
+      "name": "Turks and Caicos Islands",
+      "records": 9
+    },
+    {
+      "code": "TD",
+      "name": "Chad",
+      "records": 49
+    },
+    {
+      "code": "TF",
+      "name": "French Southern and Antarctic Lands",
+      "records": 7
+    },
+    {
+      "code": "TG",
+      "name": "Togo",
+      "records": 7
+    },
+    {
+      "code": "TH",
+      "name": "Thailand",
+      "records": 135
+    },
+    {
+      "code": "TJ",
+      "name": "Tajikistan",
+      "records": 21
+    },
+    {
+      "code": "TK",
+      "name": "Tokelau",
+      "records": 0
+    },
+    {
+      "code": "TL",
+      "name": "Timor-Leste",
+      "records": 14
+    },
+    {
+      "code": "TM",
+      "name": "Turkmenistan",
+      "records": 59
+    },
+    {
+      "code": "TN",
+      "name": "Tunisia",
+      "records": 25
+    },
+    {
+      "code": "TO",
+      "name": "Tonga",
+      "records": 6
+    },
+    {
+      "code": "TR",
+      "name": "Turkey",
+      "records": 444
+    },
+    {
+      "code": "TT",
+      "name": "Trinidad and Tobago",
+      "records": 3
+    },
+    {
+      "code": "TV",
+      "name": "Tuvalu",
+      "records": 3
+    },
+    {
+      "code": "TW",
+      "name": "Taiwan, China",
+      "records": 125
+    },
+    {
+      "code": "TZ",
+      "name": "Tanzania",
+      "records": 211
+    },
+    {
+      "code": "UA",
+      "name": "Ukraine",
+      "records": 298
+    },
+    {
+      "code": "UG",
+      "name": "Uganda",
+      "records": 42
+    },
+    {
+      "code": "UM",
+      "name": "United States Minor Outlying Islands",
+      "records": 9
+    },
+    {
+      "code": "US",
+      "name": "United States",
+      "records": 32694
+    },
+    {
+      "code": "UY",
+      "name": "Uruguay",
+      "records": 70
+    },
+    {
+      "code": "UZ",
+      "name": "Uzbekistan",
+      "records": 195
+    },
+    {
+      "code": "VA",
+      "name": "Vatican City",
+      "records": 1
+    },
+    {
+      "code": "VC",
+      "name": "Saint Vincent and the Grenadines",
+      "records": 6
+    },
+    {
+      "code": "VE",
+      "name": "Venezuela",
+      "records": 899
+    },
+    {
+      "code": "VG",
+      "name": "British Virgin Islands",
+      "records": 8
+    },
+    {
+      "code": "VI",
+      "name": "U.S. Virgin Islands",
+      "records": 11
+    },
+    {
+      "code": "VN",
+      "name": "Vietnam",
+      "records": 98
+    },
+    {
+      "code": "VU",
+      "name": "Vanuatu",
+      "records": 36
+    },
+    {
+      "code": "WF",
+      "name": "Wallis and Futuna",
+      "records": 2
+    },
+    {
+      "code": "WS",
+      "name": "Samoa",
+      "records": 5
+    },
+    {
+      "code": "XK",
+      "name": "Kosovo",
+      "records": 25
+    },
+    {
+      "code": "XP",
+      "name": "Paracel Islands (disputed)",
+      "records": 9
+    },
+    {
+      "code": "YE",
+      "name": "Yemen",
+      "records": 50
+    },
+    {
+      "code": "YT",
+      "name": "Mayotte",
+      "records": 1
+    },
+    {
+      "code": "ZA",
+      "name": "South Africa",
+      "records": 685
+    },
+    {
+      "code": "ZM",
+      "name": "Zambia",
+      "records": 132
+    },
+    {
+      "code": "ZW",
+      "name": "Zimbabwe",
+      "records": 167
+    },
+    {
+      "code": "ZZ",
+      "name": "Unknown or unassigned country",
+      "records": 2
+    }
+  ],
+  "missingCity": 4765,
+  "missingIata": 77191,
+  "missingIcao": 75691,
+  "iataCollisions": {},
+  "notes": [
+    "Source coordinates are not independently surveyed or guaranteed accurate.",
+    "Closed airports, heliports, seaplane bases and small airfields remain searchable with types.",
+    "City fallback requires unique same-country exact normalized city match; otherwise unlocated.",
+    "No airport timezone inferred from coordinates. Legacy suggestions and user values are retained.",
+    "Only source-ID/identifier duplicates removed. Shared names or IATA codes do not imply the same airport."
+  ],
+  "resourceBytes": 30681757,
+  "resourceSha256": "5446197d36ec4a012d102d844a787636494355f382c0a765300518e78b3bb9a7"
+}

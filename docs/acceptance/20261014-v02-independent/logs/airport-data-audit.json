@@ -1,0 +1,330 @@
+{
+  "records": 86242,
+  "rawRecords": 86242,
+  "countries": 247,
+  "uniqueIds": 86242,
+  "uniqueIdentifiersCasefold": 86242,
+  "sourceMismatches": [],
+  "invalidCoordinatePairs": [],
+  "locationTypes": {
+    "airport": 86242
+  },
+  "missingCity": 4765,
+  "missingIata": 77191,
+  "missingIcao": 75691,
+  "iataCollisions": {},
+  "zeroCoordinatePairs": [],
+  "rawHashMatches": true,
+  "resourceHashMatches": true,
+  "samples": [
+    {
+      "query": "OMDB",
+      "matches": [
+        {
+          "id": "oa-5235",
+          "name": "Dubai International Airport",
+          "iata": "DXB",
+          "icao": "OMDB",
+          "ident": "OMDB",
+          "city": "Dubai",
+          "countryCode": "AE",
+          "lat": 25.24979,
+          "lon": 55.370992,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "ZSPD",
+      "matches": [
+        {
+          "id": "oa-27223",
+          "name": "Shanghai Pudong International Airport",
+          "iata": "PVG",
+          "icao": "ZSPD",
+          "ident": "ZSPD",
+          "city": "Shanghai (Pudong)",
+          "countryCode": "CN",
+          "lat": 31.1434,
+          "lon": 121.805,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "RJTT",
+      "matches": [
+        {
+          "id": "oa-5627",
+          "name": "Tokyo Haneda International Airport",
+          "iata": "HND",
+          "icao": "RJTT",
+          "ident": "RJTT",
+          "city": "Tokyo",
+          "countryCode": "JP",
+          "lat": 35.549678,
+          "lon": 139.786958,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "WSSS",
+      "matches": [
+        {
+          "id": "oa-26887",
+          "name": "Singapore Changi Airport",
+          "iata": "SIN",
+          "icao": "WSSS",
+          "ident": "WSSS",
+          "city": "Singapore",
+          "countryCode": "SG",
+          "lat": 1.35019,
+          "lon": 103.994003,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "VABB",
+      "matches": [
+        {
+          "id": "oa-26434",
+          "name": "Chhatrapati Shivaji Maharaj International Airport",
+          "iata": "BOM",
+          "icao": "VABB",
+          "ident": "VABB",
+          "city": "Mumbai",
+          "countryCode": "IN",
+          "lat": 19.088699,
+          "lon": 72.867897,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "FAOR",
+      "matches": [
+        {
+          "id": "oa-31055",
+          "name": "O.R. Tambo International Airport",
+          "iata": "JNB",
+          "icao": "FAOR",
+          "ident": "FAOR",
+          "city": "Johannesburg",
+          "countryCode": "ZA",
+          "lat": -26.140081,
+          "lon": 28.246801,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "HKJK",
+      "matches": [
+        {
+          "id": "oa-3206",
+          "name": "Jomo Kenyatta International Airport",
+          "iata": "NBO",
+          "icao": "HKJK",
+          "ident": "HKJK",
+          "city": "Nairobi",
+          "countryCode": "KE",
+          "lat": -1.318886,
+          "lon": 36.928233,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "HECA",
+      "matches": [
+        {
+          "id": "oa-3183",
+          "name": "Cairo International Airport",
+          "iata": "CAI",
+          "icao": "HECA",
+          "ident": "HECA",
+          "city": "Cairo",
+          "countryCode": "EG",
+          "lat": 30.111534,
+          "lon": 31.396694,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "EGLL",
+      "matches": [
+        {
+          "id": "oa-2434",
+          "name": "London Heathrow Airport",
+          "iata": "LHR",
+          "icao": "EGLL",
+          "ident": "EGLL",
+          "city": "London",
+          "countryCode": "GB",
+          "lat": 51.470748,
+          "lon": -0.459909,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "EDDM",
+      "matches": [
+        {
+          "id": "oa-2218",
+          "name": "Munich Airport",
+          "iata": "MUC",
+          "icao": "EDDM",
+          "ident": "EDDM",
+          "city": "Munich",
+          "countryCode": "DE",
+          "lat": 48.353802,
+          "lon": 11.7861,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "BIKF",
+      "matches": [
+        {
+          "id": "oa-123",
+          "name": "Keflavik International Airport",
+          "iata": "KEF",
+          "icao": "BIKF",
+          "ident": "BIKF",
+          "city": "Reykjavík",
+          "countryCode": "IS",
+          "lat": 63.985001,
+          "lon": -22.6056,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "KJFK",
+      "matches": [
+        {
+          "id": "oa-3622",
+          "name": "John F. Kennedy International Airport",
+          "iata": "JFK",
+          "icao": "KJFK",
+          "ident": "KJFK",
+          "city": "New York",
+          "countryCode": "US",
+          "lat": 40.639447,
+          "lon": -73.779317,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "MMMX",
+      "matches": [
+        {
+          "id": "oa-4731",
+          "name": "Mexico City Benito Juárez International Airport",
+          "iata": "MEX",
+          "icao": "MMMX",
+          "ident": "MMMX",
+          "city": "Mexico City",
+          "countryCode": "MX",
+          "lat": 19.435822,
+          "lon": -99.07033,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "SBGR",
+      "matches": [
+        {
+          "id": "oa-5910",
+          "name": "São Paulo/Guarulhos–Governor André Franco Montoro International Airport",
+          "iata": "GRU",
+          "icao": "SBGR",
+          "ident": "SBGR",
+          "city": "São Paulo",
+          "countryCode": "BR",
+          "lat": -23.431274,
+          "lon": -46.469954,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "SCEL",
+      "matches": [
+        {
+          "id": "oa-6015",
+          "name": "Comodoro Arturo Merino Benítez International Airport",
+          "iata": "SCL",
+          "icao": "SCEL",
+          "ident": "SCEL",
+          "city": "Santiago",
+          "countryCode": "CL",
+          "lat": -33.393001556396484,
+          "lon": -70.78579711914062,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "NZWN",
+      "matches": [
+        {
+          "id": "oa-5063",
+          "name": "Wellington International Airport",
+          "iata": "WLG",
+          "icao": "NZWN",
+          "ident": "NZWN",
+          "city": "Wellington",
+          "countryCode": "NZ",
+          "lat": -41.326839,
+          "lon": 174.806862,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    },
+    {
+      "query": "NFFN",
+      "matches": [
+        {
+          "id": "oa-4959",
+          "name": "Nadi International Airport",
+          "iata": "NAN",
+          "icao": "NFFN",
+          "ident": "NFFN",
+          "city": "Nadi",
+          "countryCode": "FJ",
+          "lat": -17.761822,
+          "lon": 177.437843,
+          "locationKind": "airport",
+          "locationSource": "OurAirports airport coordinates"
+        }
+      ]
+    }
+  ],
+  "locationGroundTruth": "Compared against local independent source snapshot and ranges; no independent survey or current airport reality lookup",
+  "sharedDisplayCodeGroups": 55,
+  "sharedNameGroups": 2614
+}
