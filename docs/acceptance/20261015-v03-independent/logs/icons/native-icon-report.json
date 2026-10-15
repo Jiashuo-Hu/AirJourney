@@ -1,0 +1,34 @@
+﻿{
+    "executable":  "C:\\MyFile\\Project\\AirJourney\\release\\v0.3\\win-unpacked\\AirJourney.exe",
+    "fileVersion":  "0.3.0",
+    "productVersion":  "0.3.0.0",
+    "windowHandle":  "984038",
+    "records":  [
+                    {
+                        "name":  "executable-large",
+                        "width":  32,
+                        "height":  32,
+                        "cornerAlpha":  0
+                    },
+                    {
+                        "name":  "executable-small",
+                        "width":  16,
+                        "height":  16,
+                        "cornerAlpha":  0
+                    },
+                    {
+                        "name":  "window-0",
+                        "width":  512,
+                        "height":  512,
+                        "cornerAlpha":  0
+                    },
+                    {
+                        "name":  "window-1",
+                        "width":  512,
+                        "height":  512,
+                        "cornerAlpha":  0
+                    }
+                ],
+    "method":  "Direct PE icon extraction plus WM_GETICON from the running packaged window; no Explorer thumbnail cache",
+    "taskbarSeparateScreenshot":  false
+}

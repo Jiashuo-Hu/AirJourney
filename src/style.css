@@ -108,12 +108,156 @@ textarea:focus-visible,
 .brandmark {
   width: 30px;
   height: 30px;
-  background: #245fd6;
-  color: white;
-  border-radius: 9px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.repeat-mode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  gap: 7px;
+  color: #fff;
+  font-size: 11px;
+}
+.repeat-mode select {
+  width: auto;
+  min-height: 34px;
+  background: #172d40;
+  color: #fff;
+  border-color: #4b6173;
+  font-size: 11px;
+}
+.route-count {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: #fff;
+  background: #102438e8;
+  pointer-events: none;
+  font-size: 12px;
+}
+.airline-picker {
+  position: relative;
+  margin: 12px 0;
+}
+.airline-current {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 36px;
+  margin: 5px 0 8px;
+  color: var(--text);
+  font-weight: 500;
+}
+.airline-current img,
+.airline-options img {
+  width: 34px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 4px;
+  padding: 3px;
+}
+.brand-placeholder {
+  color: var(--muted);
   font-size: 24px;
-  display: grid;
-  place-items: center;
+  width: 34px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.airline-options-panel {
+  margin-top: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px;
+  background: var(--surface);
+}
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+.alphabet button {
+  padding: 2px 5px;
+  min-width: 23px;
+  min-height: 26px;
+  font-size: 11px;
+}
+.alphabet button[aria-pressed="true"] {
+  background: var(--accent);
+  color: white;
+}
+.airline-options {
+  max-height: 250px;
+  overflow-y: auto;
+}
+.airline-options > button {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 3px;
+  background: transparent;
+}
+.airline-options > button[aria-selected="true"] {
+  background: var(--subtle);
+  outline: 1px solid var(--accent);
+  outline-offset: -1px;
+}
+.airline-options small {
+  display: block;
+  line-height: 1.4;
+  margin-top: 3px;
+}
+.airline-options strong {
+  font-size: 12px;
+}
+.airline-pages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  border-top: 1px solid var(--line);
+  padding-top: 6px;
+}
+.airline-pages button {
+  font-size: 11px;
+  padding: 4px 7px;
+}
+.inline-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.inline-filter select {
+  min-height: 28px;
+  font-size: 11px;
+}
+.brand-full img {
+  display: block;
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+}
+@media (max-width: 1150px) {
+  .repeat-mode {
+    font-size: 0;
+  }
+  .repeat-mode select {
+    max-width: 120px;
+  }
 }
 .titlebar nav {
   display: flex;
@@ -454,6 +598,7 @@ h4 {
   right: 24px;
   bottom: 64px;
   display: flex;
+  align-items: center;
   gap: 5px;
 }
 .map-tools button {

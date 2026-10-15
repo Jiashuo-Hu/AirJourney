@@ -123,6 +123,19 @@ export function Settings({
         <>
           <h3>Map style</h3>
           <label>
+            Repeated routes
+            <select
+              aria-label="Repeated routes"
+              value={p.repeatRoutes || "thick"}
+              onChange={(e) =>
+                set("repeatRoutes", e.target.value as "thick" | "separate")
+              }
+            >
+              <option value="thick">Thicker by count</option>
+              <option value="separate">Separate lines</option>
+            </select>
+          </label>
+          <label>
             Route color
             <input
               type="color"
@@ -307,6 +320,7 @@ export function Settings({
                   routeColor: defaults.routeColor,
                   width: defaults.width,
                   routeHeight: defaults.routeHeight,
+                  repeatRoutes: defaults.repeatRoutes,
                   opacity: defaults.opacity,
                   markerSize: defaults.markerSize,
                   labels: defaults.labels,
@@ -516,8 +530,12 @@ export function Settings({
               priority.
             </li>
             <li>
-              Airlines, alliances and aircraft: small manually curated
-              suggestions, no historical membership verification.
+              Airlines: 7,761 local references from OpenFlights (ODbL 1.0 / DbCL
+              1.0) and Wikidata (CC0), prepared 2026-10-15. The derived
+              catalogue is ODbL 1.0. Codes may be shared or historical;
+              unverified status is not assumed active. Alliances and aircraft
+              remain small curated suggestions, without historical membership
+              verification.
             </li>
             <li>
               Moment Timezone 0.6.0 · bundled IANA rules, UTC offsets may be
@@ -525,8 +543,11 @@ export function Settings({
             </li>
             <li>GeographicLib WGS84 geodesics · MIT</li>
             <li>
-              Brand SVG files: see actual resource manifest. Missing logos use a
-              text placeholder.
+              Brand SVGs: 20 airline marks, 19 separate symbols; missing brands
+              use a diamond placeholder. Originals, source records, individual
+              conditions and gaps are in the bundled brand manifest. Trademarks
+              and copyright remain with their owners; no blanket usage license
+              or endorsement is implied.
             </li>
           </ul>
           <h4>Known resource limits</h4>

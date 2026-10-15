@@ -1,0 +1,79 @@
+{
+  "version": "v0.3",
+  "packageVersion": "0.3.0",
+  "date": "2026-10-15",
+  "localOnly": true,
+  "noGitHubActions": true,
+  "unitTests": 48,
+  "resourceTests": 5,
+  "installedScenarios": 62,
+  "syntheticFixtures": true,
+  "physicalWindowsDpiChanged": false,
+  "taskbarPixelsIndependentlyCaptured": false,
+  "originalIntermittentTriggerNotEstablished": true,
+  "faultInjectionDeclared": true,
+  "coverage": {
+    "airports": 86242,
+    "airlines": 7761,
+    "fullBrandMarks": 20,
+    "separateSymbols": 19
+  },
+  "evidence": [
+    {
+      "path": "evidence/v0.3/unit-tests.log",
+      "sha256": "2e1abf86dc6a9a298692ae4767245ef384dd3f30dd93b8eab0a8b85044cb2244",
+      "bytes": 4796
+    },
+    {
+      "path": "evidence/v0.3/airport-resource-tests.log",
+      "sha256": "6ce19fe5c6e39322ca0b13f5b467573e2eeec70d41fbf64d3e414ddbe59845d6",
+      "bytes": 108
+    },
+    {
+      "path": "evidence/v0.3/build.log",
+      "sha256": "84e72355fdaf373c132b11d366945d053bd0fa49fd69411f0a5b5742b6395ba4",
+      "bytes": 3838
+    },
+    {
+      "path": "evidence/v0.3/package.log",
+      "sha256": "0918aa43c0304d88cf1d33fee01286c9b3fce7c597651925377ff9eedf862665",
+      "bytes": 1319
+    },
+    {
+      "path": "evidence/v0.3/install.json",
+      "sha256": "dbb2d895519247bc65787e2aecc5893120d26079615ae915730ec6ee80fbf5eb",
+      "bytes": 265
+    },
+    {
+      "path": "evidence/v0.3/logo-render-results.json",
+      "sha256": "1580c032d9e9d827d39cdaf097ba06c69c8b6e0f948476cf1109ed736cdb5b81",
+      "bytes": 2583
+    },
+    {
+      "path": "evidence/v0.3/verified-regression-final/results.json",
+      "sha256": "9a2b875989e5eedefff34cfc127d809ab02e1f69019c038f4617792d35f620b5",
+      "bytes": 3125
+    },
+    {
+      "path": "evidence/v0.3/verified-smoke/smoke-results.json",
+      "sha256": "f6fa1bc5da67219531ad78eea2e7026836c22827bc679cae47b0929b075b6d79",
+      "bytes": 6706
+    },
+    {
+      "path": "evidence/v0.3/verified-upgrade/results.json",
+      "sha256": "fab4c9562967b3318c59b6b67b6f5564ad9891b90938985233bf2d110a598197",
+      "bytes": 5554
+    },
+    {
+      "path": "evidence/v0.3/verified-map/results.json",
+      "sha256": "2ae7aa6423117765b7d8088c03815a3c240f4c66ed8f4a790dbfba377a3fab29",
+      "bytes": 5752
+    },
+    {
+      "path": "evidence/v0.3/verified-regression-final/native-icons/native-icon-report.json",
+      "sha256": "b562f8ea0e6b16ef9561f765cfb255d1950bb60d626ead4097aa0332d788dd3d",
+      "bytes": 1290
+    }
+  ],
+  "screenshots": "docs/implementation/v0.3/screenshots"
+}

@@ -1,0 +1,60 @@
+
+> airjourney@0.3.0 build
+> tsc && vite build && node scripts/copy-resources.mjs
+
+vite v7.1.7 building for production...
+transforming...
+✓ 1381 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                               0.48 kB │ gzip:     0.31 kB
+dist/assets/inter-vietnamese-400-normal-DMkecbls.woff2        4.97 kB
+dist/assets/inter-vietnamese-600-normal-Cc8MFFhd.woff2        5.10 kB
+dist/assets/inter-vietnamese-500-normal-DOriooB6.woff2        5.11 kB
+dist/assets/inter-greek-ext-400-normal-Bput3-QP.woff2         5.23 kB
+dist/assets/inter-greek-ext-500-normal-B6guLgqG.woff2         5.40 kB
+dist/assets/inter-greek-ext-600-normal-Cnui8OiR.woff2         5.43 kB
+dist/assets/inter-vietnamese-400-normal-Bbgyi5SW.woff         6.50 kB
+dist/assets/inter-vietnamese-500-normal-mJboJaSs.woff         6.60 kB
+dist/assets/inter-vietnamese-600-normal-BuLX-rYi.woff         6.64 kB
+dist/assets/inter-greek-ext-400-normal-XIH6-K3k.woff          7.06 kB
+dist/assets/inter-greek-ext-500-normal-1SJLBQ3N.woff          7.19 kB
+dist/assets/inter-greek-ext-600-normal-CCFnzSpK.woff          7.21 kB
+dist/assets/inter-cyrillic-400-normal-BLGc9T1a.woff2          7.71 kB
+dist/assets/inter-greek-400-normal-DxZsaF_h.woff2             7.84 kB
+dist/assets/inter-cyrillic-500-normal-D4Vwzodn.woff2          7.90 kB
+dist/assets/inter-greek-500-normal-CeQXL5ds.woff2             7.90 kB
+dist/assets/inter-greek-600-normal-Dhlb-90d.woff2             7.96 kB
+dist/assets/inter-cyrillic-600-normal-BGBWG807.woff2          7.97 kB
+dist/assets/inter-cyrillic-400-normal-alAqRL36.woff           9.78 kB
+dist/assets/inter-greek-400-normal-C3I71FoW.woff              9.92 kB
+dist/assets/inter-cyrillic-600-normal-vZ-N8GHY.woff           9.94 kB
+dist/assets/inter-cyrillic-500-normal-BoeW9iIj.woff           9.94 kB
+dist/assets/inter-greek-500-normal-CSBZZ4CI.woff              9.98 kB
+dist/assets/inter-greek-600-normal-BVGIV3oK.woff             10.03 kB
+dist/assets/inter-cyrillic-ext-400-normal-Dc4VJyIJ.woff2     10.22 kB
+dist/assets/inter-cyrillic-ext-500-normal-BShVwWPj.woff2     10.44 kB
+dist/assets/inter-cyrillic-ext-600-normal-CaqZN2hq.woff2     10.46 kB
+dist/assets/inter-cyrillic-ext-400-normal-BE2fNs0E.woff      13.34 kB
+dist/assets/inter-cyrillic-ext-500-normal-NrhEyngK.woff      13.44 kB
+dist/assets/inter-cyrillic-ext-600-normal-t7rHAwBu.woff      13.46 kB
+dist/assets/inter-latin-400-normal-C38fXH4l.woff2            23.66 kB
+dist/assets/inter-latin-500-normal-Cerq10X2.woff2            24.27 kB
+dist/assets/inter-latin-600-normal-LgqL8muc.woff2            24.45 kB
+dist/assets/inter-latin-400-normal-CyCys3Eg.woff             30.70 kB
+dist/assets/inter-latin-600-normal-CiBQ2DWP.woff             31.26 kB
+dist/assets/inter-latin-500-normal-BL9OpVg8.woff             31.28 kB
+dist/assets/inter-latin-ext-400-normal-C1nco2VV.woff2        35.00 kB
+dist/assets/inter-latin-ext-500-normal-CV4jyFjo.woff2        36.02 kB
+dist/assets/inter-latin-ext-600-normal-D2bJ5OIk.woff2        36.26 kB
+dist/assets/inter-latin-ext-400-normal-77YHD8bZ.woff         47.56 kB
+dist/assets/inter-latin-ext-500-normal-BxGbmqWO.woff         48.49 kB
+dist/assets/inter-latin-ext-600-normal-CIVaiw4L.woff         48.67 kB
+dist/assets/index-tncL90Dr.css                               48.34 kB │ gzip:    10.46 kB
+dist/assets/index-D9spOX6E.js                             5,686.28 kB │ gzip: 1,411.39 kB
+
+(!) Some chunks are larger than 2000 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 7.77s

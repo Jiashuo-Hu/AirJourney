@@ -1,10 +1,12 @@
-> 当前 v0.2 同版本更新记录位于 [map-and-location-update](v0.2/map-and-location-update/implementation_summary.md)，旧的手工位置能力以16号补充范围撤销。
+> 当前本地 v0.3 记录位于 [v0.3](v0.3/implementation_summary.md)。旧的手工位置能力仍以16号范围撤销；17号范围增加重复路线、图标、航司/Logo及取消选中。
 
 # 实现与交付记录
 
-当前本地候选为 [v0.2](v0.2/implementation_summary.md)，工程版本0.2.0。最新实现、测试、已知问题、构建安装/备份、资源和需求追踪均位于v0.2/；产物在release/v0.2/。
+当前本地候选为 [v0.3](v0.3/implementation_summary.md)，工程版本0.3.0。最新实现、测试、已知问题、构建安装/备份、资源和需求追踪均位于v0.3/；产物在release/v0.3/。
 
-本轮仅本地实现、测试与打包，v0.2没有GitHub推送、PR、Release或上传。下列v0.1发布/验收记录为历史事件，不能推定v0.2已发布或独立通过。
+v0.3实现阶段仅本地测试和打包；2026-10-15用户在独立验收后另行授权完善文档并同步GitHub，当前上传范围及产物记录见[同步说明](github_sync_v0.3.md)。本次不创建Release，不上传安装附件。v0.2于2026-10-14另获授权同步仓库；旧报告保留各自交付时点状态。
+
+最新[简短独立验收](../acceptance/20261015-v03-independent/report.md)在限定范围PASS，未发现阻断问题；保留地图Repeated routes文字对比度P3建议和全部未测项。该结论不替代完整设备与长期验收。
 
 v0.1 本地实现阶段只授权本地测试与打包；该阶段记录保留原样。用户随后另行授权上传 GitHub，发布目标与产物说明见 [github_release_v0.1.md](github_release_v0.1.md)。
 

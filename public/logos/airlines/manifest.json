@@ -1,0 +1,1827 @@
+{
+  "checked": "2026-10-15",
+  "brands": [
+    {
+      "key": "air-china",
+      "name": "Air China",
+      "code": "CA",
+      "official": "https://www.airchina.com.cn/",
+      "file": "Air China logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [],
+      "vectorStatus": "Found via English Wikipedia file record",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/en/a/a4/Air_China_logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://en.wikipedia.org/wiki/File:Air_China_logo.svg",
+        "descriptionshorturl": "https://en.wikipedia.org/w/index.php?curid=75743154",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2024-08-18 13:30:46",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Air China logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "All non-free logos|All non-free media|Files with no machine-readable author|Files with no machine-readable description|SVG images of trademarks|Wikipedia non-free files with NFUR stated|Noindexed pages|Wikipedia images in SVG format|Wikipedia non-free files with valid backlink|Completed non-free use rationale logo transclusions|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Credit": {
+            "value": "<p><a rel=\"nofollow\" class=\"external free\" href=\"https://www.airchina.us/\">https://www.airchina.us/</a>\n</p>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Fair use",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "<a href=\"//en.wikipedia.org/wiki/Wikipedia:Non-free_use_rationale_guideline\" title=\"Wikipedia:Non-free use rationale guideline\">Fair use</a> of copyrighted material in the context of <a href=\"//en.wikipedia.org/wiki/Air_China\" title=\"Air China\">Air China</a>",
+            "source": "commons-desc-page"
+          },
+          "NonFree": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 89525,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/air-china-original.svg",
+      "fullPath": "public/logos/airlines/air-china-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "9a0a8c462c7f8ff0252e200d6fb1545ae6b2df14348c7c3a24b3e7e8358622f1",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/air-china-symbol.svg",
+      "symbolContours": 3,
+      "chosenUsage": "File-source license statement: Fair use; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "china-eastern",
+      "name": "China Eastern Airlines",
+      "code": "MU",
+      "official": "https://www.ceair.com/",
+      "file": "China Eastern Airlines logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [],
+      "vectorStatus": "Found via English Wikipedia file record",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/en/6/6b/China_Eastern_Airlines_logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://en.wikipedia.org/wiki/File:China_Eastern_Airlines_logo.svg",
+        "descriptionshorturl": "https://en.wikipedia.org/w/index.php?curid=58882262",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2018-10-26 06:01:46",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "China Eastern Airlines logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "SVG images of trademarks|Images with trademarks|All free in US media|Wikipedia images in SVG format|Wikipedia files not suitable for Commons|Files ineligible for copyright in the United States but not in their source countries|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "<p>China Eastern Airlines logo\n</p>",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<p>China Eastern Airlines web\n</p>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<p>China Eastern Airlines\n</p>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "PD",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 36612,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/china-eastern-original.svg",
+      "fullPath": "public/logos/airlines/china-eastern-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "4c70da6f7e438945135ff84d2426f804a9083f8d50e8cba94db0b6a36982b98e",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/china-eastern-symbol.svg",
+      "symbolContours": 2,
+      "chosenUsage": "File-source license statement: PD; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "china-southern",
+      "name": "China Southern Airlines",
+      "code": "CZ",
+      "official": "https://www.csair.com/en/",
+      "file": "China Southern Airlines logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [],
+      "vectorStatus": "Found via English Wikipedia file record",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/en/b/b4/China_Southern_Airlines_logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://en.wikipedia.org/wiki/File:China_Southern_Airlines_logo.svg",
+        "descriptionshorturl": "https://en.wikipedia.org/w/index.php?curid=58882068",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2018-11-16 00:28:31",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "China Southern Airlines logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "All non-free logos|All non-free media|Files with no machine-readable author|Files with no machine-readable description|SVG images of trademarks|Wikipedia non-free files with NFUR stated|Noindexed pages|Wikipedia images in SVG format|Wikipedia non-free files with valid backlink|Completed non-free use rationale logo transclusions|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Credit": {
+            "value": "<p><a rel=\"nofollow\" class=\"external text\" href=\"http://www.csair.com/en/about/investor/yejibaogao/2018/resource/d3a41612260b0cc0cf4482c45f7e8cb3.pdf\">2017 Annual Report</a>\n</p>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Fair use",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "<a href=\"//en.wikipedia.org/wiki/Wikipedia:Non-free_use_rationale_guideline\" title=\"Wikipedia:Non-free use rationale guideline\">Fair use</a> of copyrighted material in the context of <a href=\"//en.wikipedia.org/wiki/China_Southern_Airlines\" title=\"China Southern Airlines\">China Southern Airlines</a>",
+            "source": "commons-desc-page"
+          },
+          "NonFree": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 8209,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/china-southern-original.svg",
+      "fullPath": "public/logos/airlines/china-southern-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "691e3e7bf127880f55cdbdf2af50d34c0bbb8fc548490e60b39ea704d71fa51c",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/china-southern-symbol.svg",
+      "symbolContours": 8,
+      "chosenUsage": "File-source license statement: Fair use; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "lufthansa",
+      "name": "Lufthansa",
+      "code": "LH",
+      "official": "https://www.lufthansa.com/us/en/homepage",
+      "file": "Lufthansa Logo 2018.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "Error: HTTP 403",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Lufthansa_Logo_2018.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lufthansa_Logo_2018.svg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=66283355",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2021-01-26 00:29:35",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Lufthansa Logo 2018",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "With trademark|SVG logos of airlines of Germany|PD textlogo|SVG text logos|Files with derivative versions|Valid SVG created with Inkscape:Text logos|Lufthansa crane logo|Lufthansa logos",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Logo of <a href=\"https://en.wikipedia.org/wiki/Lufthansa\" class=\"extiw\" title=\"w:Lufthansa\">Lufthansa</a>.",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2018-02-06",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://corporatedesign.lufthansa.com/d/Sy9Wlqgm4YPF/downloads\">Lufthansa Styleguide y0.9 - Downloads</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Lufthansa Group",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 6294,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/lufthansa-original.svg",
+      "fullPath": "public/logos/airlines/lufthansa-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "0a61ee8967b7f4127a0d02535e132d3166beb55bdde547d48bdb0b3cd4108023",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/lufthansa-symbol.svg",
+      "symbolContours": 3,
+      "chosenUsage": "File-source license statement: Public domain; copyright/trademark limits remain",
+      "currentBrandCheck": "Official fetch unavailable/restricted; file-source identity only, current-brand verification incomplete"
+    },
+    {
+      "key": "singapore",
+      "name": "Singapore Airlines",
+      "code": "SQ",
+      "official": "https://www.singaporeair.com/",
+      "file": "Singapore Airlines Logo 2.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [],
+      "vectorStatus": "Found via English Wikipedia file record",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/en/6/6b/Singapore_Airlines_Logo_2.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://en.wikipedia.org/wiki/File:Singapore_Airlines_Logo_2.svg",
+        "descriptionshorturl": "https://en.wikipedia.org/w/index.php?curid=15356854",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2024-11-30 13:32:39",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Singapore Airlines Logo 2",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Singaporean logos|Images with trademarks|All free in US media|Wikipedia images in SVG format|Wikipedia files not suitable for Commons|Files ineligible for copyright in the United States but not in their source countries|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "<p>This is the logo of Singapore Airlines\n</p>",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<p><span class=\"url\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.singaporeair.com\">www<wbr>.singaporeair<wbr>.com</wbr></wbr></a></span>\n</p>",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "<p>1987\n</p>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<p>Singapore Airlines\n</p>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "PD",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 5433,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/singapore-original.svg",
+      "fullPath": "public/logos/airlines/singapore-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "3796474559dcacd8621819fe852c3602e71a99fe3e0dc392f4fa482a82877016",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "chosenUsage": "File-source license statement: PD; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee",
+      "symbolPath": "public/logos/airlines/singapore-symbol.svg",
+      "symbolContours": 2,
+      "symbolDerivation": "Two complete gold bird contours retained from the original SVG; separate speedline and blue company lettering excluded. No clipping or geometry stretching. Original and full lockup retained. Checked 2026-10-15."
+    },
+    {
+      "key": "air-france",
+      "name": "Air France",
+      "code": "AF",
+      "official": "https://corporate.airfrance.com/en",
+      "file": "Air France Logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "Error: HTTP 403",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Air_France_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Air_France_Logo.svg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16590808",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2020-11-17 16:14:49",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Air France Logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "With trademark|PD textlogo|SVG text logos|SVG logos of airlines of France|Valid SVG created with Text Editor:Text logos|Air France logos",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Air France logo",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "Own work using: <a rel=\"nofollow\" class=\"external free\" href=\"http://www.airfrance.fr/common/image/pdf/en/FB/O10710_DEP_WP_FB_Ivory_UK.pdf\">http://www.airfrance.fr/common/image/pdf/en/FB/O10710_DEP_WP_FB_Ivory_UK.pdf</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Air France",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 1683,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/air-france-original.svg",
+      "fullPath": "public/logos/airlines/air-france-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "4a533634f6258acaec2e7621ed78166716b290bd71743468f201d4a93a8cdb4a",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/air-france-symbol.svg",
+      "symbolContours": 1,
+      "chosenUsage": "File-source license statement: Public domain; copyright/trademark limits remain",
+      "currentBrandCheck": "Official fetch unavailable/restricted; file-source identity only, current-brand verification incomplete"
+    },
+    {
+      "key": "emirates",
+      "name": "Emirates",
+      "code": "EK",
+      "official": "https://www.emirates.com/media-centre/media-library/",
+      "file": "Emirates logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [
+        "https://c.ekstatic.net/ecl/logos/emirates/emirates-logo-badge.svg?h=d-52wmsnqryhi7L83BAKpg",
+        "https://c.ekstatic.net/ecl/logos/emirates/emirates-logo-badge.svg?h=d-52wmsnqryhi7L83BAKpg"
+      ],
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Emirates_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Emirates_logo.svg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=14492084",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2025-05-08 16:39:13",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Emirates logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "With trademark|PD textlogo|SVG text logos|SVG logos of the United Arab Emirates|SVG logos of airlines of the United Arab Emirates|Valid SVG created with Inkscape:Text logos|SVG red logos|Bilingual Arabic-English SVG logos|Emirates logos|1999 SVG logos",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Logo of <a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/Emirates%20(airline)\" title=\"en:Emirates (airline)\" class=\"extiw\">Emirates Airlines</a>",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "6 March 2011 (upload date)",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"mw:ExtLink nofollow\" href=\"http://www.emirates.com/\" class=\"external free\">http://www.emirates.com/</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Emirates",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 99064,
+      "officialVector": {
+        "url": "https://c.ekstatic.net/ecl/logos/emirates/emirates-logo-badge.svg?h=d-52wmsnqryhi7L83BAKpg",
+        "bytes": 3539
+      },
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/emirates-original.svg",
+      "fullPath": "public/logos/airlines/emirates-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "fffdc346eb3909aa292eda39f64883c3059089c08753afac043710acebc8fb77",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "chosenUsage": "File-source license statement: Public domain; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee",
+      "fullDerivation": "Removed the entire unrelated editor sample group above the original viewBox. All Arabic/English brand paths retained, without a separate pictogram. Original unchanged in originals/.",
+      "symbolDerivation": "Complete upper Arabic calligraphic mark retained; lower English Emirates lettering and its dot excluded by complete-contour selection. Original and full lockup retained. Checked 2026-10-15.",
+      "symbolPath": "public/logos/airlines/emirates-symbol.svg",
+      "symbolContours": 9
+    },
+    {
+      "key": "british-airways",
+      "name": "British Airways",
+      "code": "BA",
+      "official": "https://mediacentre.britishairways.com/image/details/115863",
+      "file": "British Airways Logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [
+        "https://mediacentre.britishairways.com/assets/britishairways__site_v2/images/logo.svg",
+        "https://mediacentre.britishairways.com/assets/britishairways__site_v2/images/footer_logo_icon.svg"
+      ],
+      "vectorStatus": "Found via English Wikipedia file record",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/en/4/42/British_Airways_Logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://en.wikipedia.org/wiki/File:British_Airways_Logo.svg",
+        "descriptionshorturl": "https://en.wikipedia.org/w/index.php?curid=18328361",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2024-12-27 02:25:46",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "British Airways Logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "British company logos|SVG images of trademarks|Images with trademarks|All free in US media|British Airways|Wikipedia images in SVG format|Wikipedia files not suitable for Commons|Files ineligible for copyright in the United States but not in their source countries|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "<p><a href=\"//en.wikipedia.org/wiki/British_Airways\" title=\"British Airways\">British Airways</a> logo.\n</p>",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<p><span class=\"url\"><a rel=\"nofollow\" class=\"external text\" href=\"https://www.britishairways.com/\">www<wbr>.britishairways<wbr>.com</wbr></wbr></a></span>\n</p>",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "<p>10 June 1997\n</p>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<p>British Airways\n</p>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "PD",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 7834,
+      "officialVector": {
+        "url": "https://mediacentre.britishairways.com/assets/britishairways__site_v2/images/logo.svg",
+        "bytes": 8542
+      },
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/british-airways-official.svg",
+      "fullPath": "public/logos/airlines/british-airways-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "e1ff4d6df54733e3c8438d0fe5a7acc01f5ac2bc645970d1ccc794a0311daaef",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/british-airways-symbol.svg",
+      "symbolContours": 2,
+      "chosenUsage": "Official website asset: copyright and trademark retained; no general redistribution license supplied",
+      "officialUseRestriction": "Official media centre permits editorial media use only; other use requires contacting its press office. No such additional permission obtained.",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "united",
+      "name": "United Airlines",
+      "code": "UA",
+      "official": "https://www.united.com/",
+      "file": "United Airlines logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [],
+      "vectorStatus": "Error: File missing",
+      "fallbackStatus": "Error: File missing",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/en/e/e0/United_Airlines_Logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://en.wikipedia.org/wiki/File:United_Airlines_Logo.svg",
+        "descriptionshorturl": "https://en.wikipedia.org/w/index.php?curid=29018443",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2026-08-22 14:03:06",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "United Airlines Logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "All non-free logos|All non-free media|Files with no machine-readable author|Files with no machine-readable description|SVG images of trademarks|Wikipedia non-free files with NFUR stated|Noindexed pages|Wikipedia images in SVG format|Wikipedia non-free files with redirect backlink|Wikipedia non-free files with valid backlink|Completed non-free use rationale logo transclusions|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Credit": {
+            "value": "<p>This image was extracted from a PDF downloaded from the <a href=\"//en.wikipedia.org/wiki/United_Airlines_Holdings\" class=\"mw-redirect\" title=\"United Airlines Holdings\">United Continental Holdings</a> website accessed <span data-sort-value=\"000000002009-12-01-0000\" style=\"white-space:nowrap\">December 1, 2009</span> at the following URL: <a rel=\"nofollow\" class=\"external text\" href=\"http://www.unitedcontinentalholdings.com/download.php?file=united_factsheet.pdf&amp;type=pdf\">http://www.unitedcontinentalholdings.com/download.php?file=united_factsheet.pdf&amp;type=pdf</a>\n</p>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Fair use",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "<a href=\"//en.wikipedia.org/wiki/Wikipedia:Non-free_use_rationale_guideline\" title=\"Wikipedia:Non-free use rationale guideline\">Fair use</a> of copyrighted material in the context of <a href=\"//en.wikipedia.org/wiki/United_Airlines\" title=\"United Airlines\">United Airlines</a>",
+            "source": "commons-desc-page"
+          },
+          "NonFree": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 10489,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/united-original.svg",
+      "fullPath": "public/logos/airlines/united-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "fb1d97c0127c35944bf00d8199113e838a6ba1419f712360914511dd519779de",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/united-symbol.svg",
+      "symbolContours": 16,
+      "chosenUsage": "File-source license statement: Fair use; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "qantas",
+      "name": "Qantas",
+      "code": "QF",
+      "official": "https://www.qantas.com/",
+      "file": "Qantas Airways logo 2016.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [],
+      "vectorStatus": "Error: File missing",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/en/0/02/Qantas_Airways_logo_2016.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://en.wikipedia.org/wiki/File:Qantas_Airways_logo_2016.svg",
+        "descriptionshorturl": "https://en.wikipedia.org/w/index.php?curid=52112934",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2024-07-07 13:40:08",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Qantas Airways logo 2016",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "All non-free logos|All non-free media|Qantas|Files with no machine-readable author|Files with no machine-readable description|SVG images of trademarks|Wikipedia non-free files with NFUR stated|Noindexed pages|Wikipedia images in SVG format|Wikipedia non-free files with valid backlink|Completed non-free use rationale logo transclusions|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Credit": {
+            "value": "<p>The logo is from the following website: <a rel=\"nofollow\" class=\"external text\" href=\"http://www.qantasnewsroom.com.au/\">Qantas Newsroom</a> <a rel=\"nofollow\" class=\"external free\" href=\"http://www.qantasnewsroom.com.au/wp-content/uploads/2016/10/History-Qantas-Tales-Face-Sheet.pdf\">http://www.qantasnewsroom.com.au/wp-content/uploads/2016/10/History-Qantas-Tales-Face-Sheet.pdf</a>\n</p>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Fair use",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "<a href=\"//en.wikipedia.org/wiki/Wikipedia:Non-free_use_rationale_guideline\" title=\"Wikipedia:Non-free use rationale guideline\">Fair use</a> of copyrighted material in the context of <a href=\"//en.wikipedia.org/wiki/Qantas\" title=\"Qantas\">Qantas</a>",
+            "source": "commons-desc-page"
+          },
+          "NonFree": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          }
+        }
+      },
+      "fallbackStatus": "Error: HTTP 429",
+      "svgBytes": 12429,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/qantas-original.svg",
+      "fullPath": "public/logos/airlines/qantas-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "dc12401a874e471b5082c771d62524b8eadd038de86560266b91f1d490f53b15",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/qantas-symbol.svg",
+      "symbolContours": 5,
+      "chosenUsage": "File-source license statement: Fair use; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "jal",
+      "name": "Japan Airlines",
+      "code": "JL",
+      "official": "https://www.jal.com/en/",
+      "file": "Japan Airlines Logo (2011).svg",
+      "checked": "2026-10-15",
+      "officialStatus": "Error: HTTP 403",
+      "vectorStatus": "Error: File missing",
+      "fallbackStatus": "Error: File missing",
+      "retryStatus": "Error: File missing",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/en/d/dd/Japan_Airlines_Logo_%282011%29.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://en.wikipedia.org/wiki/File:Japan_Airlines_Logo_(2011).svg",
+        "descriptionshorturl": "https://en.wikipedia.org/w/index.php?curid=53585104",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2023-03-04 05:48:11",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Japan Airlines Logo (2011)",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "All non-free logos|All non-free media|Files with no machine-readable author|Files with no machine-readable description|SVG images of trademarks|Wikipedia non-free files with NFUR stated|Noindexed pages|Wikipedia images in SVG format|Wikipedia non-free files with valid backlink|Possibly free images|Completed non-free use rationale logo transclusions|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Credit": {
+            "value": "<p>Extracted from the <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20211226000144/https://www.jfa.jp/about_jfa/img/profile_eng.pdf\">Japan FA profile in English</a> from official website in Inkscape\n</p>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Fair use",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "<a href=\"//en.wikipedia.org/wiki/Wikipedia:Non-free_use_rationale_guideline\" title=\"Wikipedia:Non-free use rationale guideline\">Fair use</a> of copyrighted material in the context of <a href=\"//en.wikipedia.org/wiki/Japan_Airlines\" title=\"Japan Airlines\">Japan Airlines</a>",
+            "source": "commons-desc-page"
+          },
+          "NonFree": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 3953,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/jal-original.svg",
+      "fullPath": "public/logos/airlines/jal-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "79d22c42958f737a4c53ead85e75c501309c1df7df377493b5ecf7e24155f599",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/jal-symbol.svg",
+      "symbolContours": 7,
+      "chosenUsage": "File-source license statement: Fair use; copyright/trademark limits remain",
+      "currentBrandCheck": "Official fetch unavailable/restricted; file-source identity only, current-brand verification incomplete"
+    },
+    {
+      "key": "delta",
+      "name": "Delta Air Lines",
+      "code": "DL",
+      "official": "https://news.delta.com/",
+      "file": "Delta Air Lines logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [
+        "/themes/custom/newshubten/build/assets/icons/logo_blue.svg",
+        "/themes/custom/newshubten/build/assets/icons/instagram-2-1-logo-svgrepo-com.svg",
+        "/themes/custom/newshubten/build/assets/icons/instagram-2-1-logo-svgrepo-com.svg"
+      ],
+      "vectorStatus": "Error: File missing",
+      "fallbackStatus": "Error: File missing",
+      "officialVector": {
+        "url": "https://news.delta.com/themes/custom/newshubten/build/assets/icons/logo_blue.svg",
+        "bytes": 18400
+      },
+      "retryStatus": "Error: File missing",
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/delta-official.svg",
+      "fullPath": "public/logos/airlines/delta-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "319a43014aaadc75506f761d4b0cc328c9d58f3492e236041f13d5781a181d08",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/delta-symbol.svg",
+      "symbolContours": 8,
+      "chosenUsage": "Official website asset: copyright and trademark retained; no general redistribution license supplied",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee",
+      "fullDerivation": "Retained complete Delta symbol and DELTA lettering contours from official newsroom lockup; removed separate NEWS HUB and SkyTeam additions. Original unchanged in originals/."
+    },
+    {
+      "key": "turkish",
+      "name": "Turkish Airlines",
+      "code": "TK",
+      "official": "https://www.turkishairlines.com/",
+      "file": "Turkish Airlines logo 2019.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [],
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Turkish_Airlines_logo_2019.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Turkish_Airlines_logo_2019.svg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=87614330",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2020-03-02 10:12:18",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Turkish Airlines logo 2019",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "2010s works|With trademark|PD textlogo|SVG logos of airlines of Turkey|SVG text logos|Turkish Airlines logos",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Logo of Turkish Airlines since 2019",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2019-03-05",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "vectorized by <a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Mehman97\" title=\"User:Mehman97\">User:Mehman97</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Based on <a rel=\"mw:ExtLink nofollow\" href=\"https://www.turkishairlines.com/en-us/press-room/logo-archive/index.html\" class=\"external free\">https://www.turkishairlines.com/en-us/press-room/logo-archive/index.html</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 11692,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/turkish-original.svg",
+      "fullPath": "public/logos/airlines/turkish-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "8a6111558c71fdd3c2e498b4aa5d573f991e7f466e8cceac79cb77cf5be826b5",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/turkish-symbol.svg",
+      "symbolContours": 5,
+      "chosenUsage": "File-source license statement: Public domain; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "qatar",
+      "name": "Qatar Airways",
+      "code": "QR",
+      "official": "https://www.qatarairways.com/press-releases/en-WW/assets/categories/2467/",
+      "file": "Qatar Airways Logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [],
+      "vectorStatus": "Error: File missing",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/en/9/9b/Qatar_Airways_Logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://en.wikipedia.org/wiki/File:Qatar_Airways_Logo.svg",
+        "descriptionshorturl": "https://en.wikipedia.org/w/index.php?curid=26298004",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2011-09-18 20:55:00",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Qatar Airways Logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "All non-free logos|All non-free media|Files with no machine-readable author|Files with no machine-readable description|SVG images of trademarks|Wikipedia non-free files with NFUR stated|Noindexed pages|Wikipedia images in SVG format|Wikipedia non-free files with valid backlink|Wikipedia non-free files with NFUR stated (bot-assessed)|Completed non-free use rationale logo transclusions|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Credit": {
+            "value": "<p><a rel=\"nofollow\" class=\"external free\" href=\"http://flyupdate.info/wp-content/uploads/2011/10/qatar-airways-5-star-airline.jpg\">http://flyupdate.info/wp-content/uploads/2011/10/qatar-airways-5-star-airline.jpg</a>\n</p>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Fair use",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "<a href=\"//en.wikipedia.org/wiki/Wikipedia:Non-free_use_rationale_guideline\" title=\"Wikipedia:Non-free use rationale guideline\">Fair use</a> of copyrighted material in the context of <a href=\"//en.wikipedia.org/wiki/Qatar_Airways\" title=\"Qatar Airways\">Qatar Airways</a>",
+            "source": "commons-desc-page"
+          },
+          "NonFree": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          }
+        }
+      },
+      "fallbackStatus": "Error: HTTP 429",
+      "svgBytes": 23784,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/qatar-original.svg",
+      "fullPath": "public/logos/airlines/qatar-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "ca59bd8a1307c428240aed670428849b167abf4ed344a184d84772da42fc6a47",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/qatar-symbol.svg",
+      "symbolContours": 12,
+      "chosenUsage": "File-source license statement: Fair use; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "ana",
+      "name": "All Nippon Airways",
+      "code": "NH",
+      "official": "https://www.ana.co.jp/en/",
+      "file": "All Nippon Airways Logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "Error: HTTP 404",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/All_Nippon_Airways_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:All_Nippon_Airways_Logo.svg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7882781",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2016-11-25 19:36:21",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "All Nippon Airways Logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "With trademark|PD textlogo|SVG text logos|Blue and cyan logos|A in logos|SVG logos of airlines of Japan|Valid SVG created with Other tools:Text logos|Blue alphabet logos of Japan|ANA letter combinations|TOO-Japan|Oblique logos of Japan|Three letter combinations (all caps)|3 letter acronyms logos of Japan|All Nippon Airways logos",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "<a href=\"https://en.wikipedia.org/wiki/All_Nippon_Airways\" class=\"extiw\" title=\"w:All Nippon Airways\">All Nippon Airways</a> logo",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2016-11-26",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "Transfered from English Wikipedia; <a href=\"https://en.wikipedia.org/wiki/File:All_Nippon_Airways_Logo.svg\" class=\"extiw\" title=\"en:File:All Nippon Airways Logo.svg\">File:All Nippon Airways Logo.svg</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "All Nippon Airways Co., Ltd.",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 2445,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/ana-original.svg",
+      "fullPath": "public/logos/airlines/ana-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "346ada32a2a229d8f1ac6f48123012e9442dbbbbdeda7cc38ce332bcbbaea527",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "chosenUsage": "File-source license statement: Public domain; copyright/trademark limits remain",
+      "currentBrandCheck": "Official fetch unavailable/restricted; file-source identity only, current-brand verification incomplete",
+      "symbolDerivation": "Both complete blue/cyan tail-stripe contours retained; ANA lettering excluded. Original and full lockup retained. Checked 2026-10-15.",
+      "symbolPath": "public/logos/airlines/ana-symbol.svg",
+      "symbolContours": 2
+    },
+    {
+      "key": "klm",
+      "name": "KLM",
+      "code": "KL",
+      "official": "https://news.klm.com/",
+      "file": "KLM logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [
+        "https://content.presspage.com/templates/180/162/849489/kl-logo-small-2022.svg"
+      ],
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/KLM_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:KLM_logo.svg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=9552528",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2022-07-18 09:29:50",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "KLM logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "With trademark|PD textlogo|Three letter combinations including K|SVG text logos|Cyan logos|Valid SVG created with Other tools:Text logos|Three letter combinations including L|Three letter combinations including M|SVG logos of airlines of the Netherlands|KLM logos|Works by Henri Kay Henrion",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Logo of KLM Royal Dutch Airlines.",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2010-02-23",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "KLM Royal Dutch Airlines",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Designed by F.H.K. Henrion, in 1961. Modified by Chris Ludlow at Henrion, Ludlow &amp; Schmidt, in 1991.",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 2287,
+      "officialVector": {
+        "url": "https://content.presspage.com/templates/180/162/849489/kl-logo-small-2022.svg",
+        "bytes": 980
+      },
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/klm-official.svg",
+      "fullPath": "public/logos/airlines/klm-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "550411ca24f4be6d120873915f745ecbff4407f4582008f9a164b47c00f2124b",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/klm-symbol.svg",
+      "symbolContours": 6,
+      "chosenUsage": "Official website asset: copyright and trademark retained; no general redistribution license supplied",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "cathay",
+      "name": "Cathay Pacific",
+      "code": "CX",
+      "official": "https://www.cathaypacific.com/",
+      "file": "Cathay Pacific logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [],
+      "vectorStatus": "Error: File missing",
+      "fallbackStatus": "Error: HTTP 429",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/en/1/17/Cathay_Pacific_logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://en.wikipedia.org/wiki/File:Cathay_Pacific_logo.svg",
+        "descriptionshorturl": "https://en.wikipedia.org/w/index.php?curid=47396809",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2015-07-31 22:54:17",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Cathay Pacific logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "All non-free logos|All non-free media|Files with no machine-readable description|SVG images of trademarks|Wikipedia non-free files with NFUR stated|Noindexed pages|Wikipedia images in SVG format|Non-free rationale as na|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Artist": {
+            "value": "<a href=\"//en.wikipedia.org/wiki/User:AtomCrusher\" title=\"User:AtomCrusher\">AtomCrusher</a> via Eight Partnership for Cathay Pacific.",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "Based on Cathay Pacific Annual Report 2014.",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Fair use",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "<a href=\"//en.wikipedia.org/wiki/Wikipedia:Non-free_use_rationale_guideline\" title=\"Wikipedia:Non-free use rationale guideline\">Fair use</a> of copyrighted material in the context of <a href=\"//en.wikipedia.org/wiki/Cathay_Pacific\" title=\"Cathay Pacific\">Cathay Pacific</a>",
+            "source": "commons-desc-page"
+          },
+          "NonFree": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 51898,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/cathay-original.svg",
+      "fullPath": "public/logos/airlines/cathay-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "17e466117e1b33bbc80ff6d804a095c65ec717b8bbaedecfe03628b6e636a0c9",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/cathay-symbol.svg",
+      "symbolContours": 6,
+      "chosenUsage": "File-source license statement: Fair use; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "swiss",
+      "name": "Swiss International Air Lines",
+      "code": "LX",
+      "official": "https://www.swiss.com/",
+      "file": "Swiss International Air Lines Logo 2011.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "Error: HTTP 403",
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Swiss_International_Air_Lines_Logo_2011.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Swiss_International_Air_Lines_Logo_2011.svg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=17079715",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2011-10-23 03:05:16",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Swiss International Air Lines Logo 2011",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "With trademark|PD textlogo|SVG text logos|SVG logos of airlines of Switzerland|Swiss International Air Lines logos",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Swiss International Air Lines logo",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2011",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.swiss.com\">http://www.swiss.com</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Swiss International Air Lines",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 4626,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/swiss-original.svg",
+      "fullPath": "public/logos/airlines/swiss-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "6f3f0e2f72faf1ee2b79820f53ddb19b9d64cd78875a678f29532b1b4093418b",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/swiss-symbol.svg",
+      "symbolContours": 3,
+      "chosenUsage": "File-source license statement: Public domain; copyright/trademark limits remain",
+      "currentBrandCheck": "Official fetch unavailable/restricted; file-source identity only, current-brand verification incomplete"
+    },
+    {
+      "key": "air-canada",
+      "name": "Air Canada",
+      "code": "AC",
+      "official": "https://www.aircanada.com/",
+      "file": "Air Canada Logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [
+        "/content/dam/aircanada/generic/ac_logo.svg",
+        "/content/dam/aircanada/generic/ac_logo.svg",
+        "/content/dam/aircanada/generic/ac_logo.svg",
+        "/content/dam/aircanada/generic/ac_logo.svg"
+      ],
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Air_Canada_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Air_Canada_logo.svg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=167889351",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2011-11-08 22:06:04",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Air Canada logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Logo of Air Canada from 2004 to 2017.",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2004-10",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"mw:ExtLink\" href=\"https://en.wikipedia.org/wiki/File:Air_Canada_Logo.svg\" class=\"external free\" data-mw-original-href=\"http://en.wikipedia.org/wiki/File:Air_Canada_Logo.svg\">http://en.wikipedia.org/wiki/File:Air_Canada_Logo.svg</a> and <a rel=\"mw:ExtLink nofollow\" href=\"http://www.brandsoftheworld.com/node/122534\" class=\"external free\">http://www.brandsoftheworld.com/node/122534</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Air Canada",
+            "source": "commons-desc-page"
+          },
+          "Permission": {
+            "value": "For images that are not creative in the sense of being a product of non-trivial \"skill and judgment\" as discussed below.\n\n<p>Unlike other common law countries, Canada's threshold of originality veers closer to that of the United States. <a rel=\"mw:ExtLink nofollow\" href=\"http://scc.lexum.org/decisia-scc-csc/scc-csc/scc-csc/en/item/2125/index.do\" class=\"external text\"><i>CCH Canadian Ltd. v. Law Society of Upper Canada</i></a> explicitly rejected the \"sweat of the brow\" doctrine for being too low of a standard, but at the same time, stated that the creativity standards for originality were too high:</p>\n\n<blockquote><p>A creativity standard implies that something must be novel or non-obvious — concepts more properly associated with patent law than copyright law. And for these reasons, I conclude that an “original” work under the Copyright Act is one that originates from an author and is not copied from another work. That alone, however, is not sufficient to find that something is original. In addition, an original work must be the product of an author’s exercise of skill and judgment. The exercise of skill and judgment required to produce the work must not be so trivial that it could be characterized as a purely mechanical exercise.\"</p></blockquote>\n\n<p>The same case also stated:</p>\n\n<blockquote><p> For a work to be “original” within the meaning of the Copyright Act, it must be more than a mere copy of another work. At the same time, it need not be creative, in the sense of being novel or unique. What is required to attract copyright protection in the expression of an idea is an exercise of skill and judgment. By skill, I mean the use of one’s knowledge, developed aptitude or practised ability in producing the work. By judgment, I mean the use of one’s capacity for discernment or ability to form an opinion or evaluation by comparing different possible options in producing the work. This exercise of skill and judgment will necessarily involve intellectual effort.</p></blockquote>See <a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/Commons:CRT/Canada#Threshold_of_originality\" title=\"Commons:CRT/Canada\" class=\"mw-redirect\">COM:CRT/Canada#Threshold of originality</a> for more information.",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "svgBytes": 6773,
+      "officialVector": {
+        "url": "https://www.aircanada.com/content/dam/aircanada/generic/ac_logo.svg",
+        "bytes": 3157
+      },
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/air-canada-official.svg",
+      "fullPath": "public/logos/airlines/air-canada-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "92b6e3b3acac1c551dbeafa2b45bfefc0376944971cb9a2d9c4e89538433f22a",
+      "symbolStatus": "Complete closed vector contours extracted; transforms retained; viewBox fits all selected geometry with margin",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "symbolPath": "public/logos/airlines/air-canada-symbol.svg",
+      "symbolContours": 1,
+      "chosenUsage": "Official website asset: copyright and trademark retained; no general redistribution license supplied",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    },
+    {
+      "key": "finnair",
+      "name": "Finnair",
+      "code": "AY",
+      "official": "https://www.finnair.com/",
+      "file": "Finnair Logo.svg",
+      "checked": "2026-10-15",
+      "officialStatus": "HTTP 200",
+      "officialLogoLinks": [],
+      "imageinfo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Finnair_Logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Finnair_Logo.svg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=17295015",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2011-11-10 08:53:06",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Finnair Logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Finnair|With trademark|PD textlogo|SVG text logos|SVG logos of companies of Finland|Logos of airlines of Finland|SVG created with Inkscape and Adobe Illustrator|All-caps logos|Navy blue text logos|Valid SVG created with Adobe Illustrator:Text logos|SVG blue text logos|2010 logos|SVG logos of airlines",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Logo of Finnair",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "11.11.2011",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"mw:ExtLink nofollow\" href=\"http://www.finnair.com/finnaircom/wps/portal/finnair/jump?locale=en_INT\" class=\"external free\">http://www.finnair.com/finnaircom/wps/portal/finnair/jump?locale=en_INT</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Finnair, Mikael Kivelä",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "trademarked",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      "vectorStatus": "Error: HTTP 429",
+      "fallbackStatus": "Error: HTTP 429",
+      "svgBytes": 6703,
+      "included": true,
+      "chosenOriginal": ".tools/v0.3-sources/finnair-original.svg",
+      "fullPath": "public/logos/airlines/finnair-full.svg",
+      "sanitization": "Preserve geometry; inline CSS; expand local uses; remove editor metadata and XML declarations",
+      "fullSha256": "387f0b04b1e1bdbc15b75257f7bea0671cb54ef73492be8725c24a514ee1ba91",
+      "symbolStatus": "Wordmark retained; no reliable separate symbol obtained",
+      "usage": "Brand identifiers remain trademarks; no endorsement or general redistribution license implied. See per-file source metadata.",
+      "chosenUsage": "File-source license statement: Public domain; copyright/trademark limits remain",
+      "currentBrandCheck": "Official page obtained and available identity compared; not an exhaustive global/latest-brand guarantee"
+    }
+  ]
+}

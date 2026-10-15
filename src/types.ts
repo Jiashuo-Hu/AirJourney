@@ -21,6 +21,13 @@ export type Place = {
   locationSource?: string;
 };
 export type Reference = Place & {
+  airlineStatus?: "active" | "inactive" | "unknown";
+  statusSource?: string;
+  historicalAliases?: string;
+  brandKey?: string;
+  sourceId?: string;
+  codeNote?: string;
+  logoPolicy?: "none" | "custom";
   alliance?: string;
   logo?: string;
   manufacturer?: string;
@@ -85,6 +92,7 @@ export type Settings = {
   mapImage?: string;
   mapSource?: string;
   routeHeight?: number;
+  repeatRoutes?: "thick" | "separate";
 };
 export type State = {
   schema: 1;

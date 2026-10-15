@@ -9,7 +9,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import * as C from "@cesium/engine";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import type { Flight, Settings } from "./types";
-import { hasLocation, route, distance } from "./domain";
+import { hasLocation, distance } from "./domain";
+import {
+  endpointKey,
+  groupRoutes,
+  laneRoute,
+  routeLanes,
+  routeWidth,
+} from "./route-layout";
 import mapLabels from "./map-labels.json";
 (window as any).CESIUM_BASE_URL = "./cesium/";
 C.Ion.defaultAccessToken = "";
@@ -24,6 +31,7 @@ export function Globe({
   onSelect,
   onHome,
   onView,
+  onRepeatMode,
   focusRequest,
 }: {
   flights: Flight[];
@@ -32,6 +40,7 @@ export function Globe({
   onSelect: (id: string) => void;
   onHome: (v: number[]) => void;
   onView: (v: number[]) => void;
+  onRepeatMode: (mode: "thick" | "separate") => void;
   focusRequest: number;
 }) {
   const host = useRef<HTMLDivElement>(null),
@@ -40,6 +49,7 @@ export function Globe({
     [error, setError] = useState(""),
     [ready, setReady] = useState(0),
     [group, setGroup] = useState<string[]>([]),
+    [hoverCount, setHoverCount] = useState(0),
     [generation, setGeneration] = useState(0);
   const savedCamera = useRef<
       | { position: number[]; heading: number; pitch: number; roll: number }
@@ -376,6 +386,7 @@ export function Globe({
                 hit?.id?.id?.startsWith("direction-"),
             );
           hoverIds.current = p ? p.id.properties.flightIds.getValue() : [];
+          setHoverCount(p?.id?.properties?.routeCount?.getValue() || 0);
         } catch (e) {
           hoverIds.current = [];
           failure(e);
@@ -383,6 +394,7 @@ export function Globe({
       }, C.ScreenSpaceEventType.MOUSE_MOVE);
       v.canvas.addEventListener("mouseleave", () => {
         hoverIds.current = [];
+        setHoverCount(0);
       });
       if (window.airjourney?.testing)
         (window as any).__ajMapDiagnostics = diagnostic.current;
@@ -409,83 +421,113 @@ export function Globe({
     const v = viewer.current;
     if (!v) return;
     v.entities.removeAll();
-    const groups = new Map<string, Flight[]>();
-    for (const f of flights) {
-      if (!f.visible || !hasLocation(f.from) || !hasLocation(f.to)) continue;
-      const key = [
-        f.from.id + "@" + f.from.lat + "," + f.from.lon,
-        f.to.id + "@" + f.to.lat + "," + f.to.lon,
-      ]
-        .sort()
-        .join("|");
-      groups.set(key, [...(groups.get(key) || []), f]);
-    }
-    for (const fs of groups.values()) {
-      const f = fs.find((f) => f.id === selected) || fs[0],
-        picked = fs.some((f) => f.id === selected),
-        color = C.Color.fromCssColorString(
-          f.color || settings.routeColor,
-        ).withAlpha(
-          selected && !picked ? settings.opacity * 0.35 : settings.opacity,
+    hoverIds.current = [];
+    setHoverCount(0);
+    for (const fs of groupRoutes(flights)) {
+      for (const lane of routeLanes(
+        fs,
+        settings.repeatRoutes === "separate",
+        selected,
+      )) {
+        const list = lane.flights;
+        const f = list.find((f) => f.id === selected) || list[0],
+          picked = list.some((f) => f.id === selected),
+          color = C.Color.fromCssColorString(
+            f.color || settings.routeColor,
+          ).withAlpha(
+            selected && !picked ? settings.opacity * 0.35 : settings.opacity,
+          );
+        const positions = laneRoute(
+          f.from,
+          f.to,
+          lane.offset,
+          settings.routeHeight,
         );
-      const coords = route(f.from, f.to, settings.routeHeight).flat();
-      v.entities.add({
-        id: "route-" + f.id,
-        polyline: {
-          positions: C.Cartesian3.fromDegreesArrayHeights(coords),
-          width: settings.width + (picked ? 2 : 0),
-          arcType: C.ArcType.NONE,
-          material: new C.PolylineOutlineMaterialProperty({
-            color,
-            outlineColor: C.Color.fromCssColorString("#102438").withAlpha(
-              color.alpha * 0.8,
-            ),
-            outlineWidth: 1,
-          }),
-        },
-        properties: { flightIds: fs.map((f) => f.id) },
-      });
-      const positions = route(f.from, f.to, settings.routeHeight);
-      v.entities.add({
-        id: "direction-" + f.id,
-        polyline: {
-          positions: C.Cartesian3.fromDegreesArrayHeights(
-            positions
-              .slice(
-                Math.floor(positions.length * 0.5),
-                Math.floor(positions.length * 0.62) + 1,
-              )
-              .map(([lon, lat, height]) => [lon, lat, height + 500])
-              .flat(),
-          ),
-          width: Math.max(8, settings.width + 4 + (picked ? 2 : 0)),
-          arcType: C.ArcType.NONE,
-          material: new C.PolylineArrowMaterialProperty(color),
-        },
-        properties: { flightIds: fs.map((f) => f.id) },
-      });
+        const coords = positions.flat();
+        const width =
+          settings.repeatRoutes === "separate"
+            ? settings.width + (picked ? 2 : 0)
+            : routeWidth(settings.width, fs.length, picked);
+        v.entities.add({
+          id: "route-" + f.id,
+          polyline: {
+            positions: C.Cartesian3.fromDegreesArrayHeights(coords),
+            width,
+            arcType: C.ArcType.NONE,
+            material: new C.PolylineOutlineMaterialProperty({
+              color,
+              outlineColor: C.Color.fromCssColorString("#102438").withAlpha(
+                color.alpha * 0.8,
+              ),
+              outlineWidth: 1,
+            }),
+          },
+          properties: {
+            flightIds: list.map((f) => f.id),
+            routeCount: fs.length,
+            laneOffset: lane.offset,
+            selected: picked,
+          },
+        });
+        for (const reverse of [false, true]) {
+          const directionFlights = list.filter(
+            (x) => (endpointKey(x.from) !== endpointKey(f.from)) === reverse,
+          );
+          if (!directionFlights.length) continue;
+          const directed = reverse ? [...positions].reverse() : positions;
+          v.entities.add({
+            id: "direction-" + (reverse ? "return-" : "") + f.id,
+            polyline: {
+              positions: C.Cartesian3.fromDegreesArrayHeights(
+                directed
+                  .slice(
+                    Math.floor(directed.length * 0.5),
+                    Math.floor(directed.length * 0.62) + 1,
+                  )
+                  .map(([lon, lat, height]) => [lon, lat, height + 500])
+                  .flat(),
+              ),
+              width: Math.max(8, width + 3),
+              arcType: C.ArcType.NONE,
+              material: new C.PolylineArrowMaterialProperty(color),
+            },
+            properties: {
+              flightIds: directionFlights.map((f) => f.id),
+              routeCount: fs.length,
+              directionFrom:
+                directionFlights[0].from.code || directionFlights[0].from.name,
+              directionTo:
+                directionFlights[0].to.code || directionFlights[0].to.name,
+            },
+          });
+        }
+      }
     }
     const ports = new Map<string, { p: Flight["from"]; ids: string[] }>();
     for (const f of flights.filter((f) => f.visible)) {
       for (const p of [f.from, f.to]) {
         if (!hasLocation(p)) continue;
-        const x = ports.get(p.id) || { p, ids: [] };
+        const x = ports.get(endpointKey(p)) || { p, ids: [] };
         if (!x.ids.includes(f.id)) x.ids.push(f.id);
-        ports.set(p.id, x);
+        ports.set(endpointKey(p), x);
       }
     }
-    for (const { p, ids } of ports.values())
+    for (const [key, { p, ids }] of ports.entries())
       v.entities.add({
-        id: "point-" + p.id,
-        position: C.Cartesian3.fromDegrees(p.lon!, p.lat!, 5000),
+        id: v.entities.getById("point-" + p.id)
+          ? "point-" + key
+          : "point-" + p.id,
+        position: C.Cartesian3.fromDegrees(p.lon!, p.lat!, 4000),
         point: {
           pixelSize: settings.markerSize,
           color:
             p.locationKind === "approximate"
               ? C.Color.fromCssColorString("#ffc66d")
               : C.Color.WHITE,
-          outlineColor: C.Color.fromCssColorString(settings.routeColor),
-          outlineWidth: 2,
+          outlineColor: C.Color.fromCssColorString(
+            ids.includes(selected || "") ? "#245fd6" : settings.routeColor,
+          ),
+          outlineWidth: ids.includes(selected || "") ? 3 : 2,
         },
         properties: { flightIds: ids },
       });
@@ -506,6 +548,7 @@ export function Globe({
     selected,
     settings.routeColor,
     settings.routeHeight,
+    settings.repeatRoutes,
     settings.opacity,
     settings.width,
     settings.markerSize,
@@ -523,7 +566,11 @@ export function Globe({
     const v = viewer.current,
       f = flights.find((f) => f.id === selected);
     if (v && f && hasLocation(f.from) && hasLocation(f.to)) {
-      const e = v.entities.getById("route-" + f.id);
+      const e = v.entities.values.find(
+        (e) =>
+          e.id.startsWith("route-") &&
+          e.properties?.flightIds?.getValue().includes(f.id),
+      );
       if (e)
         v.flyTo(e, {
           duration: settings.reducedMotion ? 0 : 0.7,
@@ -661,6 +708,19 @@ export function Globe({
         </div>
       )}
       <div className="map-tools">
+        <label className="repeat-mode">
+          Repeated routes
+          <select
+            aria-label="Map repeated routes"
+            value={settings.repeatRoutes || "thick"}
+            onChange={(e) =>
+              onRepeatMode(e.target.value as "thick" | "separate")
+            }
+          >
+            <option value="thick">Thicker by count</option>
+            <option value="separate">Separate lines</option>
+          </select>
+        </label>
         <button onClick={reset}>↺ Reset view</button>
         <button
           aria-label="Zoom in"
@@ -727,6 +787,11 @@ export function Globe({
           </div>
         </details>
       </div>
+      {hoverCount > 1 && (
+        <div className="route-count" role="status">
+          {hoverCount.toLocaleString("en-US")} flights on this airport pair
+        </div>
+      )}
       {group.length > 0 && (
         <div className="route-popover">
           <div className="row">

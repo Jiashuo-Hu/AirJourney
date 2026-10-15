@@ -29,6 +29,7 @@ import { Settings } from "./Settings";
 import { serialMutations, type StateMutation } from "./state-updates";
 import { AirportSearch, loadAirportCatalog, locationLabel } from "./airports";
 import type { Reference } from "./types";
+import { AirlineSearch, airlineLogo, loadAirlineCatalog } from "./airlines";
 function blank(): Flight {
   return {
     id: crypto.randomUUID(),
@@ -50,6 +51,7 @@ function blank(): Flight {
 }
 export function App() {
   const [catalogue, setCatalogue] = useState<Reference[]>([]);
+  const [airlineCatalogue, setAirlineCatalogue] = useState<Reference[]>([]);
   const [state, setState] = useState<State | null>(null),
     [fatal, setFatal] = useState(""),
     [notice, setNotice] = useState(""),
@@ -84,6 +86,10 @@ export function App() {
     () => new AirportSearch(catalogue, state?.library.Airports || []),
     [catalogue, state?.library.Airports],
   );
+  const airlineIndex = useMemo(
+    () => new AirlineSearch(airlineCatalogue, state?.library.Airlines || []),
+    [airlineCatalogue, state?.library.Airlines],
+  );
   const flightAirportIndex = useMemo(
     () =>
       new AirportSearch(
@@ -95,6 +101,11 @@ export function App() {
     [catalogue, airportIndex],
   );
   useEffect(() => {
+    loadAirlineCatalog()
+      .then(setAirlineCatalogue)
+      .catch((e) =>
+        setNotice(String(e) + " Your personal airlines remain available."),
+      );
     loadAirportCatalog()
       .then(setCatalogue)
       .catch((e) =>
@@ -414,7 +425,7 @@ export function App() {
     }
   }
   function choose(id: string) {
-    setSelected(id);
+    setSelected((previous) => (previous === id ? null : id));
     setPage("Flights");
     setSide(true);
     setFocusRequest((x) => x + 1);
@@ -498,7 +509,7 @@ export function App() {
     <div className="app">
       <header className="titlebar" inert={modalOpen}>
         <div className="brand">
-          <span className="brandmark">↗</span>
+          <img className="brandmark" src="./app-logo.svg" alt="" />
           <strong>AirJourney</strong>
           <small>{APP_VERSION}</small>
         </div>
@@ -529,6 +540,7 @@ export function App() {
                   value={draft}
                   state={state}
                   airportIndex={flightAirportIndex}
+                  airlineIndex={airlineIndex}
                   onChange={setDraft}
                   onSave={saveDraft}
                   onCancel={cancelDraft}
@@ -697,17 +709,18 @@ export function App() {
                       >
                         <button
                           className="flight-select"
+                          aria-pressed={selected === f.id}
                           onClick={() => choose(f.id)}
                         >
                           <div className="flight-top">
                             <span className="logo-tile">
-                              {f.airline?.logo ? (
+                              {airlineLogo(f.airline) ? (
                                 <img
-                                  src={f.airline.logo}
-                                  alt={f.airline.name}
+                                  src={airlineLogo(f.airline)}
+                                  alt={f.airline?.name}
                                 />
                               ) : (
-                                <span>{f.airline?.code || "✈"}</span>
+                                <span title="No verified vector logo">◇</span>
                               )}
                             </span>
                             <span>
@@ -907,6 +920,7 @@ export function App() {
               ))}
             {page === "Library" && (
               <Library
+                airlineIndex={airlineIndex}
                 airportIndex={airportIndex}
                 state={state}
                 onCommit={commit}
@@ -1068,6 +1082,12 @@ export function App() {
             selected={selected}
             settings={p}
             onSelect={choose}
+            onRepeatMode={(repeatRoutes) =>
+              commit((latest) => ({
+                ...latest,
+                settings: { ...latest.settings, repeatRoutes },
+              }))
+            }
             onHome={(home) =>
               commit((latest) => ({
                 ...latest,

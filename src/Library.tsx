@@ -12,14 +12,22 @@ import { seedLibrary } from "./seed";
 import { readFile, exportFile } from "./storage";
 import { parseReferenceCSV, referenceCSV } from "./library-csv";
 import type { StateMutation } from "./state-updates";
+import {
+  AirlineSearch,
+  airlineLogo,
+  airlineStatus,
+  brandFor,
+} from "./airlines";
 export function Library({
   state,
   airportIndex,
+  airlineIndex,
   onCommit,
   onNotice,
 }: {
   state: State;
   airportIndex: AirportSearch;
+  airlineIndex: AirlineSearch;
   onCommit: (change: StateMutation) => Promise<boolean>;
   onNotice: (s: string) => void;
 }) {
@@ -39,18 +47,30 @@ export function Library({
     () =>
       kind === "Airports"
         ? airportIndex.search(query, 60, offset, showHidden)
-        : new AirportSearch(state.library[kind]).search(
-            query,
-            60,
-            offset,
-            showHidden,
-          ),
-    [kind, airportIndex, state.library[kind], query, offset, showHidden],
+        : kind === "Airlines"
+          ? airlineIndex.search(query, 60, offset, showHidden)
+          : new AirportSearch(state.library[kind]).search(
+              query,
+              60,
+              offset,
+              showHidden,
+            ),
+    [
+      kind,
+      airportIndex,
+      airlineIndex,
+      state.library[kind],
+      query,
+      offset,
+      showHidden,
+    ],
   );
   const bundled =
     kind === "Airports"
       ? airportIndex.byId
-      : new Map(seedLibrary[kind].map((r) => [r.id, r]));
+      : kind === "Airlines"
+        ? airlineIndex.byId
+        : new Map(seedLibrary[kind].map((r) => [r.id, r]));
   const used = edit
     ? state.flights.filter((f) =>
         referenceUsedBy(
@@ -123,7 +143,11 @@ export function Library({
   async function logo() {
     try {
       const f = await readFile(".svg");
-      if (f) patch({ logo: safeSvg(new TextDecoder().decode(f.bytes)) });
+      if (f)
+        patch({
+          logo: safeSvg(new TextDecoder().decode(f.bytes)),
+          logoPolicy: "custom",
+        });
     } catch (e) {
       onNotice(String(e));
     }
@@ -356,38 +380,76 @@ export function Library({
             </>
           )}
           {kind === "Airlines" && (
-            <label>
-              Alliance suggestion
-              <select
-                value={edit.alliance || "Unknown"}
-                onChange={(e) => patch({ alliance: e.target.value })}
-              >
-                <option>Unknown</option>
-                <option>None</option>
-                {state.library.Alliances.map((r) => (
-                  <option key={r.id}>{r.name}</option>
-                ))}
-              </select>
-            </label>
+            <>
+              <label>
+                Operational status
+                <select
+                  value={edit.airlineStatus || "unknown"}
+                  onChange={(e) =>
+                    patch({
+                      airlineStatus: e.target
+                        .value as Reference["airlineStatus"],
+                      statusSource: "User provided",
+                    })
+                  }
+                >
+                  <option value="unknown">Unverified</option>
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive / historical</option>
+                </select>
+              </label>
+              <small>
+                {edit.statusSource}
+                {edit.codeNote ? " · " + edit.codeNote : ""}
+              </small>
+              <label>
+                Alliance suggestion
+                <select
+                  value={edit.alliance || "Unknown"}
+                  onChange={(e) => patch({ alliance: e.target.value })}
+                >
+                  <option>Unknown</option>
+                  <option>None</option>
+                  {state.library.Alliances.map((r) => (
+                    <option key={r.id}>{r.name}</option>
+                  ))}
+                </select>
+              </label>
+            </>
           )}
           {["Airlines", "Alliances"].includes(kind) && (
             <>
               <div className="logo-preview">
-                {edit.logo ? (
-                  <img src={edit.logo} alt={edit.name + " logo"} />
+                {airlineLogo(edit) ? (
+                  <img src={airlineLogo(edit)} alt={edit.name + " logo"} />
                 ) : (
                   <span>Logo not added</span>
                 )}
               </div>
               <div className="row">
                 <button onClick={logo}>Choose SVG</button>
-                <button onClick={() => patch({ logo: undefined })}>
+                <button
+                  onClick={() => patch({ logo: undefined, logoPolicy: "none" })}
+                >
                   Remove logo
                 </button>
               </div>
               <small>
                 User supplied SVG: confirm you have the right to use this file.
               </small>
+              {kind === "Airlines" && brandFor(edit)?.full && (
+                <details className="brand-full">
+                  <summary>Bundled full logo</summary>
+                  <img
+                    src={brandFor(edit)?.full}
+                    alt={edit.name + " full logo"}
+                  />
+                  <small>
+                    Source and usage conditions: local brand manifest in the
+                    delivery documents.
+                  </small>
+                </details>
+              )}
             </>
           )}
           {kind === "Aircraft" && (
@@ -427,6 +489,9 @@ export function Library({
               <button
                 onClick={() => {
                   const base =
+                    (kind === "Airlines"
+                      ? airlineIndex.baseById.get(edit.id)
+                      : undefined) ||
                     seedLibrary[kind].find((r) => r.id === edit.id) ||
                     airportIndex.baseById.get(edit.id);
                   if (base) setEdit(structuredClone(base));
@@ -494,10 +559,17 @@ export function Library({
                 setReview(false);
               }}
             >
-              {r.logo ? (
-                <img src={r.logo} alt="" />
+              {airlineLogo(r) ? (
+                <img src={airlineLogo(r)} alt="" />
               ) : (
-                <span className="reference-icon">{r.code || "◇"}</span>
+                <span
+                  className="reference-icon"
+                  title={
+                    kind === "Airlines" ? "No verified vector logo" : undefined
+                  }
+                >
+                  {kind === "Airlines" ? "◇" : r.code || "◇"}
+                </span>
               )}
               <span>
                 <strong>{r.name}</strong>
@@ -513,6 +585,7 @@ export function Library({
                       "Custom"}
                   </small>
                 )}
+                {kind === "Airlines" && <small>{airlineStatus(r)}</small>}
               </span>
               <span>›</span>
             </button>

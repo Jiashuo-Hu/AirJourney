@@ -1,0 +1,34 @@
+AirJourney v0.3 local airline catalogue and brand references (2026-10-15)
+
+The derived airline database public/data/airlines-global.json is made available
+under the Open Database License (ODbL) 1.0. Database contents are subject to the
+Database Contents License (DbCL) 1.0 and original source terms. The project MIT
+license does not replace third-party database or brand conditions.
+
+OpenFlights contributors: https://openflights.org/data
+Snapshot: https://github.com/jpatokal/openflights/blob/master/data/airlines.dat
+ODbL: https://opendatacommons.org/licenses/odbl/1-0/
+DbCL: https://opendatacommons.org/licenses/dbcl/1-0/
+Wikidata contributors: https://www.wikidata.org/ (structured data: CC0)
+Licensing: https://www.wikidata.org/wiki/Wikidata:Licensing
+Original snapshots and hashes: data/airline-sources/, airlines-global-manifest.json
+
+These are reference records, not an authoritative current IATA register.
+OpenFlights warns that its Active flag is unreliable. Y is not treated as proof
+of current operation. Source-listed inactivity and dissolution are labelled;
+unknown status remains unknown. Historic aliases/codes, shared/reused codes and
+non-flight transport operators can occur. No codes are invented for missing data.
+
+Airline SVGs are identifiers, not AirJourney artwork. Brand owners retain all
+trademark and applicable copyright rights. Logos do not imply endorsement.
+See logos/airlines/manifest.json for each original URL, file-source license
+statement, official-page availability, transformations, checked date and gaps.
+Wikipedia non-free/fair-use statements apply to their stated contexts and do
+not grant general permission to redistribute or use in advertising. Official
+website files likewise do not imply a general license. In particular British
+Airways media assets are restricted to editorial media use; no extra permission
+has been obtained. This is a local identification reference bundle, not a claim
+of commercial-use clearance. Review individual conditions before any publication.
+Original SVGs remain in logos/airlines/originals/; no bitmap was wrapped as SVG.
+Missing reliable vectors use a diamond placeholder. No claim of globally complete
+or universally current brand artwork is made.

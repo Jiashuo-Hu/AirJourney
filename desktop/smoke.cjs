@@ -3,6 +3,10 @@ const fs = require("node:fs"),
   path = require("node:path"),
   assert = require("node:assert/strict");
 module.exports = async (win, data) => {
+  const backupName =
+    "AirJourney-v" +
+    require("electron").app.getVersion().split(".").slice(0, 2).join(".") +
+    ".airjourney";
   const results = [],
     errors = [];
   win.webContents.on("console-message", (_e, level, msg) => {
@@ -17,6 +21,17 @@ module.exports = async (win, data) => {
     await wait(250);
   };
   const field = async (label, value) => {
+    if (label === "Airline") {
+      await js(
+        `(()=>{const n=document.querySelector('.airline-picker input');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(n,${JSON.stringify(value.replace(/^airline-/, ""))});n.dispatchEvent(new Event('input',{bubbles:true}));n.focus();})()`,
+      );
+      await wait(300);
+      await js(
+        `(()=>{const b=[...document.querySelectorAll('.airline-options [role=option]')].find(b=>b.querySelector('strong').textContent.trim()==='LH · Lufthansa');if(!b)throw Error('Lufthansa choice missing');b.click();})()`,
+      );
+      await wait(200);
+      return;
+    }
     await js(
       `(()=>{const l=[...document.querySelectorAll('label')].find(x=>x.firstChild?.textContent.trim()===${JSON.stringify(label)});const n=l?.querySelector('input,select,textarea');if(!n)throw Error('Field missing: '+${JSON.stringify(label)});Object.getOwnPropertyDescriptor(n instanceof HTMLSelectElement?HTMLSelectElement.prototype:n instanceof HTMLTextAreaElement?HTMLTextAreaElement.prototype:HTMLInputElement.prototype,'value').set.call(n,${JSON.stringify(value)});n.dispatchEvent(new Event(n instanceof HTMLSelectElement?'change':'input',{bubbles:true}));})()`,
     );
@@ -136,6 +151,10 @@ module.exports = async (win, data) => {
   await field("Theme", "Light");
   await click("Library");
   await click("Airlines");
+  await js(
+    `(()=>{const n=document.querySelector('[aria-label="Search Library"]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(n,'Lufthansa');n.dispatchEvent(new Event('input',{bubbles:true}));})()`,
+  );
+  await wait(300);
   assert.ok((await js("document.body.innerText")).includes("Lufthansa"));
   await snapshot("04-library");
   const before = await js("window.airjourney.load()");
@@ -176,9 +195,9 @@ module.exports = async (win, data) => {
   await click("Data & backup");
   await click("Export backup");
   await wait(300);
-  assert.ok(fs.existsSync(path.join(data, "AirJourney-v0.2.airjourney")));
+  assert.ok(fs.existsSync(path.join(data, backupName)));
   fs.copyFileSync(
-    path.join(data, "AirJourney-v0.2.airjourney"),
+    path.join(data, backupName),
     path.join(data, "import-next.bin"),
   );
   await click("Import backup");
@@ -264,11 +283,18 @@ module.exports = async (win, data) => {
     `(()=>{const v=__ajTestGlobe,e=v.entities.values.find(e=>e.id.startsWith('point-')&&e.properties.flightIds.getValue().length===2),position=e.position.getValue(v.clock.currentTime),pixel=v.scene.cartesianToCanvasCoordinates(position),picked=v.scene.pick(pixel);v.screenSpaceEventHandler.getInputAction(2)({position:pixel});return picked?.id?.properties?.flightIds?.getValue();})()`,
   );
   assert.equal(mapPick?.length, 2);
-  await wait(250);
+  for (let poll = 0; poll < 40; poll++) {
+    if (await js('document.querySelectorAll(".route-popover>button").length === 2')) break;
+    await wait(100);
+  }
   assert.equal(
     await js('document.querySelectorAll(".route-popover>button").length'),
     2,
   );
+  await js(
+    'document.querySelector(".flight-card.selected .flight-select")?.click()',
+  );
+  await wait(300);
   await js('document.querySelectorAll(".route-popover>button")[1].click()');
   await wait(300);
   assert.ok(

@@ -1,0 +1,4930 @@
+{
+  "date": "2026-10-15",
+  "records": 7761,
+  "openFlightsSourceRows": 6162,
+  "excludedPseudoEntries": 2,
+  "exactDuplicatesMerged": [
+    {
+      "kept": "of-airline-168",
+      "duplicate": "of-airline-169"
+    },
+    {
+      "kept": "of-airline-18723",
+      "duplicate": "of-airline-18724"
+    },
+    {
+      "kept": "of-airline-4089",
+      "duplicate": "wd-airline-Q32491",
+      "reason": "Reviewed trade/legal name alias with same IATA and ICAO"
+    },
+    {
+      "kept": "wd-airline-Q181912",
+      "duplicate": "of-airline-3090",
+      "reason": "Reviewed trade/legal name alias with same IATA and ICAO"
+    }
+  ],
+  "invalidSourceCodesPreservedInAudit": [
+    {
+      "sourceId": "9577",
+      "code": "--"
+    },
+    {
+      "sourceId": "9853",
+      "code": "-."
+    },
+    {
+      "sourceId": "11767",
+      "code": "ЯП"
+    },
+    {
+      "sourceId": "13388",
+      "code": "??"
+    },
+    {
+      "sourceId": "13389",
+      "code": "??"
+    },
+    {
+      "sourceId": "13390",
+      "code": "++"
+    },
+    {
+      "sourceId": "13391",
+      "code": "-+"
+    },
+    {
+      "sourceId": "13394",
+      "code": "\\\\'"
+    },
+    {
+      "sourceId": "13395",
+      "code": "::"
+    },
+    {
+      "sourceId": "13397",
+      "code": ";;"
+    },
+    {
+      "sourceId": "13398",
+      "code": "^^"
+    },
+    {
+      "sourceId": "13947",
+      "code": "&T"
+    },
+    {
+      "sourceId": "16273",
+      "code": "МИ"
+    },
+    {
+      "sourceId": "19567",
+      "code": ".."
+    },
+    {
+      "sourceId": "19811",
+      "code": "??"
+    },
+    {
+      "sourceId": "20608",
+      "code": "АЯ"
+    }
+  ],
+  "wikidataSourceBindings": 2972,
+  "wikidataEntities": 2900,
+  "wikidataMerged": 1148,
+  "wikidataAdded": 1605,
+  "wikidataMissingLabelOrValidCode": [
+    "Q102428079",
+    "Q102428081",
+    "Q1036118",
+    "Q10371329",
+    "Q104591404",
+    "Q106432761",
+    "Q106555489",
+    "Q109170665",
+    "Q109973625",
+    "Q1121073",
+    "Q112649027",
+    "Q112664251",
+    "Q113278691",
+    "Q113296201",
+    "Q113532659",
+    "Q113588275",
+    "Q1136917",
+    "Q1156082",
+    "Q1169197",
+    "Q117843461",
+    "Q1189080",
+    "Q1189545",
+    "Q121120753",
+    "Q121614919",
+    "Q13026504",
+    "Q131320596",
+    "Q1321326",
+    "Q1336559",
+    "Q13428478",
+    "Q1347795",
+    "Q136648647",
+    "Q137374894",
+    "Q137824737",
+    "Q139997417",
+    "Q140299022",
+    "Q140307240",
+    "Q1404228",
+    "Q1410270",
+    "Q1424207",
+    "Q14254215",
+    "Q14549136",
+    "Q153030",
+    "Q1535950",
+    "Q1539501",
+    "Q1549255",
+    "Q15613664",
+    "Q1584804",
+    "Q1586376",
+    "Q16045991",
+    "Q161432",
+    "Q1713277",
+    "Q1782994",
+    "Q180562",
+    "Q1958602",
+    "Q19744058",
+    "Q19876488",
+    "Q2081522",
+    "Q20824309",
+    "Q20871127",
+    "Q21097908",
+    "Q213147",
+    "Q2159342",
+    "Q21935596",
+    "Q2240102",
+    "Q2248915",
+    "Q2285229",
+    "Q2312814",
+    "Q23239",
+    "Q2408055",
+    "Q24780",
+    "Q2496162",
+    "Q2519047",
+    "Q26271118",
+    "Q2665363",
+    "Q2671015",
+    "Q27927817",
+    "Q28404358",
+    "Q28721688",
+    "Q28742622",
+    "Q28958607",
+    "Q29017875",
+    "Q3027994",
+    "Q3051156",
+    "Q3120944",
+    "Q3296639",
+    "Q3412468",
+    "Q3475710",
+    "Q381184",
+    "Q381605",
+    "Q381789",
+    "Q3847520",
+    "Q387901",
+    "Q4042552",
+    "Q406653",
+    "Q407402",
+    "Q407708",
+    "Q407874",
+    "Q4115026",
+    "Q45045929",
+    "Q461631",
+    "Q4688126",
+    "Q4688316",
+    "Q4688502",
+    "Q4689607",
+    "Q4697789",
+    "Q4698131",
+    "Q4836308",
+    "Q486865",
+    "Q491770",
+    "Q5290285",
+    "Q5290891",
+    "Q5384103",
+    "Q5436378",
+    "Q5463174",
+    "Q546812",
+    "Q55735445",
+    "Q60846751",
+    "Q6478904",
+    "Q65067120",
+    "Q65086967",
+    "Q65199051",
+    "Q673852",
+    "Q702959",
+    "Q7118299",
+    "Q7275069",
+    "Q740844",
+    "Q750198",
+    "Q7558149",
+    "Q781222",
+    "Q7828033",
+    "Q790790",
+    "Q790807",
+    "Q794272",
+    "Q79467978",
+    "Q7987439",
+    "Q800208",
+    "Q822130",
+    "Q83535",
+    "Q842353",
+    "Q85973533",
+    "Q863432",
+    "Q902786",
+    "Q912351",
+    "Q9137518",
+    "Q936500",
+    "Q948355",
+    "Q97368711"
+  ],
+  "missingCode": 4641,
+  "statusCounts": {
+    "unknown": 1691,
+    "inactive": 6050,
+    "active": 20
+  },
+  "countryRegionNames": 296,
+  "reusedCodes": {
+    "00": [
+      "of-airline-17614",
+      "of-airline-18637",
+      "wd-airline-Q4204397"
+    ],
+    "0G": [
+      "of-airline-20224",
+      "wd-airline-Q4115015"
+    ],
+    "0J": [
+      "of-airline-3007",
+      "of-airline-3035"
+    ],
+    "1C": [
+      "of-airline-2079",
+      "of-airline-13076"
+    ],
+    "1E": [
+      "of-airline-5168",
+      "of-airline-20268"
+    ],
+    "1F": [
+      "of-airline-2815",
+      "of-airline-16261"
+    ],
+    "1H": [
+      "of-airline-4677",
+      "of-airline-16719"
+    ],
+    "1I": [
+      "of-airline-2022",
+      "of-airline-3641",
+      "of-airline-3743",
+      "of-airline-3928",
+      "of-airline-4676",
+      "of-airline-4679",
+      "of-airline-4711",
+      "wd-airline-Q1504132"
+    ],
+    "1K": [
+      "of-airline-4680",
+      "of-airline-4681",
+      "of-airline-20995"
+    ],
+    "1L": [
+      "of-airline-5172",
+      "wd-airline-Q111914944"
+    ],
+    "1R": [
+      "of-airline-2661",
+      "of-airline-19971"
+    ],
+    "1U": [
+      "of-airline-2820",
+      "of-airline-4015"
+    ],
+    "1X": [
+      "of-airline-19927",
+      "wd-airline-Q16972046",
+      "wd-airline-Q4957559"
+    ],
+    "2A": [
+      "of-airline-2021",
+      "wd-airline-Q115232313"
+    ],
+    "2B": [
+      "of-airline-410",
+      "wd-airline-Q2107803",
+      "wd-airline-Q24915570"
+    ],
+    "2C": [
+      "of-airline-4682",
+      "wd-airline-Q111212527",
+      "wd-airline-Q93090957"
+    ],
+    "2D": [
+      "of-airline-353",
+      "of-airline-16616",
+      "of-airline-18477",
+      "wd-airline-Q1263251",
+      "wd-airline-Q17109272",
+      "wd-airline-Q1842963"
+    ],
+    "2G": [
+      "of-airline-1654",
+      "of-airline-4670",
+      "wd-airline-Q5248132"
+    ],
+    "2I": [
+      "of-airline-8359",
+      "wd-airline-Q169443",
+      "wd-airline-Q1798128",
+      "wd-airline-Q55639052"
+    ],
+    "2K": [
+      "of-airline-1338",
+      "wd-airline-Q196221"
+    ],
+    "2L": [
+      "of-airline-2750",
+      "wd-airline-Q10318788"
+    ],
+    "2M": [
+      "of-airline-3529",
+      "wd-airline-Q1370452"
+    ],
+    "2N": [
+      "of-airline-3652",
+      "wd-airline-Q86659536"
+    ],
+    "2P": [
+      "of-airline-897",
+      "wd-airline-Q408955",
+      "wd-airline-Q873330"
+    ],
+    "2Q": [
+      "of-airline-149",
+      "wd-airline-Q1119983",
+      "wd-airline-Q2898646"
+    ],
+    "2R": [
+      "of-airline-5313",
+      "of-airline-19970",
+      "wd-airline-Q876720"
+    ],
+    "2S": [
+      "of-airline-2941",
+      "of-airline-4683",
+      "of-airline-21270",
+      "wd-airline-Q113739147",
+      "wd-airline-Q7426126",
+      "wd-airline-Q7640634"
+    ],
+    "2T": [
+      "of-airline-2663",
+      "wd-airline-Q1031924",
+      "wd-airline-Q1249970",
+      "wd-airline-Q18355101",
+      "wd-airline-Q85942452"
+    ],
+    "2U": [
+      "of-airline-909",
+      "wd-airline-Q553149"
+    ],
+    "2W": [
+      "of-airline-5401",
+      "wd-airline-Q107557914"
+    ],
+    "2Y": [
+      "of-airline-21181",
+      "wd-airline-Q25101358"
+    ],
+    "2Z": [
+      "of-airline-1729",
+      "wd-airline-Q1814331"
+    ],
+    "3B": [
+      "of-airline-15953",
+      "wd-airline-Q1053758",
+      "wd-airline-Q20643336",
+      "wd-airline-Q44407175"
+    ],
+    "3C": [
+      "of-airline-4180",
+      "wd-airline-Q3206640",
+      "wd-airline-Q5021356"
+    ],
+    "3D": [
+      "of-airline-20777",
+      "of-airline-20788",
+      "wd-airline-Q2046866"
+    ],
+    "3E": [
+      "of-airline-10739",
+      "wd-airline-Q7537501"
+    ],
+    "3G": [
+      "of-airline-595",
+      "wd-airline-Q1637428",
+      "wd-airline-Q3094934",
+      "wd-airline-Q4202205"
+    ],
+    "3J": [
+      "of-airline-5521",
+      "wd-airline-Q406744"
+    ],
+    "3M": [
+      "of-airline-20710",
+      "wd-airline-Q1554309"
+    ],
+    "3O": [
+      "of-airline-9818",
+      "wd-airline-Q3373865"
+    ],
+    "3Q": [
+      "of-airline-1771",
+      "wd-airline-Q114609433",
+      "wd-airline-Q71988"
+    ],
+    "3R": [
+      "of-airline-3545",
+      "wd-airline-Q20013289",
+      "wd-airline-Q2068729",
+      "wd-airline-Q4828500"
+    ],
+    "3S": [
+      "of-airline-1107",
+      "of-airline-11741",
+      "wd-airline-Q381509",
+      "wd-airline-Q406779",
+      "wd-airline-Q407287"
+    ],
+    "3T": [
+      "of-airline-5187",
+      "wd-airline-Q7685690"
+    ],
+    "3V": [
+      "of-airline-4873",
+      "of-airline-18896",
+      "wd-airline-Q1066031"
+    ],
+    "3W": [
+      "of-airline-2246",
+      "of-airline-19541",
+      "wd-airline-Q14628879",
+      "wd-airline-Q3060669"
+    ],
+    "4A": [
+      "of-airline-263",
+      "wd-airline-Q28454808",
+      "wd-airline-Q33274057",
+      "wd-airline-Q3526546",
+      "wd-airline-Q4697998",
+      "wd-airline-Q5020735",
+      "wd-airline-Q7373817"
+    ],
+    "4B": [
+      "of-airline-20565",
+      "wd-airline-Q17511231"
+    ],
+    "4C": [
+      "of-airline-411",
+      "wd-airline-Q408655"
+    ],
+    "4F": [
+      "of-airline-830",
+      "wd-airline-Q25352341"
+    ],
+    "4G": [
+      "of-airline-66",
+      "of-airline-2524"
+    ],
+    "4H": [
+      "of-airline-8463",
+      "wd-airline-Q131292226",
+      "wd-airline-Q3074581",
+      "wd-airline-Q65310789"
+    ],
+    "4J": [
+      "wd-airline-Q22935752",
+      "wd-airline-Q4819610",
+      "wd-airline-Q85310906"
+    ],
+    "4L": [
+      "of-airline-11873",
+      "wd-airline-Q1879549"
+    ],
+    "4M": [
+      "of-airline-3201",
+      "wd-airline-Q6457053"
+    ],
+    "4N": [
+      "of-airline-341",
+      "wd-airline-Q407673"
+    ],
+    "4O": [
+      "of-airline-17885",
+      "wd-airline-Q1115295"
+    ],
+    "4P": [
+      "of-airline-11805",
+      "wd-airline-Q105424593",
+      "wd-airline-Q407745",
+      "wd-airline-Q7570493"
+    ],
+    "4Q": [
+      "of-airline-10758",
+      "wd-airline-Q1468348",
+      "wd-airline-Q2875332"
+    ],
+    "4R": [
+      "of-airline-2674",
+      "wd-airline-Q7102286",
+      "wd-airline-Q7308120"
+    ],
+    "4S": [
+      "of-airline-2346",
+      "of-airline-19908",
+      "wd-airline-Q2332207",
+      "wd-airline-Q4199381"
+    ],
+    "4T": [
+      "of-airline-1401",
+      "wd-airline-Q339700"
+    ],
+    "4V": [
+      "wd-airline-Q2915415",
+      "wd-airline-Q65308518"
+    ],
+    "4X": [
+      "of-airline-16724",
+      "wd-airline-Q123669687"
+    ],
+    "4Y": [
+      "of-airline-1173",
+      "wd-airline-Q105076914"
+    ],
+    "4Z": [
+      "of-airline-15930",
+      "wd-airline-Q25345190"
+    ],
+    "5A": [
+      "of-airline-205",
+      "wd-airline-Q125769539"
+    ],
+    "5B": [
+      "of-airline-20657",
+      "wd-airline-Q18356886"
+    ],
+    "5C": [
+      "of-airline-1581",
+      "wd-airline-Q1319103"
+    ],
+    "5D": [
+      "of-airline-165",
+      "of-airline-2051",
+      "wd-airline-Q24796481",
+      "wd-airline-Q381508"
+    ],
+    "5E": [
+      "of-airline-13218",
+      "wd-airline-Q1631839"
+    ],
+    "5F": [
+      "of-airline-767",
+      "wd-airline-Q26880381",
+      "wd-airline-Q4034296"
+    ],
+    "5G": [
+      "of-airline-4496",
+      "wd-airline-Q112190882",
+      "wd-airline-Q24913598",
+      "wd-airline-Q2828214",
+      "wd-airline-Q29017919"
+    ],
+    "5H": [
+      "of-airline-8576",
+      "wd-airline-Q5327646"
+    ],
+    "5K": [
+      "of-airline-2759",
+      "of-airline-17909"
+    ],
+    "5L": [
+      "of-airline-1231",
+      "wd-airline-Q129906267",
+      "wd-airline-Q21973642"
+    ],
+    "5M": [
+      "of-airline-4436",
+      "wd-airline-Q1135063",
+      "wd-airline-Q14628877",
+      "wd-airline-Q7537176"
+    ],
+    "5N": [
+      "of-airline-503",
+      "wd-airline-Q519211"
+    ],
+    "5P": [
+      "of-airline-10650",
+      "wd-airline-Q10348270"
+    ],
+    "5Q": [
+      "of-airline-18232",
+      "wd-airline-Q2533250",
+      "wd-airline-Q5411726",
+      "wd-airline-Q67310782",
+      "wd-airline-Q87409617"
+    ],
+    "5U": [
+      "wd-airline-Q645290",
+      "wd-airline-Q930379"
+    ],
+    "5V": [
+      "of-airline-3335",
+      "wd-airline-Q1382197",
+      "wd-airline-Q5154734",
+      "wd-airline-Q5417420"
+    ],
+    "5W": [
+      "of-airline-112",
+      "wd-airline-Q750374",
+      "wd-airline-Q97332689"
+    ],
+    "5X": [
+      "of-airline-5263",
+      "wd-airline-Q1318737"
+    ],
+    "5Z": [
+      "of-airline-1443",
+      "of-airline-18946",
+      "wd-airline-Q4035606"
+    ],
+    "6A": [
+      "of-airline-1876",
+      "wd-airline-Q63441520",
+      "wd-airline-Q790772"
+    ],
+    "6B": [
+      "of-airline-5122",
+      "wd-airline-Q4873837"
+    ],
+    "6D": [
+      "of-airline-10845",
+      "wd-airline-Q1327113"
+    ],
+    "6E": [
+      "of-airline-2850",
+      "wd-airline-Q1057110",
+      "wd-airline-Q1093808",
+      "wd-airline-Q7937444"
+    ],
+    "6F": [
+      "of-airline-16956",
+      "wd-airline-Q20564457",
+      "wd-airline-Q4000080"
+    ],
+    "6G": [
+      "of-airline-565",
+      "wd-airline-Q107739499"
+    ],
+    "6H": [
+      "of-airline-2954",
+      "wd-airline-Q558002"
+    ],
+    "6I": [
+      "of-airline-2901",
+      "of-airline-17095",
+      "wd-airline-Q15222783"
+    ],
+    "6J": [
+      "of-airline-4781",
+      "wd-airline-Q1367476"
+    ],
+    "6K": [
+      "of-airline-1200",
+      "wd-airline-Q1665820"
+    ],
+    "6M": [
+      "wd-airline-Q3833045",
+      "wd-airline-Q4698096"
+    ],
+    "6N": [
+      "of-airline-3680",
+      "wd-airline-Q1357061",
+      "wd-airline-Q1426349",
+      "wd-airline-Q20020797"
+    ],
+    "6P": [
+      "of-airline-1812",
+      "of-airline-12961",
+      "wd-airline-Q7122434"
+    ],
+    "6Q": [
+      "of-airline-4751",
+      "wd-airline-Q3270934"
+    ],
+    "6R": [
+      "of-airline-1340",
+      "wd-airline-Q2573788",
+      "wd-airline-Q381785"
+    ],
+    "6S": [
+      "wd-airline-Q16127507",
+      "wd-airline-Q6131312",
+      "wd-airline-Q7524390"
+    ],
+    "6U": [
+      "of-airline-1334",
+      "of-airline-16585"
+    ],
+    "6V": [
+      "of-airline-368",
+      "of-airline-588",
+      "of-airline-3406",
+      "of-airline-20144"
+    ],
+    "6W": [
+      "of-airline-4805",
+      "wd-airline-Q1481299",
+      "wd-airline-Q60614280"
+    ],
+    "6Z": [
+      "of-airline-5254",
+      "wd-airline-Q894484"
+    ],
+    "7A": [
+      "of-airline-67",
+      "wd-airline-Q28220917",
+      "wd-airline-Q4689461",
+      "wd-airline-Q4708515"
+    ],
+    "7B": [
+      "of-airline-3168",
+      "wd-airline-Q142227",
+      "wd-airline-Q21176160"
+    ],
+    "7C": [
+      "of-airline-2994",
+      "wd-airline-Q5180023"
+    ],
+    "7D": [
+      "wd-airline-Q23779117",
+      "wd-airline-Q28499447",
+      "wd-airline-Q795939"
+    ],
+    "7E": [
+      "of-airline-563",
+      "wd-airline-Q321856"
+    ],
+    "7H": [
+      "of-airline-16726",
+      "wd-airline-Q13418307",
+      "wd-airline-Q2004243"
+    ],
+    "7I": [
+      "of-airline-18944",
+      "wd-airline-Q1664413",
+      "wd-airline-Q407430"
+    ],
+    "7J": [
+      "of-airline-9531",
+      "wd-airline-Q528978"
+    ],
+    "7K": [
+      "of-airline-3157",
+      "wd-airline-Q1660297"
+    ],
+    "7L": [
+      "of-airline-4619",
+      "wd-airline-Q18434260",
+      "wd-airline-Q3600562",
+      "wd-airline-Q381406"
+    ],
+    "7M": [
+      "of-airline-16615",
+      "wd-airline-Q131897",
+      "wd-airline-Q6714439"
+    ],
+    "7O": [
+      "of-airline-2508",
+      "of-airline-19813",
+      "wd-airline-Q823430"
+    ],
+    "7P": [
+      "of-airline-1500",
+      "wd-airline-Q4653218",
+      "wd-airline-Q810738"
+    ],
+    "7Q": [
+      "of-airline-11731",
+      "wd-airline-Q16974622",
+      "wd-airline-Q2474682"
+    ],
+    "7R": [
+      "of-airline-1469",
+      "of-airline-21317",
+      "wd-airline-Q7305001"
+    ],
+    "7T": [
+      "of-airline-174",
+      "of-airline-5010",
+      "wd-airline-Q8353311"
+    ],
+    "7W": [
+      "of-airline-5397",
+      "wd-airline-Q1029273"
+    ],
+    "7Y": [
+      "of-airline-11843",
+      "wd-airline-Q17065733"
+    ],
+    "7Z": [
+      "of-airline-11804",
+      "wd-airline-Q4037864"
+    ],
+    "8A": [
+      "of-airline-180",
+      "wd-airline-Q4745583"
+    ],
+    "8B": [
+      "of-airline-1666",
+      "of-airline-17408",
+      "wd-airline-Q327569"
+    ],
+    "8C": [
+      "of-airline-478",
+      "of-airline-949",
+      "of-airline-4612"
+    ],
+    "8D": [
+      "of-airline-1109",
+      "of-airline-2288",
+      "of-airline-4764",
+      "wd-airline-Q2911653"
+    ],
+    "8E": [
+      "of-airline-1472",
+      "wd-airline-Q60776485"
+    ],
+    "8F": [
+      "of-airline-2362",
+      "of-airline-11840",
+      "wd-airline-Q4251011"
+    ],
+    "8G": [
+      "wd-airline-Q206301",
+      "wd-airline-Q531463"
+    ],
+    "8H": [
+      "of-airline-2704",
+      "wd-airline-Q3735800"
+    ],
+    "8I": [
+      "of-airline-3534",
+      "wd-airline-Q310261"
+    ],
+    "8J": [
+      "of-airline-3027",
+      "of-airline-3160",
+      "wd-airline-Q15640535"
+    ],
+    "8K": [
+      "of-airline-19812",
+      "wd-airline-Q4762070",
+      "wd-airline-Q5421307"
+    ],
+    "8L": [
+      "of-airline-2942",
+      "of-airline-4162",
+      "wd-airline-Q5594222"
+    ],
+    "8M": [
+      "of-airline-3432",
+      "of-airline-3570"
+    ],
+    "8P": [
+      "of-airline-3856",
+      "wd-airline-Q1427310"
+    ],
+    "8Q": [
+      "of-airline-1347",
+      "of-airline-3788",
+      "of-airline-4051",
+      "of-airline-5559"
+    ],
+    "8V": [
+      "of-airline-55",
+      "of-airline-5473"
+    ],
+    "8W": [
+      "of-airline-1516",
+      "of-airline-4059",
+      "wd-airline-Q22234509",
+      "wd-airline-Q472381"
+    ],
+    "8Y": [
+      "of-airline-1139",
+      "of-airline-1766",
+      "wd-airline-Q1037450",
+      "wd-airline-Q30644592"
+    ],
+    "8Z": [
+      "of-airline-3272",
+      "of-airline-5462",
+      "wd-airline-Q2067230",
+      "wd-airline-Q4709437"
+    ],
+    "99": [
+      "of-airline-10372",
+      "wd-airline-Q2326259"
+    ],
+    "9A": [
+      "of-airline-14725",
+      "of-airline-19806",
+      "wd-airline-Q48784870",
+      "wd-airline-Q904210"
+    ],
+    "9C": [
+      "of-airline-15999",
+      "wd-airline-Q1340408",
+      "wd-airline-Q3339370",
+      "wd-airline-Q5561881"
+    ],
+    "9D": [
+      "wd-airline-Q179879",
+      "wd-airline-Q57941251"
+    ],
+    "9E": [
+      "of-airline-3976",
+      "wd-airline-Q1145445",
+      "wd-airline-Q699514"
+    ],
+    "9F": [
+      "of-airline-18749",
+      "wd-airline-Q5413836"
+    ],
+    "9H": [
+      "of-airline-13106",
+      "wd-airline-Q1061902",
+      "wd-airline-Q3112416",
+      "wd-airline-Q5333153",
+      "wd-airline-Q7081713"
+    ],
+    "9I": [
+      "of-airline-4969",
+      "of-airline-20288",
+      "wd-airline-Q1376333",
+      "wd-airline-Q5463317"
+    ],
+    "9J": [
+      "of-airline-19827",
+      "wd-airline-Q1159205"
+    ],
+    "9K": [
+      "of-airline-1629",
+      "wd-airline-Q3335810"
+    ],
+    "9L": [
+      "of-airline-1821",
+      "wd-airline-Q4697690"
+    ],
+    "9N": [
+      "of-airline-19810",
+      "wd-airline-Q140528917"
+    ],
+    "9P": [
+      "of-airline-17822",
+      "wd-airline-Q111915074",
+      "wd-airline-Q16207770",
+      "wd-airline-Q3377571"
+    ],
+    "9Q": [
+      "of-airline-3835",
+      "wd-airline-Q18737067"
+    ],
+    "9R": [
+      "of-airline-3968",
+      "of-airline-4691",
+      "wd-airline-Q5411830"
+    ],
+    "9S": [
+      "of-airline-4607",
+      "wd-airline-Q126173686"
+    ],
+    "9T": [
+      "of-airline-5064",
+      "wd-airline-Q288836"
+    ],
+    "9V": [
+      "of-airline-20004",
+      "wd-airline-Q4816706"
+    ],
+    "9X": [
+      "of-airline-2956",
+      "of-airline-19815",
+      "wd-airline-Q1675000",
+      "wd-airline-Q1920041",
+      "wd-airline-Q7094657"
+    ],
+    "9Y": [
+      "of-airline-6222",
+      "wd-airline-Q18091494",
+      "wd-airline-Q2342356",
+      "wd-airline-Q2874807"
+    ],
+    "A0": [
+      "wd-airline-Q118904309",
+      "wd-airline-Q1880638"
+    ],
+    "A2": [
+      "of-airline-1780",
+      "of-airline-19804",
+      "wd-airline-Q384451",
+      "wd-airline-Q750308"
+    ],
+    "A4": [
+      "of-airline-4550",
+      "wd-airline-Q30890991"
+    ],
+    "A5": [
+      "of-airline-1203",
+      "wd-airline-Q3951786"
+    ],
+    "A6": [
+      "of-airline-1040",
+      "of-airline-17989",
+      "wd-airline-Q23769262",
+      "wd-airline-Q406755"
+    ],
+    "A7": [
+      "of-airline-1087",
+      "wd-airline-Q255196",
+      "wd-airline-Q4697640",
+      "wd-airline-Q4833226"
+    ],
+    "A8": [
+      "of-airline-1392",
+      "wd-airline-Q4653889"
+    ],
+    "AB": [
+      "of-airline-214",
+      "wd-airline-Q12684221",
+      "wd-airline-Q97738362"
+    ],
+    "AC": [
+      "of-airline-330",
+      "wd-airline-Q2070953",
+      "wd-airline-Q3089528"
+    ],
+    "AD": [
+      "of-airline-1156",
+      "of-airline-13983"
+    ],
+    "AE": [
+      "of-airline-3392",
+      "wd-airline-Q1530156",
+      "wd-airline-Q407079"
+    ],
+    "AF": [
+      "of-airline-137",
+      "wd-airline-Q2611893"
+    ],
+    "AG": [
+      "of-airline-216",
+      "of-airline-20978",
+      "wd-airline-Q2385210",
+      "wd-airline-Q407043",
+      "wd-airline-Q4698219",
+      "wd-airline-Q5463121"
+    ],
+    "AH": [
+      "of-airline-794",
+      "wd-airline-Q56300306"
+    ],
+    "AI": [
+      "of-airline-218",
+      "wd-airline-Q1068419",
+      "wd-airline-Q2534424",
+      "wd-airline-Q69906"
+    ],
+    "AJ": [
+      "of-airline-1116",
+      "wd-airline-Q406884"
+    ],
+    "AK": [
+      "of-airline-576",
+      "wd-airline-Q409341",
+      "wd-airline-Q4736090"
+    ],
+    "AL": [
+      "of-airline-4589",
+      "of-airline-5106",
+      "wd-airline-Q20857830",
+      "wd-airline-Q2293467",
+      "wd-airline-Q2370490",
+      "wd-airline-Q2837839"
+    ],
+    "AM": [
+      "of-airline-321",
+      "wd-airline-Q4688349"
+    ],
+    "AN": [
+      "of-airline-13",
+      "wd-airline-Q24908122",
+      "wd-airline-Q408784"
+    ],
+    "AO": [
+      "of-airline-514",
+      "of-airline-13254",
+      "wd-airline-Q42322893",
+      "wd-airline-Q5358402",
+      "wd-airline-Q790723",
+      "wd-airline-Q790771"
+    ],
+    "AP": [
+      "of-airline-199",
+      "of-airline-240",
+      "wd-airline-Q120143229",
+      "wd-airline-Q4807797"
+    ],
+    "AQ": [
+      "of-airline-22",
+      "wd-airline-Q17498723",
+      "wd-airline-Q1881168",
+      "wd-airline-Q4697732"
+    ],
+    "AR": [
+      "of-airline-412",
+      "wd-airline-Q4272346"
+    ],
+    "AT": [
+      "of-airline-4248",
+      "wd-airline-Q19870511",
+      "wd-airline-Q3445864"
+    ],
+    "AU": [
+      "of-airline-510",
+      "wd-airline-Q66369836"
+    ],
+    "AV": [
+      "of-airline-515",
+      "wd-airline-Q2621503",
+      "wd-airline-Q308911"
+    ],
+    "AW": [
+      "of-airline-1588",
+      "of-airline-2035",
+      "of-airline-16960",
+      "wd-airline-Q2279702",
+      "wd-airline-Q4688413",
+      "wd-airline-Q4699082"
+    ],
+    "AX": [
+      "of-airline-5160",
+      "wd-airline-Q4914538"
+    ],
+    "AZ": [
+      "of-airline-596",
+      "wd-airline-Q108251249"
+    ],
+    "B0": [
+      "of-airline-17841",
+      "wd-airline-Q18121467"
+    ],
+    "B2": [
+      "of-airline-1478",
+      "wd-airline-Q815314"
+    ],
+    "B3": [
+      "of-airline-1436",
+      "wd-airline-Q245917",
+      "wd-airline-Q4741054"
+    ],
+    "B4": [
+      "of-airline-1364",
+      "of-airline-1419",
+      "of-airline-2425",
+      "wd-airline-Q570758"
+    ],
+    "B5": [
+      "of-airline-2395",
+      "wd-airline-Q138752126",
+      "wd-airline-Q2652981",
+      "wd-airline-Q4739033"
+    ],
+    "B7": [
+      "of-airline-9082",
+      "wd-airline-Q2877461"
+    ],
+    "BA": [
+      "of-airline-1355",
+      "wd-airline-Q4969419",
+      "wd-airline-Q846885"
+    ],
+    "BB": [
+      "of-airline-4335",
+      "wd-airline-Q2880459",
+      "wd-airline-Q2938752"
+    ],
+    "BC": [
+      "of-airline-4740",
+      "wd-airline-Q4980808"
+    ],
+    "BD": [
+      "of-airline-1437",
+      "wd-airline-Q157205",
+      "wd-airline-Q18386262"
+    ],
+    "BE": [
+      "of-airline-2421",
+      "wd-airline-Q16974175",
+      "wd-airline-Q20715498",
+      "wd-airline-Q24566930",
+      "wd-airline-Q27012668",
+      "wd-airline-Q5059114",
+      "wd-airline-Q919252"
+    ],
+    "BF": [
+      "of-airline-1230",
+      "of-airline-1360",
+      "wd-airline-Q23979091",
+      "wd-airline-Q986457"
+    ],
+    "BI": [
+      "of-airline-4255",
+      "wd-airline-Q97738361"
+    ],
+    "BJ": [
+      "of-airline-3740",
+      "wd-airline-Q225988"
+    ],
+    "BK": [
+      "of-airline-4026",
+      "wd-airline-Q6840877",
+      "wd-airline-Q7134299"
+    ],
+    "BL": [
+      "of-airline-3850",
+      "wd-airline-Q1156874",
+      "wd-airline-Q4697746"
+    ],
+    "BM": [
+      "of-airline-312",
+      "of-airline-1521",
+      "wd-airline-Q3607173",
+      "wd-airline-Q381325",
+      "wd-airline-Q702435"
+    ],
+    "BN": [
+      "of-airline-1481",
+      "of-airline-2443",
+      "of-airline-2782",
+      "wd-airline-Q4957357",
+      "wd-airline-Q803632"
+    ],
+    "BO": [
+      "of-airline-1462",
+      "wd-airline-Q407006",
+      "wd-airline-Q885973"
+    ],
+    "BQ": [
+      "of-airline-1221",
+      "of-airline-13732",
+      "wd-airline-Q381163",
+      "wd-airline-Q795961",
+      "wd-airline-Q99546065"
+    ],
+    "BR": [
+      "of-airline-2091",
+      "wd-airline-Q477512",
+      "wd-airline-Q4969503",
+      "wd-airline-Q918817"
+    ],
+    "BS": [
+      "of-airline-1411",
+      "wd-airline-Q5002241"
+    ],
+    "BU": [
+      "of-airline-6183",
+      "of-airline-10118",
+      "of-airline-16508",
+      "wd-airline-Q27961618"
+    ],
+    "BV": [
+      "of-airline-1463",
+      "wd-airline-Q105481325",
+      "wd-airline-Q885841"
+    ],
+    "BW": [
+      "of-airline-1663",
+      "wd-airline-Q797197"
+    ],
+    "BX": [
+      "of-airline-1813",
+      "of-airline-5982",
+      "wd-airline-Q1968508",
+      "wd-airline-Q5138082"
+    ],
+    "BY": [
+      "of-airline-5013",
+      "wd-airline-Q1156859"
+    ],
+    "BZ": [
+      "of-airline-1370",
+      "of-airline-3131",
+      "of-airline-13838",
+      "of-airline-15975",
+      "wd-airline-Q2744114",
+      "wd-airline-Q5035444",
+      "wd-airline-Q821375"
+    ],
+    "C3": [
+      "of-airline-1879",
+      "of-airline-2805",
+      "of-airline-12997"
+    ],
+    "C4": [
+      "of-airline-5522",
+      "of-airline-14094",
+      "wd-airline-Q956704"
+    ],
+    "C5": [
+      "of-airline-1843",
+      "wd-airline-Q5184704",
+      "wd-airline-Q528492"
+    ],
+    "C6": [
+      "of-airline-1613",
+      "wd-airline-Q126126530",
+      "wd-airline-Q126951725"
+    ],
+    "C7": [
+      "of-airline-4198",
+      "of-airline-17571",
+      "wd-airline-Q4271858",
+      "wd-airline-Q4688127",
+      "wd-airline-Q5121035"
+    ],
+    "C8": [
+      "of-airline-1750",
+      "of-airline-18228",
+      "wd-airline-Q2693168",
+      "wd-airline-Q5095591",
+      "wd-airline-Q5749188"
+    ],
+    "C9": [
+      "of-airline-1784",
+      "wd-airline-Q20736282"
+    ],
+    "CA": [
+      "of-airline-751",
+      "wd-airline-Q39060596",
+      "wd-airline-Q5019413",
+      "wd-airline-Q5210916",
+      "wd-airline-Q55697403",
+      "wd-airline-Q85740209"
+    ],
+    "CB": [
+      "of-airline-10334",
+      "of-airline-16151"
+    ],
+    "CC": [
+      "of-airline-221",
+      "of-airline-3363",
+      "wd-airline-Q4697743"
+    ],
+    "CD": [
+      "of-airline-1026",
+      "of-airline-13105",
+      "wd-airline-Q1150325",
+      "wd-airline-Q5011900"
+    ],
+    "CE": [
+      "of-airline-3613",
+      "wd-airline-Q1053680"
+    ],
+    "CF": [
+      "of-airline-1789",
+      "wd-airline-Q1073481"
+    ],
+    "CG": [
+      "of-airline-1308",
+      "wd-airline-Q408808"
+    ],
+    "CH": [
+      "of-airline-1442",
+      "wd-airline-Q5095479"
+    ],
+    "CJ": [
+      "of-airline-1763",
+      "of-airline-1795"
+    ],
+    "CK": [
+      "of-airline-1757",
+      "wd-airline-Q5161733"
+    ],
+    "CL": [
+      "of-airline-3322",
+      "wd-airline-Q1034688",
+      "wd-airline-Q1111157",
+      "wd-airline-Q6459600"
+    ],
+    "CN": [
+      "of-airline-2946",
+      "of-airline-5434",
+      "of-airline-9829"
+    ],
+    "CO": [
+      "of-airline-1881",
+      "of-airline-1883",
+      "wd-airline-Q135019776",
+      "wd-airline-Q24255019"
+    ],
+    "CP": [
+      "of-airline-1615",
+      "of-airline-1860",
+      "wd-airline-Q110576431",
+      "wd-airline-Q113397677",
+      "wd-airline-Q627115",
+      "wd-airline-Q986941"
+    ],
+    "CQ": [
+      "of-airline-4621",
+      "of-airline-13734",
+      "wd-airline-Q2348058",
+      "wd-airline-Q2589953",
+      "wd-airline-Q5138255"
+    ],
+    "CR": [
+      "of-airline-3757",
+      "of-airline-14728",
+      "wd-airline-Q7863866"
+    ],
+    "CS": [
+      "of-airline-1884",
+      "wd-airline-Q13126523",
+      "wd-airline-Q5095873"
+    ],
+    "CT": [
+      "of-airline-1800",
+      "of-airline-16975",
+      "wd-airline-Q5152080",
+      "wd-airline-Q553296"
+    ],
+    "CV": [
+      "of-airline-787",
+      "of-airline-1656"
+    ],
+    "CW": [
+      "of-airline-788",
+      "wd-airline-Q1062247"
+    ],
+    "D1": [
+      "of-airline-14620",
+      "wd-airline-Q5280257"
+    ],
+    "D2": [
+      "of-airline-20270",
+      "wd-airline-Q5211963"
+    ],
+    "D4": [
+      "of-airline-1021",
+      "wd-airline-Q108487867",
+      "wd-airline-Q25393325"
+    ],
+    "D5": [
+      "of-airline-1993",
+      "of-airline-13905",
+      "of-airline-16738"
+    ],
+    "D7": [
+      "of-airline-2028",
+      "of-airline-2417",
+      "wd-airline-Q5277945"
+    ],
+    "D8": [
+      "of-airline-2041",
+      "wd-airline-Q22681269",
+      "wd-airline-Q22811612",
+      "wd-airline-Q60456802"
+    ],
+    "D9": [
+      "of-airline-816",
+      "wd-airline-Q135214"
+    ],
+    "DA": [
+      "of-airline-919",
+      "of-airline-11839",
+      "wd-airline-Q1158942",
+      "wd-airline-Q3270980",
+      "wd-airline-Q5414196",
+      "wd-airline-Q710605"
+    ],
+    "DB": [
+      "of-airline-1523",
+      "wd-airline-Q96625607"
+    ],
+    "DC": [
+      "of-airline-2585",
+      "wd-airline-Q1534827",
+      "wd-airline-Q509034",
+      "wd-airline-Q6443098",
+      "wd-airline-Q7639881"
+    ],
+    "DD": [
+      "of-airline-3674",
+      "wd-airline-Q22674529",
+      "wd-airline-Q5152079"
+    ],
+    "DF": [
+      "of-airline-17780",
+      "wd-airline-Q2880835",
+      "wd-airline-Q3021162"
+    ],
+    "DG": [
+      "of-airline-4475",
+      "wd-airline-Q282522",
+      "wd-airline-Q550284"
+    ],
+    "DH": [
+      "of-airline-2037",
+      "of-airline-2848",
+      "of-airline-10128",
+      "wd-airline-Q17073866",
+      "wd-airline-Q56230193"
+    ],
+    "DI": [
+      "of-airline-2077",
+      "wd-airline-Q116939897",
+      "wd-airline-Q29017831",
+      "wd-airline-Q96324220"
+    ],
+    "DJ": [
+      "of-airline-3854",
+      "of-airline-4014",
+      "of-airline-5361",
+      "wd-airline-Q1061085",
+      "wd-airline-Q7050688",
+      "wd-airline-Q7134236"
+    ],
+    "DK": [
+      "of-airline-2125",
+      "wd-airline-Q1190358",
+      "wd-airline-Q1777812"
+    ],
+    "DL": [
+      "of-airline-2009",
+      "wd-airline-Q5254629",
+      "wd-airline-Q5254741",
+      "wd-airline-Q667992"
+    ],
+    "DM": [
+      "of-airline-3366",
+      "wd-airline-Q1754153",
+      "wd-airline-Q19903242"
+    ],
+    "DN": [
+      "of-airline-10094",
+      "of-airline-16811",
+      "of-airline-17094",
+      "wd-airline-Q117322827",
+      "wd-airline-Q1426357",
+      "wd-airline-Q4199506",
+      "wd-airline-Q48723676"
+    ],
+    "DP": [
+      "of-airline-2357",
+      "wd-airline-Q4033613",
+      "wd-airline-Q5139328",
+      "wd-airline-Q6072667"
+    ],
+    "DR": [
+      "of-airline-547",
+      "wd-airline-Q15927588",
+      "wd-airline-Q23640723",
+      "wd-airline-Q407440"
+    ],
+    "DS": [
+      "of-airline-6855",
+      "wd-airline-Q1050862"
+    ],
+    "DU": [
+      "of-airline-2751",
+      "of-airline-20170",
+      "wd-airline-Q15139453",
+      "wd-airline-Q65012940"
+    ],
+    "DV": [
+      "of-airline-3325",
+      "of-airline-3584",
+      "of-airline-4840",
+      "wd-airline-Q21528895",
+      "wd-airline-Q650170"
+    ],
+    "DW": [
+      "of-airline-1332",
+      "of-airline-19231",
+      "of-airline-20961",
+      "wd-airline-Q2155822",
+      "wd-airline-Q28102591",
+      "wd-airline-Q62059902"
+    ],
+    "DX": [
+      "of-airline-1954",
+      "wd-airline-Q1164145",
+      "wd-airline-Q5214906"
+    ],
+    "DY": [
+      "of-airline-3737",
+      "wd-airline-Q1028235"
+    ],
+    "DZ": [
+      "of-airline-11963",
+      "wd-airline-Q1137771"
+    ],
+    "E2": [
+      "of-airline-3098",
+      "of-airline-4206",
+      "of-airline-20047",
+      "wd-airline-Q22691812",
+      "wd-airline-Q5416947"
+    ],
+    "E3": [
+      "of-airline-2048",
+      "wd-airline-Q1403082",
+      "wd-airline-Q15836665"
+    ],
+    "E4": [
+      "of-airline-60",
+      "of-airline-11823",
+      "wd-airline-Q104866450",
+      "wd-airline-Q1344593"
+    ],
+    "E5": [
+      "of-airline-4596",
+      "of-airline-16963"
+    ],
+    "E6": [
+      "of-airline-1405",
+      "of-airline-18616",
+      "wd-airline-Q114345318"
+    ],
+    "E7": [
+      "of-airline-2217",
+      "of-airline-2253"
+    ],
+    "E8": [
+      "of-airline-839",
+      "of-airline-10902",
+      "of-airline-16675",
+      "of-airline-20160",
+      "wd-airline-Q108113024"
+    ],
+    "E9": [
+      "of-airline-1530",
+      "of-airline-10738",
+      "of-airline-11806",
+      "wd-airline-Q15407859"
+    ],
+    "EA": [
+      "of-airline-2251",
+      "wd-airline-Q17059838",
+      "wd-airline-Q18151755",
+      "wd-airline-Q611742"
+    ],
+    "EB": [
+      "wd-airline-Q1199911",
+      "wd-airline-Q5371008"
+    ],
+    "EC": [
+      "of-airline-1322",
+      "wd-airline-Q33232651",
+      "wd-airline-Q4199442",
+      "wd-airline-Q4697853",
+      "wd-airline-Q954747"
+    ],
+    "ED": [
+      "of-airline-208",
+      "wd-airline-Q104417767",
+      "wd-airline-Q18610029",
+      "wd-airline-Q3819110"
+    ],
+    "EE": [
+      "of-airline-828",
+      "of-airline-21021",
+      "wd-airline-Q179125",
+      "wd-airline-Q56026096"
+    ],
+    "EG": [
+      "of-airline-2989",
+      "wd-airline-Q105043990",
+      "wd-airline-Q28225012",
+      "wd-airline-Q4037879",
+      "wd-airline-Q4969896"
+    ],
+    "EH": [
+      "of-airline-266",
+      "of-airline-4381",
+      "of-airline-11995",
+      "wd-airline-Q295624",
+      "wd-airline-Q407664"
+    ],
+    "EI": [
+      "of-airline-837",
+      "wd-airline-Q648074"
+    ],
+    "EJ": [
+      "of-airline-3644",
+      "wd-airline-Q406832"
+    ],
+    "EK": [
+      "of-airline-2183",
+      "wd-airline-Q1317487"
+    ],
+    "EL": [
+      "of-airline-336",
+      "wd-airline-Q15889738",
+      "wd-airline-Q5321422",
+      "wd-airline-Q6045095"
+    ],
+    "EM": [
+      "of-airline-93",
+      "of-airline-2186",
+      "wd-airline-Q14628825",
+      "wd-airline-Q5374028"
+    ],
+    "EN": [
+      "of-airline-807",
+      "wd-airline-Q7064406"
+    ],
+    "EO": [
+      "of-airline-2293",
+      "of-airline-2756",
+      "wd-airline-Q31430",
+      "wd-airline-Q4688174",
+      "wd-airline-Q5160493"
+    ],
+    "EP": [
+      "of-airline-2923",
+      "wd-airline-Q6711286"
+    ],
+    "ER": [
+      "of-airline-801",
+      "of-airline-19831",
+      "wd-airline-Q28173448"
+    ],
+    "ES": [
+      "of-airline-1963",
+      "of-airline-13304",
+      "wd-airline-Q16303234",
+      "wd-airline-Q326794",
+      "wd-airline-Q4272310"
+    ],
+    "EU": [
+      "of-airline-2193",
+      "wd-airline-Q1587837",
+      "wd-airline-Q3550719",
+      "wd-airline-Q5334424"
+    ],
+    "EV": [
+      "of-airline-452",
+      "wd-airline-Q46676"
+    ],
+    "EX": [
+      "of-airline-1254",
+      "of-airline-20124",
+      "of-airline-20881",
+      "wd-airline-Q63371258"
+    ],
+    "EY": [
+      "of-airline-2222",
+      "wd-airline-Q3060733",
+      "wd-airline-Q5325007",
+      "wd-airline-Q6796830"
+    ],
+    "EZ": [
+      "of-airline-2261",
+      "of-airline-4529"
+    ],
+    "F2": [
+      "of-airline-2409",
+      "wd-airline-Q7309014"
+    ],
+    "F3": [
+      "of-airline-2333",
+      "wd-airline-Q1386471",
+      "wd-airline-Q24035331"
+    ],
+    "F4": [
+      "of-airline-1110",
+      "of-airline-20261",
+      "wd-airline-Q138033609",
+      "wd-airline-Q4697872"
+    ],
+    "F5": [
+      "of-airline-1910",
+      "of-airline-19465",
+      "of-airline-21012",
+      "wd-airline-Q24913597",
+      "wd-airline-Q56261069"
+    ],
+    "F6": [
+      "of-airline-2331",
+      "wd-airline-Q55636863"
+    ],
+    "F7": [
+      "of-airline-2420",
+      "wd-airline-Q151174",
+      "wd-airline-Q152528"
+    ],
+    "FA": [
+      "of-airline-4392",
+      "of-airline-9833",
+      "wd-airline-Q17053011",
+      "wd-airline-Q5450697"
+    ],
+    "FB": [
+      "of-airline-1548",
+      "wd-airline-Q5613961"
+    ],
+    "FC": [
+      "of-airline-2351",
+      "wd-airline-Q28129782",
+      "wd-airline-Q3738590"
+    ],
+    "FD": [
+      "of-airline-4947",
+      "wd-airline-Q5122952"
+    ],
+    "FE": [
+      "of-airline-4044",
+      "wd-airline-Q1810388",
+      "wd-airline-Q5461180",
+      "wd-airline-Q704694"
+    ],
+    "FF": [
+      "of-airline-663",
+      "of-airline-5018",
+      "of-airline-20827"
+    ],
+    "FH": [
+      "of-airline-2480",
+      "of-airline-18252",
+      "wd-airline-Q6743950"
+    ],
+    "FJ": [
+      "of-airline-879",
+      "wd-airline-Q1319864",
+      "wd-airline-Q407719"
+    ],
+    "FK": [
+      "of-airline-715",
+      "wd-airline-Q2826163",
+      "wd-airline-Q4042123",
+      "wd-airline-Q4042250"
+    ],
+    "FL": [
+      "of-airline-1316",
+      "wd-airline-Q107456909",
+      "wd-airline-Q118899940",
+      "wd-airline-Q4697696",
+      "wd-airline-Q5505955"
+    ],
+    "FN": [
+      "of-airline-4177",
+      "wd-airline-Q19876079",
+      "wd-airline-Q2042940",
+      "wd-airline-Q21096628",
+      "wd-airline-Q21848336",
+      "wd-airline-Q3445865"
+    ],
+    "FO": [
+      "of-airline-476",
+      "wd-airline-Q1320817",
+      "wd-airline-Q4566781",
+      "wd-airline-Q5420889"
+    ],
+    "FP": [
+      "of-airline-2454",
+      "wd-airline-Q23073577"
+    ],
+    "FQ": [
+      "of-airline-4896",
+      "wd-airline-Q406804",
+      "wd-airline-Q499795"
+    ],
+    "FS": [
+      "of-airline-4513",
+      "wd-airline-Q105720709",
+      "wd-airline-Q22079898",
+      "wd-airline-Q3508987",
+      "wd-airline-Q63044327",
+      "wd-airline-Q7455870"
+    ],
+    "FT": [
+      "of-airline-4469",
+      "wd-airline-Q125852676",
+      "wd-airline-Q5463222",
+      "wd-airline-Q748279"
+    ],
+    "FU": [
+      "of-airline-9343",
+      "wd-airline-Q407456"
+    ],
+    "FV": [
+      "of-airline-641",
+      "wd-airline-Q1200975",
+      "wd-airline-Q1556184",
+      "wd-airline-Q2380338",
+      "wd-airline-Q727452"
+    ],
+    "FW": [
+      "of-airline-2826",
+      "wd-airline-Q20894660"
+    ],
+    "FX": [
+      "of-airline-2342",
+      "of-airline-20110",
+      "wd-airline-Q1321722",
+      "wd-airline-Q782557"
+    ],
+    "FY": [
+      "of-airline-2353",
+      "of-airline-3732"
+    ],
+    "FZ": [
+      "of-airline-14485",
+      "wd-airline-Q1174276"
+    ],
+    "G0": [
+      "of-airline-2556",
+      "wd-airline-Q20721701"
+    ],
+    "G1": [
+      "of-airline-2595",
+      "of-airline-16327"
+    ],
+    "G2": [
+      "of-airline-719",
+      "wd-airline-Q2361250",
+      "wd-airline-Q2656283"
+    ],
+    "G3": [
+      "of-airline-1790",
+      "of-airline-2581",
+      "of-airline-4374"
+    ],
+    "G5": [
+      "of-airline-15837",
+      "wd-airline-Q5294996"
+    ],
+    "G6": [
+      "of-airline-2626",
+      "of-airline-11855",
+      "wd-airline-Q110612856",
+      "wd-airline-Q16841218",
+      "wd-airline-Q40192603"
+    ],
+    "G7": [
+      "of-airline-2516",
+      "of-airline-2577",
+      "wd-airline-Q1533365",
+      "wd-airline-Q3811905"
+    ],
+    "G8": [
+      "of-airline-162",
+      "of-airline-2200",
+      "of-airline-2575",
+      "of-airline-2634",
+      "wd-airline-Q1350144"
+    ],
+    "GB": [
+      "of-airline-49",
+      "of-airline-50",
+      "of-airline-13306"
+    ],
+    "GC": [
+      "of-airline-2513",
+      "of-airline-18762"
+    ],
+    "GD": [
+      "of-airline-184",
+      "of-airline-19208",
+      "wd-airline-Q5665870",
+      "wd-airline-Q869505"
+    ],
+    "GE": [
+      "of-airline-5038",
+      "wd-airline-Q123512505"
+    ],
+    "GF": [
+      "of-airline-2638",
+      "wd-airline-Q1554282"
+    ],
+    "GG": [
+      "of-airline-931",
+      "of-airline-934",
+      "of-airline-1649",
+      "wd-airline-Q2447748"
+    ],
+    "GH": [
+      "of-airline-6196",
+      "wd-airline-Q1521343"
+    ],
+    "GI": [
+      "of-airline-2958",
+      "wd-airline-Q43899547",
+      "wd-airline-Q597294"
+    ],
+    "GJ": [
+      "of-airline-1856",
+      "of-airline-2239",
+      "wd-airline-Q5009945",
+      "wd-airline-Q6826138"
+    ],
+    "GK": [
+      "of-airline-2576",
+      "of-airline-14118",
+      "wd-airline-Q7669219",
+      "wd-airline-Q7692318"
+    ],
+    "GL": [
+      "of-airline-921",
+      "of-airline-3482"
+    ],
+    "GM": [
+      "of-airline-1285",
+      "of-airline-13392",
+      "of-airline-15984",
+      "wd-airline-Q20890046",
+      "wd-airline-Q619050"
+    ],
+    "GN": [
+      "of-airline-142",
+      "of-airline-16695"
+    ],
+    "GO": [
+      "of-airline-3180",
+      "wd-airline-Q1139196",
+      "wd-airline-Q19574831",
+      "wd-airline-Q2348609"
+    ],
+    "GP": [
+      "of-airline-2551",
+      "of-airline-3875",
+      "of-airline-12962",
+      "wd-airline-Q21017028",
+      "wd-airline-Q30645010",
+      "wd-airline-Q7126866",
+      "wd-airline-Q953485"
+    ],
+    "GR": [
+      "of-airline-508",
+      "of-airline-2526"
+    ],
+    "GS": [
+      "of-airline-690",
+      "of-airline-2604"
+    ],
+    "GT": [
+      "of-airline-2486",
+      "wd-airline-Q18396784",
+      "wd-airline-Q24841017"
+    ],
+    "GV": [
+      "of-airline-386",
+      "wd-airline-Q602941",
+      "wd-airline-Q7537324"
+    ],
+    "GW": [
+      "of-airline-3175",
+      "wd-airline-Q31840427",
+      "wd-airline-Q5579957",
+      "wd-airline-Q7537172",
+      "wd-airline-Q85754202"
+    ],
+    "GX": [
+      "of-airline-3060",
+      "of-airline-3866",
+      "of-airline-19986",
+      "of-airline-20802"
+    ],
+    "GY": [
+      "of-airline-2649",
+      "of-airline-4983",
+      "of-airline-9620",
+      "wd-airline-Q21190457",
+      "wd-airline-Q4049593",
+      "wd-airline-Q5622731"
+    ],
+    "H1": [
+      "of-airline-16735",
+      "wd-airline-Q18164950"
+    ],
+    "H2": [
+      "of-airline-4737",
+      "wd-airline-Q2325152"
+    ],
+    "H3": [
+      "of-airline-13923",
+      "of-airline-16110",
+      "wd-airline-Q123912148",
+      "wd-airline-Q18578785",
+      "wd-airline-Q18712140"
+    ],
+    "H4": [
+      "of-airline-2799",
+      "of-airline-2873",
+      "wd-airline-Q124171164"
+    ],
+    "H5": [
+      "of-airline-2767",
+      "of-airline-3428",
+      "of-airline-16796",
+      "wd-airline-Q42380253",
+      "wd-airline-Q5013054"
+    ],
+    "H6": [
+      "of-airline-2657",
+      "wd-airline-Q1003679"
+    ],
+    "H7": [
+      "of-airline-2094",
+      "wd-airline-Q21036305",
+      "wd-airline-Q87656572"
+    ],
+    "H8": [
+      "of-airline-1973",
+      "wd-airline-Q85801489"
+    ],
+    "H9": [
+      "of-airline-933",
+      "of-airline-2964",
+      "of-airline-16373",
+      "wd-airline-Q18349505"
+    ],
+    "HB": [
+      "of-airline-2683",
+      "wd-airline-Q12125952"
+    ],
+    "HC": [
+      "of-airline-472",
+      "of-airline-16323",
+      "wd-airline-Q56754455",
+      "wd-airline-Q5944874",
+      "wd-airline-Q868414"
+    ],
+    "HD": [
+      "of-airline-2765",
+      "wd-airline-Q407298",
+      "wd-airline-Q948500"
+    ],
+    "HE": [
+      "of-airline-3319",
+      "wd-airline-Q111949926",
+      "wd-airline-Q117851008",
+      "wd-airline-Q2731894"
+    ],
+    "HF": [
+      "of-airline-2682",
+      "wd-airline-Q2915439",
+      "wd-airline-Q392864"
+    ],
+    "HG": [
+      "of-airline-3661",
+      "wd-airline-Q111796795"
+    ],
+    "HH": [
+      "of-airline-2777",
+      "of-airline-16116",
+      "wd-airline-Q249702",
+      "wd-airline-Q407294"
+    ],
+    "HI": [
+      "of-airline-16625",
+      "wd-airline-Q1252540",
+      "wd-airline-Q14628820"
+    ],
+    "HJ": [
+      "of-airline-571",
+      "wd-airline-Q106745202",
+      "wd-airline-Q11277663"
+    ],
+    "HK": [
+      "of-airline-2448",
+      "of-airline-9784",
+      "wd-airline-Q1994872",
+      "wd-airline-Q5475551",
+      "wd-airline-Q7568113",
+      "wd-airline-Q948198"
+    ],
+    "HN": [
+      "of-airline-2695",
+      "of-airline-16707",
+      "wd-airline-Q107694279",
+      "wd-airline-Q133817100",
+      "wd-airline-Q17011292",
+      "wd-airline-Q2449781"
+    ],
+    "HO": [
+      "of-airline-805",
+      "of-airline-3081",
+      "wd-airline-Q6840994"
+    ],
+    "HP": [
+      "of-airline-281",
+      "of-airline-2689",
+      "of-airline-3923",
+      "of-airline-3964",
+      "wd-airline-Q454611"
+    ],
+    "HQ": [
+      "of-airline-2684",
+      "of-airline-18643",
+      "wd-airline-Q5001726",
+      "wd-airline-Q945386"
+    ],
+    "HR": [
+      "of-airline-1769",
+      "of-airline-2659",
+      "wd-airline-Q406901"
+    ],
+    "HS": [
+      "wd-airline-Q2298730",
+      "wd-airline-Q8190224"
+    ],
+    "HT": [
+      "of-airline-196",
+      "of-airline-11834",
+      "wd-airline-Q19834198"
+    ],
+    "HU": [
+      "of-airline-2660",
+      "wd-airline-Q14628843"
+    ],
+    "HV": [
+      "of-airline-5039",
+      "wd-airline-Q246952"
+    ],
+    "HW": [
+      "of-airline-2748",
+      "of-airline-3710",
+      "wd-airline-Q5880366"
+    ],
+    "HX": [
+      "of-airline-2773",
+      "wd-airline-Q1572872",
+      "wd-airline-Q18151248",
+      "wd-airline-Q19971672"
+    ],
+    "HZ": [
+      "of-airline-4808",
+      "wd-airline-Q15222475"
+    ],
+    "I2": [
+      "of-airline-17881",
+      "wd-airline-Q11690235"
+    ],
+    "I4": [
+      "of-airline-2917",
+      "of-airline-19944",
+      "wd-airline-Q1063314"
+    ],
+    "I5": [
+      "of-airline-17794",
+      "wd-airline-Q407498",
+      "wd-airline-Q5103383"
+    ],
+    "I6": [
+      "of-airline-4379",
+      "of-airline-10955",
+      "wd-airline-Q4698037"
+    ],
+    "I7": [
+      "of-airline-3907",
+      "wd-airline-Q21924765"
+    ],
+    "I9": [
+      "of-airline-116",
+      "of-airline-2855",
+      "wd-airline-Q97161891"
+    ],
+    "IB": [
+      "of-airline-2822",
+      "wd-airline-Q187972"
+    ],
+    "IC": [
+      "of-airline-2853",
+      "wd-airline-Q118899173"
+    ],
+    "ID": [
+      "of-airline-2896",
+      "wd-airline-Q618960"
+    ],
+    "IF": [
+      "of-airline-2948",
+      "wd-airline-Q20165812",
+      "wd-airline-Q5165649",
+      "wd-airline-Q573915"
+    ],
+    "IG": [
+      "of-airline-3463",
+      "wd-airline-Q4726953",
+      "wd-airline-Q49547426"
+    ],
+    "IH": [
+      "of-airline-2320",
+      "of-airline-12990",
+      "wd-airline-Q4041621",
+      "wd-airline-Q489547"
+    ],
+    "II": [
+      "of-airline-2801",
+      "of-airline-16507",
+      "wd-airline-Q6006348"
+    ],
+    "IJ": [
+      "of-airline-2610",
+      "of-airline-2869",
+      "of-airline-9793",
+      "of-airline-16399",
+      "of-airline-16798",
+      "of-airline-19886",
+      "wd-airline-Q33434055",
+      "wd-airline-Q5158887"
+    ],
+    "IK": [
+      "of-airline-2845",
+      "of-airline-3229",
+      "wd-airline-Q1526739",
+      "wd-airline-Q407416",
+      "wd-airline-Q5995362"
+    ],
+    "IL": [
+      "of-airline-10121",
+      "of-airline-10796"
+    ],
+    "IM": [
+      "of-airline-3454",
+      "wd-airline-Q2162266",
+      "wd-airline-Q6060978"
+    ],
+    "IN": [
+      "of-airline-3350",
+      "wd-airline-Q15984817"
+    ],
+    "IO": [
+      "of-airline-2858",
+      "wd-airline-Q102427518",
+      "wd-airline-Q2033681"
+    ],
+    "IP": [
+      "of-airline-979",
+      "of-airline-10960",
+      "wd-airline-Q18352818"
+    ],
+    "IQ": [
+      "of-airline-493",
+      "wd-airline-Q20650538"
+    ],
+    "IS": [
+      "of-airline-2937",
+      "wd-airline-Q14628821",
+      "wd-airline-Q20737194",
+      "wd-airline-Q2354839"
+    ],
+    "IT": [
+      "of-airline-3142",
+      "wd-airline-Q15434492",
+      "wd-airline-Q407368"
+    ],
+    "IV": [
+      "of-airline-5447",
+      "wd-airline-Q113381029",
+      "wd-airline-Q2179637"
+    ],
+    "IW": [
+      "of-airline-343",
+      "of-airline-5451",
+      "wd-airline-Q16303572",
+      "wd-airline-Q3314904"
+    ],
+    "IX": [
+      "of-airline-569",
+      "wd-airline-Q2305605"
+    ],
+    "IZ": [
+      "of-airline-231",
+      "wd-airline-Q553915"
+    ],
+    "J1": [
+      "of-airline-20222",
+      "wd-airline-Q6188731"
+    ],
+    "J2": [
+      "of-airline-197",
+      "wd-airline-Q24566616",
+      "wd-airline-Q30344196"
+    ],
+    "J4": [
+      "of-airline-1384",
+      "of-airline-10737"
+    ],
+    "J6": [
+      "of-airline-349",
+      "wd-airline-Q28496959",
+      "wd-airline-Q6127260"
+    ],
+    "J7": [
+      "of-airline-1711",
+      "of-airline-18545",
+      "of-airline-18702",
+      "wd-airline-Q1187202",
+      "wd-airline-Q18640098",
+      "wd-airline-Q1878146",
+      "wd-airline-Q3369355"
+    ],
+    "J9": [
+      "of-airline-2629",
+      "of-airline-2993"
+    ],
+    "JA": [
+      "of-airline-132",
+      "of-airline-1371",
+      "wd-airline-Q30106175",
+      "wd-airline-Q510538",
+      "wd-airline-Q7060825"
+    ],
+    "JD": [
+      "of-airline-6557",
+      "wd-airline-Q302642",
+      "wd-airline-Q6156481"
+    ],
+    "JF": [
+      "of-airline-3032",
+      "of-airline-3196",
+      "wd-airline-Q114679199",
+      "wd-airline-Q4924268"
+    ],
+    "JG": [
+      "of-airline-21268",
+      "wd-airline-Q137217028",
+      "wd-airline-Q4698004"
+    ],
+    "JH": [
+      "of-airline-3679",
+      "of-airline-13200",
+      "wd-airline-Q5458930",
+      "wd-airline-Q899512"
+    ],
+    "JI": [
+      "of-airline-3494",
+      "wd-airline-Q117810704"
+    ],
+    "JJ": [
+      "of-airline-4867",
+      "wd-airline-Q4957797",
+      "wd-airline-Q690789"
+    ],
+    "JK": [
+      "of-airline-4652",
+      "wd-airline-Q14628823",
+      "wd-airline-Q85739913"
+    ],
+    "JL": [
+      "of-airline-2987",
+      "of-airline-2988"
+    ],
+    "JM": [
+      "of-airline-239",
+      "wd-airline-Q17092819",
+      "wd-airline-Q872798"
+    ],
+    "JN": [
+      "of-airline-2264",
+      "wd-airline-Q1140941",
+      "wd-airline-Q294342",
+      "wd-airline-Q95747999"
+    ],
+    "JO": [
+      "of-airline-2970",
+      "wd-airline-Q28357",
+      "wd-airline-Q65232609"
+    ],
+    "JP": [
+      "of-airline-83",
+      "wd-airline-Q95949533"
+    ],
+    "JR": [
+      "of-airline-1257",
+      "of-airline-13089"
+    ],
+    "JT": [
+      "of-airline-3290",
+      "wd-airline-Q1056794",
+      "wd-airline-Q7833746"
+    ],
+    "JU": [
+      "of-airline-2991",
+      "of-airline-19582",
+      "wd-airline-Q17310422",
+      "wd-airline-Q6164447"
+    ],
+    "JV": [
+      "of-airline-1434",
+      "wd-airline-Q813036"
+    ],
+    "JW": [
+      "of-airline-397",
+      "wd-airline-Q15149613",
+      "wd-airline-Q4051725",
+      "wd-airline-Q499539"
+    ],
+    "JX": [
+      "of-airline-3056",
+      "of-airline-16628",
+      "wd-airline-Q28056940",
+      "wd-airline-Q5012870",
+      "wd-airline-Q870818"
+    ],
+    "JY": [
+      "of-airline-1293",
+      "of-airline-14849",
+      "wd-airline-Q14628828",
+      "wd-airline-Q4698234",
+      "wd-airline-Q6184744"
+    ],
+    "JZ": [
+      "of-airline-4739",
+      "wd-airline-Q1809380",
+      "wd-airline-Q2079202",
+      "wd-airline-Q4828511"
+    ],
+    "K2": [
+      "of-airline-2245",
+      "wd-airline-Q140289089"
+    ],
+    "K3": [
+      "of-airline-20963",
+      "wd-airline-Q4050737"
+    ],
+    "K4": [
+      "of-airline-3094",
+      "wd-airline-Q3258921",
+      "wd-airline-Q6380790"
+    ],
+    "K5": [
+      "of-airline-39",
+      "of-airline-5456",
+      "of-airline-10765",
+      "wd-airline-Q65043358"
+    ],
+    "K6": [
+      "of-airline-1479",
+      "of-airline-13899",
+      "wd-airline-Q368781",
+      "wd-airline-Q66313000"
+    ],
+    "K7": [
+      "of-airline-11816",
+      "wd-airline-Q2494087"
+    ],
+    "K8": [
+      "of-airline-540",
+      "of-airline-11808",
+      "wd-airline-Q3041717",
+      "wd-airline-Q8035383"
+    ],
+    "K9": [
+      "of-airline-3172",
+      "wd-airline-Q1319113",
+      "wd-airline-Q140436245",
+      "wd-airline-Q5397580"
+    ],
+    "KA": [
+      "of-airline-2056",
+      "wd-airline-Q32436"
+    ],
+    "KC": [
+      "of-airline-1006",
+      "wd-airline-Q1799599",
+      "wd-airline-Q6418903"
+    ],
+    "KD": [
+      "of-airline-3087",
+      "wd-airline-Q108560330",
+      "wd-airline-Q21470356",
+      "wd-airline-Q4970170"
+    ],
+    "KF": [
+      "of-airline-1427",
+      "wd-airline-Q50399835"
+    ],
+    "KG": [
+      "of-airline-3199",
+      "of-airline-18241",
+      "wd-airline-Q2030896",
+      "wd-airline-Q381474"
+    ],
+    "KH": [
+      "of-airline-16671",
+      "of-airline-19367",
+      "wd-airline-Q7537187",
+      "wd-airline-Q7833668",
+      "wd-airline-Q901266"
+    ],
+    "KI": [
+      "of-airline-105",
+      "of-airline-800",
+      "wd-airline-Q14628857",
+      "wd-airline-Q6436151",
+      "wd-airline-Q7804921"
+    ],
+    "KJ": [
+      "of-airline-1543",
+      "wd-airline-Q11289522",
+      "wd-airline-Q2364752"
+    ],
+    "KK": [
+      "of-airline-995",
+      "wd-airline-Q112106752",
+      "wd-airline-Q757295",
+      "wd-airline-Q7834592"
+    ],
+    "KL": [
+      "wd-airline-Q14906128",
+      "wd-airline-Q181912",
+      "wd-airline-Q7878880"
+    ],
+    "KM": [
+      "of-airline-242",
+      "wd-airline-Q123144232"
+    ],
+    "KN": [
+      "of-airline-10741",
+      "wd-airline-Q1073550",
+      "wd-airline-Q12062042",
+      "wd-airline-Q2840095"
+    ],
+    "KO": [
+      "of-airline-109",
+      "wd-airline-Q5960390"
+    ],
+    "KP": [
+      "of-airline-3151",
+      "of-airline-17861",
+      "of-airline-19890",
+      "wd-airline-Q127529"
+    ],
+    "KQ": [
+      "of-airline-3126",
+      "wd-airline-Q4698192"
+    ],
+    "KR": [
+      "of-airline-1844",
+      "wd-airline-Q1330155",
+      "wd-airline-Q55606487"
+    ],
+    "KS": [
+      "of-airline-3935",
+      "wd-airline-Q114247072",
+      "wd-airline-Q116848484",
+      "wd-airline-Q1811285",
+      "wd-airline-Q7426775"
+    ],
+    "KT": [
+      "of-airline-10124",
+      "of-airline-16837",
+      "wd-airline-Q115882421",
+      "wd-airline-Q31841215",
+      "wd-airline-Q3644995",
+      "wd-airline-Q5019414",
+      "wd-airline-Q6452346",
+      "wd-airline-Q734872"
+    ],
+    "KV": [
+      "of-airline-3110",
+      "wd-airline-Q22080749",
+      "wd-airline-Q6888541"
+    ],
+    "KW": [
+      "of-airline-8461",
+      "wd-airline-Q104630809",
+      "wd-airline-Q1060465",
+      "wd-airline-Q14628798"
+    ],
+    "KY": [
+      "of-airline-849",
+      "of-airline-3189",
+      "of-airline-13704",
+      "wd-airline-Q1388103",
+      "wd-airline-Q1970134"
+    ],
+    "KZ": [
+      "of-airline-3667",
+      "of-airline-19891",
+      "wd-airline-Q4827444"
+    ],
+    "L1": [
+      "of-airline-3323",
+      "of-airline-19803"
+    ],
+    "L3": [
+      "of-airline-1964",
+      "of-airline-3212",
+      "wd-airline-Q1232836"
+    ],
+    "L4": [
+      "of-airline-16511",
+      "wd-airline-Q134959753",
+      "wd-airline-Q3559186"
+    ],
+    "L5": [
+      "of-airline-3326",
+      "wd-airline-Q14924297",
+      "wd-airline-Q378788"
+    ],
+    "L6": [
+      "of-airline-16942",
+      "wd-airline-Q2468208",
+      "wd-airline-Q3852483"
+    ],
+    "L7": [
+      "of-airline-3235",
+      "of-airline-3270",
+      "of-airline-12960",
+      "wd-airline-Q537223"
+    ],
+    "L8": [
+      "of-airline-1051",
+      "of-airline-10114",
+      "wd-airline-Q118902474",
+      "wd-airline-Q4689464"
+    ],
+    "L9": [
+      "of-airline-4908",
+      "of-airline-19805",
+      "wd-airline-Q3637773",
+      "wd-airline-Q5987936"
+    ],
+    "LA": [
+      "of-airline-3200",
+      "wd-airline-Q649178"
+    ],
+    "LB": [
+      "of-airline-3295",
+      "of-airline-19451",
+      "wd-airline-Q27926738"
+    ],
+    "LC": [
+      "of-airline-5354",
+      "wd-airline-Q1891602",
+      "wd-airline-Q6475219",
+      "wd-airline-Q85775277"
+    ],
+    "LD": [
+      "of-airline-191",
+      "of-airline-3274"
+    ],
+    "LE": [
+      "of-airline-20607",
+      "wd-airline-Q1296403",
+      "wd-airline-Q1602439"
+    ],
+    "LF": [
+      "of-airline-2419",
+      "wd-airline-Q1826760",
+      "wd-airline-Q25384943",
+      "wd-airline-Q3705093",
+      "wd-airline-Q54933181"
+    ],
+    "LH": [
+      "of-airline-3320",
+      "of-airline-3321",
+      "wd-airline-Q170159"
+    ],
+    "LI": [
+      "of-airline-3251",
+      "wd-airline-Q108528361",
+      "wd-airline-Q618062"
+    ],
+    "LJ": [
+      "of-airline-4742",
+      "of-airline-9810"
+    ],
+    "LK": [
+      "of-airline-1052",
+      "wd-airline-Q3688922",
+      "wd-airline-Q5241204"
+    ],
+    "LL": [
+      "of-airline-922",
+      "wd-airline-Q222223",
+      "wd-airline-Q28955954",
+      "wd-airline-Q3090256",
+      "wd-airline-Q6711272"
+    ],
+    "LM": [
+      "of-airline-3287",
+      "of-airline-3294",
+      "wd-airline-Q1810797",
+      "wd-airline-Q2190812"
+    ],
+    "LN": [
+      "of-airline-3258",
+      "wd-airline-Q1056939",
+      "wd-airline-Q2855432"
+    ],
+    "LP": [
+      "of-airline-3205",
+      "wd-airline-Q1145155",
+      "wd-airline-Q1750338",
+      "wd-airline-Q28099067",
+      "wd-airline-Q6460942"
+    ],
+    "LQ": [
+      "of-airline-3246",
+      "of-airline-13815",
+      "wd-airline-Q39059591",
+      "wd-airline-Q4698014",
+      "wd-airline-Q8192330"
+    ],
+    "LR": [
+      "of-airline-3197",
+      "wd-airline-Q1028575"
+    ],
+    "LS": [
+      "of-airline-3026",
+      "wd-airline-Q1062248"
+    ],
+    "LT": [
+      "of-airline-3213",
+      "of-airline-19610",
+      "wd-airline-Q29017885",
+      "wd-airline-Q4045461"
+    ],
+    "LU": [
+      "of-airline-3204",
+      "wd-airline-Q688359"
+    ],
+    "LV": [
+      "of-airline-1008",
+      "wd-airline-Q4207229"
+    ],
+    "LW": [
+      "of-airline-3865",
+      "wd-airline-Q104833239",
+      "wd-airline-Q56295142",
+      "wd-airline-Q7638188",
+      "wd-airline-Q891861",
+      "wd-airline-Q975169"
+    ],
+    "LX": [
+      "of-airline-4559",
+      "wd-airline-Q667656",
+      "wd-airline-Q7658899"
+    ],
+    "LY": [
+      "of-airline-2150",
+      "wd-airline-Q12182498",
+      "wd-airline-Q15614811",
+      "wd-airline-Q208489"
+    ],
+    "LZ": [
+      "of-airline-1406",
+      "wd-airline-Q543277"
+    ],
+    "M1": [
+      "of-airline-18930",
+      "wd-airline-Q4698086"
+    ],
+    "M2": [
+      "of-airline-3371",
+      "of-airline-19026",
+      "wd-airline-Q15525949",
+      "wd-airline-Q15934726"
+    ],
+    "M3": [
+      "of-airline-42",
+      "of-airline-1271",
+      "of-airline-3702",
+      "wd-airline-Q407679"
+    ],
+    "M4": [
+      "of-airline-3741",
+      "of-airline-15893",
+      "wd-airline-Q1939338",
+      "wd-airline-Q4118246",
+      "wd-airline-Q791089"
+    ],
+    "M7": [
+      "of-airline-3349",
+      "of-airline-3408",
+      "of-airline-4877",
+      "wd-airline-Q1189646"
+    ],
+    "M8": [
+      "of-airline-8568",
+      "of-airline-20207",
+      "wd-airline-Q25037248",
+      "wd-airline-Q3537331",
+      "wd-airline-Q6915457"
+    ],
+    "M9": [
+      "of-airline-3547",
+      "wd-airline-Q1840579",
+      "wd-airline-Q6889299"
+    ],
+    "MA": [
+      "of-airline-3389",
+      "wd-airline-Q208372"
+    ],
+    "MB": [
+      "of-airline-2267",
+      "of-airline-3357"
+    ],
+    "MC": [
+      "of-airline-1179",
+      "wd-airline-Q7833276"
+    ],
+    "MD": [
+      "of-airline-1066",
+      "wd-airline-Q6736659"
+    ],
+    "ME": [
+      "of-airline-3490",
+      "wd-airline-Q859510"
+    ],
+    "MF": [
+      "of-airline-5484",
+      "wd-airline-Q124161695"
+    ],
+    "MG": [
+      "of-airline-1727",
+      "wd-airline-Q875472"
+    ],
+    "MH": [
+      "of-airline-3378",
+      "wd-airline-Q1368765"
+    ],
+    "MI": [
+      "of-airline-4750",
+      "wd-airline-Q407840",
+      "wd-airline-Q62250188"
+    ],
+    "MJ": [
+      "of-airline-3342",
+      "wd-airline-Q134531808",
+      "wd-airline-Q1932859"
+    ],
+    "ML": [
+      "of-airline-664",
+      "of-airline-9656",
+      "wd-airline-Q1060578",
+      "wd-airline-Q407611",
+      "wd-airline-Q4688129",
+      "wd-airline-Q6843263"
+    ],
+    "MM": [
+      "of-airline-17675",
+      "wd-airline-Q1376634",
+      "wd-airline-Q98000160"
+    ],
+    "MN": [
+      "of-airline-1829",
+      "wd-airline-Q131759026",
+      "wd-airline-Q930120"
+    ],
+    "MO": [
+      "of-airline-502",
+      "of-airline-1608",
+      "wd-airline-Q1942813",
+      "wd-airline-Q4670122"
+    ],
+    "MQ": [
+      "of-airline-659",
+      "wd-airline-Q4049509",
+      "wd-airline-Q6742803"
+    ],
+    "MR": [
+      "of-airline-1093",
+      "of-airline-13335",
+      "wd-airline-Q904069"
+    ],
+    "MS": [
+      "of-airline-2143",
+      "wd-airline-Q56274514"
+    ],
+    "MT": [
+      "of-airline-4897",
+      "wd-airline-Q5463381",
+      "wd-airline-Q6108495",
+      "wd-airline-Q6914814"
+    ],
+    "MU": [
+      "of-airline-1758",
+      "wd-airline-Q86731708"
+    ],
+    "MV": [
+      "of-airline-1210",
+      "wd-airline-Q1423590",
+      "wd-airline-Q40446413",
+      "wd-airline-Q4698233",
+      "wd-airline-Q4828598",
+      "wd-airline-Q6520288",
+      "wd-airline-Q6722104",
+      "wd-airline-Q6746971"
+    ],
+    "MW": [
+      "of-airline-3437",
+      "wd-airline-Q174616",
+      "wd-airline-Q64555797"
+    ],
+    "MX": [
+      "of-airline-3479",
+      "wd-airline-Q53085",
+      "wd-airline-Q55641146"
+    ],
+    "MY": [
+      "of-airline-3434",
+      "of-airline-3498",
+      "wd-airline-Q768164"
+    ],
+    "MZ": [
+      "of-airline-3465",
+      "wd-airline-Q432533",
+      "wd-airline-Q7388496"
+    ],
+    "N0": [
+      "of-airline-16363",
+      "wd-airline-Q107300119"
+    ],
+    "N2": [
+      "of-airline-1967",
+      "of-airline-3091"
+    ],
+    "N3": [
+      "of-airline-3783",
+      "wd-airline-Q104850545",
+      "wd-airline-Q2023556",
+      "wd-airline-Q4688309"
+    ],
+    "N4": [
+      "of-airline-3550",
+      "of-airline-3596",
+      "of-airline-9808",
+      "of-airline-19807"
+    ],
+    "N5": [
+      "of-airline-3183",
+      "of-airline-4411",
+      "wd-airline-Q18109342",
+      "wd-airline-Q6452349",
+      "wd-airline-Q6979855",
+      "wd-airline-Q7050992",
+      "wd-airline-Q907891"
+    ],
+    "N6": [
+      "of-airline-3220",
+      "of-airline-3749",
+      "of-airline-16437",
+      "wd-airline-Q596549",
+      "wd-airline-Q812058"
+    ],
+    "N7": [
+      "of-airline-3597",
+      "of-airline-19809",
+      "wd-airline-Q1434560",
+      "wd-airline-Q1800549",
+      "wd-airline-Q6995647",
+      "wd-airline-Q9295998"
+    ],
+    "N8": [
+      "of-airline-2345",
+      "of-airline-19287",
+      "wd-airline-Q899774"
+    ],
+    "N9": [
+      "of-airline-3701",
+      "of-airline-19808",
+      "wd-airline-Q206180",
+      "wd-airline-Q28149",
+      "wd-airline-Q7503470"
+    ],
+    "NA": [
+      "of-airline-3598",
+      "of-airline-13190",
+      "wd-airline-Q1188991"
+    ],
+    "NB": [
+      "of-airline-4776",
+      "wd-airline-Q7944086"
+    ],
+    "NC": [
+      "of-airline-3608",
+      "of-airline-3717",
+      "wd-airline-Q7054722"
+    ],
+    "ND": [
+      "wd-airline-Q18355700",
+      "wd-airline-Q3343575",
+      "wd-airline-Q408819"
+    ],
+    "NE": [
+      "of-airline-4620",
+      "wd-airline-Q1642115",
+      "wd-airline-Q661242"
+    ],
+    "NG": [
+      "of-airline-3239",
+      "wd-airline-Q104879873"
+    ],
+    "NH": [
+      "of-airline-324",
+      "wd-airline-Q109967243"
+    ],
+    "NJ": [
+      "of-airline-16025",
+      "of-airline-17890"
+    ],
+    "NL": [
+      "of-airline-4311",
+      "wd-airline-Q1373561",
+      "wd-airline-Q23038882",
+      "wd-airline-Q4698067"
+    ],
+    "NM": [
+      "of-airline-817",
+      "of-airline-3548",
+      "wd-airline-Q1138889",
+      "wd-airline-Q17113508"
+    ],
+    "NO": [
+      "of-airline-509",
+      "of-airline-3638",
+      "of-airline-18727",
+      "wd-airline-Q65072618"
+    ],
+    "NP": [
+      "of-airline-17083",
+      "wd-airline-Q14628864"
+    ],
+    "NR": [
+      "of-airline-3878",
+      "of-airline-19030",
+      "wd-airline-Q2784136"
+    ],
+    "NS": [
+      "of-airline-16136",
+      "wd-airline-Q12064437",
+      "wd-airline-Q134931944",
+      "wd-airline-Q24189611"
+    ],
+    "NV": [
+      "of-airline-779",
+      "of-airline-20438"
+    ],
+    "NX": [
+      "of-airline-316",
+      "wd-airline-Q1966880"
+    ],
+    "NY": [
+      "of-airline-896",
+      "wd-airline-Q628658"
+    ],
+    "NZ": [
+      "of-airline-345",
+      "wd-airline-Q1054700",
+      "wd-airline-Q6970269"
+    ],
+    "O7": [
+      "of-airline-3831",
+      "wd-airline-Q18406897",
+      "wd-airline-Q2043003"
+    ],
+    "O8": [
+      "of-airline-3759",
+      "wd-airline-Q116779681",
+      "wd-airline-Q18171855"
+    ],
+    "OA": [
+      "of-airline-3776",
+      "wd-airline-Q2721211",
+      "wd-airline-Q583843",
+      "wd-airline-Q95615422"
+    ],
+    "OB": [
+      "of-airline-462",
+      "wd-airline-Q7074416",
+      "wd-airline-Q891372"
+    ],
+    "OC": [
+      "of-airline-11794",
+      "wd-airline-Q1151882",
+      "wd-airline-Q4045768",
+      "wd-airline-Q4046176",
+      "wd-airline-Q968566"
+    ],
+    "OD": [
+      "of-airline-15970",
+      "of-airline-18732",
+      "wd-airline-Q1929952",
+      "wd-airline-Q2835801",
+      "wd-airline-Q532077",
+      "wd-airline-Q5370405",
+      "wd-airline-Q6743729"
+    ],
+    "OE": [
+      "of-airline-372",
+      "of-airline-18722",
+      "of-airline-18723",
+      "wd-airline-Q29010457",
+      "wd-airline-Q47133973",
+      "wd-airline-Q472129",
+      "wd-airline-Q489719",
+      "wd-airline-Q727769"
+    ],
+    "OF": [
+      "of-airline-876",
+      "of-airline-5199",
+      "wd-airline-Q1987495"
+    ],
+    "OG": [
+      "of-airline-9018",
+      "of-airline-17889",
+      "wd-airline-Q20648900",
+      "wd-airline-Q4697996",
+      "wd-airline-Q74705406"
+    ],
+    "OI": [
+      "of-airline-17022",
+      "wd-airline-Q14628842",
+      "wd-airline-Q4808100",
+      "wd-airline-Q7541510"
+    ],
+    "OJ": [
+      "of-airline-3826",
+      "wd-airline-Q10403860",
+      "wd-airline-Q66121841"
+    ],
+    "OL": [
+      "of-airline-3822",
+      "wd-airline-Q702928",
+      "wd-airline-Q956449"
+    ],
+    "ON": [
+      "of-airline-3618",
+      "of-airline-3824",
+      "wd-airline-Q192459"
+    ],
+    "OO": [
+      "of-airline-4738",
+      "wd-airline-Q773662"
+    ],
+    "OP": [
+      "of-airline-1721",
+      "of-airline-20286",
+      "wd-airline-Q1059869"
+    ],
+    "OQ": [
+      "of-airline-12975",
+      "wd-airline-Q7375100"
+    ],
+    "OR": [
+      "of-airline-1299",
+      "wd-airline-Q1712321",
+      "wd-airline-Q2020349",
+      "wd-airline-Q520869"
+    ],
+    "OT": [
+      "of-airline-1143",
+      "wd-airline-Q39060529",
+      "wd-airline-Q4827676",
+      "wd-airline-Q56282488"
+    ],
+    "OU": [
+      "of-airline-1925",
+      "wd-airline-Q5123159"
+    ],
+    "OV": [
+      "of-airline-2218",
+      "wd-airline-Q27926620",
+      "wd-airline-Q794530"
+    ],
+    "OW": [
+      "of-airline-2277",
+      "wd-airline-Q26794481"
+    ],
+    "OX": [
+      "of-airline-3811",
+      "wd-airline-Q17104009"
+    ],
+    "OY": [
+      "of-airline-3781",
+      "wd-airline-Q10955026"
+    ],
+    "OZ": [
+      "of-airline-28",
+      "of-airline-3830"
+    ],
+    "P0": [
+      "of-airline-4066",
+      "wd-airline-Q2678060"
+    ],
+    "P2": [
+      "wd-airline-Q1174292",
+      "wd-airline-Q15637565",
+      "wd-airline-Q408748",
+      "wd-airline-Q7202332"
+    ],
+    "P3": [
+      "wd-airline-Q21884331",
+      "wd-airline-Q3177764"
+    ],
+    "P4": [
+      "of-airline-18169",
+      "wd-airline-Q18161750"
+    ],
+    "P5": [
+      "of-airline-1224",
+      "wd-airline-Q1129944",
+      "wd-airline-Q27493922"
+    ],
+    "P7": [
+      "of-airline-4286",
+      "of-airline-11755",
+      "wd-airline-Q4204404"
+    ],
+    "P8": [
+      "of-airline-3900",
+      "of-airline-16103"
+    ],
+    "P9": [
+      "of-airline-3588",
+      "of-airline-3941",
+      "of-airline-11763"
+    ],
+    "PA": [
+      "of-airline-2401",
+      "of-airline-3885",
+      "of-airline-3886",
+      "of-airline-13303",
+      "wd-airline-Q14628871",
+      "wd-airline-Q1514315",
+      "wd-airline-Q310107",
+      "wd-airline-Q8681"
+    ],
+    "PB": [
+      "wd-airline-Q1758698",
+      "wd-airline-Q3408507"
+    ],
+    "PC": [
+      "of-airline-866",
+      "of-airline-1882",
+      "of-airline-3926",
+      "wd-airline-Q7122283"
+    ],
+    "PD": [
+      "of-airline-4021",
+      "wd-airline-Q1549336"
+    ],
+    "PE": [
+      "of-airline-106",
+      "wd-airline-Q14628812",
+      "wd-airline-Q634777",
+      "wd-airline-Q873376"
+    ],
+    "PF": [
+      "of-airline-3876",
+      "of-airline-11732",
+      "wd-airline-Q3529327",
+      "wd-airline-Q41498064",
+      "wd-airline-Q7129542"
+    ],
+    "PG": [
+      "of-airline-1422",
+      "wd-airline-Q3725893"
+    ],
+    "PH": [
+      "of-airline-4013",
+      "wd-airline-Q7186783",
+      "wd-airline-Q86753929"
+    ],
+    "PI": [
+      "of-airline-3969",
+      "of-airline-4522",
+      "wd-airline-Q1328746",
+      "wd-airline-Q2130889",
+      "wd-airline-Q677831"
+    ],
+    "PL": [
+      "of-airline-179",
+      "of-airline-443",
+      "wd-airline-Q381611"
+    ],
+    "PN": [
+      "of-airline-12978",
+      "wd-airline-Q1073544",
+      "wd-airline-Q112578206",
+      "wd-airline-Q7129586"
+    ],
+    "PO": [
+      "of-airline-3992",
+      "of-airline-19834"
+    ],
+    "PP": [
+      "of-airline-17574",
+      "wd-airline-Q941940"
+    ],
+    "PQ": [
+      "of-airline-3891",
+      "of-airline-14061",
+      "wd-airline-Q1471572",
+      "wd-airline-Q47009940",
+      "wd-airline-Q4952936"
+    ],
+    "PR": [
+      "of-airline-3952",
+      "wd-airline-Q4633116"
+    ],
+    "PS": [
+      "of-airline-3864",
+      "of-airline-5282",
+      "wd-airline-Q2211437"
+    ],
+    "PT": [
+      "of-airline-1636",
+      "of-airline-5408",
+      "of-airline-16720",
+      "wd-airline-Q605968",
+      "wd-airline-Q6333727",
+      "wd-airline-Q7252596"
+    ],
+    "PU": [
+      "of-airline-3839",
+      "wd-airline-Q18026968"
+    ],
+    "PV": [
+      "of-airline-3834",
+      "wd-airline-Q1810598",
+      "wd-airline-Q2105506",
+      "wd-airline-Q2514756",
+      "wd-airline-Q56026091"
+    ],
+    "PW": [
+      "of-airline-4031",
+      "wd-airline-Q3360205",
+      "wd-airline-Q895800"
+    ],
+    "PZ": [
+      "of-airline-5156",
+      "wd-airline-Q3512020",
+      "wd-airline-Q6711284"
+    ],
+    "Q3": [
+      "of-airline-5508",
+      "of-airline-18700"
+    ],
+    "Q4": [
+      "of-airline-3421",
+      "of-airline-19974",
+      "wd-airline-Q7602099"
+    ],
+    "Q6": [
+      "of-airline-753",
+      "wd-airline-Q27970677",
+      "wd-airline-Q381290",
+      "wd-airline-Q499869"
+    ],
+    "Q7": [
+      "of-airline-20686",
+      "wd-airline-Q111081521",
+      "wd-airline-Q2554316",
+      "wd-airline-Q7270995",
+      "wd-airline-Q7655996"
+    ],
+    "Q9": [
+      "of-airline-33",
+      "of-airline-11838",
+      "wd-airline-Q10303086",
+      "wd-airline-Q7271947"
+    ],
+    "QA": [
+      "of-airline-10715",
+      "wd-airline-Q4688216",
+      "wd-airline-Q796000",
+      "wd-airline-Q94559"
+    ],
+    "QB": [
+      "of-airline-2541",
+      "wd-airline-Q2293317",
+      "wd-airline-Q945198"
+    ],
+    "QC": [
+      "of-airline-778",
+      "of-airline-16415"
+    ],
+    "QD": [
+      "of-airline-1161",
+      "of-airline-19751",
+      "wd-airline-Q16644952",
+      "wd-airline-Q29017843"
+    ],
+    "QE": [
+      "of-airline-1928",
+      "wd-airline-Q375162"
+    ],
+    "QF": [
+      "of-airline-4089",
+      "wd-airline-Q116275644",
+      "wd-airline-Q1347762",
+      "wd-airline-Q869352"
+    ],
+    "QG": [
+      "of-airline-19305",
+      "wd-airline-Q1093383",
+      "wd-airline-Q2186212",
+      "wd-airline-Q2563999"
+    ],
+    "QH": [
+      "of-airline-882",
+      "of-airline-3185",
+      "wd-airline-Q1786701",
+      "wd-airline-Q51779763"
+    ],
+    "QI": [
+      "of-airline-1781",
+      "wd-airline-Q958837"
+    ],
+    "QJ": [
+      "of-airline-3001",
+      "wd-airline-Q1459664"
+    ],
+    "QK": [
+      "of-airline-983",
+      "wd-airline-Q1458703",
+      "wd-airline-Q4381038"
+    ],
+    "QL": [
+      "of-airline-1206",
+      "wd-airline-Q1249088",
+      "wd-airline-Q3565322",
+      "wd-airline-Q548133"
+    ],
+    "QM": [
+      "of-airline-306",
+      "wd-airline-Q16934226"
+    ],
+    "QN": [
+      "of-airline-426",
+      "of-airline-19983",
+      "wd-airline-Q2828221",
+      "wd-airline-Q3445869"
+    ],
+    "QO": [
+      "of-airline-1088",
+      "of-airline-3814",
+      "wd-airline-Q1754131",
+      "wd-airline-Q2130621"
+    ],
+    "QP": [
+      "of-airline-20127",
+      "wd-airline-Q109536115"
+    ],
+    "QQ": [
+      "of-airline-120",
+      "of-airline-4185",
+      "wd-airline-Q4688505"
+    ],
+    "QR": [
+      "of-airline-4091",
+      "wd-airline-Q16127512",
+      "wd-airline-Q29018057",
+      "wd-airline-Q7134506",
+      "wd-airline-Q7267100"
+    ],
+    "QS": [
+      "of-airline-1166",
+      "of-airline-5097",
+      "wd-airline-Q114646165",
+      "wd-airline-Q1853488",
+      "wd-airline-Q7058034"
+    ],
+    "QT": [
+      "of-airline-5020",
+      "wd-airline-Q1139445",
+      "wd-airline-Q2825566",
+      "wd-airline-Q7308990",
+      "wd-airline-Q7309115"
+    ],
+    "QU": [
+      "of-airline-2104",
+      "wd-airline-Q1058657",
+      "wd-airline-Q5327647"
+    ],
+    "QW": [
+      "of-airline-1510",
+      "wd-airline-Q15942879"
+    ],
+    "QY": [
+      "of-airline-2252",
+      "of-airline-16721",
+      "wd-airline-Q479159"
+    ],
+    "R1": [
+      "of-airline-4854",
+      "of-airline-18673",
+      "wd-airline-Q5448249"
+    ],
+    "R2": [
+      "of-airline-3805",
+      "wd-airline-Q1368516"
+    ],
+    "R3": [
+      "of-airline-1287",
+      "wd-airline-Q1364772"
+    ],
+    "R5": [
+      "of-airline-3073",
+      "of-airline-3387"
+    ],
+    "R6": [
+      "of-airline-4106",
+      "wd-airline-Q2034533",
+      "wd-airline-Q2828233",
+      "wd-airline-Q7277997"
+    ],
+    "R7": [
+      "of-airline-622",
+      "wd-airline-Q135287302"
+    ],
+    "R8": [
+      "of-airline-3186",
+      "of-airline-16728"
+    ],
+    "RA": [
+      "of-airline-3637",
+      "of-airline-4264",
+      "wd-airline-Q552807"
+    ],
+    "RB": [
+      "of-airline-224",
+      "of-airline-4586",
+      "wd-airline-Q859245"
+    ],
+    "RC": [
+      "of-airline-881",
+      "wd-airline-Q1744520"
+    ],
+    "RD": [
+      "of-airline-4295",
+      "wd-airline-Q7381944",
+      "wd-airline-Q790792"
+    ],
+    "RE": [
+      "of-airline-1188",
+      "wd-airline-Q113352162",
+      "wd-airline-Q17070034",
+      "wd-airline-Q17096618"
+    ],
+    "RF": [
+      "of-airline-2404",
+      "wd-airline-Q65272521",
+      "wd-airline-Q7321066"
+    ],
+    "RG": [
+      "of-airline-5368",
+      "wd-airline-Q861197"
+    ],
+    "RH": [
+      "of-airline-4188",
+      "wd-airline-Q407751",
+      "wd-airline-Q495883"
+    ],
+    "RI": [
+      "of-airline-3391",
+      "wd-airline-Q21002534"
+    ],
+    "RK": [
+      "of-airline-1202",
+      "of-airline-4261",
+      "wd-airline-Q3704970",
+      "wd-airline-Q4391939",
+      "wd-airline-Q60521096"
+    ],
+    "RL": [
+      "of-airline-11857",
+      "wd-airline-Q17492738",
+      "wd-airline-Q409359",
+      "wd-airline-Q5354815",
+      "wd-airline-Q7301096",
+      "wd-airline-Q747829"
+    ],
+    "RM": [
+      "of-airline-19678",
+      "wd-airline-Q24765258"
+    ],
+    "RN": [
+      "of-airline-19674",
+      "wd-airline-Q2092915",
+      "wd-airline-Q21806375",
+      "wd-airline-Q3060496"
+    ],
+    "RP": [
+      "of-airline-1739",
+      "wd-airline-Q4742802",
+      "wd-airline-Q851054"
+    ],
+    "RR": [
+      "of-airline-4241",
+      "of-airline-16715",
+      "of-airline-20282",
+      "wd-airline-Q55165235"
+    ],
+    "RS": [
+      "of-airline-2885",
+      "of-airline-4242",
+      "of-airline-16459",
+      "wd-airline-Q24867828",
+      "wd-airline-Q6744654",
+      "wd-airline-Q9008933"
+    ],
+    "RT": [
+      "of-airline-19963",
+      "wd-airline-Q21482041",
+      "wd-airline-Q2700305"
+    ],
+    "RU": [
+      "of-airline-496",
+      "of-airline-4728",
+      "of-airline-19677",
+      "wd-airline-Q3443436",
+      "wd-airline-Q406645",
+      "wd-airline-Q4971529",
+      "wd-airline-Q7537184"
+    ],
+    "RV": [
+      "of-airline-1675",
+      "wd-airline-Q2828184"
+    ],
+    "RW": [
+      "of-airline-4187",
+      "wd-airline-Q28845202",
+      "wd-airline-Q5933323",
+      "wd-airline-Q7709150",
+      "wd-airline-Q93343652"
+    ],
+    "RX": [
+      "of-airline-644",
+      "of-airline-19676",
+      "wd-airline-Q115802741",
+      "wd-airline-Q7308074"
+    ],
+    "RY": [
+      "of-airline-10367",
+      "of-airline-19675",
+      "wd-airline-Q18118709",
+      "wd-airline-Q1816550",
+      "wd-airline-Q4698175",
+      "wd-airline-Q7122677"
+    ],
+    "RZ": [
+      "of-airline-2226",
+      "wd-airline-Q7293499"
+    ],
+    "S0": [
+      "of-airline-4694",
+      "of-airline-19774",
+      "wd-airline-Q589629"
+    ],
+    "S1": [
+      "of-airline-16139",
+      "wd-airline-Q18636606"
+    ],
+    "S2": [
+      "of-airline-241",
+      "wd-airline-Q1048418"
+    ],
+    "S3": [
+      "of-airline-4735",
+      "wd-airline-Q930943"
+    ],
+    "S4": [
+      "of-airline-4304",
+      "wd-airline-Q2205178"
+    ],
+    "S5": [
+      "of-airline-4822",
+      "of-airline-5060",
+      "wd-airline-Q153679"
+    ],
+    "S6": [
+      "of-airline-4855",
+      "of-airline-10776",
+      "wd-airline-Q825150"
+    ],
+    "S8": [
+      "of-airline-1733",
+      "of-airline-4565",
+      "of-airline-19361",
+      "wd-airline-Q10481759",
+      "wd-airline-Q7537266"
+    ],
+    "S9": [
+      "of-airline-2105",
+      "of-airline-17099",
+      "wd-airline-Q133878947",
+      "wd-airline-Q5116247",
+      "wd-airline-Q7601481"
+    ],
+    "SA": [
+      "of-airline-4305",
+      "wd-airline-Q8071967"
+    ],
+    "SB": [
+      "of-airline-139",
+      "wd-airline-Q1410859",
+      "wd-airline-Q408408"
+    ],
+    "SC": [
+      "of-airline-4599",
+      "wd-airline-Q6129108"
+    ],
+    "SE": [
+      "of-airline-5479",
+      "wd-airline-Q123266064"
+    ],
+    "SF": [
+      "of-airline-5134",
+      "of-airline-16197",
+      "wd-airline-Q406997",
+      "wd-airline-Q5244560",
+      "wd-airline-Q546493"
+    ],
+    "SG": [
+      "of-airline-3051",
+      "of-airline-4375",
+      "wd-airline-Q114736869",
+      "wd-airline-Q1548880",
+      "wd-airline-Q4189342",
+      "wd-airline-Q65066388",
+      "wd-airline-Q7398191"
+    ],
+    "SH": [
+      "of-airline-2415",
+      "of-airline-5905",
+      "of-airline-9814",
+      "of-airline-10675",
+      "wd-airline-Q1434501",
+      "wd-airline-Q2353729",
+      "wd-airline-Q2825580",
+      "wd-airline-Q7388568"
+    ],
+    "SI": [
+      "of-airline-4438",
+      "wd-airline-Q3029196",
+      "wd-airline-Q4041839"
+    ],
+    "SJ": [
+      "of-airline-4454",
+      "wd-airline-Q33449175",
+      "wd-airline-Q4828578",
+      "wd-airline-Q7569594"
+    ],
+    "SK": [
+      "of-airline-4319",
+      "wd-airline-Q1677867",
+      "wd-airline-Q187854",
+      "wd-airline-Q2449757",
+      "wd-airline-Q7388799",
+      "wd-airline-Q7388801"
+    ],
+    "SL": [
+      "of-airline-4207",
+      "of-airline-19225",
+      "wd-airline-Q407808",
+      "wd-airline-Q7335333",
+      "wd-airline-Q7569284"
+    ],
+    "SM": [
+      "of-airline-4471",
+      "of-airline-12965",
+      "wd-airline-Q121008569",
+      "wd-airline-Q96824972"
+    ],
+    "SN": [
+      "of-airline-1531",
+      "wd-airline-Q638450"
+    ],
+    "SO": [
+      "of-airline-4637",
+      "of-airline-4699",
+      "of-airline-16860",
+      "wd-airline-Q12857077",
+      "wd-airline-Q2373208",
+      "wd-airline-Q4825461",
+      "wd-airline-Q9079609"
+    ],
+    "SP": [
+      "of-airline-4429",
+      "wd-airline-Q7537450"
+    ],
+    "SQ": [
+      "of-airline-4435",
+      "of-airline-4464"
+    ],
+    "SR": [
+      "of-airline-4560",
+      "wd-airline-Q27886697"
+    ],
+    "SS": [
+      "of-airline-1908",
+      "wd-airline-Q114678506",
+      "wd-airline-Q385366",
+      "wd-airline-Q7515905"
+    ],
+    "ST": [
+      "of-airline-2547",
+      "wd-airline-Q1495905",
+      "wd-airline-Q18324495",
+      "wd-airline-Q667400",
+      "wd-airline-Q96335478"
+    ],
+    "SU": [
+      "of-airline-130",
+      "wd-airline-Q58707"
+    ],
+    "SV": [
+      "of-airline-4533",
+      "wd-airline-Q541179",
+      "wd-airline-Q65075189"
+    ],
+    "SX": [
+      "of-airline-4470",
+      "of-airline-4720",
+      "of-airline-17893",
+      "of-airline-18543",
+      "wd-airline-Q14628840",
+      "wd-airline-Q693008"
+    ],
+    "SY": [
+      "of-airline-4356",
+      "wd-airline-Q2355987",
+      "wd-airline-Q406760"
+    ],
+    "T0": [
+      "of-airline-10969",
+      "wd-airline-Q1321143"
+    ],
+    "T2": [
+      "of-airline-4889",
+      "wd-airline-Q609818"
+    ],
+    "T3": [
+      "of-airline-2117",
+      "wd-airline-Q26916579"
+    ],
+    "T4": [
+      "of-airline-2747",
+      "wd-airline-Q1371222",
+      "wd-airline-Q7833969"
+    ],
+    "T6": [
+      "of-airline-5096",
+      "of-airline-16264",
+      "wd-airline-Q23048079"
+    ],
+    "T7": [
+      "of-airline-4965",
+      "wd-airline-Q6362271",
+      "wd-airline-Q874424"
+    ],
+    "T8": [
+      "of-airline-10929",
+      "wd-airline-Q7833593"
+    ],
+    "T9": [
+      "of-airline-5054",
+      "of-airline-5074",
+      "wd-airline-Q111181546",
+      "wd-airline-Q5557848"
+    ],
+    "TA": [
+      "of-airline-2622",
+      "wd-airline-Q1139145",
+      "wd-airline-Q862227"
+    ],
+    "TB": [
+      "of-airline-6002",
+      "of-airline-15985",
+      "wd-airline-Q139119426",
+      "wd-airline-Q526550",
+      "wd-airline-Q635789"
+    ],
+    "TC": [
+      "of-airline-465",
+      "wd-airline-Q14628867",
+      "wd-airline-Q85739045"
+    ],
+    "TD": [
+      "of-airline-1048",
+      "of-airline-4974",
+      "wd-airline-Q4816711"
+    ],
+    "TE": [
+      "of-airline-2418",
+      "wd-airline-Q138828004",
+      "wd-airline-Q7669921"
+    ],
+    "TF": [
+      "of-airline-3386",
+      "wd-airline-Q111844586",
+      "wd-airline-Q1438076",
+      "wd-airline-Q27917033"
+    ],
+    "TG": [
+      "of-airline-4940",
+      "wd-airline-Q188710"
+    ],
+    "TH": [
+      "of-airline-1407",
+      "of-airline-5057",
+      "of-airline-15989",
+      "wd-airline-Q1368249",
+      "wd-airline-Q4923781"
+    ],
+    "TI": [
+      "of-airline-5012",
+      "of-airline-16127",
+      "wd-airline-Q539218",
+      "wd-airline-Q660062"
+    ],
+    "TJ": [
+      "of-airline-16093",
+      "of-airline-18529",
+      "wd-airline-Q2165371",
+      "wd-airline-Q7076175"
+    ],
+    "TK": [
+      "of-airline-4951",
+      "wd-airline-Q483676"
+    ],
+    "TL": [
+      "of-airline-338",
+      "of-airline-4981",
+      "wd-airline-Q5374846"
+    ],
+    "TM": [
+      "of-airline-9541",
+      "wd-airline-Q1156479"
+    ],
+    "TN": [
+      "of-airline-225",
+      "wd-airline-Q2448822"
+    ],
+    "TO": [
+      "of-airline-4040",
+      "of-airline-8745"
+    ],
+    "TP": [
+      "of-airline-4869",
+      "wd-airline-Q208232",
+      "wd-airline-Q28973970"
+    ],
+    "TQ": [
+      "of-airline-4902",
+      "of-airline-10123",
+      "wd-airline-Q16985280"
+    ],
+    "TR": [
+      "of-airline-4936",
+      "wd-airline-Q3246680"
+    ],
+    "TT": [
+      "of-airline-300",
+      "of-airline-4937",
+      "wd-airline-Q117599015",
+      "wd-airline-Q7669159"
+    ],
+    "TU": [
+      "of-airline-4870",
+      "wd-airline-Q29389430"
+    ],
+    "TV": [
+      "of-airline-5333",
+      "wd-airline-Q1090978",
+      "wd-airline-Q4804058"
+    ],
+    "TW": [
+      "of-airline-5098",
+      "of-airline-16624",
+      "wd-airline-Q494775"
+    ],
+    "TX": [
+      "of-airline-567",
+      "wd-airline-Q6151777"
+    ],
+    "TY": [
+      "of-airline-1311",
+      "of-airline-2825",
+      "wd-airline-Q1467477",
+      "wd-airline-Q406942"
+    ],
+    "TZ": [
+      "of-airline-17891",
+      "wd-airline-Q4697763",
+      "wd-airline-Q7833747"
+    ],
+    "U1": [
+      "of-airline-17618",
+      "of-airline-17750",
+      "wd-airline-Q7927756"
+    ],
+    "U2": [
+      "of-airline-2297",
+      "of-airline-5213"
+    ],
+    "U3": [
+      "of-airline-198",
+      "wd-airline-Q19574839",
+      "wd-airline-Q55394542"
+    ],
+    "U4": [
+      "of-airline-3840",
+      "wd-airline-Q2199848"
+    ],
+    "U5": [
+      "of-airline-5207",
+      "wd-airline-Q125206321",
+      "wd-airline-Q14628886"
+    ],
+    "U7": [
+      "of-airline-3721",
+      "of-airline-5227",
+      "wd-airline-Q132765517"
+    ],
+    "U8": [
+      "of-airline-1216",
+      "wd-airline-Q20639413"
+    ],
+    "U9": [
+      "of-airline-286",
+      "wd-airline-Q14628863"
+    ],
+    "UA": [
+      "of-airline-5209",
+      "wd-airline-Q1188413",
+      "wd-airline-Q7505706",
+      "wd-airline-Q7893675",
+      "wd-airline-Q949147"
+    ],
+    "UB": [
+      "of-airline-3569",
+      "wd-airline-Q101208211",
+      "wd-airline-Q101208227",
+      "wd-airline-Q101208285",
+      "wd-airline-Q18010500"
+    ],
+    "UD": [
+      "of-airline-2757",
+      "wd-airline-Q108123253"
+    ],
+    "UE": [
+      "of-airline-3589",
+      "of-airline-4916",
+      "wd-airline-Q3547581",
+      "wd-airline-Q7880119"
+    ],
+    "UF": [
+      "of-airline-5251",
+      "wd-airline-Q14628839",
+      "wd-airline-Q617584"
+    ],
+    "UG": [
+      "of-airline-5085",
+      "wd-airline-Q543645"
+    ],
+    "UH": [
+      "of-airline-5284",
+      "wd-airline-Q22681285",
+      "wd-airline-Q4969142"
+    ],
+    "UI": [
+      "of-airline-2237",
+      "wd-airline-Q4822322"
+    ],
+    "UJ": [
+      "of-airline-11811",
+      "wd-airline-Q2837473",
+      "wd-airline-Q7865818"
+    ],
+    "UK": [
+      "of-airline-5556",
+      "of-airline-10318",
+      "of-airline-20264",
+      "wd-airline-Q17502128",
+      "wd-airline-Q1826431",
+      "wd-airline-Q4971168"
+    ],
+    "UM": [
+      "of-airline-608",
+      "wd-airline-Q4698081"
+    ],
+    "UO": [
+      "of-airline-2774",
+      "wd-airline-Q1365358"
+    ],
+    "UQ": [
+      "of-airline-3756",
+      "of-airline-11850",
+      "wd-airline-Q18028989"
+    ],
+    "UR": [
+      "of-airline-15814",
+      "wd-airline-Q27842245"
+    ],
+    "US": [
+      "of-airline-5265",
+      "wd-airline-Q10854887",
+      "wd-airline-Q125217775",
+      "wd-airline-Q15840489",
+      "wd-airline-Q6824425"
+    ],
+    "UT": [
+      "of-airline-5271",
+      "wd-airline-Q1063343",
+      "wd-airline-Q1372406"
+    ],
+    "UU": [
+      "of-airline-1191",
+      "wd-airline-Q836560"
+    ],
+    "UW": [
+      "of-airline-20695",
+      "wd-airline-Q3551270",
+      "wd-airline-Q7884618"
+    ],
+    "UX": [
+      "of-airline-90",
+      "wd-airline-Q16482619",
+      "wd-airline-Q4698024"
+    ],
+    "UY": [
+      "of-airline-1611",
+      "wd-airline-Q17004292"
+    ],
+    "UZ": [
+      "of-airline-2155",
+      "wd-airline-Q1982661",
+      "wd-airline-Q903749"
+    ],
+    "V2": [
+      "of-airline-3102",
+      "of-airline-18178",
+      "wd-airline-Q1189014"
+    ],
+    "V4": [
+      "of-airline-4165",
+      "wd-airline-Q180221"
+    ],
+    "V5": [
+      "of-airline-733",
+      "of-airline-4251",
+      "of-airline-10674",
+      "wd-airline-Q1165121",
+      "wd-airline-Q1332515",
+      "wd-airline-Q2917559",
+      "wd-airline-Q7373707"
+    ],
+    "V6": [
+      "of-airline-11761",
+      "wd-airline-Q2828183",
+      "wd-airline-Q28465992",
+      "wd-airline-Q7907103"
+    ],
+    "V7": [
+      "of-airline-151",
+      "of-airline-20577",
+      "wd-airline-Q2296193"
+    ],
+    "V8": [
+      "of-airline-724",
+      "wd-airline-Q1141422",
+      "wd-airline-Q2071372"
+    ],
+    "V9": [
+      "of-airline-1493",
+      "of-airline-10800"
+    ],
+    "VA": [
+      "of-airline-5288",
+      "of-airline-5322",
+      "of-airline-5360",
+      "wd-airline-Q1319019",
+      "wd-airline-Q4007110",
+      "wd-airline-Q608421"
+    ],
+    "VB": [
+      "of-airline-10646",
+      "of-airline-16825",
+      "wd-airline-Q6729266",
+      "wd-airline-Q795990"
+    ],
+    "VC": [
+      "of-airline-3761",
+      "of-airline-5307",
+      "of-airline-13178",
+      "wd-airline-Q3480558",
+      "wd-airline-Q406837"
+    ],
+    "VD": [
+      "of-airline-299",
+      "of-airline-3176",
+      "of-airline-4488",
+      "wd-airline-Q1604936",
+      "wd-airline-Q172135"
+    ],
+    "VE": [
+      "of-airline-732",
+      "of-airline-2090",
+      "of-airline-5351",
+      "wd-airline-Q1278338"
+    ],
+    "VF": [
+      "of-airline-5297",
+      "wd-airline-Q108545367",
+      "wd-airline-Q28407773",
+      "wd-airline-Q34807459",
+      "wd-airline-Q7004961",
+      "wd-airline-Q920362"
+    ],
+    "VG": [
+      "of-airline-5383",
+      "wd-airline-Q20182006",
+      "wd-airline-Q407779"
+    ],
+    "VH": [
+      "of-airline-9666",
+      "wd-airline-Q108574767",
+      "wd-airline-Q1826405",
+      "wd-airline-Q7937432"
+    ],
+    "VJ": [
+      "of-airline-2992",
+      "of-airline-5651"
+    ],
+    "VK": [
+      "of-airline-5335",
+      "wd-airline-Q116413236",
+      "wd-airline-Q407651",
+      "wd-airline-Q55618547"
+    ],
+    "VL": [
+      "of-airline-695",
+      "wd-airline-Q117191656",
+      "wd-airline-Q2343605",
+      "wd-airline-Q7561869"
+    ],
+    "VM": [
+      "of-airline-5358",
+      "wd-airline-Q3423539",
+      "wd-airline-Q34400337",
+      "wd-airline-Q4688226",
+      "wd-airline-Q5988653"
+    ],
+    "VN": [
+      "of-airline-5309",
+      "wd-airline-Q1531524",
+      "wd-airline-Q2828240"
+    ],
+    "VO": [
+      "of-airline-1326",
+      "wd-airline-Q660191"
+    ],
+    "VP": [
+      "of-airline-5373",
+      "wd-airline-Q5463088"
+    ],
+    "VQ": [
+      "of-airline-11948",
+      "wd-airline-Q1136051",
+      "wd-airline-Q3260360",
+      "wd-airline-Q6007970"
+    ],
+    "VR": [
+      "of-airline-5041",
+      "wd-airline-Q669686"
+    ],
+    "VS": [
+      "of-airline-5347",
+      "wd-airline-Q22080715",
+      "wd-airline-Q32277",
+      "wd-airline-Q978139"
+    ],
+    "VU": [
+      "of-airline-682",
+      "wd-airline-Q17632435"
+    ],
+    "VV": [
+      "of-airline-114",
+      "wd-airline-Q28503405"
+    ],
+    "VY": [
+      "of-airline-2439",
+      "of-airline-5352",
+      "wd-airline-Q3135436",
+      "wd-airline-Q646741"
+    ],
+    "VZ": [
+      "of-airline-3568",
+      "wd-airline-Q333697",
+      "wd-airline-Q409260",
+      "wd-airline-Q6944897"
+    ],
+    "W2": [
+      "of-airline-1626",
+      "of-airline-18553",
+      "wd-airline-Q1406781",
+      "wd-airline-Q16996364",
+      "wd-airline-Q4698068",
+      "wd-airline-Q6114609"
+    ],
+    "W3": [
+      "of-airline-407",
+      "of-airline-20976"
+    ],
+    "W4": [
+      "of-airline-227",
+      "of-airline-16660",
+      "wd-airline-Q113637091"
+    ],
+    "W8": [
+      "of-airline-1655",
+      "wd-airline-Q376186"
+    ],
+    "W9": [
+      "of-airline-15",
+      "of-airline-970",
+      "of-airline-2126",
+      "wd-airline-Q55525155"
+    ],
+    "WA": [
+      "of-airline-3088",
+      "of-airline-5424"
+    ],
+    "WB": [
+      "of-airline-4292",
+      "wd-airline-Q14628826",
+      "wd-airline-Q3468759",
+      "wd-airline-Q392542"
+    ],
+    "WC": [
+      "of-airline-2950",
+      "wd-airline-Q846922"
+    ],
+    "WD": [
+      "of-airline-1952",
+      "of-airline-11836",
+      "wd-airline-Q15043635",
+      "wd-airline-Q428008",
+      "wd-airline-Q5642459"
+    ],
+    "WE": [
+      "of-airline-1714",
+      "of-airline-19930",
+      "wd-airline-Q1189248"
+    ],
+    "WG": [
+      "of-airline-4553",
+      "of-airline-11922",
+      "of-airline-16329",
+      "wd-airline-Q107226924",
+      "wd-airline-Q16932139"
+    ],
+    "WH": [
+      "of-airline-1764",
+      "of-airline-17911",
+      "wd-airline-Q3339515",
+      "wd-airline-Q428096"
+    ],
+    "WI": [
+      "wd-airline-Q618093",
+      "wd-airline-Q7656001",
+      "wd-airline-Q7862906"
+    ],
+    "WJ": [
+      "of-airline-5399",
+      "wd-airline-Q153797",
+      "wd-airline-Q73246554"
+    ],
+    "WK": [
+      "of-airline-119",
+      "of-airline-2138",
+      "wd-airline-Q5603645"
+    ],
+    "WM": [
+      "of-airline-16149",
+      "wd-airline-Q1119913"
+    ],
+    "WO": [
+      "of-airline-5465",
+      "wd-airline-Q47508526",
+      "wd-airline-Q99616773"
+    ],
+    "WP": [
+      "of-airline-8809",
+      "wd-airline-Q2601293",
+      "wd-airline-Q65956710"
+    ],
+    "WR": [
+      "of-airline-4275",
+      "of-airline-20285"
+    ],
+    "WU": [
+      "of-airline-13757",
+      "wd-airline-Q2177161"
+    ],
+    "WV": [
+      "of-airline-4564",
+      "wd-airline-Q4033474"
+    ],
+    "WW": [
+      "of-airline-1441",
+      "wd-airline-Q1156931",
+      "wd-airline-Q22032189"
+    ],
+    "WY": [
+      "of-airline-3778",
+      "wd-airline-Q134882990"
+    ],
+    "WZ": [
+      "of-airline-9239",
+      "wd-airline-Q1348402",
+      "wd-airline-Q15635079",
+      "wd-airline-Q7835460",
+      "wd-airline-Q821281"
+    ],
+    "X3": [
+      "of-airline-2681",
+      "wd-airline-Q4075518",
+      "wd-airline-Q508417",
+      "wd-airline-Q699933"
+    ],
+    "X5": [
+      "of-airline-20017",
+      "wd-airline-Q1140957",
+      "wd-airline-Q15966665",
+      "wd-airline-Q4690144"
+    ],
+    "X7": [
+      "of-airline-1775",
+      "of-airline-20549",
+      "wd-airline-Q108660582",
+      "wd-airline-Q407771"
+    ],
+    "X9": [
+      "of-airline-19979",
+      "of-airline-20548",
+      "wd-airline-Q124727484",
+      "wd-airline-Q1780529",
+      "wd-airline-Q791093"
+    ],
+    "XA": [
+      "of-airline-19433",
+      "wd-airline-Q10854414"
+    ],
+    "XG": [
+      "of-airline-1607",
+      "wd-airline-Q1100995",
+      "wd-airline-Q1726112"
+    ],
+    "XJ": [
+      "of-airline-3467",
+      "wd-airline-Q16308074"
+    ],
+    "XK": [
+      "of-airline-1909",
+      "wd-airline-Q407054",
+      "wd-airline-Q5659209"
+    ],
+    "XL": [
+      "of-airline-1034",
+      "wd-airline-Q651491"
+    ],
+    "XM": [
+      "of-airline-371",
+      "wd-airline-Q8072119"
+    ],
+    "XN": [
+      "of-airline-13130",
+      "wd-airline-Q118868077"
+    ],
+    "XO": [
+      "of-airline-1770",
+      "of-airline-3211",
+      "wd-airline-Q17088704",
+      "wd-airline-Q1760122",
+      "wd-airline-Q3261146",
+      "wd-airline-Q7335143"
+    ],
+    "XP": [
+      "of-airline-5487",
+      "of-airline-19358",
+      "of-airline-19473",
+      "wd-airline-Q14628810",
+      "wd-airline-Q14628813",
+      "wd-airline-Q7675608",
+      "wd-airline-Q8045045"
+    ],
+    "XR": [
+      "of-airline-17082",
+      "wd-airline-Q55371187"
+    ],
+    "XS": [
+      "of-airline-4445",
+      "of-airline-10119"
+    ],
+    "XT": [
+      "of-airline-575",
+      "wd-airline-Q18327499"
+    ],
+    "XV": [
+      "of-airline-16844",
+      "wd-airline-Q6879339",
+      "wd-airline-Q7241415"
+    ],
+    "XW": [
+      "of-airline-5584",
+      "wd-airline-Q1073547",
+      "wd-airline-Q15818414"
+    ],
+    "XY": [
+      "of-airline-3754",
+      "wd-airline-Q476681"
+    ],
+    "XZ": [
+      "of-airline-14388",
+      "wd-airline-Q113144143"
+    ],
+    "Y2": [
+      "wd-airline-Q1434577",
+      "wd-airline-Q4732280"
+    ],
+    "Y5": [
+      "of-airline-3845",
+      "of-airline-17023",
+      "wd-airline-Q6045124"
+    ],
+    "Y6": [
+      "wd-airline-Q22080283",
+      "wd-airline-Q5025106"
+    ],
+    "Y7": [
+      "of-airline-13088",
+      "wd-airline-Q1517245",
+      "wd-airline-Q152425",
+      "wd-airline-Q5463620"
+    ],
+    "Y8": [
+      "of-airline-5494",
+      "of-airline-16725",
+      "wd-airline-Q630591"
+    ],
+    "YB": [
+      "wd-airline-Q265578",
+      "wd-airline-Q893310"
+    ],
+    "YC": [
+      "of-airline-9828",
+      "wd-airline-Q1030192"
+    ],
+    "YE": [
+      "of-airline-18239",
+      "wd-airline-Q14628845",
+      "wd-airline-Q15030106",
+      "wd-airline-Q7051062"
+    ],
+    "YI": [
+      "of-airline-16475",
+      "wd-airline-Q17066858",
+      "wd-airline-Q7672041"
+    ],
+    "YJ": [
+      "wd-airline-Q2494170",
+      "wd-airline-Q2565038"
+    ],
+    "YL": [
+      "of-airline-5492",
+      "wd-airline-Q27967075",
+      "wd-airline-Q871849",
+      "wd-airline-Q889607"
+    ],
+    "YM": [
+      "of-airline-3539",
+      "wd-airline-Q19757781",
+      "wd-airline-Q5156076"
+    ],
+    "YP": [
+      "of-airline-14921",
+      "wd-airline-Q106504531",
+      "wd-airline-Q314143"
+    ],
+    "YQ": [
+      "of-airline-16882",
+      "wd-airline-Q16512099",
+      "wd-airline-Q2061270"
+    ],
+    "YR": [
+      "of-airline-17519",
+      "wd-airline-Q4697999"
+    ],
+    "YS": [
+      "of-airline-4299",
+      "wd-airline-Q3408004",
+      "wd-airline-Q5459359"
+    ],
+    "YT": [
+      "of-airline-62",
+      "of-airline-16133"
+    ],
+    "YV": [
+      "of-airline-3466",
+      "wd-airline-Q289359"
+    ],
+    "YX": [
+      "of-airline-3497",
+      "wd-airline-Q1669658"
+    ],
+    "YZ": [
+      "of-airline-14881",
+      "wd-airline-Q4040709"
+    ],
+    "Z0": [
+      "of-airline-19928",
+      "wd-airline-Q113213169"
+    ],
+    "Z2": [
+      "of-airline-9764",
+      "wd-airline-Q1319117",
+      "wd-airline-Q196817",
+      "wd-airline-Q197938",
+      "wd-airline-Q4251740",
+      "wd-airline-Q697009"
+    ],
+    "Z3": [
+      "of-airline-1266",
+      "wd-airline-Q16245939"
+    ],
+    "Z4": [
+      "of-airline-5523",
+      "wd-airline-Q12525465",
+      "wd-airline-Q4047639",
+      "wd-airline-Q9097413"
+    ],
+    "Z5": [
+      "of-airline-20599",
+      "wd-airline-Q19284181",
+      "wd-airline-Q606390"
+    ],
+    "Z7": [
+      "of-airline-76",
+      "of-airline-16570",
+      "of-airline-16717",
+      "wd-airline-Q18552577",
+      "wd-airline-Q8071982"
+    ],
+    "Z8": [
+      "of-airline-603",
+      "wd-airline-Q1320877"
+    ],
+    "Z9": [
+      "of-airline-18825",
+      "wd-airline-Q112629032",
+      "wd-airline-Q3200452",
+      "wd-airline-Q4881566"
+    ],
+    "ZA": [
+      "of-airline-792",
+      "of-airline-2883",
+      "wd-airline-Q1052688",
+      "wd-airline-Q135909"
+    ],
+    "ZB": [
+      "of-airline-220",
+      "of-airline-3532",
+      "wd-airline-Q55075006"
+    ],
+    "ZC": [
+      "of-airline-17786",
+      "wd-airline-Q1567702"
+    ],
+    "ZD": [
+      "wd-airline-Q15307945",
+      "wd-airline-Q3712742"
+    ],
+    "ZE": [
+      "of-airline-598",
+      "of-airline-3276",
+      "of-airline-9809",
+      "wd-airline-Q638303"
+    ],
+    "ZF": [
+      "of-airline-11947",
+      "wd-airline-Q1751278"
+    ],
+    "ZG": [
+      "of-airline-5350",
+      "wd-airline-Q5611790",
+      "wd-airline-Q59186361"
+    ],
+    "ZI": [
+      "of-airline-21",
+      "wd-airline-Q212703"
+    ],
+    "ZJ": [
+      "of-airline-16867",
+      "wd-airline-Q7693969"
+    ],
+    "ZL": [
+      "of-airline-4178",
+      "wd-airline-Q788906"
+    ],
+    "ZN": [
+      "of-airline-17935",
+      "wd-airline-Q145479",
+      "wd-airline-Q1972518"
+    ],
+    "ZO": [
+      "wd-airline-Q28169324",
+      "wd-airline-Q5461342",
+      "wd-airline-Q5599765"
+    ],
+    "ZP": [
+      "of-airline-4590",
+      "of-airline-15867",
+      "wd-airline-Q1715027",
+      "wd-airline-Q58533086"
+    ],
+    "ZQ": [
+      "of-airline-6578",
+      "of-airline-10748",
+      "wd-airline-Q107657417",
+      "wd-airline-Q18162475",
+      "wd-airline-Q19574836",
+      "wd-airline-Q4770646"
+    ],
+    "ZR": [
+      "wd-airline-Q14628875",
+      "wd-airline-Q2198388"
+    ],
+    "ZS": [
+      "of-airline-4455",
+      "wd-airline-Q977140"
+    ],
+    "ZT": [
+      "of-airline-4934",
+      "of-airline-20218",
+      "wd-airline-Q2289122"
+    ],
+    "ZU": [
+      "of-airline-2735",
+      "wd-airline-Q47166879",
+      "wd-airline-Q7638765",
+      "wd-airline-Q85742634"
+    ],
+    "ZV": [
+      "of-airline-318",
+      "of-airline-20401",
+      "wd-airline-Q115869920"
+    ],
+    "ZX": [
+      "of-airline-905",
+      "of-airline-16359",
+      "wd-airline-Q8074146"
+    ]
+  },
+  "resourceSha256": "108b7e7d7d8408b7691334194272a375fbdfe323759b33c0850e2e11b2730986",
+  "sources": [
+    {
+      "url": "https://github.com/jpatokal/openflights/blob/master/data/airlines.dat",
+      "license": "ODbL 1.0 / DbCL 1.0",
+      "sha256": "39be1a432e8b04ebc12860c29281c974a9cb52169c82b2456a835d66ab1548a1"
+    },
+    {
+      "url": "https://query.wikidata.org/",
+      "query": "P229 airline designator, P230 ICAO, P17 country, P576 dissolution; English labels",
+      "license": "CC0",
+      "sha256": "6e9586d08ffe251c370f1d5b297edfa23665a6c1bbe902f5ce41c9364e51b226"
+    }
+  ],
+  "limitations": [
+    "Not an authoritative/current IATA register. OpenFlights active=Y is deliberately Unknown because the source warns it is unreliable.",
+    "N is source-listed inactive; P576 is source-listed dissolution. Unknown is not inferred active. Aliases may be historical and are not separate current operators.",
+    "P229 can include non-flight transport operators; retained as source references, not flight-validation authority.",
+    "Country/region names are source labels, not a count of internationally recognized countries. Codes are never unique IDs."
+  ]
+}

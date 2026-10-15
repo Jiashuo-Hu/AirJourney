@@ -1,6 +1,8 @@
 import { sameCoordinates } from "./location-lock";
 import { useEffect, useState } from "react";
 import { AirportPicker } from "./AirportPicker";
+import { AirlinePicker } from "./AirlinePicker";
+import type { AirlineSearch } from "./airlines";
 import { locationLabel, type AirportSearch } from "./airports";
 import type {
   Field,
@@ -24,6 +26,7 @@ export function FlightEditor({
   value: f,
   state,
   airportIndex,
+  airlineIndex,
   onChange,
   onSave,
   onCancel,
@@ -31,6 +34,7 @@ export function FlightEditor({
   value: Flight;
   state: State;
   airportIndex: AirportSearch;
+  airlineIndex: AirlineSearch;
   onChange: (f: Flight) => void;
   onSave: () => void;
   onCancel: () => void;
@@ -190,36 +194,19 @@ export function FlightEditor({
           </label>
           {airport("from")}
           {airport("to")}
-          <label>
-            Airline
-            <select
-              value={f.airline?.id || ""}
-              onChange={(e) =>
-                patch({
-                  airline: structuredClone(
-                    state.library.Airlines.find((r) => r.id === e.target.value),
-                  ),
-                  alliance: state.library.Airlines.find(
-                    (r) => r.id === e.target.value,
-                  )?.alliance,
-                  allianceLogo: state.library.Alliances.find(
-                    (r) =>
-                      r.name ===
-                      state.library.Airlines.find(
-                        (a) => a.id === e.target.value,
-                      )?.alliance,
-                  )?.logo,
-                })
-              }
-            >
-              <option value="">Unknown</option>
-              {state.library.Airlines.filter((r) => !r.hidden).map((r) => (
-                <option key={r.id} value={r.id}>
-                  {r.name}
-                </option>
-              ))}
-            </select>
-          </label>
+          <AirlinePicker
+            index={airlineIndex}
+            value={f.airline}
+            onSelect={(airline) =>
+              patch({
+                airline,
+                alliance: airline?.alliance,
+                allianceLogo: state.library.Alliances.find(
+                  (r) => r.name === airline?.alliance,
+                )?.logo,
+              })
+            }
+          />
           {time("departure")}
           {time("arrival")}
           <details key={f.id}>

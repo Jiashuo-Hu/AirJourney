@@ -114,9 +114,24 @@ export function validatePlace(p: Place, requireName = false) {
     "countryCode",
     "airportType",
     "locationSource",
+    "statusSource",
+    "historicalAliases",
+    "brandKey",
+    "sourceId",
+    "codeNote",
   ])
     if ((p as any)[key] !== undefined && typeof (p as any)[key] !== "string")
       throw Error("Invalid reference text field.");
+  if (
+    (p as Reference).logoPolicy !== undefined &&
+    !["none", "custom"].includes((p as Reference).logoPolicy!)
+  )
+    throw Error("Invalid logo preference.");
+  if (
+    (p as Reference).airlineStatus !== undefined &&
+    !["active", "inactive", "unknown"].includes((p as Reference).airlineStatus!)
+  )
+    throw Error("Invalid airline status.");
   if (
     p.overrides &&
     (!Array.isArray(p.overrides) ||
@@ -160,6 +175,7 @@ export const defaults = {
   routeColor: "#74bcff",
   width: 4,
   routeHeight: 12000,
+  repeatRoutes: "thick" as const,
   opacity: 0.85,
   markerSize: 7,
   labels: true,
@@ -472,6 +488,11 @@ export function validateState(s: State) {
     }
   }
   const p = s.settings;
+  if (
+    p.repeatRoutes !== undefined &&
+    !["thick", "separate"].includes(p.repeatRoutes)
+  )
+    throw Error("Invalid repeated-route mode.");
   if (
     p.routeHeight !== undefined &&
     (!Number.isFinite(p.routeHeight) ||

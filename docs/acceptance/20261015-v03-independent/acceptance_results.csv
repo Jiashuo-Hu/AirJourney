@@ -1,0 +1,12 @@
+项目,结果,证据,限制
+重复航线加粗分开奇偶对称及持久化,PASS,data/regression/results.json;data/regression/01-odd-split.png;data/regression/02-even-split.png,大量记录允许共享通道
+程序窗口应用内标准图标,PASS,logs/icons/native-icon-report.json;data/canonical-app.png,实际PE和WM_GETICON已提取
+任务栏同源资源配置,PASS,desktop/main.cjs;package.json,不是任务栏像素实测
+任务栏按钮实际像素与固定快捷方式缓存,NOT RUN,,本轮未单独核验
+航司代码名称搜索字母选择,PASS,data/regression/results.json;data/regression/04-airline-picker.png,未全量核实机构现状
+航司SVG独立图形版本记录和缺失占位,PASS,data/regression/results.json;data/regression/05-brand-variants.png;data/regression/05c-singapore-symbol.png,20家覆盖非全目录
+再次点击取消选择切换编辑,PASS,data/regression/results.json;data/regression/08-normal-mode.png,相机不自动回原视角符合设计
+新增编辑保存实际重启及地图,PASS,data/regression/results.json,独立合成库
+现有测试48项构建,PASS,logs/tests.log;logs/build.log,大chunk提示非功能阻断
+代码资源交付文档一致,PASS,logs/delivery-verification.json,package运行清单正常裁剪
+浅色地形上重复模式文案对比,P3建议,data/regression/02-even-split.png,不阻断

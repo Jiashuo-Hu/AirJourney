@@ -23,6 +23,7 @@ protocol.registerSchemesAsPrivileged([
   },
 ]);
 app.setName("AirJourney");
+app.setAppUserModelId("local.airjourney.app");
 app.commandLine.appendSwitch("disable-background-networking");
 app.commandLine.appendSwitch("disable-component-update");
 const userDirectory = process.env.AIRJOURNEY_TEST_DIR

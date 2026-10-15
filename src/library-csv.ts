@@ -21,6 +21,11 @@ const keys = [
   "airportType",
   "locationKind",
   "locationSource",
+  "airlineStatus",
+  "statusSource",
+  "historicalAliases",
+  "sourceId",
+  "codeNote",
 ] as const;
 export function referenceCSV(entries: Reference[]) {
   return [
