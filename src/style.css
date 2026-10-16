@@ -154,13 +154,14 @@ textarea:focus-visible,
 }
 .airline-current img,
 .airline-options img {
-  width: 34px;
-  height: 30px;
+  width: 40px;
+  height: 36px;
   object-fit: contain;
   flex-shrink: 0;
   background: #fff;
-  border-radius: 4px;
-  padding: 3px;
+  border: 1px solid #dce2eb;
+  border-radius: 8px;
+  padding: 5px;
 }
 .brand-placeholder {
   color: var(--muted);
@@ -461,12 +462,13 @@ h4 {
   margin-top: 4px;
 }
 .logo-tile {
-  width: 40px;
-  height: 34px;
+  width: 44px;
+  height: 40px;
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  background: #f2f5f9;
+  background: #fff;
+  border: 1px solid #dce2eb;
   color: #31516c;
   border-radius: 6px;
   font-weight: 600;
@@ -474,7 +476,7 @@ h4 {
 }
 .logo-tile img {
   width: 34px;
-  max-height: 26px;
+  height: 30px;
   object-fit: contain;
 }
 .badge {
@@ -876,6 +878,27 @@ summary {
   height: 80px;
   object-fit: contain;
 }
+.journey-endpoint {
+  padding: 14px;
+  margin: 18px 0;
+  background: var(--surface);
+  border-radius: 14px;
+}
+.journey-endpoint > legend { font-size: 14px; padding: 0 7px; }
+.journey-endpoint .chosen-airport { margin: 10px 0; }
+.journey-endpoint .advanced summary { font-size: 11px; padding: 6px 0; }
+.local-time-block { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 4px; }
+.local-time-block > label { margin-top: 10px; }
+.local-time-block .two { gap: 10px; }
+.airport-reference-detail { padding: 16px 0; }
+.airport-reference-detail dl { margin: 18px 0; }
+.airport-reference-detail dd { margin: 4px 0 16px; overflow-wrap: anywhere; }
+.airport-reference-detail dt { color: var(--muted); font-size: 12px; }
+.airport-reference-detail > button { display: block; margin-top: 20px; }
+.reference-row > img { padding: 5px; width: 44px; height: 40px; border: 1px solid #dce2eb; background: white; border-radius: 8px; }
+.repeat-mode { padding: 7px 9px; border-radius: 10px; background: #14283de8; color: white; }
+.brand-full { padding: 12px; border: 1px solid var(--line); border-radius: 10px; }
+.brand-full > img { display: block; max-width: 100%; width: 100%; height: 80px; padding: 12px; background: white; border-radius: 8px; object-fit: contain; }
 .stack {
   display: flex;
   flex-direction: column;

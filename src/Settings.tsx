@@ -1,4 +1,5 @@
 import { APP_VERSION } from "./version";
+import { brands } from "./airlines";
 import { useState } from "react";
 import type { State, Settings as Prefs, Field } from "./types";
 import { defaults } from "./domain";
@@ -530,7 +531,7 @@ export function Settings({
               priority.
             </li>
             <li>
-              Airlines: 7,761 local references from OpenFlights (ODbL 1.0 / DbCL
+                Airlines: 7,764 local references from OpenFlights (ODbL 1.0 / DbCL
               1.0) and Wikidata (CC0), prepared 2026-10-15. The derived
               catalogue is ODbL 1.0. Codes may be shared or historical;
               unverified status is not assumed active. Alliances and aircraft
@@ -543,7 +544,7 @@ export function Settings({
             </li>
             <li>GeographicLib WGS84 geodesics · MIT</li>
             <li>
-              Brand SVGs: 20 airline marks, 19 separate symbols; missing brands
+              Brand SVGs: {Object.keys(brands).length} airline marks, {Object.values(brands).filter(b => b.symbol).length} separate symbols; missing brands
               use a diamond placeholder. Originals, source records, individual
               conditions and gaps are in the bundled brand manifest. Trademarks
               and copyright remain with their owners; no blanket usage license

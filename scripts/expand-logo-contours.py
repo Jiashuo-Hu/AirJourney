@@ -1,10 +1,10 @@
-import json,copy
+import json,copy,sys
 from pathlib import Path
 from lxml import etree as E
 from fontTools.svgLib.path import parse_path
 from fontTools.pens.recordingPen import RecordingPen
 from fontTools.pens.svgPathPen import SVGPathPen
-out=Path('.tools/v0.3-sources/expanded');out.mkdir(exist_ok=True)
+out=Path(sys.argv[1] if len(sys.argv)>1 else '.tools/v0.3-sources/expanded');out.mkdir(exist_ok=True,parents=True)
 for p in Path('public/logos/airlines').glob('*-full.svg'):
     root=E.fromstring(p.read_bytes())
     for el in list(root.iter('{http://www.w3.org/2000/svg}path')):

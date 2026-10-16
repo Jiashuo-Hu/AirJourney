@@ -185,7 +185,7 @@ test("shared airline codes stay distinct; personal names, SVGs and hidden choice
   );
 });
 test("every bundled airline mark is portable vector; missing code/logo never invented", () => {
-  assert.equal(Object.keys(brands).length, 20);
+  assert.ok(Object.keys(brands).length >= 110);
   let symbols = 0;
   for (const b of Object.values(brands)) {
     for (const img of [b.full, b.symbol].filter(Boolean)) {
@@ -195,7 +195,7 @@ test("every bundled airline mark is portable vector; missing code/logo never inv
     }
     if (b.symbol) symbols++;
   }
-  assert.equal(symbols, 19);
+  assert.ok(symbols >= 33);
   assert.equal(
     airlineLogo({ id: "custom", name: "Unknown airline" }),
     undefined,

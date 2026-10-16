@@ -1,18 +1,16 @@
-# AirJourney v0.3
+# AirJourney v0.4
 
-高度自由、可自定义的Windows个人飞行旅程记录App。用户手动提供航班信息，App本地保存并在三维地球上呈现示意路线。
+Windows个人飞行记录App，英语界面、完全本地使用。用户手动记录航班，三维地球呈现机场之间的示意航线；不查航班真实性、实际轨迹或实时信息。
 
-当前版本为 v0.3（工程 0.3.0），依据[本轮范围](docs/planning/17_V0_3_SCOPE.md)新增重复路线加粗/分开显示及持久化、统一标准App图标、7,761条航司参考目录、20家完整矢量Logo（其中19家独立图形），以及再次点击取消选中。保留86,242条机场资料、个人数据和历史快照；机场位置继续按16号范围固定。
+当前产品v0.4 / 工程0.4.0，本地候选范围见[18_V0_4_SCOPE](docs/planning/18_V0_4_SCOPE.md)。提供Departure/Arrival分组表单、柔和航线和机场连接、新地球+飞机图标。航司资源扩至115家完整矢量标志，92家独立图形；默认优先图形，23家暂无可靠图形者使用完整文字标志，完整文字版保留在资料库。覆盖欧洲31、亚洲46、美洲24、大洋洲8、非洲6家，不宣称全球全部或全部最新。
 
-最新更新：[v0.3实现](docs/implementation/v0.3/implementation_summary.md)、[测试](docs/implementation/v0.3/test_report.md)、[限制](docs/implementation/v0.3/known_issues.md)。大量重复路线允许共享通道，不改里程；目录状态和品牌覆盖如实记录，不宣称全部现役或全部最新。完整设备与长期测试仍未完成。
+随包86,242条机场和7,764条航司参考。机场资料只读，不新增、不修改名称、代码、城市、时区、位置等信息；保留既有航班、个人资料、历史快照、完整备份恢复，以及航班自己的当地时间/时区填写。其他资料和个人SVG仍可自定义。
 
-安装包 `release/v0.3/AirJourney-v0.3-x64-setup.exe`；源码包 `release/v0.3/AirJourney-v0.3-source.zip`；SHA-256 和完整交付清单在同目录。
+交付：release/v0.4/AirJourney-v0.4-x64-setup.exe、AirJourney-v0.4-source.zip；SHA256SUMS.txt及delivery_manifest.json在同目录。详细[实现说明](docs/implementation/v0.4/implementation_summary.md)、[自测报告](docs/implementation/v0.4/test_report.md)、[限制和未测项](docs/implementation/v0.4/known_issues.md)、[构建安装与备份](docs/implementation/v0.4/build_and_install.md)、[需求追踪](docs/implementation/v0.4/requirements_traceability.csv)。自测不替代独立验收。
 
-简要历史更新见 [update_log.txt](update_log.txt)。2026-10-15，用户在本地交付与独立验收之后另行授权完善文档并上传GitHub，本次同步当前源码、静态资源和文档至[项目仓库](https://github.com/Jiashuo-Hu/AirJourney)，不创建Release或上传安装附件。安装产物、依赖、缓存及个人运行数据不提交到Git；本地产物位置和校验方式见[同步说明](docs/implementation/github_sync_v0.3.md)。代码为MIT；航司数据库为ODbL派生数据，品牌版权商标及个别用途限制另见[资源说明](public/notices/Airline-data-and-brands.txt)。
+v0.4于2026-10-15完成本地实现、测试和打包；2026-10-16用户另行授权完善文档并同步GitHub。当前同步源码、静态资源及文档，不创建PR或Release，不上传安装附件，详见[本次同步说明](docs/implementation/github_sync_v0.4.md)。[简短独立验收](docs/acceptance/20261015-v04-offline/report.md)结论为有条件通过：代码、构建与交付核对通过，真实交互和动态视觉待人工确认。简要版本历史见[update_log.txt](update_log.txt)。
 
-实现自测：48项单元、5项机场资源策略、同一安装版62项运行场景通过；[简短独立验收](docs/acceptance/20261015-v03-independent/report.md)在限定范围内PASS，未发现阻断问题。仍有一项P3：浅色陆地上的Repeated routes文案对比度偏低。任务栏实际像素与旧固定图标缓存、真实DPI/触控板、低配长时及完整安装卸载矩阵等未测；不据此宣称地图间歇故障已彻底根治。
-
-交付与检查：[需求追踪](docs/implementation/v0.3/requirements_traceability.csv)、[构建安装/备份](docs/implementation/v0.3/build_and_install.md)、[航司来源与缺项](public/data/airlines-global-manifest.json)、[Logo来源/条件](public/logos/airlines/manifest.json)、[资源清单](docs/implementation/v0.3/resource_manifest.csv)、[历史v0.2轻量验收](docs/acceptance/20261014-v02-map-followup/report.md)。
+代码MIT；数据库ODbL/原来源条款，品牌版权商标另计。资源[来源与限制](public/notices/Airline-data-and-brands.txt)、[品牌逐项清单](public/logos/airlines/manifest.json)、[地区覆盖及纯图形缺项](public/data/airline-sources/v04-coverage.json)随包提供，原SVG保留。不将“免费下载”视为已获得再分发或商业使用权。
 
 ```powershell
 npm ci --no-audit --no-fund
@@ -21,12 +19,6 @@ npm run build
 npm run package
 ```
 
-开发环境为 Windows x64、Node 24 或支持的 Node 22.12+。安装包携带 Electron 和本地资源；用户运行不需要开发工具或 WebView2。
+Node 24或兼容22.12+，Windows x64。必须等待构建完成后打包；安装后运行不需要开发环境。可从[当前规划总览](docs/planning/00_README.md)开始，最新迭代范围优先于旧基线中的机场编辑能力。docs/archive不是实现依据。
 
-从[当前规划总览](docs/planning/00_README.md)开始；[实验计划](docs/planning/10_EXPERIMENTS.md)、[实现/验收交接任务书](docs/planning/08_AGENT_HANDOFF.md)供后续两个Agent使用。
-
-唯一有效基线位于docs/planning；docs/archive中的旧稿已整体失效，不能合并使用。
-
-项目根目录：C:/MyFile/Project/AirJourney。
-
-
+项目：C:/MyFile/Project/AirJourney。

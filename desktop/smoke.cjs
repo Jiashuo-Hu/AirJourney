@@ -42,7 +42,7 @@ module.exports = async (win, data) => {
       path.join(data, name + ".png"),
       (await win.webContents.capturePage()).toPNG(),
     );
-  win.show();
+  if (!process.env.AIRJOURNEY_BACKGROUND_TEST) win.show();
   await wait(9000);
   assert.ok(
     (await js("document.body.innerText")).includes("Your journeys, your way."),
@@ -224,47 +224,16 @@ module.exports = async (win, data) => {
     ),
     0,
   );
-  await field("Name", "London Heathrow · metadata edit");
-  await click("Apply to future selections");
-  const future = await js("window.airjourney.load()");
-  assert.equal(
-    future.library.Airports.find((r) => r.code === "LHR").lat,
-    before.library.Airports.find((r) => r.code === "LHR").lat,
-  );
-  assert.equal(future.flights[0].to.lat, first.flights[0].to.lat);
-  results.push({
-    test: "airport location locked; future-only metadata edit preserves snapshots",
-    status: "PASS",
-  });
-  await js(
-    `[...document.querySelectorAll('.reference-row')].find(n=>n.textContent.includes('LHR')).click()`,
-  );
-  await wait(250);
-  await js(
-    `window.airjourney.load().then(s=>{const f=s.flights[0]; const i=s.library.Airports.findIndex(r=>r.id===f.to.id); if(i<0)s.library.Airports.push({...f.to}); return window.airjourney.save(JSON.stringify(s));})`,
-  );
-  await win.webContents.reload();
-  await wait(3500);
-  await click("Library");
-  await js(
-    `[...document.querySelectorAll('.reference-row')].find(n=>n.textContent.includes('LHR')&&!n.textContent.includes('metadata edit')).click()`,
-  );
-  await field("Name", "London Heathrow · explicit metadata");
-  await click("Review changes to existing flights");
-  await click("Confirm snapshot changes");
-  await wait(300);
-  assert.equal(
-    (await js("window.airjourney.load()")).flights[0].to.lat,
-    before.flights[0].to.lat,
-  );
-  assert.equal(
-    (await js("window.airjourney.load()")).flights[0].to.name,
-    "London Heathrow · explicit metadata",
-  );
-  results.push({
-    test: "explicit reference preview / apply updates snapshots",
-    status: "PASS",
-  });
+  assert.equal(await js('document.querySelectorAll(".airport-reference-detail input,.airport-reference-detail select").length'),0);
+  assert.ok((await js('document.querySelector(".airport-reference-detail").textContent')).includes('Read-only'));
+  assert.deepEqual((await js("window.airjourney.load()")).library.Airports,before.library.Airports);
+  results.push({test:'airport catalogue read-only; original metadata and snapshots preserved',status:'PASS'});
+  await click('Back to airports');await click('Airlines');
+  await js(`(()=>{const n=document.querySelector('[aria-label="Search Library"]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(n,'Lufthansa');n.dispatchEvent(new Event('input',{bubbles:true}));})()`);await wait(300);
+  await js(`[...document.querySelectorAll('.reference-row')].find(n=>n.querySelector('strong')?.textContent==='Lufthansa').click()`);
+  await field('Name','Lufthansa · explicit metadata');await click('Review changes to existing flights');await click('Confirm snapshot changes');await wait(300);
+  assert.equal((await js("window.airjourney.load()")).flights[0].airline.name,'Lufthansa · explicit metadata');
+  results.push({test:'non-airport reference preview / apply remains editable',status:'PASS'});
   await click("Flights");
   await js('document.querySelector(".flight-select").click()');
   await wait(4000);

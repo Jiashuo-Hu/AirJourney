@@ -1,0 +1,66 @@
+
+> airjourney@0.4.0 test
+> tsx --test tests/*.test.ts
+
+✔ unknown and date-only preserve null; missing time zone never guesses (4.8709ms)
+✔ FX03 PEK to LHR =12h, FX04 HND to LAX =9h (4.6102ms)
+✔ DST gap / overlap unresolved, offsets explicit, invalid chronology preserved (1.289ms)
+✔ zero coordinate, zero distance and manual units stay distinct from unknown (1.7161ms)
+✔ WGS84 published geodesic oracle Wellington–Salamanca 19959679.267m (0.925ms)
+✔ antimeridian / polar / antipodal / same-place route coordinates remain finite (10.1366ms)
+✔ safe SVG is vector only; bundled assets pass; dangerous SVG rejects (38.2922ms)
+✔ snapshot changes do not mutate existing flights; backups preserve all data and SVG (24.5773ms)
+✔ backup rejects corruption, unsupported schema, traversal, missing files; does not change source (4.5018ms)
+✔ CSV quotes multiline, escapes formula injection, exports precision / manual / derived values (0.943ms)
+✔ Library CSV imports explicit columns, multiline names and optional coordinates (0.7825ms)
+✔ explicit Library updates preserve per-flight user coordinate / code overrides (0.1954ms)
+✔ same text ID in different reference categories never overwrites an airport with an airline (0.1769ms)
+✔ backup schema rejects remote images, malformed time, invalid custom field and style (0.8459ms)
+✔ AF-03 queued independent settings merge after delayed successful saves (1.4286ms)
+✔ AF-03 failed save is not published and later operations retain last successful state (2.6347ms)
+✔ AF-01 empty precision intent survives backup; changing intent clears only unsuitable values (24.1686ms)
+✔ AF-02 tags trim empty separators and deduplicate without changing names (0.3732ms)
+✔ v0.0 schema 1 remains accepted with absent precision and route lift (0.9637ms)
+✔ near-surface routes stay clear of ellipsoid, preserve endpoints and independent WGS84 distance (8.5575ms)
+✔ hover codes are supplied three-letter strings, never airport names or ICAO (1.1397ms)
+✔ viewport guard rejects a zero GPU buffer even when CSS canvas is large (0.2279ms)
+✔ label fading progresses smoothly in both directions and honors reduced motion (0.2096ms)
+✔ collision layout retains higher priority countries and unobstructed names (10.9834ms)
+✔ existing airport coordinates cannot be changed or extended by normal mutations (1.2558ms)
+✔ supplied airport metadata remains editable with frozen location provenance (0.5178ms)
+✔ new flight endpoints require given coordinates while historical edits are retained (0.9612ms)
+✔ global resource coverage, identifiers and coordinate metadata match manifest (128.685ms)
+✔ global search finds IATA, ICAO, city/country, accent-insensitive and multi-token names (279.6473ms)
+✔ personal overrides suppress only the matching base; hidden values stay hidden (152.8373ms)
+✔ shared codes and custom duplicate records are not conflated (0.5575ms)
+✔ legacy seed identities take precedence without inflating the personal database (180.3234ms)
+✔ approximate and unknown locations cannot silently become airport coordinates (0.5446ms)
+✔ backup and Library CSV preserve approximate provenance and personal data (19.5279ms)
+✔ bounded pagination visits remaining matching records without duplicates (34.4007ms)
+✔ repeated airport pairs combine both directions without merging differing historical coordinates (6.1246ms)
+✔ odd/even lane patterns are symmetric, centered, bounded and become denser (0.6286ms)
+✔ display offsets keep exact endpoints and reverse direction; no record or distance changes (7.3636ms)
+✔ antimeridian, polar and near-antipodal offset routes remain finite (8.3152ms)
+✔ 1000+ records retain every ID and direction in bounded overlapping lanes (1.5023ms)
+✔ count-dependent width is monotonic and caps selected/unselected lines at 16px (0.1093ms)
+✔ airline resource has unique IDs, valid optional alphanumeric codes and explicit unknown status (1.5983ms)
+✔ airline search supports numeric codes, name, historical alias, alphabet browsing and source status (33.3131ms)
+✔ shared airline codes stay distinct; personal names, SVGs and hidden choices take precedence (0.8662ms)
+✔ every bundled airline mark is portable vector; missing code/logo never invented (38.0152ms)
+✔ Singapore default uses the complete bird without wordmark; full/custom snapshots remain intact (0.4609ms)
+✔ Emirates and ANA display the requested graphic variants while full/custom marks remain available (0.2207ms)
+✔ schema 1 keeps old records byte-for-byte and optional repeat preference survives backup validation (2.0814ms)
+✔ major-carrier regions have portable marks and exact name/code catalogue options without rebranding old Tway (34.4946ms)
+✔ all airport information is read-only, including name, codes, zone and visibility (1.0367ms)
+✔ separated symbols take precedence; a missing symbol retains the complete wordmark and custom SVG (6.4275ms)
+✔ non-airport edits and preserved historical airport references remain valid (0.6341ms)
+✔ airport marker covers the widest route endpoint while sizing stays bounded (0.1432ms)
+✔ grouped local times retain independent zones and an independently known 12-hour duration (2.8546ms)
+ℹ tests 54
+ℹ suites 0
+ℹ pass 54
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7919.5509

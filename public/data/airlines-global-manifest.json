@@ -1,6 +1,6 @@
 {
   "date": "2026-10-15",
-  "records": 7761,
+  "records": 7764,
   "openFlightsSourceRows": 6162,
   "excludedPseudoEntries": 2,
   "exactDuplicatesMerged": [
@@ -244,12 +244,16 @@
   ],
   "missingCode": 4641,
   "statusCounts": {
-    "unknown": 1691,
+    "unknown": 1694,
     "inactive": 6050,
     "active": 20
   },
   "countryRegionNames": 296,
   "reusedCodes": {
+    "99": [
+      "of-airline-10372",
+      "wd-airline-Q2326259"
+    ],
     "00": [
       "of-airline-17614",
       "of-airline-18637",
@@ -937,10 +941,6 @@
       "of-airline-5462",
       "wd-airline-Q2067230",
       "wd-airline-Q4709437"
-    ],
-    "99": [
-      "of-airline-10372",
-      "wd-airline-Q2326259"
     ],
     "9A": [
       "of-airline-14725",
@@ -4907,7 +4907,7 @@
       "wd-airline-Q8074146"
     ]
   },
-  "resourceSha256": "108b7e7d7d8408b7691334194272a375fbdfe323759b33c0850e2e11b2730986",
+  "resourceSha256": "b0ec31d47b549d7ebac7598b248506722bd2996c563fb25a20f8fb05882cdbcb",
   "sources": [
     {
       "url": "https://github.com/jpatokal/openflights/blob/master/data/airlines.dat",
@@ -4926,5 +4926,21 @@
     "N is source-listed inactive; P576 is source-listed dissolution. Unknown is not inferred active. Aliases may be historical and are not separate current operators.",
     "P229 can include non-flight transport operators; retained as source references, not flight-validation authority.",
     "Country/region names are source labels, not a count of internationally recognized countries. Codes are never unique IDs."
+  ],
+  "referenceCorrectionsV04": [
+    {
+      "id": "of-airline-17891",
+      "oldCode": "TZ",
+      "currentCode": "TR",
+      "historicalAliasRetained": true,
+      "source": "https://www.iata.org/en/about/members/airline-list/scoot/581/",
+      "checked": "2026-10-15",
+      "savedSnapshotsChanged": false
+    }
+  ],
+  "v04BrandSupplementIds": [
+    "v04-brand-vietjet",
+    "v04-brand-gulf",
+    "v04-brand-flydubai"
   ]
 }

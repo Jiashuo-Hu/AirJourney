@@ -47,8 +47,7 @@ export function FlightEditor({
     const supplied = airportIndex.canonicalFor(p);
     const legacy = supplied && !sameCoordinates(p, supplied);
     return (
-      <fieldset>
-        <legend>{side === "from" ? "Departure" : "Arrival"}</legend>
+      <div className="airport-block">
         <AirportPicker
           side={side === "from" ? "Departure" : "Arrival"}
           index={airportIndex}
@@ -96,7 +95,7 @@ export function FlightEditor({
             </dl>
           </details>
         )}
-      </fieldset>
+      </div>
     );
   }
   function time(side: "departure" | "arrival") {
@@ -104,13 +103,11 @@ export function FlightEditor({
       set = (p: Partial<typeof t>) => patch({ [side]: { ...t, ...p } }),
       precision = timePrecision(t);
     return (
-      <fieldset>
-        <legend>
-          {side === "departure" ? "Departure time" : "Arrival time"}
-        </legend>
+      <div className="local-time-block">
         <label>
-          Precision
+          Time precision
           <select
+            aria-label="Time precision"
             value={precision}
             onChange={(e) =>
               patch({
@@ -125,7 +122,7 @@ export function FlightEditor({
         </label>
         <div className="two">
           <label>
-            Date
+            Local date
             <input
               type="date"
               value={t.date}
@@ -149,7 +146,7 @@ export function FlightEditor({
           </label>
         </div>
         <label>
-          IANA time zone / UTC offset
+          Time zone / UTC offset
           <input
             placeholder="Asia/Shanghai or +08:00"
             list="zones"
@@ -159,7 +156,7 @@ export function FlightEditor({
         </label>
         <span className="badge">{resolveTime(t).status}</span>
         {resolveTime(t).utc && <small>{resolveTime(t).utc}</small>}
-      </fieldset>
+      </div>
     );
   }
   return (
@@ -192,8 +189,16 @@ export function FlightEditor({
               onChange={(e) => patch({ number: e.target.value })}
             />
           </label>
-          {airport("from")}
-          {airport("to")}
+          <fieldset className="journey-endpoint" aria-label="Departure">
+            <legend>Departure</legend>
+            {airport("from")}
+            {time("departure")}
+          </fieldset>
+          <fieldset className="journey-endpoint" aria-label="Arrival">
+            <legend>Arrival</legend>
+            {airport("to")}
+            {time("arrival")}
+          </fieldset>
           <AirlinePicker
             index={airlineIndex}
             value={f.airline}
@@ -207,8 +212,6 @@ export function FlightEditor({
               })
             }
           />
-          {time("departure")}
-          {time("arrival")}
           <details key={f.id}>
             <summary>More details</summary>
             <label>

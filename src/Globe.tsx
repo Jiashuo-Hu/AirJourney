@@ -1,4 +1,5 @@
 import { attachMapLoop, type MapDiagnostics } from "./map-runtime";
+import { airportMarkerPixels } from "./map-style";
 import {
   airportHoverCode,
   fadeLabel,
@@ -222,7 +223,7 @@ export function Globe({
         baseLayer: false,
         useDefaultRenderLoop: false,
         showRenderLoopErrors: false,
-        msaaSamples: 1,
+        msaaSamples: 4,
         terrainProvider: new C.EllipsoidTerrainProvider(),
         requestRenderMode: true,
         maximumRenderTimeChange: Infinity,
@@ -236,7 +237,8 @@ export function Globe({
       v.scene.backgroundColor = C.Color.fromCssColorString("#0c1725");
       v.scene.globe.baseColor = C.Color.fromCssColorString("#2b4b60");
       v.scene.globe.enableLighting = false;
-      v.scene.msaaSamples = 1;
+      v.scene.msaaSamples = 4;
+      v.scene.postProcessStages.fxaa.enabled = true;
       v.scene.globe.maximumScreenSpaceError = 1;
       v.scene.globe.tileCacheSize = 180;
       v.scene.screenSpaceCameraController.minimumZoomDistance = 1500000;
@@ -423,6 +425,7 @@ export function Globe({
     v.entities.removeAll();
     hoverIds.current = [];
     setHoverCount(0);
+    const endpointStyles = new Map<string, {width: number; color: C.Color; selected: boolean}>();
     for (const fs of groupRoutes(flights)) {
       for (const lane of routeLanes(
         fs,
@@ -448,19 +451,21 @@ export function Globe({
           settings.repeatRoutes === "separate"
             ? settings.width + (picked ? 2 : 0)
             : routeWidth(settings.width, fs.length, picked);
+        for (const p of [f.from, f.to]) {
+          const key = endpointKey(p), previous = endpointStyles.get(key);
+          endpointStyles.set(key, {
+            width: Math.max(width, previous?.width || 0),
+            color: picked || (!previous?.selected && width >= (previous?.width || 0)) ? color : previous!.color,
+            selected: picked || !!previous?.selected,
+          });
+        }
         v.entities.add({
           id: "route-" + f.id,
           polyline: {
             positions: C.Cartesian3.fromDegreesArrayHeights(coords),
             width,
             arcType: C.ArcType.NONE,
-            material: new C.PolylineOutlineMaterialProperty({
-              color,
-              outlineColor: C.Color.fromCssColorString("#102438").withAlpha(
-                color.alpha * 0.8,
-              ),
-              outlineWidth: 1,
-            }),
+            material: new C.ColorMaterialProperty(color),
           },
           properties: {
             flightIds: list.map((f) => f.id),
@@ -519,15 +524,14 @@ export function Globe({
           : "point-" + p.id,
         position: C.Cartesian3.fromDegrees(p.lon!, p.lat!, 4000),
         point: {
-          pixelSize: settings.markerSize,
+          pixelSize: airportMarkerPixels(settings.markerSize, endpointStyles.get(key)?.width || 0, ids.includes(selected || "")),
           color:
             p.locationKind === "approximate"
-              ? C.Color.fromCssColorString("#ffc66d")
-              : C.Color.WHITE,
-          outlineColor: C.Color.fromCssColorString(
-            ids.includes(selected || "") ? "#245fd6" : settings.routeColor,
-          ),
-          outlineWidth: ids.includes(selected || "") ? 3 : 2,
+              ? C.Color.fromCssColorString("#f4b44e")
+              : (endpointStyles.get(key)?.color || C.Color.fromCssColorString(settings.routeColor)).withAlpha(1),
+          outlineColor: C.Color.WHITE.withAlpha(ids.includes(selected || "") ? 1 : 0.88),
+          outlineWidth: ids.includes(selected || "") ? 2.5 : 1.5,
+          scaleByDistance: new C.NearFarScalar(1500000, 1.1, 30000000, 0.85),
         },
         properties: { flightIds: ids },
       });

@@ -1,0 +1,31 @@
+{
+  "version": "v0.4",
+  "packageVersion": "0.4.0",
+  "localOnly": true,
+  "installer": {
+    "path": "release/v0.4/AirJourney-v0.4-x64-setup.exe",
+    "sha256": "9b2c9ba998f31e108c3232fd431fc183b962fcf32cfbd310b2207257f1dd288f",
+    "bytes": 121255628
+  },
+  "source": {
+    "path": "release/v0.4/AirJourney-v0.4-source.zip",
+    "sha256Location": "release/v0.4/SHA256SUMS.txt"
+  },
+  "coverage": {
+    "airports": 86242,
+    "airlines": 7764,
+    "fullBrandMarks": 115,
+    "separateSymbols": 92,
+    "symbolGaps": 23
+  },
+  "evidence": "docs/implementation/v0.4/evidence_index.json",
+  "limits": "docs/implementation/v0.4/known_issues.md",
+  "sourceRevision": {
+    "date": "2026-10-16",
+    "scope": "Documentation and independent offline acceptance additions; application and installer unchanged",
+    "originalSourceSha256": "4654c536121465bb581e82a0be8b9216c5822a697589004d5f9c84e272ea944e",
+    "githubAuthorization": "User: 完善更新文档，推送至 GitHub",
+    "releaseCreated": false,
+    "artifactUploads": false
+  }
+}

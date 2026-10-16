@@ -1,0 +1,115 @@
+{
+  "version": "v0.4",
+  "packageVersion": "0.4.0",
+  "date": "2026-10-15",
+  "localOnly": true,
+  "noGitHubActions": true,
+  "unitTests": 54,
+  "resourceTests": 5,
+  "installedScenarios": 68,
+  "actualAirlineChoicesSaved": 115,
+  "svgVariants": 207,
+  "themeImageLoads": 460,
+  "syntheticFixtures": true,
+  "backgroundWindowsHidden": true,
+  "nativeMinimizeRestoreRetested": false,
+  "physicalWindowsDpiChanged": false,
+  "taskbarPixelsIndependentlyCaptured": false,
+  "originalIntermittentTriggerNotEstablished": true,
+  "faultInjectionDeclared": true,
+  "coverage": {
+    "airports": 86242,
+    "airlines": 7764,
+    "fullBrandMarks": 115,
+    "separateSymbols": 92,
+    "symbolGaps": 23
+  },
+  "evidence": [
+    {
+      "path": "evidence/v0.4/unit-tests.log",
+      "sha256": "a948af74f7007b15b96b0cb34c9e26ea60fbf608b4e9094ad94afd87f7917b2a",
+      "bytes": 5429
+    },
+    {
+      "path": "evidence/v0.4/airport-resource-tests.log",
+      "sha256": "46a59d823d772c3809446eba836399e2612ba33924b6c71abe8e15b736b8f4b7",
+      "bytes": 108
+    },
+    {
+      "path": "evidence/v0.4/build.log",
+      "sha256": "5c3d3f993d5852d773c00cf4d3b46f92f05e4c2fa85ae6c45ff1cac0bdd7e0a5",
+      "bytes": 3839
+    },
+    {
+      "path": "evidence/v0.4/package.log",
+      "sha256": "a7159540c8b04d63123653f1c6df680f7b8aca29cdd0be8a368ea11b84c4fcbb",
+      "bytes": 1319
+    },
+    {
+      "path": "evidence/v0.4/install.json",
+      "sha256": "7cc9a9b8c0f3891cc2e34dc85af12a9c55c798e82efcff3df69084c3640e9a24",
+      "bytes": 406
+    },
+    {
+      "path": "evidence/v0.4/vector-portability.json",
+      "sha256": "fe8495efadd0b86f69d5c5a1a859e762103b6e6073cec033f9e1f57046ada16c",
+      "bytes": 15890
+    },
+    {
+      "path": "evidence/v0.4/all-brand-render.json",
+      "sha256": "aa2ef8a9a8c73727c8cba3eb0bb356ee8f696888879367738df764d9f8fe39fd",
+      "bytes": 6166
+    },
+    {
+      "path": "evidence/v0.4/native-visual-review.json",
+      "sha256": "747fe9cc1bc5bdde268c25ff717fd09d0e6e805980c7c91e7d4928c6a2571ef9",
+      "bytes": 2196
+    },
+    {
+      "path": "evidence/v0.4/installer-icons/installer-icon-report.json",
+      "sha256": "a735eabcd3cf9ec9d78d8965714d015229a8a3944cd55971df67ad6a31e4c86f",
+      "bytes": 578
+    },
+    {
+      "path": "evidence/v0.4/background-diagnostic.log",
+      "sha256": "7cce46c44d1ac502102156e5b40ecaca06b96fb9a30b6bf15f3da1a55e48e923",
+      "bytes": 282
+    },
+    {
+      "path": "evidence/v0.4/regression-before-backup-wait.json",
+      "sha256": "7394f95df7dce7dee28b6805c045926ff211b50a112e159b8bd7ecf192e50da1",
+      "bytes": 3969
+    },
+    {
+      "path": "evidence/v0.4/regression-tail.log",
+      "sha256": "1144d602f34915525ca35d3324f6f75caf1e3a4cc46fe0cc331c0355bdf69efd",
+      "bytes": 164
+    },
+    {
+      "path": "evidence/v0.4/verified-regression-final/results.json",
+      "sha256": "3538d6c10b9e75c35458401a23358a19d1101a48665072e4a2fea3e42a8711a8",
+      "bytes": 4045
+    },
+    {
+      "path": "evidence/v0.4/verified-smoke/smoke-results.json",
+      "sha256": "22de0355e83a50b25080f898d8ed34beb82732c0115e61b10853b6f3dd68b613",
+      "bytes": 6711
+    },
+    {
+      "path": "evidence/v0.4/verified-upgrade/results.json",
+      "sha256": "517591ce46a5497fe6f4ed0bea010edebbe9bab5b59214f8a2270606f914f276",
+      "bytes": 5929
+    },
+    {
+      "path": "evidence/v0.4/verified-map/results.json",
+      "sha256": "03edb30a7ed85ca814fd8614a61ecf437751a3496c19d47d5f22b48cf9cfde51",
+      "bytes": 5703
+    },
+    {
+      "path": "evidence/v0.4/verified-regression-final/native-icons/native-icon-report.json",
+      "sha256": "0127e76595d7e35cf357c7c5fca9cac93932aaa763b10f3e98e71c365a154788",
+      "bytes": 1290
+    }
+  ],
+  "screenshots": "docs/implementation/v0.4/screenshots"
+}

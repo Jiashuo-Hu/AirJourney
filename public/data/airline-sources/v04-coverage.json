@@ -1,0 +1,901 @@
+{
+  "checked": "2026-10-15",
+  "fullMarks": 115,
+  "symbols": 92,
+  "regions": {
+    "Asia": [
+      {
+        "key": "air-china",
+        "name": "Air China",
+        "code": "CA",
+        "symbol": true
+      },
+      {
+        "key": "china-eastern",
+        "name": "China Eastern Airlines",
+        "code": "MU",
+        "symbol": true
+      },
+      {
+        "key": "china-southern",
+        "name": "China Southern Airlines",
+        "code": "CZ",
+        "symbol": true
+      },
+      {
+        "key": "singapore",
+        "name": "Singapore Airlines",
+        "code": "SQ",
+        "symbol": true
+      },
+      {
+        "key": "emirates",
+        "name": "Emirates",
+        "code": "EK",
+        "symbol": true
+      },
+      {
+        "key": "jal",
+        "name": "Japan Airlines",
+        "code": "JL",
+        "symbol": true
+      },
+      {
+        "key": "qatar",
+        "name": "Qatar Airways",
+        "code": "QR",
+        "symbol": true
+      },
+      {
+        "key": "ana",
+        "name": "All Nippon Airways",
+        "code": "NH",
+        "symbol": true
+      },
+      {
+        "key": "cathay",
+        "name": "Cathay Pacific",
+        "code": "CX",
+        "symbol": true
+      },
+      {
+        "key": "thai",
+        "name": "Thai Airways",
+        "code": "TG",
+        "symbol": true
+      },
+      {
+        "key": "eva",
+        "name": "EVA Air",
+        "code": "BR",
+        "symbol": true
+      },
+      {
+        "key": "hainan",
+        "name": "Hainan Airlines",
+        "code": "HU",
+        "symbol": true
+      },
+      {
+        "key": "shenzhen",
+        "name": "Shenzhen Airlines",
+        "code": "ZH",
+        "symbol": true
+      },
+      {
+        "key": "xiamen",
+        "name": "Xiamen Airlines",
+        "code": "MF",
+        "symbol": true
+      },
+      {
+        "key": "vietnam",
+        "name": "Vietnam Airlines",
+        "code": "VN",
+        "symbol": true
+      },
+      {
+        "key": "malaysia",
+        "name": "Malaysia Airlines",
+        "code": "MH",
+        "symbol": true
+      },
+      {
+        "key": "airasia",
+        "name": "AirAsia",
+        "code": "AK",
+        "symbol": false
+      },
+      {
+        "key": "scoot",
+        "name": "Scoot",
+        "code": "TR",
+        "symbol": false
+      },
+      {
+        "key": "etihad",
+        "name": "Etihad Airways",
+        "code": "EY",
+        "symbol": false
+      },
+      {
+        "key": "korean",
+        "name": "Korean Air",
+        "code": "KE",
+        "symbol": true
+      },
+      {
+        "key": "indigo",
+        "name": "IndiGo",
+        "code": "6E",
+        "symbol": true
+      },
+      {
+        "key": "garuda",
+        "name": "Garuda Indonesia",
+        "code": "GA",
+        "symbol": true
+      },
+      {
+        "key": "philippine",
+        "name": "Philippine Airlines",
+        "code": "PR",
+        "symbol": true
+      },
+      {
+        "key": "air-india",
+        "name": "Air India",
+        "code": "AI",
+        "symbol": true
+      },
+      {
+        "key": "china-airlines",
+        "name": "China Airlines",
+        "code": "CI",
+        "symbol": true
+      },
+      {
+        "key": "asiana",
+        "name": "Asiana Airlines",
+        "code": "OZ",
+        "symbol": false
+      },
+      {
+        "key": "starlux",
+        "name": "STARLUX Airlines",
+        "code": "JX",
+        "symbol": true
+      },
+      {
+        "key": "hk-express",
+        "name": "HK Express",
+        "code": "UO",
+        "symbol": true
+      },
+      {
+        "key": "hong-kong-airlines",
+        "name": "Hong Kong Airlines",
+        "code": "HX",
+        "symbol": true
+      },
+      {
+        "key": "juneyao",
+        "name": "Juneyao Air",
+        "code": "HO",
+        "symbol": true
+      },
+      {
+        "key": "peach",
+        "name": "Peach Aviation",
+        "code": "MM",
+        "symbol": true
+      },
+      {
+        "key": "tigerair-taiwan",
+        "name": "Tigerair Taiwan",
+        "code": "IT",
+        "symbol": true
+      },
+      {
+        "key": "jeju",
+        "name": "Jeju Air",
+        "code": "7C",
+        "symbol": false
+      },
+      {
+        "key": "jin-air",
+        "name": "Jin Air",
+        "code": "LJ",
+        "symbol": true
+      },
+      {
+        "key": "tway",
+        "name": "Trinity Airways",
+        "code": "TW",
+        "symbol": true
+      },
+      {
+        "key": "vietjet",
+        "name": "VietJet Air",
+        "code": "VJ",
+        "symbol": false
+      },
+      {
+        "key": "bangkok",
+        "name": "Bangkok Airways",
+        "code": "PG",
+        "symbol": true
+      },
+      {
+        "key": "cebu",
+        "name": "Cebu Pacific",
+        "code": "5J",
+        "symbol": true
+      },
+      {
+        "key": "lion",
+        "name": "Lion Air",
+        "code": "JT",
+        "symbol": true
+      },
+      {
+        "key": "saudia",
+        "name": "Saudia",
+        "code": "SV",
+        "symbol": true
+      },
+      {
+        "key": "oman",
+        "name": "Oman Air",
+        "code": "WY",
+        "symbol": true
+      },
+      {
+        "key": "gulf",
+        "name": "Gulf Air",
+        "code": "GF",
+        "symbol": true
+      },
+      {
+        "key": "flydubai",
+        "name": "flydubai",
+        "code": "FZ",
+        "symbol": false
+      },
+      {
+        "key": "air-arabia",
+        "name": "Air Arabia",
+        "code": "G9",
+        "symbol": false
+      },
+      {
+        "key": "air-astana",
+        "name": "Air Astana",
+        "code": "KC",
+        "symbol": true
+      },
+      {
+        "key": "akasa",
+        "name": "Akasa Air",
+        "code": "QP",
+        "symbol": true
+      }
+    ],
+    "Europe": [
+      {
+        "key": "lufthansa",
+        "name": "Lufthansa",
+        "code": "LH",
+        "symbol": true
+      },
+      {
+        "key": "air-france",
+        "name": "Air France",
+        "code": "AF",
+        "symbol": true
+      },
+      {
+        "key": "british-airways",
+        "name": "British Airways",
+        "code": "BA",
+        "symbol": true
+      },
+      {
+        "key": "turkish",
+        "name": "Turkish Airlines",
+        "code": "TK",
+        "symbol": true
+      },
+      {
+        "key": "klm",
+        "name": "KLM",
+        "code": "KL",
+        "symbol": true
+      },
+      {
+        "key": "swiss",
+        "name": "Swiss International Air Lines",
+        "code": "LX",
+        "symbol": true
+      },
+      {
+        "key": "finnair",
+        "name": "Finnair",
+        "code": "AY",
+        "symbol": false
+      },
+      {
+        "key": "iberia",
+        "name": "Iberia",
+        "code": "IB",
+        "symbol": true
+      },
+      {
+        "key": "vueling",
+        "name": "Vueling",
+        "code": "VY",
+        "symbol": false
+      },
+      {
+        "key": "easyjet",
+        "name": "easyJet",
+        "code": "U2",
+        "symbol": false
+      },
+      {
+        "key": "ryanair",
+        "name": "Ryanair",
+        "code": "FR",
+        "symbol": true
+      },
+      {
+        "key": "sas",
+        "name": "Scandinavian Airlines",
+        "code": "SK",
+        "symbol": false
+      },
+      {
+        "key": "lot",
+        "name": "LOT Polish Airlines",
+        "code": "LO",
+        "symbol": true
+      },
+      {
+        "key": "tap",
+        "name": "TAP Air Portugal",
+        "code": "TP",
+        "symbol": true
+      },
+      {
+        "key": "austrian",
+        "name": "Austrian Airlines",
+        "code": "OS",
+        "symbol": true
+      },
+      {
+        "key": "brussels",
+        "name": "Brussels Airlines",
+        "code": "SN",
+        "symbol": true
+      },
+      {
+        "key": "aer-lingus",
+        "name": "Aer Lingus",
+        "code": "EI",
+        "symbol": true
+      },
+      {
+        "key": "air-europa",
+        "name": "Air Europa",
+        "code": "UX",
+        "symbol": true
+      },
+      {
+        "key": "ita",
+        "name": "ITA Airways",
+        "code": "AZ",
+        "symbol": false
+      },
+      {
+        "key": "aegean",
+        "name": "Aegean Airlines",
+        "code": "A3",
+        "symbol": true
+      },
+      {
+        "key": "icelandair",
+        "name": "Icelandair",
+        "code": "FI",
+        "symbol": true
+      },
+      {
+        "key": "airbaltic",
+        "name": "airBaltic",
+        "code": "BT",
+        "symbol": false
+      },
+      {
+        "key": "wizz",
+        "name": "Wizz Air",
+        "code": "W6",
+        "symbol": false
+      },
+      {
+        "key": "norwegian",
+        "name": "Norwegian Air Shuttle",
+        "code": "DY",
+        "symbol": true
+      },
+      {
+        "key": "eurowings",
+        "name": "Eurowings",
+        "code": "EW",
+        "symbol": true
+      },
+      {
+        "key": "condor",
+        "name": "Condor",
+        "code": "DE",
+        "symbol": true
+      },
+      {
+        "key": "air-serbia",
+        "name": "Air Serbia",
+        "code": "JU",
+        "symbol": true
+      },
+      {
+        "key": "virgin-atlantic",
+        "name": "Virgin Atlantic",
+        "code": "VS",
+        "symbol": true
+      },
+      {
+        "key": "transavia",
+        "name": "Transavia",
+        "code": "HV",
+        "symbol": true
+      },
+      {
+        "key": "pegasus",
+        "name": "Pegasus Airlines",
+        "code": "PC",
+        "symbol": false
+      },
+      {
+        "key": "sunexpress",
+        "name": "SunExpress",
+        "code": "XQ",
+        "symbol": true
+      }
+    ],
+    "Americas": [
+      {
+        "key": "united",
+        "name": "United Airlines",
+        "code": "UA",
+        "symbol": true
+      },
+      {
+        "key": "delta",
+        "name": "Delta Air Lines",
+        "code": "DL",
+        "symbol": true
+      },
+      {
+        "key": "air-canada",
+        "name": "Air Canada",
+        "code": "AC",
+        "symbol": true
+      },
+      {
+        "key": "american",
+        "name": "American Airlines",
+        "code": "AA",
+        "symbol": true
+      },
+      {
+        "key": "southwest",
+        "name": "Southwest Airlines",
+        "code": "WN",
+        "symbol": true
+      },
+      {
+        "key": "jetblue",
+        "name": "JetBlue Airways",
+        "code": "B6",
+        "symbol": false
+      },
+      {
+        "key": "alaska",
+        "name": "Alaska Airlines",
+        "code": "AS",
+        "symbol": false
+      },
+      {
+        "key": "hawaiian",
+        "name": "Hawaiian Airlines",
+        "code": "HA",
+        "symbol": true
+      },
+      {
+        "key": "westjet",
+        "name": "WestJet",
+        "code": "WS",
+        "symbol": true
+      },
+      {
+        "key": "air-transat",
+        "name": "Air Transat",
+        "code": "TS",
+        "symbol": true
+      },
+      {
+        "key": "porter",
+        "name": "Porter Airlines",
+        "code": "PD",
+        "symbol": false
+      },
+      {
+        "key": "latam",
+        "name": "LATAM Airlines",
+        "code": "LA",
+        "symbol": true
+      },
+      {
+        "key": "avianca",
+        "name": "Avianca",
+        "code": "AV",
+        "symbol": true
+      },
+      {
+        "key": "copa",
+        "name": "Copa Airlines",
+        "code": "CM",
+        "symbol": true
+      },
+      {
+        "key": "aeromexico",
+        "name": "Aeroméxico",
+        "code": "AM",
+        "symbol": true
+      },
+      {
+        "key": "gol",
+        "name": "GOL Linhas Aéreas",
+        "code": "G3",
+        "symbol": false
+      },
+      {
+        "key": "azul",
+        "name": "Azul Brazilian Airlines",
+        "code": "AD",
+        "symbol": true
+      },
+      {
+        "key": "aerolineas",
+        "name": "Aerolíneas Argentinas",
+        "code": "AR",
+        "symbol": true
+      },
+      {
+        "key": "jetsmart",
+        "name": "JetSMART",
+        "code": "JA",
+        "symbol": false
+      },
+      {
+        "key": "frontier",
+        "name": "Frontier Airlines",
+        "code": "F9",
+        "symbol": false
+      },
+      {
+        "key": "spirit",
+        "name": "Spirit Airlines",
+        "code": "NK",
+        "symbol": false
+      },
+      {
+        "key": "allegiant",
+        "name": "Allegiant Air",
+        "code": "G4",
+        "symbol": true
+      },
+      {
+        "key": "sun-country",
+        "name": "Sun Country Airlines",
+        "code": "SY",
+        "symbol": true
+      },
+      {
+        "key": "breeze",
+        "name": "Breeze Airways",
+        "code": "MX",
+        "symbol": true
+      }
+    ],
+    "Oceania": [
+      {
+        "key": "qantas",
+        "name": "Qantas",
+        "code": "QF",
+        "symbol": true
+      },
+      {
+        "key": "air-new-zealand",
+        "name": "Air New Zealand",
+        "code": "NZ",
+        "symbol": true
+      },
+      {
+        "key": "virgin-australia",
+        "name": "Virgin Australia",
+        "code": "VA",
+        "symbol": true
+      },
+      {
+        "key": "jetstar",
+        "name": "Jetstar Airways",
+        "code": "JQ",
+        "symbol": true
+      },
+      {
+        "key": "fiji",
+        "name": "Fiji Airways",
+        "code": "FJ",
+        "symbol": true
+      },
+      {
+        "key": "air-tahiti-nui",
+        "name": "Air Tahiti Nui",
+        "code": "TN",
+        "symbol": true
+      },
+      {
+        "key": "aircalin",
+        "name": "Aircalin",
+        "code": "SB",
+        "symbol": true
+      },
+      {
+        "key": "air-niugini",
+        "name": "Air Niugini",
+        "code": "PX",
+        "symbol": true
+      }
+    ],
+    "Africa": [
+      {
+        "key": "ethiopian",
+        "name": "Ethiopian Airlines",
+        "code": "ET",
+        "symbol": true
+      },
+      {
+        "key": "kenya",
+        "name": "Kenya Airways",
+        "code": "KQ",
+        "symbol": true
+      },
+      {
+        "key": "egyptair",
+        "name": "Egyptair",
+        "code": "MS",
+        "symbol": true
+      },
+      {
+        "key": "royal-air-maroc",
+        "name": "Royal Air Maroc",
+        "code": "AT",
+        "symbol": true
+      },
+      {
+        "key": "south-african",
+        "name": "South African Airways",
+        "code": "SA",
+        "symbol": true
+      },
+      {
+        "key": "air-mauritius",
+        "name": "Air Mauritius",
+        "code": "MK",
+        "symbol": true
+      }
+    ]
+  },
+  "missing": [
+    {
+      "key": "spring",
+      "name": "Spring Airlines",
+      "reason": "The located SVG wraps a bitmap. Rejected; placeholder retained. No reliable standalone vector obtained."
+    }
+  ],
+  "limitations": "Fixed major-carrier selection, not every airline. Region groups are for browsing coverage, not political classification. Current-brand verification is partial; see each source record.",
+  "symbolGaps": [
+    {
+      "key": "finnair",
+      "name": "Finnair",
+      "code": "AY",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "airasia",
+      "name": "AirAsia",
+      "code": "AK",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "scoot",
+      "name": "Scoot",
+      "code": "TR",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "etihad",
+      "name": "Etihad Airways",
+      "code": "EY",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "jetblue",
+      "name": "JetBlue Airways",
+      "code": "B6",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "vueling",
+      "name": "Vueling",
+      "code": "VY",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "easyjet",
+      "name": "easyJet",
+      "code": "U2",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "sas",
+      "name": "Scandinavian Airlines",
+      "code": "SK",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "ita",
+      "name": "ITA Airways",
+      "code": "AZ",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "airbaltic",
+      "name": "airBaltic",
+      "code": "BT",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "wizz",
+      "name": "Wizz Air",
+      "code": "W6",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "asiana",
+      "name": "Asiana Airlines",
+      "code": "OZ",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "jeju",
+      "name": "Jeju Air",
+      "code": "7C",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "vietjet",
+      "name": "VietJet Air",
+      "code": "VJ",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "flydubai",
+      "name": "flydubai",
+      "code": "FZ",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "air-arabia",
+      "name": "Air Arabia",
+      "code": "G9",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "alaska",
+      "name": "Alaska Airlines",
+      "code": "AS",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "porter",
+      "name": "Porter Airlines",
+      "code": "PD",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "gol",
+      "name": "GOL Linhas Aéreas",
+      "code": "G3",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "jetsmart",
+      "name": "JetSMART",
+      "code": "JA",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "frontier",
+      "name": "Frontier Airlines",
+      "code": "F9",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "spirit",
+      "name": "Spirit Airlines",
+      "code": "NK",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    },
+    {
+      "key": "pegasus",
+      "name": "Pegasus Airlines",
+      "code": "PC",
+      "default": "full wordmark",
+      "fullRetained": true,
+      "reason": "No verified standalone graphic obtained; retain the complete wordmark, as explicitly requested. Do not mutilate it or invent a symbol."
+    }
+  ]
+}

@@ -112,7 +112,7 @@ export function AirportPicker({
           <small className="search-total">
             {found.total
               ? `${found.total.toLocaleString("en-US")} matches · showing ${found.results.length}`
-              : "No match. Enter your own place below."}
+              : "No matching airport in the local catalogue."}
           </small>
         </div>
       )}

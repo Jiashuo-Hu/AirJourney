@@ -13,25 +13,24 @@ export const airlineStatus = (r: Reference) =>
     : r.airlineStatus === "inactive"
       ? "Inactive · source"
       : "Status unverified";
-type Brand = { name: string; code: string; symbol?: string; full?: string };
+type Brand = { name: string; code: string; names?: string[]; symbol?: string; full?: string };
 export const brands = assets as Record<string, Brand>;
 export function brandFor(r?: Reference) {
   if (!r) return undefined;
   return (
     (r.brandKey && brands[r.brandKey]) ||
     Object.values(brands).find(
-      (b) => airlineText(b.name) === airlineText(r.name) && b.code === r.code,
+      (b) => [b.name, ...(b.names || [])].some(n => airlineText(n) === airlineText(r.name)) && b.code === r.code,
     )
   );
 }
 export function airlineLogo(r?: Reference) {
   if (!r || r.logoPolicy === "none") return undefined;
   const brand = brandFor(r);
-  // Old SQ/EK/NH choices saved full lockups before symbols were supplied.
-  // Correct that exact default for display, while retaining custom SVGs and the
-  // stored snapshot. The full lockup remains available in the library.
-  if (brand && ["SQ", "EK", "NH"].includes(brand.code) && brand.symbol && r.logo === brand.full && r.logoPolicy !== "custom")
-    return brand.symbol;
+  // Display current bundled graphics without altering stored snapshots.
+  // Without a reliable graphic, keep the complete wordmark as requested.
+  if (brand && r.logo === brand.full && r.logoPolicy !== "custom")
+    return brand.symbol || brand.full;
   // Preserve all personal SVGs. Only replace the exact old bundled LH default.
   if (
     r.logo &&

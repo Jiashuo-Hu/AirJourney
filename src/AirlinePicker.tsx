@@ -51,7 +51,7 @@ export function AirlinePicker({
           {airlineLogo(value) ? (
             <img src={airlineLogo(value)} alt="" />
           ) : (
-            <span className="brand-placeholder" title="No verified vector logo">
+            <span className="brand-placeholder" title="No verified standalone symbol">
               ◇
             </span>
           )}

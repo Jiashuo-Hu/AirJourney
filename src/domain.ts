@@ -172,7 +172,7 @@ export const defaults = {
   dateFormat: "DD MMM YYYY",
   clock: "24h",
   density: "Comfortable",
-  routeColor: "#74bcff",
+  routeColor: "#3b86df",
   width: 4,
   routeHeight: 12000,
   repeatRoutes: "thick" as const,

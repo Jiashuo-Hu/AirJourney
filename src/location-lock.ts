@@ -1,4 +1,10 @@
 import type { Place, Reference, State } from "./types";
+// Airport reference data is read-only in v0.4. Old personal references survive
+// load/backup restore; ordinary mutations cannot edit, hide, add or delete them.
+export function assertAirportLibraryReadOnly(before: State, after: State) {
+  if (JSON.stringify(before.library.Airports) !== JSON.stringify(after.library.Airports))
+    throw Error("Airport information is read-only. Choose an existing airport.");
+}
 export const locationFields = [
   "lat",
   "lon",

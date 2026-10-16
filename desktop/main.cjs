@@ -33,7 +33,7 @@ const userDirectory = process.env.AIRJOURNEY_TEST_DIR
       "AirJourney",
     );
 app.setPath("userData", userDirectory);
-let db, SQL, location;
+let db, SQL, location, mainWindow;
 const requestAudit = [];
 function persist(next) {
   const bytes = Buffer.from(next.export()),
@@ -189,7 +189,9 @@ app.whenReady().then(async () => {
       throw Error("File exceeds 50 MB limit.");
     return { name: path.basename(p), bytes: Array.from(fs.readFileSync(p)) };
   });
-  const win = new BrowserWindow({
+  const win = mainWindow = new BrowserWindow({
+    // Explicit engineering-only mode: keep automated runs off the user's desktop.
+    show: !process.env.AIRJOURNEY_BACKGROUND_TEST,
     width: 1440,
     height: 960,
     minWidth: 1024,
@@ -202,13 +204,15 @@ app.whenReady().then(async () => {
       contextIsolation: true,
       nodeIntegration: false,
       sandbox: true,
-      backgroundThrottling: !process.env.AIRJOURNEY_SMOKE,
+      offscreen: !!process.env.AIRJOURNEY_BACKGROUND_TEST,
+      backgroundThrottling: !(process.env.AIRJOURNEY_SMOKE || process.env.AIRJOURNEY_BACKGROUND_TEST),
       additionalArguments: process.env.AIRJOURNEY_SMOKE
         ? ["--airjourney-smoke"]
         : [],
     },
   });
   win.removeMenu();
+  win.on("closed", () => { mainWindow = null; });
   win.webContents.setWindowOpenHandler(() => ({ action: "deny" }));
   win.webContents.on("will-navigate", (e, url) => {
     if (!url.startsWith("airjourney://app/")) e.preventDefault();

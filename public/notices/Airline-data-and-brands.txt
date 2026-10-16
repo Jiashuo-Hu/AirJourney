@@ -1,4 +1,4 @@
-AirJourney v0.3 local airline catalogue and brand references (2026-10-15)
+AirJourney v0.4 local airline catalogue and brand references (2026-10-15)
 
 The derived airline database public/data/airlines-global.json is made available
 under the Open Database License (ODbL) 1.0. Database contents are subject to the
@@ -32,3 +32,19 @@ of commercial-use clearance. Review individual conditions before any publication
 Original SVGs remain in logos/airlines/originals/; no bitmap was wrapped as SVG.
 Missing reliable vectors use a diamond placeholder. No claim of globally complete
 or universally current brand artwork is made.
+
+v0.4 includes 115 full vector marks, 92 independently separated graphics, and
+retained originals. Coverage by region and explicit gaps: data/airline-sources/
+v04-coverage.json. 95 marks were added to the prior 20. Spring Airlines remains
+a placeholder: the located SVG embeds a bitmap and was rejected. Wordmark-only
+and inseparable variants keep the full mark in the library; default list/picker
+views retain the complete wordmark when no symbol is supplied. Integral lettering in symbols
+(e.g. TAP monogram or Virgin badge) is intentionally retained.
+
+WorldVectorLogo was considered as a reference; its terms were reviewed at
+https://worldvectorlogo.com/terms-of-use. No files were copied from that site:
+its terms are not treated as permission for modification or transfer.
+Official site HTTP availability is only a fetch result, not proof of exhaustive
+brand verification. Specific primary confirmations and uncertain cases remain
+in the per-brand manifest. Kenya's white official lockup is presented on navy;
+the underlying paths and colors are preserved. No general clearance is claimed.

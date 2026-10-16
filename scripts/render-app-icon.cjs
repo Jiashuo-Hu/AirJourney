@@ -1,4 +1,4 @@
-// One canonical existing blue/white arrow logo; rasterization only, no redrawing.
+// Rasterize the canonical globe-and-airplane vector; never redraw per surface.
 const fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.AIRJOURNEY_PLAYWRIGHT||'C:/Users/hjs20/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 (async()=>{

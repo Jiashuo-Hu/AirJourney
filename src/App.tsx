@@ -1,4 +1,4 @@
-import { assertLocationsLocked } from "./location-lock";
+import { assertLocationsLocked, assertAirportLibraryReadOnly } from "./location-lock";
 import { APP_VERSION } from "./version";
 import { useEffect, useMemo, useRef, useState } from "react";
 import moment from "moment-timezone";
@@ -184,6 +184,7 @@ export function App() {
       await queue.current!((s) => {
         const previous = current.current!;
         const next = change(s);
+        if (!restoreBackup) assertAirportLibraryReadOnly(previous, next);
         if (!restoreBackup)
           assertLocationsLocked(previous, next, airportIndex.baseById);
         return next;
@@ -720,7 +721,7 @@ export function App() {
                                   alt={f.airline?.name}
                                 />
                               ) : (
-                                <span title="No verified vector logo">◇</span>
+                                <span title="No verified standalone symbol">◇</span>
                               )}
                             </span>
                             <span>

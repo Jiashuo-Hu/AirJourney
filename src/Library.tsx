@@ -85,6 +85,10 @@ export function Library({
   const patch = (p: Partial<Reference>) =>
     setEdit((v) => (v ? { ...v, ...p } : null));
   async function store(apply = false) {
+    if (kind === "Airports") {
+      onNotice("Airport information is read-only.");
+      return;
+    }
     if (!edit?.name.trim()) {
       onNotice("A name is required.");
       return;
@@ -153,6 +157,10 @@ export function Library({
     }
   }
   async function importData() {
+    if (kind === "Airports") {
+      onNotice("Airport information is read-only.");
+      return;
+    }
     try {
       const f = await readFile(".json,.csv");
       if (!f) return;
@@ -262,7 +270,7 @@ export function Library({
         />
       </div>
       <div className="row">
-        <button onClick={importData}>Import</button>
+        {kind !== "Airports" && <button onClick={importData}>Import</button>}
         <details className="data-tools">
           <summary>Data tools</summary>
           <button
@@ -308,7 +316,22 @@ export function Library({
           </small>
         </details>
       </div>
-      {edit ? (
+      {edit && kind === "Airports" ? (
+        <div className="airport-reference-detail">
+          <div className="panel-head"><h3>{edit.name}</h3><span className="badge">Read-only</span></div>
+          <dl>
+            <dt>Airport codes</dt><dd>{[edit.iata || edit.code, edit.icao, edit.ident].filter(Boolean).join(" · ") || "Not supplied"}</dd>
+            <dt>City</dt><dd>{edit.city || "Not supplied"}</dd>
+            <dt>Country / region</dt><dd>{edit.region || "Not supplied"}</dd>
+            <dt>Time zone suggestion</dt><dd>{edit.zone || "Not supplied"}</dd>
+            <dt>Location</dt><dd>{locationLabel(edit)}{hasLocation(edit) ? ` · ${edit.lat!.toFixed(6)}, ${edit.lon!.toFixed(6)}` : ""}</dd>
+            <dt>Source</dt><dd>{edit.locationSource || edit.source || "Preserved legacy entry"}</dd>
+            <dt>Aliases</dt><dd>{edit.aliases || "Not supplied"}</dd>
+          </dl>
+          <small>Airport information is supplied with the app. Existing historical entries are preserved.</small>
+          <button onClick={() => setEdit(null)}>Back to airports</button>
+        </div>
+      ) : edit ? (
         <div className="library-edit">
           <h3>{edit.name || `New ${kind.slice(0, -1)}`}</h3>
           <p className="muted">
@@ -423,7 +446,7 @@ export function Library({
                 {airlineLogo(edit) ? (
                   <img src={airlineLogo(edit)} alt={edit.name + " logo"} />
                 ) : (
-                  <span>Logo not added</span>
+                  <span>{kind === "Airlines" && brandFor(edit)?.full ? "Standalone symbol unavailable" : "Logo not added"}</span>
                 )}
               </div>
               <div className="row">
