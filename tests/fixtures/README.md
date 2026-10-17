@@ -9,3 +9,5 @@ v00-journal.sqlite 和 v00-state.airjourney 来自原 v0.0 安装版的隔离 sm
 Additional v01 fixtures are copied from the original v0.1 isolated installed-smoke run. They contain synthetic test flights and logos only; SQLite represents the later explicit reference update, while the backup captures its export point. v0.2 tests compare each fixture against its own stored JSON.
 
 v02-journal.sqlite is copied from the actual v0.2 map-update isolated regression profile (5 synthetic MAP-* / NEW-GIVEN flights). v02-state.airjourney is an equivalent schema-1 archive constructed from that preserved JSON, with app=v0.2 and a fresh integrity checksum. It is a compatibility fixture, not an actual user export. No default personal data directory is used.
+
+v04-journal.sqlite与v04-state.airjourney分别复制自实际v0.4隔离legacy-smoke的数据库和AirJourney-v0.4.airjourney导出，均为合成数据；各自按其原JSON独立验证，不要求两个时点完全相同。未使用个人资料目录。

@@ -1,5 +1,6 @@
 import type { Place, Reference } from "./types";
 import { hasLocation } from "./domain";
+import { gunzipSync, strFromU8 } from "fflate";
 export const airportText = (text: string) =>
   text
     .normalize("NFKD")
@@ -125,14 +126,21 @@ export class AirportSearch {
 }
 let catalogPromise: Promise<Reference[]> | undefined;
 export function loadAirportCatalog() {
-  return (catalogPromise ??= fetch("./data/airports-global.json").then(
-    async (response) => {
-      if (!response.ok)
-        throw Error("Bundled airport catalogue could not be loaded.");
-      const rows = (await response.json()) as Reference[];
-      if (!Array.isArray(rows) || rows.some((r) => !r.id || !r.name))
-        throw Error("Invalid bundled airport catalogue.");
-      return rows;
-    },
-  ));
+  const packed = import.meta.env?.PROD;
+  return (catalogPromise ??= fetch(
+    "./data/airports-global.json" + (packed ? ".gz" : ""),
+  ).then(async (response) => {
+    if (!response.ok)
+      throw Error("Bundled airport catalogue could not be loaded.");
+    const rows = (
+      packed
+        ? JSON.parse(
+            strFromU8(gunzipSync(new Uint8Array(await response.arrayBuffer()))),
+          )
+        : await response.json()
+    ) as Reference[];
+    if (!Array.isArray(rows) || rows.some((r) => !r.id || !r.name))
+      throw Error("Invalid bundled airport catalogue.");
+    return rows;
+  }));
 }

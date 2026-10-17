@@ -1,0 +1,8 @@
+"requirement_id","implementation","status","evidence"
+"V05-01","Completed/planned statistics, identities, bilateral routes, missing/manual distance","SELFTEST PASS","src/journey-summary.ts; evidence/v0.5/final-verified/results.json"
+"V05-02","Local-departure year intersects all existing filters/list/map/summary; mutation updates","SELFTEST PASS","evidence/v0.5/final-verified/results.json"
+"V05-03","Immediate color / reset / contrast / restart / full backup","SELFTEST PASS","evidence/v0.5/final-verified/results.json"
+"V05-04","Same widget/camera; five CSS timeline positions, rapid toggles/resizes, zero-buffer regression","BACKEND/FRAME SELFTEST PASS; FOREGROUND FEEL PENDING","evidence/v0.5/final-verified/sidebar-samples.json; evidence/v0.5/final-map/results.json"
+"V05-05","Consolidated stats, lazy globe, lossless directory, production SQL only","MEASURED; NO UNIVERSAL SPEED CLAIM","docs/implementation/v0.5/performance.json"
+"V05-COMPAT","v0.0-v0.4 synthetic SQLite/backups edit/restart, airports read-only, legacy/map suites","SELECTED REGRESSION PASS; FULL OLD MATRIX NOT RUN","evidence/v0.5/final-upgrade/results.json"
+"V05-DELIVERY","0.5.0, silent isolated install, source ZIP, resource/ASAR/ZIP byte checks","VERIFIED BY DELIVERY SCRIPT","release/v0.5/package-verification.json"

@@ -24,7 +24,6 @@ export function attachMapLoop(
     frame = 0,
     last = performance.now(),
     size = "",
-    stable = 0,
     zeroSince = 0,
     first = true;
   const issue = (e: unknown) => {
@@ -55,9 +54,9 @@ export function attachMapLoop(
     const width = host.clientWidth,
       height = host.clientHeight;
     const next = width + "x" + height + "@" + devicePixelRatio;
-    stable = next === size ? stable + 1 : 0;
+    const resized = next !== size;
     size = next;
-    if (width < 1 || height < 1 || stable < 1) {
+    if (width < 1 || height < 1) {
       d.skippedFrames++;
       d.state = "waiting for viewport";
       return;
@@ -80,6 +79,7 @@ export function attachMapLoop(
       if (Math.abs(v.resolutionScale - scale) > 0.001)
         v.resolutionScale = scale;
       v.resize();
+      if (resized) v.scene.requestRender();
       const bw = gl!.drawingBufferWidth,
         bh = gl!.drawingBufferHeight;
       d.lastViewport = [width, height, bw, bh];

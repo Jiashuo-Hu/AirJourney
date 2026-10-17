@@ -138,11 +138,20 @@ export function Settings({
           </label>
           <label>
             Route color
-            <input
-              type="color"
-              value={p.routeColor}
-              onChange={(e) => set("routeColor", e.target.value)}
-            />
+            <span className="route-color-row">
+              <input
+                type="color"
+                aria-label="Default route color"
+                value={p.routeColor}
+                onChange={(e) => set("routeColor", e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={() => set("routeColor", defaults.routeColor)}
+              >
+                Reset color
+              </button>
+            </span>
           </label>
           <details className="advanced">
             <summary>Advanced route style</summary>
@@ -531,7 +540,7 @@ export function Settings({
               priority.
             </li>
             <li>
-                Airlines: 7,764 local references from OpenFlights (ODbL 1.0 / DbCL
+              Airlines: 7,764 local references from OpenFlights (ODbL 1.0 / DbCL
               1.0) and Wikidata (CC0), prepared 2026-10-15. The derived
               catalogue is ODbL 1.0. Codes may be shared or historical;
               unverified status is not assumed active. Alliances and aircraft
@@ -544,11 +553,12 @@ export function Settings({
             </li>
             <li>GeographicLib WGS84 geodesics · MIT</li>
             <li>
-              Brand SVGs: {Object.keys(brands).length} airline marks, {Object.values(brands).filter(b => b.symbol).length} separate symbols; missing brands
-              use a diamond placeholder. Originals, source records, individual
-              conditions and gaps are in the bundled brand manifest. Trademarks
-              and copyright remain with their owners; no blanket usage license
-              or endorsement is implied.
+              Brand SVGs: {Object.keys(brands).length} airline marks,{" "}
+              {Object.values(brands).filter((b) => b.symbol).length} separate
+              symbols; missing brands use a diamond placeholder. Originals,
+              source records, individual conditions and gaps are in the bundled
+              brand manifest. Trademarks and copyright remain with their owners;
+              no blanket usage license or endorsement is implied.
             </li>
           </ul>
           <h4>Known resource limits</h4>

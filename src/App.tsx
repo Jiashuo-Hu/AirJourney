@@ -1,6 +1,17 @@
-import { assertLocationsLocked, assertAirportLibraryReadOnly } from "./location-lock";
+import {
+  assertLocationsLocked,
+  assertAirportLibraryReadOnly,
+} from "./location-lock";
 import { APP_VERSION } from "./version";
-import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  lazy,
+  Suspense,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+} from "react";
 import moment from "moment-timezone";
 import type { Flight, State, Place } from "./types";
 import { initialState } from "./seed";
@@ -22,7 +33,9 @@ import {
   readFile,
   exportFile,
 } from "./storage";
-import { Globe } from "./Globe";
+import { JourneySummary } from "./JourneySummary";
+import { flightYears, inYear } from "./journey-summary";
+const Globe = lazy(() => import("./Globe").then((m) => ({ default: m.Globe })));
 import { FlightEditor } from "./FlightEditor";
 import { Library } from "./Library";
 import { Settings } from "./Settings";
@@ -69,6 +82,7 @@ export function App() {
     [end, setEnd] = useState(""),
     [sort, setSort] = useState("Newest first"),
     [trash, setTrash] = useState(false),
+    [year, setYear] = useState("All"),
     [path, setPath] = useState("Browser preview storage"),
     [incoming, setIncoming] = useState<State | null>(null),
     [importMode, setImportMode] = useState("Merge · keep conflicts"),
@@ -201,11 +215,20 @@ export function App() {
       setBusy(pending.current > 0);
     }
   }
+  const years = useMemo(
+    () => flightYears(state?.flights || [], trash),
+    [state?.flights, trash],
+  );
+  const activeYear = year === "All" || years.includes(year) ? year : "All";
+  useEffect(() => {
+    if (year !== activeYear) setYear(activeYear);
+  }, [year, activeYear]);
   const filtered = useMemo(() => {
     if (!state) return [];
     const list = state.flights.filter(
       (f) =>
         Boolean(f.deleted) === trash &&
+        inYear(f, activeYear) &&
         (!statuses.length || statuses.includes(f.status)) &&
         (!airlines.length || airlines.includes(f.airline?.id || "Unknown")) &&
         (!ports.length ||
@@ -247,7 +270,19 @@ export function App() {
         a.id.localeCompare(b.id);
       return sort === "Oldest first" ? diff : -diff;
     });
-  }, [state, trash, statuses, airlines, ports, tags, start, end, search, sort]);
+  }, [
+    state,
+    trash,
+    activeYear,
+    statuses,
+    airlines,
+    ports,
+    tags,
+    start,
+    end,
+    search,
+    sort,
+  ]);
   useEffect(() => {
     if (selected && !filtered.some((f) => f.id === selected)) setSelected(null);
   }, [filtered, selected]);
@@ -452,21 +487,7 @@ export function App() {
     missing = filtered.filter(
       (f) => !hasLocation(f.from) || !hasLocation(f.to),
     ).length,
-    hidden = filtered.filter((f) => !f.visible).length,
-    recorded = filtered.filter((f) => f.status === "Recorded" && !f.deleted),
-    meters = recorded.map(recordedMeters),
-    known = meters.filter((v) => v !== null) as number[],
-    estimated = recorded.filter(
-      (f) => f.distance === undefined && distance(f.from, f.to) !== null,
-    ).length,
-    total =
-      known.reduce((a, b) => a + b, 0) / (p.units === "km" ? 1000 : 1609.344),
-    airportCount = new Set(
-      recorded
-        .flatMap((f) => [f.from, f.to])
-        .filter((v) => v.name)
-        .map((v) => v.id),
-    ).size;
+    hidden = filtered.filter((f) => !f.visible).length;
   const multiselect = (
     label: string,
     values: string[],
@@ -507,7 +528,7 @@ export function App() {
     setSide(true);
   }
   return (
-    <div className="app">
+    <div className="app" data-reduced-motion={p.reducedMotion}>
       <header className="titlebar" inert={modalOpen}>
         <div className="brand">
           <img className="brandmark" src="./app-logo.svg" alt="" />
@@ -531,7 +552,15 @@ export function App() {
       </header>
       <main inert={modalOpen}>
         <aside
-          style={{ width: p.sidebarWidth, display: side ? "flex" : "none" }}
+          style={
+            {
+              width: side ? p.sidebarWidth : 0,
+              "--sidebar-width": p.sidebarWidth + "px",
+            } as CSSProperties
+          }
+          className={side ? "sidebar-open" : "sidebar-closed"}
+          inert={!side}
+          aria-hidden={!side}
           aria-label="Flight management"
         >
           <div className="sidebar-content">
@@ -556,6 +585,21 @@ export function App() {
                       + Add flight
                     </button>
                   </div>
+                  <label className="year-selector">
+                    Time range
+                    <select
+                      aria-label="Time range"
+                      value={activeYear}
+                      onChange={(e) => setYear(e.target.value)}
+                    >
+                      <option value="All">All</option>
+                      {years.map((y) => (
+                        <option key={y} value={y}>
+                          {y}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
                   <div className="search-box">
                     <span>⌕</span>
                     <input
@@ -647,32 +691,16 @@ export function App() {
                           setStart("");
                           setEnd("");
                           setSearch("");
+                          setYear("All");
                         }}
                       >
                         Clear filters
                       </button>
                     </div>
                   )}
-                  <div className="journey-stats">
-                    <div>
-                      <strong>{filtered.length}</strong>
-                      <span>flights</span>
-                    </div>
-                    <div>
-                      <strong>{mapped.length}</strong>
-                      <span>mapped</span>
-                    </div>
-                    <div>
-                      <strong>
-                        {total.toLocaleString("en-US", {
-                          maximumFractionDigits: 0,
-                        })}
-                      </strong>
-                      <span title="Recorded flights; manual distances or geographic estimates">
-                        {p.units}
-                      </span>
-                    </div>
-                  </div>
+                  {!trash && (
+                    <JourneySummary flights={filtered} units={p.units} />
+                  )}
                   {(missing > 0 || hidden > 0) && (
                     <p className="coverage">
                       {missing > 0 ? `${missing} need location` : ""}
@@ -721,7 +749,9 @@ export function App() {
                                   alt={f.airline?.name}
                                 />
                               ) : (
-                                <span title="No verified standalone symbol">◇</span>
+                                <span title="No verified standalone symbol">
+                                  ◇
+                                </span>
                               )}
                             </span>
                             <span>
@@ -948,163 +978,95 @@ export function App() {
             )}{" "}
             {page === "Insights" && (
               <div className="panel insights">
-                <span className="eyebrow">YOUR JOURNEYS IN PERSPECTIVE</span>
                 <h2>Insights</h2>
-                <p className="muted">
-                  Current Flights filters apply. Recorded flights only.
-                </p>
-                <div className="metric">
-                  <strong>{recorded.length}</strong>
-                  <span>Recorded flights</span>
-                </div>
-                <div className="metric">
-                  <strong>{airportCount}</strong>
-                  <span>Named airport / place IDs</span>
-                </div>
-                <div className="metric">
-                  <strong>
-                    {total.toLocaleString("en-US", {
-                      maximumFractionDigits: 1,
-                    })}
-                  </strong>
-                  <span>
-                    {p.units} · {known.length} known,{" "}
-                    {meters.length - known.length} unknown
-                  </span>
-                </div>
-                <div className="metric">
-                  <strong>
-                    {
-                      new Set(
-                        recorded.map((f) => f.airline?.id).filter(Boolean),
-                      ).size
-                    }
-                  </strong>
-                  <span>
-                    Known airlines · {recorded.filter((f) => !f.airline).length}{" "}
-                    unknown
-                  </span>
-                </div>
-                <div className="metric">
-                  <strong>
-                    {
-                      new Set(
-                        recorded.map((f) => f.aircraft?.id).filter(Boolean),
-                      ).size
-                    }
-                  </strong>
-                  <span>
-                    Known aircraft types ·{" "}
-                    {recorded.filter((f) => !f.aircraft).length} unknown
-                  </span>
-                </div>
-                <h3>Years</h3>
-                {[
-                  ...new Set(
-                    recorded.map(
-                      (f) => f.departure.date.slice(0, 4) || "Undated",
-                    ),
-                  ),
-                ]
-                  .sort()
-                  .reverse()
-                  .map((y) => (
-                    <div className="reference-row" key={y}>
-                      <strong>{y}</strong>
-                      <span>
-                        {
-                          recorded.filter(
-                            (f) =>
-                              (f.departure.date.slice(0, 4) || "Undated") === y,
-                          ).length
-                        }{" "}
-                        flights
-                      </span>
-                    </div>
-                  ))}
-                <p className="muted">
-                  {estimated} geographic estimates. Manual distance takes
-                  priority. Planned and Draft flights are excluded.
-                </p>
+                <p className="muted">{activeYear} · current Flights filters</p>
+                <JourneySummary flights={filtered} units={p.units} expanded />
               </div>
             )}
           </div>
         </aside>
-        {side && (
-          <div
-            className="resizer"
-            role="separator"
-            aria-label="Sidebar width"
-            aria-valuenow={p.sidebarWidth}
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-                e.preventDefault();
-                commit((latest) => ({
-                  ...latest,
-                  settings: {
-                    ...latest.settings,
-                    sidebarWidth: Math.min(
-                      480,
-                      Math.max(
-                        300,
-                        latest.settings.sidebarWidth +
-                          (e.key === "ArrowRight" ? 10 : -10),
-                      ),
+        <div
+          className={side ? "resizer" : "resizer collapsed"}
+          role="separator"
+          aria-label="Sidebar width"
+          aria-valuenow={p.sidebarWidth}
+          aria-hidden={!side}
+          tabIndex={side ? 0 : -1}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+              e.preventDefault();
+              commit((latest) => ({
+                ...latest,
+                settings: {
+                  ...latest.settings,
+                  sidebarWidth: Math.min(
+                    480,
+                    Math.max(
+                      300,
+                      latest.settings.sidebarWidth +
+                        (e.key === "ArrowRight" ? 10 : -10),
                     ),
-                  },
-                }));
-              }
-            }}
-            onPointerDown={(e) => {
-              e.currentTarget.setPointerCapture(e.pointerId);
-              const target = e.currentTarget;
-              let width = p.sidebarWidth;
-              const move = (evt: PointerEvent) => {
-                width = Math.min(480, Math.max(300, evt.clientX));
-                document.querySelector("aside")!.style.width = width + "px";
-              };
-              const up = () => {
-                target.removeEventListener("pointermove", move);
-                target.removeEventListener("pointerup", up);
-                commit((latest) => ({
-                  ...latest,
-                  settings: { ...latest.settings, sidebarWidth: width },
-                }));
-              };
-              target.addEventListener("pointermove", move);
-              target.addEventListener("pointerup", up);
-            }}
-          />
-        )}
+                  ),
+                },
+              }));
+            }
+          }}
+          onPointerDown={(e) => {
+            e.currentTarget.setPointerCapture(e.pointerId);
+            const target = e.currentTarget;
+            const aside = document.querySelector("aside")!;
+            aside.classList.add("resizing");
+            let width = p.sidebarWidth;
+            const move = (evt: PointerEvent) => {
+              width = Math.min(480, Math.max(300, evt.clientX));
+              aside.style.width = width + "px";
+              aside.style.setProperty("--sidebar-width", width + "px");
+            };
+            const up = () => {
+              aside.classList.remove("resizing");
+              target.removeEventListener("pointermove", move);
+              target.removeEventListener("pointerup", up);
+              commit((latest) => ({
+                ...latest,
+                settings: { ...latest.settings, sidebarWidth: width },
+              }));
+            };
+            target.addEventListener("pointermove", move);
+            target.addEventListener("pointerup", up);
+          }}
+        />
         <div className="map-area">
-          <Globe
-            flights={trash ? [] : filtered}
-            selected={selected}
-            settings={p}
-            onSelect={choose}
-            onRepeatMode={(repeatRoutes) =>
-              commit((latest) => ({
-                ...latest,
-                settings: { ...latest.settings, repeatRoutes },
-              }))
-            }
-            onHome={(home) =>
-              commit((latest) => ({
-                ...latest,
-                settings: { ...latest.settings, home },
-              }))
-            }
-            onView={(lastView) => {
-              const s = current.current;
-              if (s)
+          <Suspense
+            fallback={<div className="map-loading">Opening local globe…</div>}
+          >
+            <Globe
+              flights={trash ? [] : filtered}
+              selected={selected}
+              settings={p}
+              onSelect={choose}
+              onRepeatMode={(repeatRoutes) =>
                 commit((latest) => ({
                   ...latest,
-                  settings: { ...latest.settings, lastView },
-                }));
-            }}
-            focusRequest={focusRequest}
-          />
+                  settings: { ...latest.settings, repeatRoutes },
+                }))
+              }
+              onHome={(home) =>
+                commit((latest) => ({
+                  ...latest,
+                  settings: { ...latest.settings, home },
+                }))
+              }
+              onView={(lastView) => {
+                const s = current.current;
+                if (s)
+                  commit((latest) => ({
+                    ...latest,
+                    settings: { ...latest.settings, lastView },
+                  }));
+              }}
+              focusRequest={focusRequest}
+            />
+          </Suspense>
           <button
             id="sidebar-toggle"
             className="sidebar-toggle"

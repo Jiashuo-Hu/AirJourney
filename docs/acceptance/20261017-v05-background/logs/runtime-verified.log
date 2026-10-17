@@ -1,0 +1,12 @@
+PASS v0.5 installed offline globe and lossless airport resource load
+PASS compact completed/planned statistics and bilateral route ranking
+PASS local departure years descending; undated only All; Trash excluded
+PASS year intersects existing search filters and map, Insights uses same summary
+PASS planned year intersects status filter without contributing completed totals
+PASS create/edit/delete updates year options immediately and invalid selection returns All
+PASS default route color changes immediately; selected routes contrast in both repeated modes
+PASS color persists through real process restart and Reset color changes only color
+PASS sidebar resizes continuously without skipped frames, rebuilding globe or moving camera
+PASS rapid toggles and window resizing preserve selection, camera and correct framebuffer
+PASS complete backup restores color, mode and unmodified historical flight snapshots
+PASS ordinary hidden launch has no test hooks and maintains saved statistics

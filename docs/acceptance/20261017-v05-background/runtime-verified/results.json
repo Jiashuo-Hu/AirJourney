@@ -1,0 +1,136 @@
+{
+  "version": "v0.5",
+  "exe": "C:\\MyFile\\Project\\AirJourney\\release\\v0.5\\win-unpacked\\AirJourney.exe",
+  "results": [
+    {
+      "name": "v0.5 installed offline globe and lossless airport resource load",
+      "status": "PASS",
+      "detail": {
+        "resource": {
+          "records": 86242,
+          "firstId": "oa-610367"
+        },
+        "defaultProfileUsed": false
+      }
+    },
+    {
+      "name": "compact completed/planned statistics and bilateral route ranking",
+      "status": "PASS"
+    },
+    {
+      "name": "local departure years descending; undated only All; Trash excluded",
+      "status": "PASS"
+    },
+    {
+      "name": "year intersects existing search filters and map, Insights uses same summary",
+      "status": "PASS"
+    },
+    {
+      "name": "planned year intersects status filter without contributing completed totals",
+      "status": "PASS"
+    },
+    {
+      "name": "create/edit/delete updates year options immediately and invalid selection returns All",
+      "status": "PASS"
+    },
+    {
+      "name": "default route color changes immediately; selected routes contrast in both repeated modes",
+      "status": "PASS"
+    },
+    {
+      "name": "color persists through real process restart and Reset color changes only color",
+      "status": "PASS"
+    },
+    {
+      "name": "sidebar resizes continuously without skipped frames, rebuilding globe or moving camera",
+      "status": "PASS",
+      "detail": {
+        "rows": [
+          {
+            "time": 0,
+            "width": 1055,
+            "height": 898,
+            "bw": 1055,
+            "bh": 898,
+            "aspect": 1.1748329621380846,
+            "frames": 307
+          },
+          {
+            "time": 55,
+            "width": 1307,
+            "height": 898,
+            "bw": 1307,
+            "bh": 898,
+            "aspect": 1.455456570155902,
+            "frames": 308
+          },
+          {
+            "time": 110,
+            "width": 1402,
+            "height": 898,
+            "bw": 1402,
+            "bh": 898,
+            "aspect": 1.5612472160356348,
+            "frames": 309
+          },
+          {
+            "time": 165,
+            "width": 1433,
+            "height": 898,
+            "bw": 1433,
+            "bh": 898,
+            "aspect": 1.5957683741648108,
+            "frames": 310
+          },
+          {
+            "time": 220,
+            "width": 1440,
+            "height": 898,
+            "bw": 1440,
+            "bh": 898,
+            "aspect": 1.6035634743875278,
+            "frames": 311
+          }
+        ],
+        "start": {
+          "frames": 305,
+          "skipped": 0,
+          "rebuilds": 0
+        },
+        "end": {
+          "frames": 311,
+          "skipped": 0,
+          "rebuilds": 0
+        },
+        "same": true,
+        "camera": [
+          2187566.7739308635,
+          5286329.258874403,
+          11081623.047483481
+        ],
+        "original": [
+          2187566.7739308635,
+          5286329.258874403,
+          11081623.047483481
+        ],
+        "method": "Actual CSS width transitions sampled at five paused timeline positions; no map resize/render bypass; natural timing remains manual review"
+      }
+    },
+    {
+      "name": "rapid toggles and window resizing preserve selection, camera and correct framebuffer",
+      "status": "PASS"
+    },
+    {
+      "name": "complete backup restores color, mode and unmodified historical flight snapshots",
+      "status": "PASS"
+    },
+    {
+      "name": "ordinary hidden launch has no test hooks and maintains saved statistics",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "hiddenOffscreen": true,
+  "nativeInputUsed": false,
+  "visualConfirmation": "Pending manual foreground review"
+}

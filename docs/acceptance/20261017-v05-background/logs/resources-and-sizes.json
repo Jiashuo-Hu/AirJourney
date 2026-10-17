@@ -1,0 +1,76 @@
+{
+  "retainedResourcesCompared": 937,
+  "resourceChanges": [],
+  "airports": 86242,
+  "airlines": 7764,
+  "sqlRuntimeFiles": [
+    "node_modules/sql.js/AUTHORS",
+    "node_modules/sql.js/LICENSE",
+    "node_modules/sql.js/dist/sql-wasm.js",
+    "node_modules/sql.js/dist/sql-wasm.wasm",
+    "node_modules/sql.js/package.json"
+  ],
+  "dist": {
+    "files": 957,
+    "bytes": 46631726
+  },
+  "unpacked": {
+    "files": 74,
+    "bytes": 361099365
+  },
+  "installerBytes": 116070398,
+  "existingEvidenceHashes": [
+    {
+      "path": "evidence/v0.5/unit-tests.log",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/airport-resource-tests.log",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/build.log",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/package.log",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/install.json",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/baseline-sizes.json",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/performance-baseline/results.json",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/performance-v05/results.json",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/final-verified/sidebar-samples.json",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/final-verified/results.json",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/final-upgrade/results.json",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/final-map/results.json",
+      "matches": true
+    },
+    {
+      "path": "evidence/v0.5/final-legacy/smoke-results.json",
+      "matches": true
+    }
+  ]
+}

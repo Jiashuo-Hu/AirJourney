@@ -1,5 +1,5 @@
 import { attachMapLoop, type MapDiagnostics } from "./map-runtime";
-import { airportMarkerPixels } from "./map-style";
+import { airportMarkerPixels, selectedRouteColor } from "./map-style";
 import {
   airportHoverCode,
   fadeLabel,
@@ -436,9 +436,9 @@ export function Globe({
         const f = list.find((f) => f.id === selected) || list[0],
           picked = list.some((f) => f.id === selected),
           color = C.Color.fromCssColorString(
-            f.color || settings.routeColor,
+            picked ? selectedRouteColor(f.color || settings.routeColor) : f.color || settings.routeColor,
           ).withAlpha(
-            selected && !picked ? settings.opacity * 0.35 : settings.opacity,
+            picked ? 1 : selected ? settings.opacity * 0.35 : settings.opacity,
           );
         const positions = laneRoute(
           f.from,

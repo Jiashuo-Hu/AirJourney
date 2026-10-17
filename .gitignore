@@ -10,3 +10,6 @@ src-tauri/target/
 /docs/acceptance/**/data/
 __pycache__/
 *.pyc
+
+# Isolated acceptance browser profiles are test runtime data, not deliverables.
+/docs/acceptance/**/profile/

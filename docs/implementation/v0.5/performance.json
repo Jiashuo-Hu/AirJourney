@@ -1,0 +1,99 @@
+{
+  "baseline": {
+    "dist": {
+      "files": 955,
+      "bytes": 72876581
+    },
+    "release/v0.4/win-unpacked": {
+      "files": 74,
+      "bytes": 408330075
+    },
+    "installerBytes": 121255628,
+    "sqlRuntimeBytes": 21708222,
+    "jsBytes": 9506163
+  },
+  "after": {
+    "distBytes": 46631726,
+    "unpackedBytes": 361099365,
+    "installerBytes": 116070398,
+    "sqlRuntimeBytes": 712525,
+    "jsBytes": 9502484
+  },
+  "oldPerformance": {
+    "exe": "release/v0.4/win-unpacked/AirJourney.exe",
+    "runs": [
+      {
+        "uiMs": 1824.1844,
+        "globeMs": 2664.0213,
+        "searchMs": 19.97470000000021,
+        "map": {
+          "frames": 36,
+          "drawn": 36
+        }
+      },
+      {
+        "uiMs": 922.3467999999998,
+        "globeMs": 1811.5901,
+        "searchMs": 11.74200000000019,
+        "map": {
+          "frames": 38,
+          "drawn": 38
+        }
+      },
+      {
+        "uiMs": 935.9175999999998,
+        "globeMs": 1773.2199,
+        "searchMs": 228.16710000000057,
+        "map": {
+          "frames": 33,
+          "drawn": 33
+        }
+      }
+    ],
+    "median": {
+      "uiMs": 935.9175999999998,
+      "globeMs": 1811.5901,
+      "searchMs": 19.97470000000021
+    },
+    "method": "3 fresh isolated profiles/processes; same fixture; filesystem caches uncontrolled; sequential, no cold-machine claim; CDP hidden/offscreen"
+  },
+  "newPerformance": {
+    "exe": "evidence/v0.5/installed-app/AirJourney.exe",
+    "runs": [
+      {
+        "uiMs": 635.6769,
+        "globeMs": 2050.6657,
+        "searchMs": 8.729800000000068,
+        "map": {
+          "frames": 27,
+          "drawn": 27
+        }
+      },
+      {
+        "uiMs": 448.1905999999999,
+        "globeMs": 1955.4913999999999,
+        "searchMs": 14.66399999999976,
+        "map": {
+          "frames": 32,
+          "drawn": 32
+        }
+      },
+      {
+        "uiMs": 492.14770000000044,
+        "globeMs": 2020.1638000000003,
+        "searchMs": 10.533900000000358,
+        "map": {
+          "frames": 30,
+          "drawn": 30
+        }
+      }
+    ],
+    "median": {
+      "uiMs": 492.14770000000044,
+      "globeMs": 2020.1638000000003,
+      "searchMs": 10.533900000000358
+    },
+    "method": "3 fresh isolated profiles/processes; same fixture; filesystem caches uncontrolled; sequential, no cold-machine claim; CDP hidden/offscreen"
+  },
+  "method": "Same machine, three sequential fresh isolated profiles per version, fixed software DPR 1, hidden/offscreen; OS file caches uncontrolled; not a cold-machine or foreground benchmark"
+}

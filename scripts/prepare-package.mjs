@@ -20,9 +20,10 @@ mkdirSync(root, { recursive: true });
 for (const folder of ["dist", "desktop"])
   cpSync(folder, `${root}/${folder}`, { recursive: true });
 mkdirSync(`${root}/node_modules`, { recursive: true });
-cpSync("node_modules/sql.js", `${root}/node_modules/sql.js`, {
-  recursive: true,
-});
+mkdirSync(`${root}/node_modules/sql.js/dist`, { recursive: true });
+// Keep the exact production runtime and notices; omit unused alternate builds.
+for (const file of ["package.json", "LICENSE", "AUTHORS", "dist/sql-wasm.js", "dist/sql-wasm.wasm"])
+  cpSync(`node_modules/sql.js/${file}`, `${root}/node_modules/sql.js/${file}`);
 writeFileSync(
   `${root}/package.json`,
   JSON.stringify({

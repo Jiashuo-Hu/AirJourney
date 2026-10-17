@@ -1,0 +1,81 @@
+{
+  "version": "v0.5",
+  "packageVersion": "0.5.0",
+  "date": "2026-10-16",
+  "localOnly": true,
+  "unitTests": 63,
+  "resourceTests": 5,
+  "installedScenarios": 64,
+  "syntheticFixtures": true,
+  "hiddenOffscreen": true,
+  "nativeInputUsed": false,
+  "foregroundVisualConfirmation": false,
+  "physicalNetworkDisconnected": false,
+  "evidence": [
+    {
+      "path": "evidence/v0.5/unit-tests.log",
+      "bytes": 6374,
+      "sha256": "cc19dd99fadf75e7cf6903ca7b1c38e8f9e3c3dfa28782150ab13b27c6468fb9"
+    },
+    {
+      "path": "evidence/v0.5/airport-resource-tests.log",
+      "bytes": 108,
+      "sha256": "46a59d823d772c3809446eba836399e2612ba33924b6c71abe8e15b736b8f4b7"
+    },
+    {
+      "path": "evidence/v0.5/build.log",
+      "bytes": 4083,
+      "sha256": "d54890204eeafc759e2f3475dc793134537fdf8c90fe8993dfcdb0e7e4d4a382"
+    },
+    {
+      "path": "evidence/v0.5/package.log",
+      "bytes": 1319,
+      "sha256": "f0e6901831188c59753e2813a51a19b52b7934015d94bd46dc74141243d6cb7d"
+    },
+    {
+      "path": "evidence/v0.5/install.json",
+      "bytes": 406,
+      "sha256": "64bd6273d5b0143e691a4f142b65556406c81ac291c2e7f7517c675723fb9baf"
+    },
+    {
+      "path": "evidence/v0.5/baseline-sizes.json",
+      "bytes": 233,
+      "sha256": "a60691571ed4b7264342527b7464f31a842a4ccf2bba1611b7c09a668eb04a8d"
+    },
+    {
+      "path": "evidence/v0.5/performance-baseline/results.json",
+      "bytes": 856,
+      "sha256": "ca041aa9c7191640fb8611f02e6d3d2d73fe2e56ee388db82c1ccd594f9b6c94"
+    },
+    {
+      "path": "evidence/v0.5/performance-v05/results.json",
+      "bytes": 887,
+      "sha256": "8a148fe06cfa3535a3f33a9b713f98b93658fedb173752470664d07fde6548a0"
+    },
+    {
+      "path": "evidence/v0.5/final-verified/sidebar-samples.json",
+      "bytes": 1332,
+      "sha256": "60f058c288afa287e1bfb5d12a54b93a68d6fa7252848d235abdc2f72c5454f1"
+    },
+    {
+      "path": "evidence/v0.5/final-verified/results.json",
+      "bytes": 3753,
+      "sha256": "106ba567fe5a5718f059ff116a304e88fe4d5ab76dc126e8d4a7b5e77f66109f"
+    },
+    {
+      "path": "evidence/v0.5/final-upgrade/results.json",
+      "bytes": 6453,
+      "sha256": "465ee2b6c06c67247e375d69a61f48feb3d00c2ae1c76c1ec464dc020d9a0606"
+    },
+    {
+      "path": "evidence/v0.5/final-map/results.json",
+      "bytes": 5701,
+      "sha256": "b25a2394c28701c8c058e499f24d207d291c9284ec1dbaac04b229f6fc66eb7b"
+    },
+    {
+      "path": "evidence/v0.5/final-legacy/smoke-results.json",
+      "bytes": 6710,
+      "sha256": "b028e9ee875bc235b5fd4316f490190f1159fba3d6520c71811b77dd347524ad"
+    }
+  ]
+}
